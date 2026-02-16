@@ -1,20 +1,25 @@
+// Quiz Immunologia - SPA vanilla JS
+// Carica le domande da immunologia_v21_mcq.txt e renderizza Home/Quiz/Statistiche
+// Nessun backend. Solo browser + localStorage.
+
 const view = document.getElementById("view");
 
-const STORAGE_KEY = "immunologia_v21_mcq.txt";
+const STORAGE_KEY = "immunologia_quiz_v1";
+
 const state = {
     all: [],
     categories: [],
     mode: "home", // home | quiz | stats | done
     config: { category: "Tutte", limit: 30, shuffle: true, wrongOnly: false },
     quiz: { items: [], index: 0, selected: new Set(), correct: 0, answered: 0, wrongIds: new Set() },
-    stats: { played: 0, correct: 0, wrong: 0, perCategory: {} }
+    stats: { played: 0, correct: 0, wrong: 0, perCategory: {} },
 };
 
 function save() {
     const payload = {
         config: state.config,
         stats: state.stats,
-        wrongIds: Array.from(state.quiz.wrongIds)
+        wrongIds: Array.from(state.quiz.wrongIds),
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
 }
@@ -26,8 +31,10 @@ function load() {
         const p = JSON.parse(raw);
         if (p.config) state.config = { ...state.config, ...p.config };
         if (p.stats) state.stats = p.stats;
-        if (p.wrongIds) state.quiz.wrongIds = new Set(p.wrongIds);
-    } catch {}
+        if (Array.isArray(p.wrongIds)) state.quiz.wrongIds = new Set(p.wrongIds);
+    } catch {
+        // ignora
+    }
 }
 
 function resetAll() {
@@ -45,33 +52,160 @@ function shuffle(arr) {
 
 function uniqCategories(questions) {
     const set = new Set();
-    for (const q of questions) set.add(q.category ?? "Senza categoria");
-    return ["Tutte", ...Array.from(set).sort((a,b) => a.localeCompare(b))];
+    for (const q of questions) set.add(q.category || "Senza categoria");
+    return ["Tutte", ...Array.from(set).sort((a, b) => a.localeCompare(b))];
 }
 
-function normalizeQuestion(q) {
-    // atteso dal tuo JSON: { category, question, options:[{label,text}], correctLabels:[...] }
-    return {
-        id: q.id ?? crypto.randomUUID(),
-        category: q.category ?? "Senza categoria",
-        question: q.question ?? "",
-        options: (q.options ?? []).map(o => ({ label: String(o.label), text: String(o.text) })),
-        correctLabels: (q.correctLabels ?? []).map(x => String(x)) // può essere []
-    };
+function isOptionLine(line) {
+    return /^([A-Za-z0-9]+)\)\s*(.*)$/.test(line);
 }
 
-async function init() {
-    load();
-    const res = await fetch("immunologia_v21_mcq.txt", { cache: "no-store" });
-    const data = await res.json();
-    state.all = data.map(normalizeQuestion)
-        // filtra: almeno 2 opzioni (come hai chiesto)
-        .filter(q => q.options.length >= 2);
+function parseOptionLine(line) {
+    const m = line.match(/^([A-Za-z0-9]+)\)\s*(.*)$/);
+    if (!m) return null;
+    return { label: m[1], text: (m[2] ?? "").trim() };
+}
 
-    state.categories = uniqCategories(state.all);
+function normalizeLabelForCompare(label) {
+    const s = String(label).trim();
+    if (!s) return "";
+    return /^\d+$/.test(s) ? s : s.toUpperCase();
+}
 
-    wireNav();
-    renderHome();
+function splitAns(ansRaw) {
+    const cleaned = String(ansRaw ?? "").trim();
+    if (!cleaned || cleaned === "?") return [];
+    return cleaned
+        .split(/[,\s]+/)
+        .map((x) => x.trim())
+        .filter(Boolean);
+}
+
+function fnv1a32Hex(str) {
+    // hash deterministico per avere ID stabile tra reload (wrongIds/statistiche)
+    let h = 0x811c9dc5;
+    for (let i = 0; i < str.length; i++) {
+        h ^= str.charCodeAt(i);
+        h = (h + ((h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24))) >>> 0;
+    }
+    return ("00000000" + h.toString(16)).slice(-8);
+}
+
+function chooseAnswerRun(runs, correctLabels) {
+    // runs: [{ idxs:[...], options:[{label,text}] }]
+    if (!runs.length) return null;
+
+    const normAns = correctLabels.map(normalizeLabelForCompare).filter(Boolean);
+    const hasAns = normAns.length > 0;
+
+    if (!hasAns) {
+        // nessuna soluzione: prendi l'ultimo run con >=2 opzioni
+        for (let i = runs.length - 1; i >= 0; i--) {
+            if (runs[i].options.length >= 2) return runs[i];
+        }
+        return runs[runs.length - 1];
+    }
+
+    let best = null;
+    let bestScore = -1;
+    for (let i = 0; i < runs.length; i++) {
+        const run = runs[i];
+        const runLabels = new Set(run.options.map((o) => normalizeLabelForCompare(o.label)));
+        const containsAll = normAns.every((a) => runLabels.has(a));
+        const intersection = normAns.reduce((acc, a) => acc + (runLabels.has(a) ? 1 : 0), 0);
+
+        // preferisci run che contiene tutte le risposte, poi più vicino in basso
+        const score = (containsAll ? 100 : 0) + intersection * 10 + i;
+        if (score > bestScore) {
+            best = run;
+            bestScore = score;
+        }
+    }
+    return best;
+}
+
+function parseTxtToQuestions(txt) {
+    // separa i blocchi: una riga vuota prima di "CAT:"
+    const blocks = txt
+        .trim()
+        .split(/\n\s*\n(?=CAT:)/g)
+        .map((b) => b.trim())
+        .filter(Boolean);
+
+    const questions = [];
+    for (const block of blocks) {
+        const rawLines = block.split("\n").map((l) => l.trimEnd());
+        const lines = rawLines.filter((l) => l.trim() !== "");
+
+        const catLine = lines.find((l) => l.startsWith("CAT:"));
+        const qLineIndex = lines.findIndex((l) => l.startsWith("Q:"));
+        const ansLineIndex = lines.findIndex((l) => l.startsWith("ANS:"));
+
+        if (!catLine || qLineIndex === -1 || ansLineIndex === -1) continue;
+
+        const category = catLine.replace(/^CAT:\s*/, "").trim() || "Senza categoria";
+
+        const ansRaw = lines[ansLineIndex].replace(/^ANS:\s*/, "").trim();
+        const correctLabels = splitAns(ansRaw);
+
+        // costruisci runs di option lines tra Q e ANS
+        const runs = [];
+        let current = null;
+
+        for (let i = qLineIndex + 1; i < ansLineIndex; i++) {
+            const l = lines[i];
+            if (isOptionLine(l)) {
+                const opt = parseOptionLine(l);
+                if (!opt) continue;
+                if (!current) current = { idxs: [], options: [] };
+                current.idxs.push(i);
+                current.options.push(opt);
+            } else {
+                if (current) {
+                    runs.push(current);
+                    current = null;
+                }
+            }
+        }
+        if (current) runs.push(current);
+
+        const answerRun = chooseAnswerRun(runs, correctLabels);
+
+        // testo domanda: Q: + tutte le righe tra Q e ANS che NON sono answer options
+        const qFirst = lines[qLineIndex].replace(/^Q:\s*/, "").trim();
+        const questionLines = [qFirst];
+
+        const answerIdxSet = new Set(answerRun ? answerRun.idxs : []);
+        for (let i = qLineIndex + 1; i < ansLineIndex; i++) {
+            if (answerIdxSet.has(i)) continue;
+            // include anche liste tipo 1) ... 2) ... (sequenze)
+            questionLines.push(lines[i].trim());
+        }
+
+        const question = questionLines.join("\n").trim();
+
+        const options = answerRun ? answerRun.options : [];
+        if (options.length < 2) continue; // requisito: almeno 2 scelte
+
+        const idSource =
+            category +
+            "|" +
+            question +
+            "|" +
+            options.map((o) => `${o.label})${o.text}`).join("|");
+        const id = fnv1a32Hex(idSource);
+
+        questions.push({
+            id,
+            category,
+            question,
+            options, // ordine preservato
+            correctLabels, // ordine preservato come in ANS
+            hasAnswer: correctLabels.length > 0,
+        });
+    }
+
+    return questions;
 }
 
 function wireNav() {
@@ -83,9 +217,15 @@ function wireNav() {
 function renderHome() {
     state.mode = "home";
     const total = state.all.length;
-    const catsOptions = state.categories.map(c =>
-        `<option value="${escapeHtml(c)}" ${c === state.config.category ? "selected" : ""}>${escapeHtml(c)}</option>`
-    ).join("");
+
+    const catsOptions = state.categories
+        .map(
+            (c) =>
+                `<option value="${escapeHtml(c)}" ${
+                    c === state.config.category ? "selected" : ""
+                }>${escapeHtml(c)}</option>`
+        )
+        .join("");
 
     view.innerHTML = `
     <div class="card">
@@ -99,7 +239,9 @@ function renderHome() {
           <div class="kpi">${state.quiz.wrongIds.size}</div>
         </div>
       </div>
+
       <hr />
+
       <div class="row">
         <label class="label">Categoria</label>
         <select id="cat" class="select">${catsOptions}</select>
@@ -121,7 +263,7 @@ function renderHome() {
       </div>
 
       <p class="muted">
-        Supporto multi-risposta: se una domanda ha più risposte corrette, compaiono checkbox. Se ne ha una sola, radio.
+        Nota: domande senza soluzione (ANS: ?) vengono mostrate ma non vengono conteggiate nelle statistiche.
       </p>
     </div>
   `;
@@ -140,11 +282,11 @@ function startQuiz() {
     let pool = [...state.all];
 
     if (state.config.category !== "Tutte") {
-        pool = pool.filter(q => q.category === state.config.category);
+        pool = pool.filter((q) => q.category === state.config.category);
     }
 
     if (state.config.wrongOnly) {
-        pool = pool.filter(q => state.quiz.wrongIds.has(q.id));
+        pool = pool.filter((q) => state.quiz.wrongIds.has(q.id));
     }
 
     if (state.config.shuffle) shuffle(pool);
@@ -165,21 +307,22 @@ function renderQuiz() {
     const q = state.quiz.items[state.quiz.index];
     if (!q) return renderDone();
 
-    const multi = (q.correctLabels?.length ?? 0) > 1;
+    const multi = q.correctLabels.length > 1;
     const inputType = multi ? "checkbox" : "radio";
 
-    // ordine opzioni preservato: non mischiamo qui.
-    const optionsHtml = q.options.map(o => {
-        const checked = state.quiz.selected.has(o.label) ? "checked" : "";
-        return `
-      <label class="option">
-        <input type="${inputType}" name="opt" value="${escapeHtml(o.label)}" ${checked} />
-        <div>
-          <div><strong>${escapeHtml(o.label)})</strong> ${escapeHtml(o.text)}</div>
-        </div>
-      </label>
-    `;
-    }).join("");
+    const optionsHtml = q.options
+        .map((o) => {
+            const checked = state.quiz.selected.has(o.label) ? "checked" : "";
+            return `
+        <label class="option">
+          <input type="${inputType}" name="opt" value="${escapeHtml(o.label)}" ${checked} />
+          <div>
+            <div><strong>${escapeHtml(o.label)})</strong> ${escapeHtml(o.text)}</div>
+          </div>
+        </label>
+      `;
+        })
+        .join("");
 
     view.innerHTML = `
     <div class="card">
@@ -188,7 +331,7 @@ function renderQuiz() {
         <div class="label">Domanda ${state.quiz.index + 1} / ${state.quiz.items.length}</div>
       </div>
 
-      <h2>${escapeHtml(q.question)}</h2>
+      <pre class="qtext">${escapeHtml(q.question)}</pre>
 
       <div id="options">${optionsHtml}</div>
 
@@ -202,8 +345,7 @@ function renderQuiz() {
     </div>
   `;
 
-    // selezione
-    document.querySelectorAll('input[name="opt"]').forEach(inp => {
+    document.querySelectorAll('input[name="opt"]').forEach((inp) => {
         inp.onchange = (e) => {
             const lab = e.target.value;
             if (multi) {
@@ -223,14 +365,21 @@ function renderQuiz() {
         }
     };
 
-    document.getElementById("skip").onclick = () => nextQuestion(null);
+    document.getElementById("skip").onclick = () => nextQuestion();
 
     document.getElementById("check").onclick = () => {
-        const selected = Array.from(state.quiz.selected);
-        const correct = q.correctLabels ?? [];
-        const ok = sameSet(new Set(selected), new Set(correct));
+        if (!q.hasAnswer) {
+            feedback("Soluzione non disponibile per questa domanda (ANS: ?). Non conteggiata.");
+            setTimeout(() => nextQuestion(), 700);
+            return;
+        }
 
-        // aggiorna statistiche
+        const selected = Array.from(state.quiz.selected);
+        const ok = sameSet(
+            new Set(selected.map(normalizeLabelForCompare)),
+            new Set(q.correctLabels.map(normalizeLabelForCompare))
+        );
+
         state.stats.played++;
         state.stats.perCategory[q.category] ??= { played: 0, correct: 0, wrong: 0 };
         state.stats.perCategory[q.category].played++;
@@ -239,22 +388,19 @@ function renderQuiz() {
             state.quiz.correct++;
             state.stats.correct++;
             state.stats.perCategory[q.category].correct++;
-            // se era in wrong list, la possiamo anche togliere (dipende: io la tolgo)
             state.quiz.wrongIds.delete(q.id);
-            feedback(`Corretto.`);
+            feedback("Corretto.");
         } else {
             state.stats.wrong++;
             state.stats.perCategory[q.category].wrong++;
             state.quiz.wrongIds.add(q.id);
-            const corrTxt = correct.length ? correct.join(", ") : "(nessuna risposta marcata)";
-            feedback(`Sbagliato. Corrette: ${corrTxt}`);
+            feedback(`Sbagliato. Corrette: ${q.correctLabels.join(", ")}`);
         }
 
         state.quiz.answered++;
         save();
 
-        // vai avanti dopo un attimo, così lo leggi
-        setTimeout(() => nextQuestion(ok), 650);
+        setTimeout(() => nextQuestion(), 700);
     };
 }
 
@@ -263,7 +409,7 @@ function feedback(msg) {
     if (el) el.textContent = msg;
 }
 
-function nextQuestion(_) {
+function nextQuestion() {
     state.quiz.index++;
     state.quiz.selected = new Set();
     renderQuiz();
@@ -304,7 +450,7 @@ function renderStats() {
     state.mode = "stats";
 
     const rows = Object.entries(state.stats.perCategory)
-        .sort((a,b) => a[0].localeCompare(b[0]))
+        .sort((a, b) => a[0].localeCompare(b[0]))
         .map(([cat, s]) => {
             const pct = s.played ? Math.round((s.correct / s.played) * 100) : 0;
             return `<tr>
@@ -314,7 +460,8 @@ function renderStats() {
         <td>${s.wrong}</td>
         <td>${pct}%</td>
       </tr>`;
-        }).join("");
+        })
+        .join("");
 
     view.innerHTML = `
     <div class="card">
@@ -339,7 +486,7 @@ function renderStats() {
       <div class="card">
         <div class="label">Per categoria</div>
         <div style="overflow:auto;">
-          <table>
+          <table class="tbl">
             <thead>
               <tr><th>Categoria</th><th>Giocate</th><th>Corrette</th><th>Sbagliate</th><th>%</th></tr>
             </thead>
@@ -364,6 +511,37 @@ function escapeHtml(str) {
         .replaceAll(">", "&gt;")
         .replaceAll('"', "&quot;")
         .replaceAll("'", "&#039;");
+}
+
+async function init() {
+    load();
+    view.innerHTML = `<div class="card"><p>Caricamento domande…</p></div>`;
+
+    try {
+        const res = await fetch("./immunologia_v21_mcq.txt", { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status} su ./immunologia_v21_mcq.txt`);
+
+        const txt = await res.text();
+        const questions = parseTxtToQuestions(txt);
+
+        state.all = questions;
+        state.categories = uniqCategories(state.all);
+
+        wireNav();
+        renderHome();
+    } catch (err) {
+        console.error(err);
+        view.innerHTML = `
+      <div class="card">
+        <h2>Errore caricamento</h2>
+        <p class="muted">${escapeHtml(String(err))}</p>
+        <p class="muted">
+          Cause tipiche: stai aprendo index.html in file:// (senza server) oppure il file immunologia_v21_mcq.txt
+          non è nello stesso folder di index.html/app.js.
+        </p>
+      </div>
+    `;
+    }
 }
 
 init();
