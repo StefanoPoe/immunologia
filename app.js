@@ -1,25 +1,40 @@
 // Quiz Immunologia - SPA vanilla JS
-// Carica le domande da immunologia_v21_mcq.txt e renderizza Home/Quiz/Statistiche
-// Nessun backend. Solo browser + localStorage.
+// Modalità: Allenamento (una domanda per volta) + Simulazione esame (33 domande/30 min)
 
 const view = document.getElementById("view");
 
-const STORAGE_KEY = "immunologia_quiz_v1";
+const STORAGE_KEY = "immunologia_quiz_v2";
+
+// tempi (ms)
+const PRACTICE_DELAY_OK = 900;
+const PRACTICE_DELAY_WRONG = 2000;
+
+// config esame
+const EXAM_QUESTIONS = 33;
+const EXAM_MINUTES = 30;
 
 const state = {
     all: [],
     categories: [],
-    mode: "home", // home | quiz | stats | done
-    config: { category: "Tutte", limit: 30, shuffle: true, wrongOnly: false },
-    quiz: { items: [], index: 0, selected: new Set(), correct: 0, answered: 0, wrongIds: new Set() },
+    mode: "home", // home | practice | done | stats | exam | exam_result
+    config: { category: "Tutte", limit: 30, shuffle: true, mode: "practice" },
+    quiz: { items: [], index: 0, selected: new Set(), correct: 0, answered: 0 },
     stats: { played: 0, correct: 0, wrong: 0, perCategory: {} },
+
+    exam: {
+        items: [],
+        answers: new Map(), // qid -> Set(labels)
+        endAt: 0,
+        timerId: null,
+        submitted: false,
+        results: null, // { total, correct, perQuestion: Map(qid -> {ok, correctLabels, selectedLabels}) }
+    },
 };
 
 function save() {
     const payload = {
         config: state.config,
         stats: state.stats,
-        wrongIds: Array.from(state.quiz.wrongIds),
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
 }
@@ -31,7 +46,6 @@ function load() {
         const p = JSON.parse(raw);
         if (p.config) state.config = { ...state.config, ...p.config };
         if (p.stats) state.stats = p.stats;
-        if (Array.isArray(p.wrongIds)) state.quiz.wrongIds = new Set(p.wrongIds);
     } catch {
         // ignora
     }
@@ -82,7 +96,6 @@ function splitAns(ansRaw) {
 }
 
 function fnv1a32Hex(str) {
-    // hash deterministico per avere ID stabile tra reload (wrongIds/statistiche)
     let h = 0x811c9dc5;
     for (let i = 0; i < str.length; i++) {
         h ^= str.charCodeAt(i);
@@ -92,14 +105,12 @@ function fnv1a32Hex(str) {
 }
 
 function chooseAnswerRun(runs, correctLabels) {
-    // runs: [{ idxs:[...], options:[{label,text}] }]
     if (!runs.length) return null;
 
     const normAns = correctLabels.map(normalizeLabelForCompare).filter(Boolean);
     const hasAns = normAns.length > 0;
 
     if (!hasAns) {
-        // nessuna soluzione: prendi l'ultimo run con >=2 opzioni
         for (let i = runs.length - 1; i >= 0; i--) {
             if (runs[i].options.length >= 2) return runs[i];
         }
@@ -114,7 +125,6 @@ function chooseAnswerRun(runs, correctLabels) {
         const containsAll = normAns.every((a) => runLabels.has(a));
         const intersection = normAns.reduce((acc, a) => acc + (runLabels.has(a) ? 1 : 0), 0);
 
-        // preferisci run che contiene tutte le risposte, poi più vicino in basso
         const score = (containsAll ? 100 : 0) + intersection * 10 + i;
         if (score > bestScore) {
             best = run;
@@ -125,7 +135,6 @@ function chooseAnswerRun(runs, correctLabels) {
 }
 
 function parseTxtToQuestions(txt) {
-    // separa i blocchi: una riga vuota prima di "CAT:"
     const blocks = txt
         .trim()
         .split(/\n\s*\n(?=CAT:)/g)
@@ -144,11 +153,9 @@ function parseTxtToQuestions(txt) {
         if (!catLine || qLineIndex === -1 || ansLineIndex === -1) continue;
 
         const category = catLine.replace(/^CAT:\s*/, "").trim() || "Senza categoria";
-
         const ansRaw = lines[ansLineIndex].replace(/^ANS:\s*/, "").trim();
         const correctLabels = splitAns(ansRaw);
 
-        // costruisci runs di option lines tra Q e ANS
         const runs = [];
         let current = null;
 
@@ -171,21 +178,18 @@ function parseTxtToQuestions(txt) {
 
         const answerRun = chooseAnswerRun(runs, correctLabels);
 
-        // testo domanda: Q: + tutte le righe tra Q e ANS che NON sono answer options
         const qFirst = lines[qLineIndex].replace(/^Q:\s*/, "").trim();
         const questionLines = [qFirst];
 
         const answerIdxSet = new Set(answerRun ? answerRun.idxs : []);
         for (let i = qLineIndex + 1; i < ansLineIndex; i++) {
             if (answerIdxSet.has(i)) continue;
-            // include anche liste tipo 1) ... 2) ... (sequenze)
             questionLines.push(lines[i].trim());
         }
 
         const question = questionLines.join("\n").trim();
-
         const options = answerRun ? answerRun.options : [];
-        if (options.length < 2) continue; // requisito: almeno 2 scelte
+        if (options.length < 2) continue; // requisito tuo
 
         const idSource =
             category +
@@ -200,17 +204,22 @@ function parseTxtToQuestions(txt) {
             category,
             question,
             options, // ordine preservato
-            correctLabels, // ordine preservato come in ANS
+            correctLabels, // ordine preservato
             hasAnswer: correctLabels.length > 0,
         });
     }
-
     return questions;
 }
 
 function wireNav() {
-    document.getElementById("nav-home").onclick = () => renderHome();
-    document.getElementById("nav-stats").onclick = () => renderStats();
+    document.getElementById("nav-home").onclick = () => {
+        stopExamTimer();
+        renderHome();
+    };
+    document.getElementById("nav-stats").onclick = () => {
+        stopExamTimer();
+        renderStats();
+    };
     document.getElementById("nav-reset").onclick = () => resetAll();
 }
 
@@ -227,6 +236,13 @@ function renderHome() {
         )
         .join("");
 
+    const modeOptions = `
+    <option value="practice" ${state.config.mode === "practice" ? "selected" : ""}>Allenamento</option>
+    <option value="exam" ${state.config.mode === "exam" ? "selected" : ""}>Simulazione esame (33 domande / 30 min)</option>
+  `;
+
+    const isExam = state.config.mode === "exam";
+
     view.innerHTML = `
     <div class="card">
       <div class="row">
@@ -234,59 +250,58 @@ function renderHome() {
           <div class="label">Domande disponibili</div>
           <div class="kpi">${total}</div>
         </div>
-        <div>
-          <div class="label">Sbagliate salvate</div>
-          <div class="kpi">${state.quiz.wrongIds.size}</div>
-        </div>
       </div>
 
       <hr />
 
       <div class="row">
+        <label class="label">Modalità</label>
+        <select id="mode" class="select">${modeOptions}</select>
+
         <label class="label">Categoria</label>
-        <select id="cat" class="select">${catsOptions}</select>
+        <select id="cat" class="select" ${isExam ? "disabled" : ""}>${catsOptions}</select>
 
         <label class="label">Numero domande</label>
-        <input id="limit" type="number" min="1" max="${total}" value="${state.config.limit}" />
+        <input id="limit" type="number" min="1" max="${total}" value="${state.config.limit}" ${isExam ? "disabled" : ""} />
 
         <label class="label">
           <input id="shuffle" type="checkbox" ${state.config.shuffle ? "checked" : ""} />
           Mischia
         </label>
 
-        <label class="label">
-          <input id="wrongOnly" type="checkbox" ${state.config.wrongOnly ? "checked" : ""} />
-          Solo sbagliate
-        </label>
-
-        <button id="start">Inizia</button>
+        <button id="start" class="primary">Inizia</button>
       </div>
 
       <p class="muted">
-        Nota: domande senza soluzione (ANS: ?) vengono mostrate ma non vengono conteggiate nelle statistiche.
+        ${isExam
+        ? "Simulazione: 33 domande in 30 minuti, tutte su una pagina. Le domande senza soluzione (ANS: ?) vengono escluse dalla simulazione."
+        : "Allenamento: una domanda alla volta, correzione immediata con evidenziazione."}
       </p>
     </div>
   `;
+
+    document.getElementById("mode").onchange = (e) => {
+        state.config.mode = e.target.value;
+        save();
+        renderHome();
+    };
 
     document.getElementById("start").onclick = () => {
         state.config.category = document.getElementById("cat").value;
         state.config.limit = Math.max(1, Number(document.getElementById("limit").value) || 30);
         state.config.shuffle = document.getElementById("shuffle").checked;
-        state.config.wrongOnly = document.getElementById("wrongOnly").checked;
         save();
-        startQuiz();
+
+        if (state.config.mode === "exam") startExam();
+        else startPractice();
     };
 }
 
-function startQuiz() {
+function startPractice() {
     let pool = [...state.all];
 
     if (state.config.category !== "Tutte") {
         pool = pool.filter((q) => q.category === state.config.category);
-    }
-
-    if (state.config.wrongOnly) {
-        pool = pool.filter((q) => state.quiz.wrongIds.has(q.id));
     }
 
     if (state.config.shuffle) shuffle(pool);
@@ -299,13 +314,38 @@ function startQuiz() {
     state.quiz.correct = 0;
     state.quiz.answered = 0;
 
-    renderQuiz();
+    renderPractice();
 }
 
-function renderQuiz() {
-    state.mode = "quiz";
+function selectionHint(q) {
+    if (!q.hasAnswer) return "Soluzione non disponibile per questa domanda.";
+    const n = q.correctLabels.length;
+    if (n === 1) return "Seleziona 1 risposta corretta.";
+    return `Seleziona ${n} risposte corrette.`;
+}
+
+function applyPracticeHighlight(q, selectedSet, correctSet) {
+    const labels = Array.from(document.querySelectorAll(".option[data-label]"));
+    for (const el of labels) {
+        const lab = el.dataset.label;
+        const nl = normalizeLabelForCompare(lab);
+        const isCorrect = correctSet.has(nl);
+        const isSelected = selectedSet.has(nl);
+
+        el.classList.remove("correct", "wrong", "missed", "chosen");
+
+        if (isCorrect) el.classList.add("correct");
+        if (isCorrect && !isSelected) el.classList.add("missed");
+
+        if (isSelected) el.classList.add("chosen");
+        if (isSelected && !isCorrect) el.classList.add("wrong");
+    }
+}
+
+function renderPractice() {
+    state.mode = "practice";
     const q = state.quiz.items[state.quiz.index];
-    if (!q) return renderDone();
+    if (!q) return renderDonePractice();
 
     const multi = q.correctLabels.length > 1;
     const inputType = multi ? "checkbox" : "radio";
@@ -314,7 +354,7 @@ function renderQuiz() {
         .map((o) => {
             const checked = state.quiz.selected.has(o.label) ? "checked" : "";
             return `
-        <label class="option">
+        <label class="option" data-label="${escapeHtml(o.label)}">
           <input type="${inputType}" name="opt" value="${escapeHtml(o.label)}" ${checked} />
           <div>
             <div><strong>${escapeHtml(o.label)})</strong> ${escapeHtml(o.text)}</div>
@@ -333,10 +373,12 @@ function renderQuiz() {
 
       <pre class="qtext">${escapeHtml(q.question)}</pre>
 
+      <div class="hint">${escapeHtml(selectionHint(q))}</div>
+
       <div id="options">${optionsHtml}</div>
 
       <div class="row">
-        <button id="check">Conferma</button>
+        <button id="check" class="primary">Conferma</button>
         <button id="skip">Salta</button>
         <button id="back">Indietro</button>
       </div>
@@ -345,8 +387,11 @@ function renderQuiz() {
     </div>
   `;
 
+    let locked = false;
+
     document.querySelectorAll('input[name="opt"]').forEach((inp) => {
         inp.onchange = (e) => {
+            if (locked) return;
             const lab = e.target.value;
             if (multi) {
                 if (e.target.checked) state.quiz.selected.add(lab);
@@ -358,28 +403,41 @@ function renderQuiz() {
     });
 
     document.getElementById("back").onclick = () => {
+        if (locked) return;
         if (state.quiz.index > 0) {
             state.quiz.index--;
             state.quiz.selected = new Set();
-            renderQuiz();
+            renderPractice();
         }
     };
 
-    document.getElementById("skip").onclick = () => nextQuestion();
+    document.getElementById("skip").onclick = () => {
+        if (locked) return;
+        nextPractice();
+    };
 
     document.getElementById("check").onclick = () => {
+        if (locked) return;
+        locked = true;
+
+        // blocca input
+        document.querySelectorAll('input[name="opt"]').forEach((i) => (i.disabled = true));
+
         if (!q.hasAnswer) {
-            feedback("Soluzione non disponibile per questa domanda (ANS: ?). Non conteggiata.");
-            setTimeout(() => nextQuestion(), 700);
+            feedback("Soluzione non disponibile (ANS: ?). Non conteggiata.");
+            setTimeout(() => nextPractice(), PRACTICE_DELAY_OK);
             return;
         }
 
-        const selected = Array.from(state.quiz.selected);
-        const ok = sameSet(
-            new Set(selected.map(normalizeLabelForCompare)),
-            new Set(q.correctLabels.map(normalizeLabelForCompare))
-        );
+        const selectedNorm = new Set(Array.from(state.quiz.selected).map(normalizeLabelForCompare));
+        const correctNorm = new Set(q.correctLabels.map(normalizeLabelForCompare));
 
+        const ok = sameSet(selectedNorm, correctNorm);
+
+        // evidenziazione
+        applyPracticeHighlight(q, selectedNorm, correctNorm);
+
+        // stats
         state.stats.played++;
         state.stats.perCategory[q.category] ??= { played: 0, correct: 0, wrong: 0 };
         state.stats.perCategory[q.category].played++;
@@ -388,19 +446,17 @@ function renderQuiz() {
             state.quiz.correct++;
             state.stats.correct++;
             state.stats.perCategory[q.category].correct++;
-            state.quiz.wrongIds.delete(q.id);
             feedback("Corretto.");
         } else {
             state.stats.wrong++;
             state.stats.perCategory[q.category].wrong++;
-            state.quiz.wrongIds.add(q.id);
             feedback(`Sbagliato. Corrette: ${q.correctLabels.join(", ")}`);
         }
 
         state.quiz.answered++;
         save();
 
-        setTimeout(() => nextQuestion(), 700);
+        setTimeout(() => nextPractice(), ok ? PRACTICE_DELAY_OK : PRACTICE_DELAY_WRONG);
     };
 }
 
@@ -409,13 +465,13 @@ function feedback(msg) {
     if (el) el.textContent = msg;
 }
 
-function nextQuestion() {
+function nextPractice() {
     state.quiz.index++;
     state.quiz.selected = new Set();
-    renderQuiz();
+    renderPractice();
 }
 
-function renderDone() {
+function renderDonePractice() {
     state.mode = "done";
     const total = state.quiz.items.length || 0;
     const correct = state.quiz.correct;
@@ -436,7 +492,7 @@ function renderDone() {
       </div>
       <hr />
       <div class="row">
-        <button id="again">Nuovo test</button>
+        <button id="again" class="primary">Nuovo test</button>
         <button id="stats">Statistiche</button>
       </div>
     </div>
@@ -445,6 +501,264 @@ function renderDone() {
     document.getElementById("again").onclick = () => renderHome();
     document.getElementById("stats").onclick = () => renderStats();
 }
+
+/* =========================
+   ESAME (33 domande / 30 min)
+   ========================= */
+
+function stopExamTimer() {
+    if (state.exam.timerId) {
+        clearInterval(state.exam.timerId);
+        state.exam.timerId = null;
+    }
+}
+
+function formatMMSS(ms) {
+    const s = Math.max(0, Math.floor(ms / 1000));
+    const mm = String(Math.floor(s / 60)).padStart(2, "0");
+    const ss = String(s % 60).padStart(2, "0");
+    return `${mm}:${ss}`;
+}
+
+function startExam() {
+    stopExamTimer();
+
+    // pool: solo domande con soluzione
+    let pool = state.all.filter((q) => q.hasAnswer);
+
+    // simulazione esame = tutte le categorie, quindi ignora state.config.category
+    if (state.config.shuffle) shuffle(pool);
+
+    pool = pool.slice(0, Math.min(EXAM_QUESTIONS, pool.length));
+
+    state.exam.items = pool;
+    state.exam.answers = new Map();
+    state.exam.submitted = false;
+    state.exam.results = null;
+
+    state.exam.endAt = Date.now() + EXAM_MINUTES * 60 * 1000;
+
+    renderExam();
+
+    state.exam.timerId = setInterval(() => {
+        const left = state.exam.endAt - Date.now();
+        const timerEl = document.getElementById("exam-timer");
+        if (timerEl) timerEl.textContent = formatMMSS(left);
+
+        if (left <= 0 && !state.exam.submitted) {
+            submitExam(true);
+        }
+    }, 250);
+}
+
+function getExamAnsweredCount() {
+    let n = 0;
+    for (const q of state.exam.items) {
+        const set = state.exam.answers.get(q.id);
+        if (set && set.size > 0) n++;
+    }
+    return n;
+}
+
+function renderExam() {
+    state.mode = "exam";
+
+    const left = state.exam.endAt - Date.now();
+    const answered = getExamAnsweredCount();
+
+    const listHtml = state.exam.items
+        .map((q, idx) => {
+            const multi = q.correctLabels.length > 1;
+            const inputType = multi ? "checkbox" : "radio";
+            const current = state.exam.answers.get(q.id) ?? new Set();
+
+            const optionsHtml = q.options
+                .map((o) => {
+                    const checked = current.has(o.label) ? "checked" : "";
+                    return `
+            <label class="option" data-qid="${escapeHtml(q.id)}" data-label="${escapeHtml(o.label)}">
+              <input type="${inputType}" name="q_${escapeHtml(q.id)}" value="${escapeHtml(o.label)}" ${checked} />
+              <div><strong>${escapeHtml(o.label)})</strong> ${escapeHtml(o.text)}</div>
+            </label>
+          `;
+                })
+                .join("");
+
+            return `
+        <div class="card" data-qcard="${escapeHtml(q.id)}">
+          <div class="row">
+            <div class="label"><strong>${idx + 1}</strong> · ${escapeHtml(q.category)}</div>
+            <div class="label">${escapeHtml(selectionHint(q))}</div>
+          </div>
+          <pre class="qtext">${escapeHtml(q.question)}</pre>
+          <div>${optionsHtml}</div>
+        </div>
+      `;
+        })
+        .join("");
+
+    view.innerHTML = `
+    <div class="card">
+      <div class="timerbar">
+        <div class="label">Simulazione esame: <strong>${EXAM_QUESTIONS}</strong> domande · <strong>${EXAM_MINUTES}</strong> minuti</div>
+        <div class="timer">Tempo: <span id="exam-timer">${formatMMSS(left)}</span></div>
+        <div class="label">Risposte date: <strong id="answered-count">${answered}</strong> / ${state.exam.items.length}</div>
+      </div>
+      <div class="row">
+        <button id="submit-exam" class="primary">Consegna</button>
+      </div>
+      <p class="muted">Le domande sono tutte in pagina. Alla consegna vedi correzione completa (verde/rosso) e la risposta giusta.</p>
+    </div>
+
+    ${listHtml}
+  `;
+
+    // gestisci selezioni
+    view.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach((inp) => {
+        inp.onchange = (e) => {
+            if (state.exam.submitted) return;
+
+            const qid = e.target.name.replace(/^q_/, "");
+            const q = state.exam.items.find((x) => x.id === qid);
+            if (!q) return;
+
+            const multi = q.correctLabels.length > 1;
+            const value = e.target.value;
+
+            if (!state.exam.answers.has(qid)) state.exam.answers.set(qid, new Set());
+            const set = state.exam.answers.get(qid);
+
+            if (multi) {
+                if (e.target.checked) set.add(value);
+                else set.delete(value);
+            } else {
+                // radio: reset e setta uno
+                set.clear();
+                set.add(value);
+            }
+
+            const answered = getExamAnsweredCount();
+            const el = document.getElementById("answered-count");
+            if (el) el.textContent = String(answered);
+        };
+    });
+
+    document.getElementById("submit-exam").onclick = () => submitExam(false);
+}
+
+function submitExam(auto) {
+    if (state.exam.submitted) return;
+    state.exam.submitted = true;
+    stopExamTimer();
+
+    const perQuestion = new Map();
+    let correct = 0;
+
+    for (const q of state.exam.items) {
+        const selectedRaw = state.exam.answers.get(q.id) ?? new Set();
+        const selected = new Set(Array.from(selectedRaw).map(normalizeLabelForCompare));
+        const correctSet = new Set(q.correctLabels.map(normalizeLabelForCompare));
+
+        const ok = sameSet(selected, correctSet);
+        if (ok) correct++;
+
+        perQuestion.set(q.id, {
+            ok,
+            selectedLabels: new Set(Array.from(selectedRaw)),
+            correctLabels: new Set(q.correctLabels),
+        });
+    }
+
+    state.exam.results = { total: state.exam.items.length, correct, perQuestion };
+
+    renderExamResults(auto);
+}
+
+function renderExamResults(auto) {
+    state.mode = "exam_result";
+
+    const total = state.exam.results.total;
+    const correct = state.exam.results.correct;
+    const pct = total ? Math.round((correct / total) * 100) : 0;
+
+    // applica classi di evidenziazione a tutte le opzioni
+    // (dopo aver renderizzato la stessa lista)
+    const left = state.exam.endAt - Date.now();
+
+    const listHtml = state.exam.items
+        .map((q, idx) => {
+            const res = state.exam.results.perQuestion.get(q.id);
+            const selected = new Set(Array.from(res.selectedLabels).map(normalizeLabelForCompare));
+            const correctSet = new Set(Array.from(res.correctLabels).map(normalizeLabelForCompare));
+
+            const multi = q.correctLabels.length > 1;
+            const inputType = multi ? "checkbox" : "radio";
+
+            const optionsHtml = q.options
+                .map((o) => {
+                    const nl = normalizeLabelForCompare(o.label);
+                    const isSelected = selected.has(nl);
+                    const isCorrect = correctSet.has(nl);
+
+                    let cls = "option";
+                    if (isCorrect) cls += " correct";
+                    if (isCorrect && !isSelected) cls += " missed";
+                    if (isSelected) cls += " chosen";
+                    if (isSelected && !isCorrect) cls += " wrong";
+
+                    return `
+            <label class="${cls}" data-label="${escapeHtml(o.label)}">
+              <input type="${inputType}" disabled ${isSelected ? "checked" : ""} />
+              <div><strong>${escapeHtml(o.label)})</strong> ${escapeHtml(o.text)}</div>
+            </label>
+          `;
+                })
+                .join("");
+
+            return `
+        <div class="card">
+          <div class="row">
+            <div class="label"><strong>${idx + 1}</strong> · ${escapeHtml(q.category)}</div>
+            <div class="label">${res.ok ? "✅ Corretta" : "❌ Sbagliata"} · Corrette: <strong>${escapeHtml(q.correctLabels.join(", "))}</strong></div>
+          </div>
+          <pre class="qtext">${escapeHtml(q.question)}</pre>
+          <div>${optionsHtml}</div>
+        </div>
+      `;
+        })
+        .join("");
+
+    view.innerHTML = `
+    <div class="card">
+      <h2>Risultato simulazione</h2>
+      <div class="row">
+        <div>
+          <div class="label">Corrette</div>
+          <div class="kpi">${correct} / ${total}</div>
+        </div>
+        <div>
+          <div class="label">Percentuale</div>
+          <div class="kpi">${pct}%</div>
+        </div>
+        <div class="muted">${auto ? "Tempo scaduto: consegna automatica." : ""}</div>
+      </div>
+      <hr />
+      <div class="row">
+        <button id="back-home" class="primary">Home</button>
+        <button id="stats">Statistiche</button>
+      </div>
+    </div>
+
+    ${listHtml}
+  `;
+
+    document.getElementById("back-home").onclick = () => renderHome();
+    document.getElementById("stats").onclick = () => renderStats();
+}
+
+/* =========================
+   STATS
+   ========================= */
 
 function renderStats() {
     state.mode = "stats";
@@ -536,8 +850,7 @@ async function init() {
         <h2>Errore caricamento</h2>
         <p class="muted">${escapeHtml(String(err))}</p>
         <p class="muted">
-          Cause tipiche: stai aprendo index.html in file:// (senza server) oppure il file immunologia_v21_mcq.txt
-          non è nello stesso folder di index.html/app.js.
+          Se sei in locale: usa un server (python -m http.server). Su Pages: controlla che immunologia_v21_mcq.txt sia nello stesso folder di index.html.
         </p>
       </div>
     `;

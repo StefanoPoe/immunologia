@@ -126,3 +126,54 @@ hr {
     font-size: 14px;
     opacity: 0.85;
 }
+
+/* Hint sotto la domanda */
+.hint {
+    margin: 10px 0 6px;
+    opacity: 0.85;
+    font-size: 14px;
+}
+
+/* Evidenziazione risposte dopo conferma */
+.option.correct {
+    border-color: #2f6b3d;
+    background: rgba(47, 107, 61, 0.22);
+}
+
+.option.correct.missed {
+    background: rgba(47, 107, 61, 0.12);
+}
+
+.option.wrong {
+    border-color: #6b2b2b;
+    background: rgba(107, 43, 43, 0.26);
+}
+
+.option.chosen {
+    outline: 1px solid rgba(231, 231, 231, 0.08);
+}
+
+/* Timer esame */
+.timerbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.timer {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 8px 10px;
+    border: 1px solid #26324a;
+    border-radius: 10px;
+    background: #0f1115;
+}
+
+/* Bottoni più evidenti in esame */
+button.primary {
+    border-color: #2b3a52;
+    background: #1f2a3a;
+}
