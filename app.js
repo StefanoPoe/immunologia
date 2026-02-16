@@ -62,7 +62,7 @@ function normalizeQuestion(q) {
 
 async function init() {
     load();
-    const res = await fetch("./data/questions.json", { cache: "no-store" });
+    const res = await fetch("immunologia_v21_mcq.txt", { cache: "no-store" });
     const data = await res.json();
     state.all = data.map(normalizeQuestion)
         // filtra: almeno 2 opzioni (come hai chiesto)
