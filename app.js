@@ -2,6 +2,8 @@
 // Modalità: Allenamento (una domanda per volta) + Simulazione esame (33 domande/30 min)
 
 const view = document.getElementById("view");
+// nuovo file domande (formato CAT/Q/R/ANS)
+const QUESTIONS_FILE = "./quiz_immunologia_strutturato_CAT_Q_R_ANS.txt";
 
 const STORAGE_KEY = "immunologia_quiz_v2";
 
@@ -17,7 +19,7 @@ const state = {
     all: [],
     categories: [],
     mode: "home", // home | practice | done | stats | exam | exam_result
-    config: { category: "Tutte", limit: 30, shuffle: true, mode: "practice" },
+    config: { category: "Tutte", limit: 30, shuffle: true, mode: "practice", rangeEnabled: false, rangeFrom: 1, rangeTo: 1 },
     quiz: { items: [], index: 0, selected: new Set(), correct: 0, answered: 0 },
     stats: { played: 0, correct: 0, wrong: 0, perCategory: {} },
 
@@ -148,6 +150,8 @@ function parseTxtToQuestions(txt) {
 
     const questions = [];
     for (const block of blocks) {
+        // NB: non facciamo trim() a sinistra per non perdere l'indentazione,
+        // ma usiamo trimEnd e poi gestiamo continuazioni con trim().
         const rawLines = block.split("\n").map((l) => l.trimEnd());
         const lines = rawLines.filter((l) => l.trim() !== "");
 
@@ -161,7 +165,17 @@ function parseTxtToQuestions(txt) {
         const ansRaw = lines[ansLineIndex].replace(/^ANS:\s*/, "").trim();
         const correctLabels = splitAns(ansRaw);
 
-        // Nuovo: se c’è "R:", usiamo quello come separatore netto domanda/risposte
+        // parse numero domanda dal Q: "123. testo..."
+        const qRaw = lines[qLineIndex].replace(/^Q:\s*/, "").trim();
+        let qNumber = null;
+        let qFirstText = qRaw;
+        const qm = qRaw.match(/^(\d+)\.\s*(.*)$/);
+        if (qm) {
+            qNumber = Number(qm[1]);
+            qFirstText = (qm[2] ?? "").trim();
+        }
+
+        // se c’è "R:", separatore netto domanda/risposte
         const rLineIndex = lines.findIndex((l, idx) => idx > qLineIndex && idx < ansLineIndex && isRLine(l));
 
         let question = "";
@@ -169,30 +183,41 @@ function parseTxtToQuestions(txt) {
 
         if (rLineIndex !== -1) {
             // DOMANDA = da Q: fino a prima di R:
-            const qFirst = lines[qLineIndex].replace(/^Q:\s*/, "").trim();
-            const questionLines = [qFirst];
-
+            const questionLines = [qFirstText];
             for (let i = qLineIndex + 1; i < rLineIndex; i++) {
                 questionLines.push(lines[i].trim());
             }
             question = questionLines.join("\n").trim();
 
             // OPZIONI = da dopo R: fino a prima di ANS:
+            // Se una riga non è una nuova opzione, è continuazione della precedente.
             const opts = [];
+            let last = null;
+
             for (let i = rLineIndex + 1; i < ansLineIndex; i++) {
-                const l = lines[i].trim();
-                if (!isOptionLine(l)) continue;
-                const opt = parseOptionLine(l);
-                if (opt) opts.push(opt);
+                const lRaw = lines[i];
+                const l = lRaw.trim();
+
+                if (!l) continue;
+
+                if (isOptionLine(l)) {
+                    const opt = parseOptionLine(l);
+                    if (!opt) continue;
+                    opts.push(opt);
+                    last = opt;
+                } else if (last) {
+                    last.text = (last.text + "\n" + l).trim();
+                }
             }
+
             options = opts;
         } else {
-            // Fallback vecchio: prova a capire quali righe sono opzioni (runs)
+            // Fallback vecchio: runs
             const runs = [];
             let current = null;
 
             for (let i = qLineIndex + 1; i < ansLineIndex; i++) {
-                const l = lines[i];
+                const l = lines[i].trim();
                 if (isOptionLine(l)) {
                     const opt = parseOptionLine(l);
                     if (!opt) continue;
@@ -210,9 +235,7 @@ function parseTxtToQuestions(txt) {
 
             const answerRun = chooseAnswerRun(runs, correctLabels);
 
-            const qFirst = lines[qLineIndex].replace(/^Q:\s*/, "").trim();
-            const questionLines = [qFirst];
-
+            const questionLines = [qFirstText];
             const answerIdxSet = new Set(answerRun ? answerRun.idxs : []);
             for (let i = qLineIndex + 1; i < ansLineIndex; i++) {
                 if (answerIdxSet.has(i)) continue;
@@ -223,7 +246,7 @@ function parseTxtToQuestions(txt) {
             options = answerRun ? answerRun.options : [];
         }
 
-        if (options.length < 2) continue; // requisito tuo
+        if (options.length < 2) continue;
 
         const idSource =
             category +
@@ -236,9 +259,10 @@ function parseTxtToQuestions(txt) {
         questions.push({
             id,
             category,
+            qNumber,
             question,
-            options, // ordine preservato
-            correctLabels, // ordine preservato
+            options,
+            correctLabels,
             hasAnswer: correctLabels.length > 0,
         });
     }
@@ -261,6 +285,9 @@ function wireNav() {
 function renderHome() {
     state.mode = "home";
     const total = state.all.length;
+    const maxQn = state.all.reduce((m, q) => Math.max(m, q.qNumber || 0), 0) || total;
+    const rangeFromVal = Math.max(1, Number(state.config.rangeFrom) || 1);
+    const rangeToVal = Math.max(1, Number(state.config.rangeTo) || maxQn);
 
     const catsOptions = state.categories
         .map(
@@ -303,6 +330,14 @@ function renderHome() {
           <input id="shuffle" type="checkbox" ${state.config.shuffle ? "checked" : ""} />
           Mischia
         </label>
+        <label class="label">
+          <input id="rangeEnabled" type="checkbox" ${state.config.rangeEnabled ? "checked" : ""} ${isExam ? "disabled" : ""} />
+          Range
+        </label>
+        <label class="label">Da</label>
+        <input id="rangeFrom" type="number" min="1" max="${maxQn}" value="${rangeFromVal}" ${isExam || !state.config.rangeEnabled ? "disabled" : ""} />
+        <label class="label">A</label>
+        <input id="rangeTo" type="number" min="1" max="${maxQn}" value="${rangeToVal}" ${isExam || !state.config.rangeEnabled ? "disabled" : ""} />
 
         <button id="start" class="primary">Inizia</button>
       </div>
@@ -320,11 +355,26 @@ function renderHome() {
         save();
         renderHome();
     };
+// abilita/disabilita inputs range
+    const rangeEnabledEl = document.getElementById("rangeEnabled");
+    const rangeFromEl = document.getElementById("rangeFrom");
+    const rangeToEl = document.getElementById("rangeTo");
+    if (rangeEnabledEl) {
+        rangeEnabledEl.onchange = () => {
+            const on = rangeEnabledEl.checked;
+            if (rangeFromEl) rangeFromEl.disabled = !on;
+            if (rangeToEl) rangeToEl.disabled = !on;
+        };
+    }
 
     document.getElementById("start").onclick = () => {
         state.config.category = document.getElementById("cat").value;
         state.config.limit = Math.max(1, Number(document.getElementById("limit").value) || 30);
         state.config.shuffle = document.getElementById("shuffle").checked;
+        state.config.rangeEnabled = document.getElementById("rangeEnabled")?.checked ?? false;
+        state.config.rangeFrom = Math.max(1, Number(document.getElementById("rangeFrom")?.value) || 1);
+        state.config.rangeTo = Math.max(1, Number(document.getElementById("rangeTo")?.value) || state.config.rangeFrom);
+
         save();
 
         if (state.config.mode === "exam") startExam();
@@ -337,6 +387,13 @@ function startPractice() {
 
     if (state.config.category !== "Tutte") {
         pool = pool.filter((q) => q.category === state.config.category);
+    }
+    // range (solo allenamento): filtra per numero domanda del DOCX (Q: N.)
+    if (state.config.rangeEnabled) {
+        let a = Math.max(1, Number(state.config.rangeFrom) || 1);
+        let b = Math.max(1, Number(state.config.rangeTo) || a);
+        if (b < a) [a, b] = [b, a];
+        pool = pool.filter((q) => typeof q.qNumber === "number" && q.qNumber >= a && q.qNumber <= b);
     }
 
     if (state.config.shuffle) shuffle(pool);
@@ -867,8 +924,8 @@ async function init() {
     view.innerHTML = `<div class="card"><p>Caricamento domande…</p></div>`;
 
     try {
-        const res = await fetch("./immunologia_v21_mcq2.txt", { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status} su ./immunologia_v21_mcq2.txt`);
+        const res = await fetch(QUESTIONS_FILE, { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status} su ${QUESTIONS_FILE}`);
 
         const txt = await res.text();
         const questions = parseTxtToQuestions(txt);
