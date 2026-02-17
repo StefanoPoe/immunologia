@@ -2779,3 +2779,1536 @@ Q: Quale componente del sistema immunitario è il principale responsabile della 
 5) Linfociti T.
 ANS: 4
 
+CAT: Immunità innata e infiammazione
+Q: Quali dei seguenti PRRs sono espressi a livello citosolico?
+1) TLRs
+2) TREMs
+3) CLRs
+4) NLRs
+5) RLRs
+6) quelli indicati nei punti 2 e 5
+7) quelli 4 e 5
+ANS: 7
+
+CAT: Immunità innata e infiammazione
+Q: Giudica l’affermazione falsa
+A) I PRRs riconoscono PAMPs e DAMPs
+B) I GPCR fanno parte dei PRRs
+C) I PRRs si possono trovare sulla membrana cellulare o all’interno della cellula
+D) I PRRs Possono attivare la Caspasi 1 mediante pathway intracellulari Tuttevere
+ANS: B
+
+CAT: Immunità innata e infiammazione
+Q: Quale di questi è un PRRs di segnalazione?
+A) Scavenger receptors
+B) RIG1-like receptors
+C) TRIF
+D) Pentraxina
+ANS: B
+
+CAT: Linfociti B e anticorpi
+Q: PRRs:
+A) Sono recettori che si trovano esclusivamente sulla membrana di macrofagi e DCs
+B) Il riconoscimento del ligando comporta necessariamente la sua internalizzazione
+C) Ognuno genera un pathway unico che non interagisce con altre vie di segnalazione
+D) Alcuni portano all’assemblaggio intracellulare dell’inflammosoma
+E) Tutti i pathway portano all’attivazione delle caspasi
+ANS: D
+
+CAT: Linfociti B e anticorpi
+Q: Quale di queste NON è una caratteristica dei NOD-like receptors
+A) Hanno un dominio C-terminale chiamato LRRs
+B) Tra i ligandi vi sono il peptidoglicano della parete batterica e ssRNA
+C) La loro attivazione può portare all’assemblaggio di un inflammosoma
+D) Non possono riconoscere molecole presenti nel citoplasma
+E) NACHT è un dominio di oligomerizzazione
+ANS: D
+
+CAT: Complemento e citochine
+Q: Quale di queste NON è una caratteristica dei RIG1-like receptors:
+A) Hanno il compito di percepire acidi nucleici nel citosol
+B) A questa famiglia appartengono due recettori: RIG-1 e NOD2
+C) Presentano un dominio CARD
+D) La loro attivazione può portare alla produzione di citochine pro-infiammatorie
+E) LGP-2 ha una funzione down-regolatrice
+ANS: B
+
+CAT: Immunità innata e infiammazione
+Q: Quali di questi TLRs può trovarsi sia sulla membrana cellulare esterna sia sulla membrana dei compartimenti endolisosomiali:
+A) TLR-4
+B) TLR-6
+C) TLR-2
+D) TLR-9
+E) TLR-10
+ANS: A
+
+CAT: Immunità innata e infiammazione
+Q: Quale di questi TLRs può usare sia la via di segnalazione mediata da Myd88 sia quella mediata da TRIF:
+A) TLR-2
+B) TLR-10
+C) TLR-4
+D) TLR-9
+E) TLR-6
+ANS: C
+
+CAT: Immunità innata e infiammazione
+Q: Quale di questi PRRs presentano il dominio NACHT
+A) NLRs TLRs
+C) Scavenger
+D) NLRs
+E) Pentraxine
+ANS: A
+
+CAT: Immunità innata e infiammazione
+Q: LGP-2 è un RLR particolare perché:
+A) Possiede due domini CARD
+B) È molto espresso negli enterociti del colon e, se mutato, predispone allo sviluppo del Morbo di Chron La sua attivazione provoca la secrezione di INF-alfa Ha una funzione down-regolatrice Riconosce il peptidoglicano batterico
+ANS: B
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Quale di questi recettori percepisce la presenza di DNA a doppia elica a livello citosolico:
+A) TLR-4
+B) AIM2
+C) NOD2(riconosce muramil dipeptide)
+D) Myd88
+E) CLR (riconosce zuccheri)
+ANS: B
+
+CAT: Organi linfoidi e traffico cellulare
+Q: Le selectine sono:
+1) Lectine di tipo C (C-type lectins) solubili con attivita’ battericida (fagocitosi e attivazione del complemento)
+2) Lectine di tipo C con un’importante funzione nel direzionare la migrazione delle cellule del sistema immunitario
+3) PRR endocellulari coinvolti nella risposta anti-virale
+4) PRR di membrane coinvolti nella risposta anti-virale
+ANS: 2
+
+CAT: Immunità innata e infiammazione
+Q: I toll like receptor (TLRs) sono pattern recognition receptors che riconoscono:
+1) sostanze di origine microbica presenti nel citosol
+2) sostanze di origine microbica presenti nel nucleo
+3) sostanze di origine microbica presenti nel compartimento extracellulare
+4) sostanze di origine microbica presenti nel compartimento endosomiale
+5) le sostanze di cui ai punti 3 e 4
+6) le sostanze di cui ai punti 2 e 4
+ANS: 5
+
+CAT: Immunità innata e infiammazione
+Q: Quali dei seguenti pattern recognition receptors (PRRs) sono espressi a livello citosolico?
+1) TLRs
+2) TREMs
+3) CLRs
+4) NLRs
+5) RLRs
+6) quelli indicati ai punti 2 e 5
+7) quelli indicati ai punti 4 e 5
+ANS: 4,5
+
+CAT: Immunità innata e infiammazione
+Q: Che cos’e’ il DNA-dependent activator of IRFs (DAI)?
+1) Un pattern recognition receptor (PRR) di superficie che lega carboidrati batterici
+2) Un PRR endosomiale che riconosce prodotti batterici
+3) Il primo TLR identificato
+4) Un PRR solubile della famiglia delle lectine di tipo C
+5) Un PRR intracitoplasmatico che riconosce prodotti batterici
+6) Un PRR intracitoplasmatico che riconosce il dsDNA
+7) Un PRR endosomiale che riconsoce il DNA virale
+ANS: 6
+
+CAT: Complemento e citochine
+Q: CITA e CIITA sono dei:
+A) NLRs
+B) TLRs
+C) RLRs
+D) Molecole solubili
+E) CLRs COMPLEMENTO
+ANS: A
+
+CAT: Complemento e citochine
+Q: Quale via di attivazione del complemento si avvale dell’uso del C1q:
+A) Via alternativa
+B) Via classica
+C) Via regolatrice
+D) Via lectinica
+E) Via endogena
+ANS: B
+
+CAT: Complemento e citochine
+Q: Quale via di attivazione del complemento si avvale dell’uso di MBL:
+A) Via alternativa
+B) Via classica
+C) Via regolatrice
+D) Via lectinica
+E) Via endogena
+ANS: D
+
+CAT: APC e cellule dendritiche
+Q: Quale delle affermazioni riguardanti il C3b è falsa:
+A) Può̀ opsonizzare i microbi
+B) Sul C3b legato in membrana si può̀ legare il fattore B
+C) Sulla membrana del patogeno può̀ legare C5 e tagliarlo
+D) Può̀ produrre i suoi effetti tramite due vie principali
+E) Può portare alla morte del microbo opsonizzandolo e rendendolo più appetibile ai fagociti professionisti, ma mai generando la sua lisi spontanea senza intervento di altre cellule
+ANS: E
+
+CAT: Complemento e citochine
+Q: quale delle seguenti affermazioni sul complemento è vera:
+A) Esistono due vie di attivazione: quella endogena e quella esogena
+B) Sono necessari i PRRs per attivarlo
+C) Il C1q entra in gioco nell’attivazione del complemento
+D) Le proteine del complemento si trovano nei fluidi cellulare e sono tutte costitutivamente attive
+E) Il complemento non fa parte della risposta immunitaria innata CITOCHINE
+ANS: C
+
+CAT: Complemento e citochine
+Q: Quale delle seguenti affermazioni è vera?
+1) Recettori diversi utilizzano combinazioni di Jak e STAT diverse, e questo consente la trasduzione di segnali diversi
+2) Il pathway Jak-STAT è utilizzato dai recettori citochinici di tipo I
+3) Il pathway Jack-STAT è utilizzato dai recettori citochinici di tipo II
+4) Le STAT si cross-fosforilano attivandosi e poi fosforilano le Jak che dimerizzano e traslocano nel nucleo
+5) Sono giuste la 1, 2 e 3
+6) Sono giuste la 2, 3 e 4
+7) Sono tutte giuste
+ANS: 5
+
+CAT: Immunità innata e infiammazione
+Q: Le proteine SOCS sono inibitori dell’attivita’ di:
+1) STAT
+2) Jak
+3) NFkB
+4) NFAT
+5) MyD88
+ANS: 2
+
+CAT: Complemento e citochine
+Q: Quale delle seguenti affermazioni sulle citochine è falsa:
+A) Vengono sintetizzate generalmente in forma attiva
+B) Una stessa citochina può avere effetti diversi
+C) Gli interferoni fanno parte delle citochine di tipo II
+ANS: A
+
+CAT: Organi linfoidi e traffico cellulare
+Q: quale delle seguenti affermazioni è vera:
+A) I recettori per IL-2 sono simili ai TLRs
+B) Le citochine della famiglia del TNF utilizzano Myd88 per la segnalazione intracellulare
+C) Le chemochine sono fondamentali per la guarigione delle ferite e l’integrità degli epiteli
+D) Le citochine della famiglia dell’IL-17 segnalano attraverso FADD o TRADD
+E) I recettori per la famiglia delle citochine di tipo I hanno una sequenza aminoacidica conservata nel dominio intracellulare
+ANS: C
+
+CAT: Organi linfoidi e traffico cellulare
+Q: Quali delle seguenti citochine sono fondamentali per l’integrità degli epiteli:
+A) Citochine di tipo I
+B) Citochine della famiglia di IL-17
+C) Citochine della famiglia di TNF
+D) Citochine di tipo II
+E) Chemochine
+ANS: E
+
+CAT: Organi linfoidi e traffico cellulare
+Q: I recettori per quali citochine sono dei GPCR:
+A) Citochine di tipo I
+B) Citochine della famiglia di IL-17
+C) Citochine della famiglia di IL-1
+D) Citochine di tipo II
+E) Chemochine
+ANS: E
+
+CAT: Organi linfoidi e traffico cellulare
+Q: i recettori per quali citochine si avvalgono FADD o TRADD per la segnalazione intracellulare
+A) Recettori per il TGF-beta
+B) Recettori per le chemochine
+C) Recettori per il TNF
+D) Recettori per le citochine di tipo I
+E) Recettori per le citochine della famiglia di IL-1
+ANS: C
+
+CAT: Organi linfoidi e traffico cellulare
+Q: I linfociti Tregolatori quale citochina inibitoria secernono comunemente:
+A) IL-1
+B) IL-2
+C) IL-10
+D) IL-8
+E) CCL1
+ANS: C
+
+CAT: Organi linfoidi e traffico cellulare
+Q: Quale delle seguenti citochine è fondamentale per la sopravvivenza dei linfociti B-2 in fase di maturazione:
+A) IL-10
+B) IL-7
+C) CXCL13
+D) CCL7
+E) IL-21
+ANS: B
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Attraverso la secrezione di citochine, quali cellule può richiamare la cellula tumorale per tentare di sfuggire al controllo del sistema immunitario:
+A) Linfociti T reg
+B) NKT di classe II
+C) Linfociti Th1
+D) Linfociti B-2 FO
+E) Tutte le precedenti
+F) Risposte A e C
+G) Risposte A e B
+H) Risposte A, B e C
+ANS: A,B
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Quali delle seguenti affermazioni sull’HLA è vera:
+A) È codificato da più geni, e per ogni gene un solo allele è espresso
+B) Ne fanno parte molecole di classe I, II e III tutte direttamente implicate nella presentazione dell’antigene
+C) La Tapsina è una molecole classica di classe I
+D) HLA I ed HLA II sono sempre espressi su tutte le cellule
+E) Esistono numerosi alleli per ogni gene codificante una proteine dell’MHC.
+ANS: E
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: quale delle seguenti affermazioni sull’HLA I è vera:
+A) Sono le glicoproteine implicate nella presentazione ai linfociti T CD4+
+B) La catena beta-2 microglobulina non è transmembrana
+C) Presentano antigeni che sono stati fagocitati o endocitati
+D) Il dominio alfa1 presenta delle sequenze riconosciute dal CD8
+E) La catena alfa non è codificata da un gene facente parte del sistema maggiore di istocompatibilità
+ANS: B
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Quale delle seguenti affermazioni sull’HLA II è vera:
+A) sono implicate nella presentazione di antigeni del metabolismo cellulare
+B) la catena alfa ha tre domini extracellulare: alfa1, alfa2 e alfa3
+C) la catena beta non è transmembrana (si lo è)
+D) sono espresse costitutivamente solo su DCs (cell dendritiche), TEC(timociti epiteliali della corticale), linfociti B e macrofagi
+E) si crea la tasca per il peptide tra alfa1 e alfa2
+ANS: D
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: quale delle seguenti affermazioni è falsa:
+A) IFN-gamma stimola la trascrizione di molecole HLA di classe I e II
+B) CIITA è fondamentale per la trascrizione dei geni delle molecole HLA di classe II (si)
+C) L’unico elemento regolatorio per i geni delle molecole HLA di classe II è il modulo SXY (si)
+D) CIITA lega direttamente il DNA
+E) Il TGF-beta può inibire CIITA
+ANS: D
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Su quale dominio delle catene di HLA II è presente il sito di legame per il CD4 dei linfociti T:
+A) Sul dominio alfa1 della catena alfa
+B) Sul dominio beta2 della catena beta
+C) sul dominio alfa1 e alfa 2 della catena alfa
+D) sul dominio beta2 della catena alfa
+E) sul dominio beta2 della catena beta e alfa1 della catena alfa
+ANS: B
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Qual è il ruolo di CDR3
+A) Riconoscere le regioni alfa1 sull’HLA
+B) Riconoscere le regioni alfa2 sull’HLA
+C) Riconoscere le regioni beta1 sull’HLA
+D) Riconoscere il peptide caricato sull’HLA
+E) Riconoscere le regioni alfa1 ed alfa2 sull’HLA
+ANS: D
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Quale delle seguenti affermazioni è vera:
+A) Peptidi citosolici vengono espressi preferenzialmente su HLA di classe II
+B) Il proteasoma ha come unica funzione quella di riconoscere molecole poliubiquitinate e degradarle
+C) TAP1 e TAP2 sono delle proteine della membrana citoplasmatica, con il compito di prelevare antigeni dall’esterno e trasportarli nel citosol
+D) I complessi HLAp, in cui HLA è di classe I, attiveranno preferenzialmente linfociti T CD4+
+E) L’immunoproteasoma è un proteasoma specializzato nel generare peptidi adatti al caricamento su HLA I
+ANS: E
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: i peptidi di origine citosolica vengono caricati:
+A) Preferenzialmente su HLA I
+B) Esclusivamente su HLA I
+C) In maniera casuale su HLA I o HLA II
+D) Preferenzialmente su HLA II
+E) Esclusivamente su HLA II
+ANS: A
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Su HLA di classe II vengono caricati preferenzialmente:
+A) Peptidi di origine citosolica
+B) Peptidi processati dal proteasoma
+C) Peptidi derivati dalla via fagocitica/endocitica
+D) Peptidi trasportati nel citosol mediante gap-junction
+E) Peptidi processati dal timoproteasoma
+ANS: C
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: quale delle seguenti affermazioni sull’HLA di classe II è falsa
+A) Viene esposto in membrana privo del peptide e successivamente endocitato per permetterne il caricamento(si)
+B) Per il caricamento del peptide è necessario l’ausilio della catena invariante (si)
+C) Il peptide viene caricato nel lume del RE
+D) I MVB giocano un ruolo fondamentale nel processo di caricamento del peptide
+E) La proteina DM entra in gioco nel corso del caricamento del peptide (si)
+ANS: C
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Che cosa non si può trovare nei MVB:
+A) Catena invariante (è già stata degradata)
+B) Catepsine
+C) HLA di classe II
+D) Peptidi
+E) PLC (Peptide Loading complex)
+ANS: E
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Che cosa si intende per cross presentazione:
+A) Il fatto che una DC possa attivare sia linfociti T sia linfociti B
+B) Il fatto che HLA I e HLA II possano presentare sia peptidi di origine citosolica sia di derivazione fagocitica/endocitica.
+C) il fatto che un complesso HLAp possa essere esocitato
+D) il fatto che l’immunoproteasoma possa degradare ulteriormente peptidi generati dal proteasoma costitutivo, in modo da generare peptidi più adatti al caricamento
+E) nessuna delle precedenti
+ANS: E
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Quale delle seguenti affermazioni sui tumori è falsa:
+A) Hanno la capacità di evadere l’apoptosi
+B) L’infiammazione cronica contrasta lo sviluppo del tumore
+C) Per sfuggire al sistema immunitario le cellule tumorali, talvolta, inibiscono l’espressione di molecole MHC
+D) Possono esprimere PDL-1
+E) Hanno una deregolazione del metabolismo energetico
+ANS: B
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Quali sono le glicoproteine HLA di classe II più polimorfiche?
+1) DM
+2) DP e DO
+3) DM, DO e DQ
+4) DP, DQ e DR
+5) DO e DM
+ANS: 4
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Il complesso HLA è poligenico e polimorfico. Il polimorfismo HLA di un individuo:
+1) Deriva da ricombinazioni somatiche
+2) Deriva da mutazioni somatiche
+3) Deriva da ricombinazioni somatiche cui si associano spesso delle mutazioni
+4) E’ ereditato da entrambi I genitori
+ANS: 4
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: I peptidi presentati dalle molecole MHC di classe II derivano principalmente:
+1) Da peptide presenti nell’ambiente extracellulare che si legano direttamente alle molecule MHC sula membrana
+2) Dalle proteine presenti nel citoplasma
+3) Dalle protein dei virus che infettano le cellule
+4) Dalle proteine fagocitate
+5) Dai peptide selezionati da TAP1 e TAP2
+ANS: 4
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Un peptide si lega ad una tasca MHC quando possiede:
+1) Le regioni CDR1 e CDR2 complementari
+2) La regione CDR3 complementare
+3) Quando corrisponde all’immagine interna dell’antigene
+4) Quando possiede i siti di ancoraggio che si adattano alle caratteristiche della tasca
+5) Quando esiste un TCR in grado di riconoscerlo
+ANS: 4
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Quale delle seguenti affermazioni è corretta?
+1) Le molecole MHC legano esclusivamente peptidi generati da agenti infettivi
+2) Le molecole MHC di classe I sono specializzate nel presentare peptidi generate nel citoplasma dove sono sintetizzate le protein virali, quindi non possono presentare protein di origine batterica
+3) Le molecole MHC di classe II possono presentare peptidi generati da qualunque agente infettivo internalizzato dai fagociti
+4) Solo la proteina alfa di classe I, e non la beta-2-microglobulina, e’ codificata all’interno del sistema maggiore di istocompatibilita’
+5) Sono vere la 1 e la 2
+6) Sono vere la 3 e la 4
+ANS: 6
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Quali delle seguenti caratteristiche sono comuni alle MHC di classe I e II?
+1) Sono composte da due catene transmembrana non identiche
+2) Il dominio distale dalla membrana cellulare forma una tasca per il peptide
+3) Non assumono una conformazione stabile in assenza del peptide nella tasca
+4) Sono espresso virtualmente su tutte le cellule dell’organismo
+5) Sono vere la 2 e la 3
+6) Sono vere la 2 e la 4
+ANS: 5
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Per il locus HLA-B sono stati identificati oltre 400 alleli. Quale è il massimo numero di alleli per il locus HLA-B che possono esprimere simultaneamente le cellule di un determinato paziente?
+1) 1
+2) 2
+3) 4
+4) 400
+5) 400x2
+ANS: 2
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: A un paziente con una storia di infezioni batteriche croniche delle vie aree superiori e inferiori che presenta anomalie nel numero delle molecole MHC di classe I sulla superficie cellulare e un ridotto numero di cellule T CD8, viene diagnosticata la sindrome del linfocita nudo di tipo I. La deficienza di quale di queste molecole causa la malattia?
+1) HLA-DM
+2) Catena invariante
+3) CLIP
+4) TAP-1 o TAP-2
+5) CIITA
+ANS: 4
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Una donna di 38 anni necessita di un trapianto di rene. Il suo genotipo HLA e’: HLA-A: 01;01/03;01, HLA-B: 07;02/08;01, HLA-DRB1: 03;01/07;01. Per ciascun locus, l’allele materno e’ riportato per primo, mentre quello paterno per secondo. Quale dei seguenti potenziali donator e’ quello maggiormente compatibile per il trapianto?
+1) HLA-A 03;01/02;01, HLA-B: 44;02/08;01; HLA-DRB1: 03;01/04;03
+2) HLA-A 03;01/29;02, HLA-B: 18;01/08;01; HLA-DRB1: 04;03/07;01
+3) HLA-A 29;02/02;01, HLA-B: 07;02/08;01; HLA-DRB1: 03;01/13;01
+4) HLA-A 01;03/01;01, HLA-B: 57;01/08;01; HLA-DRB1: 07;01/03;01
+5) HLA-A 03;01/03;01, HLA-B: 07;02/57;01; HLA-DRB1: 04;01/03;01 LINFOCITI T
+ANS: 4
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Da quali recettori vengono captati i segnali che determinano la maturazione delle cellule dendritiche da immature a cellule dendritiche mature?
+1) Dal TCR
+2) Dal BCR
+3) Dal CD28
+4) Da recettori TOLL-like
+5) Dal B7
+ANS: 4
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Quale di questi meccanismi contribuisce alla generazione della tolleranza centrale:
+A) Segregazione antigenica
+B) Linfociti Treg
+C) Anergia periferica
+ANS: B
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Quale dei seguenti elementi non fa parte del complesso recettoriale dei linfociti T
+A) CD3 gamma
+B) Catena alfa del TCR
+C) CD3 delta
+D) Beta2 microglobulina
+E) Catene zeta
+ANS: D
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Il movimento a pistone del TCR è importante per:
+A) Il suo corretto inserimento sulla membrana plasmatica
+B) Per permettere la fosforilazione delle sequenze ITAM nella suo dominio intracitoplasmatico
+C) Per permettere il corretto caricamento dell’antigene sul TCR
+D) Per permettere la fosforilazione delle sequenze ITAM sulle regioni intracitoplasmatiche delle catene CD3 e delle catene zeta
+E) Per permettere la fosforilazione delle sequenze ITAM sul CDR1, CDR2 e CDR3
+ANS: D
+
+CAT: Organi linfoidi e traffico cellulare
+Q: Per permettere la corretta attivazione di un linfocita T serve:
+A) La produzione di IL-2 Solo B
+B) Segnali costimolatori
+C) Produzione di chemochine
+D) Produzione di IFN
+E) Riconoscimento ad alta affinità TCR-HLAp
+F) Sono giuste la B e la E
+G) Sono giuste la B, la E e la D
+H) Sono giuste la A, la B e la E
+ANS: H
+
+CAT: Organi linfoidi e traffico cellulare
+Q: il sommarsi dei segnali di costimolazione ai segnali del TCR porta il linfocita T:
+A) A produrre cloni di se stesso
+B) A migrare nei linfonodi
+C) Ad esprimere la catena alfa del recettore per IL-2
+D) A sovraesprimere CIITA portando alla produzione di un gran numero di HLA II
+E) A migrare nella milza
+ANS: C
+
+CAT: Organi linfoidi e traffico cellulare
+Q: CD40L:
+A) Lega il recettore CCR7
+B) I linfociti T in fase di attivazione ne down-regolano l’espressione
+C) Se interagisce con il proprio recettore permette l’espressione di CTLA4 sul linfocita T
+D) Se interagisce con il proprio recettore sulle DCs induce il linfocita T a diventare un linfocita anergico
+E) È un recettore costimolatorio
+ANS: C
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Quale delle seguenti affermazioni su CTLA4 è falsa:
+A) Lega le molecole B7 espresse dalle APCs
+B) è considerato un checkpoint immunitario
+C) lega gli stessi ligandi di CD28 con affinità venti volte minore
+D) promuove l’internalizzazione in vescicole di CD28 down-regolandone l’espressione
+E) la sua espressione è indotta dall’interazione CD40-CD40L
+ANS: C
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: quali delle seguenti cellule sono FoxP3+:
+A) timociti DN
+B) Linfociti B-2 MZ
+C) Linfociti B-2 FO
+D) Linfociti T reg
+E) Timociti DP
+ANS: D
+
+CAT: Organi linfoidi e traffico cellulare
+Q: I linfociti Treg quale citochina inibitoria secernono comunemente:
+A) IL-1
+B) IL-2
+C) IL-10
+D) IL-8
+E) CCL1
+ANS: C
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Quale delle seguenti affermazioni è falsa:
+A) I linfociti TH2 sono coinvolti nella difesa contro gli elminti
+B) I linfociti TH9 implicati nell’insorgenza di quadri di asma
+C) I linfociti TH17 hanno due fenotipi: uno effettore e un regolatorio
+D) I linfociti TH17 producono IL-21
+E) L’interazione tra DLLs e NOTCH3 provoca commitment a TH9
+ANS: A
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: I linfociti T CD8+ effettori citotossici:
+A) Possono secernere perforine per uccidere le cellule bersaglio
+B) Possono operare una sola uccisione poiché vengono uccisi dai loro stessi granuli - citotossici
+C) Esprimono FasL
+D) La serpina B9 è una loro proteina citoplasmatica
+E) Possono secernere granuli citotossici contententi catepsina B che ha il ruolo di uccidere i patogeni
+F) Tutte le precedenti
+G) Sono corrette la A,la B e laD
+H) Sono corrette la A, la C, la D I. Sono corrette la A, la C e la E
+ANS: H
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: I linfociti Tgamma/delta:
+A) Nella maggior parte dei casi sono CD8+
+B) Richiedono l’attivazione del fattore trascrizionale SOX13
+C) Vengono prodotti dal timo secondo due ondate. Presentano il recettore NKG2D
+E) Tutte le precedenti
+F) Sono corrette la C, la D
+G) Sono corrette la A e la D
+H) Sono correttel aB,la C e laD
+ANS: H
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Metti in ordine gli eventi che si susseguono nella reazione del centro germinativo:
+A) Si forma il follicolo secondario
+B) Linfociti T e linfociti B, che hanno riconosciuto l’antigene, costituiscono il focus primario, nella regione interfollicolare
+C) Formazione del centro germinativo definitivo, in cui si riconoscono una zona scura e una zona chiara
+D) Linfociti B naive residenti nel follicolo, che non hanno riconosciuto l’antigene, si spostano nella zona mantellare
+E) Linfociti T Helper Follicolari e linfociti B attivati migrano nel follicolo B
+1) B-D-E-A-C
+2) E-B-D-A-C -
+3) B-E-D-C-A >
+4) B-E-D-A-C
+5) E-B-D-C-A - >
+ANS: 4
+
+CAT: Organi linfoidi e traffico cellulare
+Q: I plasmablasti generati in seguito ad attivazione T-dipendente dal focus primario dei linfonodi:
+A) Produrranno esclusivamente IgM
+B) Sono lungo sopravviventi
+C) Esprimono ad altissimi livelli BLIMP-1
+D) Evolvono raramente in plasmacellule
+E) Si spostano nella zona chiara del centro germinativo
+ANS: C
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Attraverso la secrezione di citochine, quali cellule può richiamare la cellula tumorale per tentare di sfuggire al controllo del sistema immunitario:
+A) Linfociti T reg
+B) NKT di classe II
+C) Linfociti Th1
+D) Linfociti B-2 FO
+E) Tutte le precedenti
+F) Risposte A e C
+G) Risposte A e B
+ANS: A,B
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Un linfocita T citotossico uccide:
+1) La cellula bersaglio morendo con essa
+2) Piu’ cellule bersaglio con lo stesso allele MHC anche se legato a peptide diversi
+3) Più cellule bersaglio con lo stesso allele MHC e lo stesso peptide in quanto si allontana prima che queste muoiano
+4) Piu’ cellule bersaglio con lo stesso peptide anche se ancorato a molecule MHC diverse
+5) Piu’ cellule bersaglio con lo stesso antigene nella sua conformazione terziaria esposto sulla membrana
+ANS: 3
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: La molecola CD8 si lega:
+1) Al dominio beta-2 delle glicoproteine di classe II, dominio costante e vicino alla membrana
+2) Al dominio beta-1 delle glicoproteine MHC di classe II, dominio che partecipa alla formazione della tasca
+3) Al dominioalfa-1 delle glicoproteine di classe II, dominio che partecipa alla formazione della tasca
+4) Al dominio alfa-3 delle glicoproteine di classe I, dominio costante e vicino alla membrana
+ANS: 4
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Più ampio è il repertorio dei diversi TCR:
+1) Minore è il numero di complessi MHC-peptide che verranno riconosciuti
+2) Maggiore è il numero di complessi MHC-peptide che verranno riconosciuti
+3) Minore e’ il numero di TCR espresso da ogni linfocita
+ANS: 2
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Le regioni del TCR dette CDR1 e CDR2:
+1) Nascono dall’aggiunta di nucleotidi da parte della terminal desossinucleotidil transferasi
+2) Interagiscono principalmente con il peptide nella tasca dell’MHC
+3) Interagiscono con le glicoproteine HLA
+4) Dipendono dalle caratteristiche delle regioni costanti delle catene alfa e beta del TCR
+5) Nascono dai fenomeni di ipermutazione somatica
+ANS: 3
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Il recettore dei linfociti T (TCR) è formato:
+1) Da un’unica catena alfa, che si ripiega e poggia sulla beta-2 microglobulina
+2) Da un eterodimero di catene alfa e beta
+3) Da un omodimero di catene alfa
+4) Da tre catene, di cui beta e gamma sempre espresso ed alfa che appare durante l’attivazione del linfocita
+ANS: 2
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Da un’unica catena alfa, che si associa al complesso CD3 Il ruolo delle proteine CD3 e della catena ζ (zeta) espresse sulla superficie cellulare e’ quello di:
+1) Trasmettere i segnali captati dal BCR all’interno della cellula
+2) Trasmettere i segnali captati dal TCR all’interno della cellula
+3) Legare le molecule MHC
+4) Legare CD4 e CD8
+5) Facilitare l’elaborazione dell’antigene che si lega alla superficie delle cellule T
+ANS: 2
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: I linfociti T citotossici e killer sono:
+1) Cellule CD4+ che riconoscono l’antigene in forma naturale
+2) Cellule CD4+ che riconoscono l’antigene in forma di peptide complessato con MHC di classe I
+3) Cellule CD4+ che riconoscono l’antigene in forma di peptide complessato con MHC di classe II
+4) Cellule CD8+ che riconoscono l’antigene in forma di peptide complessato con MHC di classe I
+5) Cellule CD8+ che riconoscono l’antigene in forma di peptide complessato con MHC di classe II LINFOIDE INFETTO cellT
+ANS: 4
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: I linfociti T helper sono:
+1) Cellule CD4+ che riconoscono l’antigene in forma naturale
+2) Cellule CD4+ che riconoscono l’antigene in forma di peptide complessato con le molecule MHC di classe I
+3) Cellule CD4+ che riconoscono l’antigene in forma di peptide complessato con le molecule MHC di classe II
+4) Cellule CD8+ che riconoscono l’antigene in forma di peptide complessato con le molecule MHC di classe I
+5) Cellule CD8+ che riconoscono l’antigene in forma di peptide complessato con le molecule MHC di classe II
+ANS: 3
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Un linfocita in via di maturazione come primo evento del riarrangiamento dei geni del TCR:
+1) unisce una regione D della catena beta con una ragione J beta
+2) unisce una regione D della catena alfa con una ragione J alfa
+3) unisce una regione V della catena beta con una ragione D beta
+4) unisce una regione V della catena alfa con una ragione J alfa
+5) unisce una regione V della catena alfa con una ragione D alfa
+ANS: 1
+
+CAT: Organi linfoidi e traffico cellulare
+Q: In quale distretto dell’organismo possiamo trovare fino al 80% di linfociti che co- esprimono CD4 e CD8?
+1) Nel sangue
+2) Nel midollo osseo
+3) Nei linfonodi
+4) Nei polmoni e nel fegato
+5) Nel timo
+6) Sono vere 2 e 3
+7) Sono vere 1 e 2
+ANS: 5
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: La funzione della selezione negativa nel timo è di eliminare:
+1) i timociti doppi positivi
+2) i timociti singoli positivi
+3) i timociti apoptotici
+4) i timociti autoreattivi
+5) i timociti alloreattivi
+ANS: 4
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Nel timo i linfociti T che non riconoscono per nulla i complessi MHC-peptide dell’individuo di cui fanno parte:
+1) Vanno incontro a espansione clonale
+2) Vengono selezionati negativamente e in dotti a suicidio apoptotico
+3) Persistono in periferia senza subire ne’ una selezione positive ne’ una selezione negativa
+4) Negletti, muoiono per solitudine
+5) Esprimono Foxp3 e si trasformano in cellule T regolatorie
+ANS: 4
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Qual’è il fenotipo più comune delle cellule T regolatorie?
+1) CD4+CD25+Foxp3+
+2) CD8+CD25+Foxp3-
+3) CD8+CD25+Foxp3+
+4) CD4+CD25+Foxp3-
+5) CD4+CD25-Foxp3+
+ANS: 1
+
+CAT: Immunità innata e infiammazione
+Q: Come mai numerosi linfociti T vergini condividono l’identica catena beta?
+1) Perche’ la catena beta ha piu’ possibilita’ di riarrangiare rispetto alla catena alfa
+2) perché dopo aver riarrangiato la catena beta il linfocita prolifera e da origine a tanti cloni che poi riarrangiano la catena alfa
+ANS: 2
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Individui con difetto del gene regolatore autoimmune (AIRE) sono affetti da:
+1) Sindrome DiGeorge
+2) APECED-Poli-endo-crino-patia autoimmunitaria-candidiasi-distrofia ectodermica
+3) SCID
+4) Deficienza di MHC di classe I
+5) Deficienza di MHC di classe II
+6) Sindrome di Bruton
+ANS: 2
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Quale evento fa sì che un linfocita maturando divenga CD4 oppure CD8?
+1) Quale dei due geni ha ricombinato per primo, quello del CD4 o quello del CD8
+2) Quale gene, CD4 oppure CD8, e’ piu’ affine al complesso MHC peptide
+3) Che il TCR interagisca con affinità con un peptide associato alle molecole MHC di classe I o II
+4) Il fatto che il linfocita sia T helper o T citotossico
+5) il fatto che esprima il CD3
+ANS: 3
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: I linfociti immaturi che lasciano il midollo osseo e vanno a localizzarsi nel timo sono:
+1) CD3+, CD4+, CD8+, TCR+, Tdt+
+2) CD3+, CD4-, CD8-, TCR+, Tdt-
+3) CD3-, CD4+, CD8+, TCR+, Tdt+
+4) CD3-, CD4-, CD8-, TCR-,tdt-
+5) CD3+, CD4+, CD8-, TCR-, Tdt-
+ANS: 4
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: La maggior parte dei linfociti maturi che lasciano il timo ed entrano nel circolo sanguiogno sono:
+1) CD3+ CD4+ CD8- TdT+
+2) CD3+ CD4- CD8- TdT+
+3) CD3+ CD4+ CD8- TdT-
+4) CD3+ CD4- CD8+ TdT-
+ANS: 3
+
+CAT: Linfociti B e anticorpi
+Q: L’espansione clonale che ha luogo dopo il riconoscimento di un antigene è un meccanismo tipico:
+1) solo dei linfociti T e B 
+2) Dei linfociti T, B, NK e macrofagi
+3) Solo dei linfociti T e delle cellule NK
+4) Delle cellule del sistema immunitario in genere
+ANS: 1
+
+CAT: Linfociti B e anticorpi
+Q: La conseguenza immunologica della malattia da immunodeficienza combinata grave (SCID) causata da un difetto genetico dei geni RAG-1 o RAG-2 e’:
+1) Perdita del meccanismo di ricombinazione somatica nei geni del recettore delle cellule T e delle cellule B
+2) Perdita del meccanismo di ricombinazione somatica nei loci delle immunoglobuline
+3) Perdita del meccanismo di ricombinazione somatica nei loci del recettore delle cellule T
+4) Perdita del meccanismo di ipermutazione somatica nei loci delle immunoglobuline e recettore delle cellule T
+5) Perdita del meccanismo di ipermutazione somatica nei loci del recettore delle cellule T
+ANS: 1
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Quali cellule si ritiene siano responsabili della presentazioni ai timociti, durante il processo di selezione negativa, degli antigeni catturati nei tessuti periferici, di antigeni derivati da batteri commensali e di antigeni del cibo?
+1) Cellule epiteliali timiche della corticale
+2) Cellule epiteluiali timiche della midollare
+3) Cellule dendritiche autoctone
+4) Cellule dendritiche migratorie
+5) Le cellule dei punti 1 e 4
+6) Le cellule dei punti 2 e 4
+ANS: 4
+
+CAT: Organi linfoidi e traffico cellulare
+Q: cosa si intende per commitment cellulare:
+A) la perdita della capacita di un linfocita T maturo a lasciare l’organo linfatico secondario
+B) la perdita della capacità di differenziare in tipi cellulari diversi
+C) l’acquisizione di un fenotipo specifico
+D) la capacità, da parte di un linfocita T DN, di andare incontro alla selezione positiva nella corticale timica
+E) la perdita della capacità di esprimere un TCR gamma-delta
+ANS: C
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: durante la selezione positiva nella corticale timica:
+A) un timocita viene selezionato positivamente riesce ad avere una interazione TCR- HLAp molto forte
+B) un timocita viene selezionato positivamente se non ha alcuna interazione TCR-HLAp
+C) un timocita viene selezionato positivamente se ha una interazione TCR-HLAp e vengono scatenati pathways intracellulari anche da un corecettore
+D) un timocita viene selezionato positivamente se ha una interazione TCR-HLAp ma non vengono scatenati pathways intracellulari anche dai corecettori
+E) un timocita viene selzionato positivamente se riconosce antigeni in maniera HLA- indipendente
+ANS: C
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: la totale fosforilazione delle sequenze ITAM sui CD3 e sulle catene Zeta può portare a:
+A) assumere un fenotipo CD8+
+B) apoptosi
+C) assunzione di un fenotipo T regolatorio
+D) espressione di CIITA
+ANS: B
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Quali sono le proteine adattatrici fondamentali per la trasduzione del segnale a valle del TCR?
+1) SLP-65 e ZAP-70
+2) SLP-65 e LAT
+3) SLP-76 e LAT
+ANS: 3
+
+CAT: Immunità innata e infiammazione
+Q: La scissione dei fosfolipidi di membrana da parte della fosfolipasi c-gamma determina la produzione di inositolo-3-fosfato che:
+1) Fosforila le tyrosine della ITAM
+2) De-fosforila LcK e Fyn
+3) Attiva la via di trasduzione dellNF-kB
+4) Attiva la via del Ca2+
+ANS: 4
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Il riconoscimento dell’antigene da parte dei linfociti T in assenza di segnali co- stimolatori provoca:
+1) up-regolazione del B7
+2) espressione del recettore ad alta affinita’ per l’IL-2
+3) anergia della cellula T
+4) apoptosi della cellula T
+5) attivazione della funzione citotossica della cellula T
+ANS: 3
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: L’espressione del CD40 Ligando da parte dei linfociti T in via d’attivazione determina l’espressione sulla cellula che presenta l’antigene:
+1) Del recettore CD28
+2) Della catena alfa del recettore di IL-2 (CD25)
+3) Della molecola di costimolazione B7
+4) Delle perforine
+5) Dei TLR
+ANS: 3
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Metti nell’ordine corretto queste fasi della presentazione dei peptide da parte delle glicoproteine HLA di classe II: a-Progressiva degradazione della catena invariante b-Inserimento del peptide nella tasca c-Associazione delle catene alfa e beta con la catena invariante d-Sintesi indipendente delle catene alfa e beta e-Associazione delle catene alfa e beta contenenti il residuo “Clip” con le molecule HLA- DN e HLA-DO f-Apertura della tasca e fuoriuscita di “Clip”
+1) a,b,c,d,e,f
+2) e,d,f,c,b,a
+3) d,f,b,a,e,c
+4) c,d,a,e,f,b
+5) d,c,a,e,f,b
+ANS: 5
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: In che cosa si differenziano le DCs classiche e le DCs plasmocitoidi:
+A) Le cDCs, una volta attivate, diventano pDCs
+B) Le cDCs hanno attivo il fattore di trascrizione E2-2, non attivo nelle pDCs
+C) Le pDCs sono più coinvolte nella risposta immunitaria innata, mentre le cDCs in quella adattativa
+D) Le pDCs sono delle TECs specializzate e sono molto importanti per la selezione positiva nella corticale timica
+E) Le cDCs non sono in grado di attivare i linfociti T naive, solo le pDCs sono in grado di farlo
+ANS: C
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Quale di queste proteine non fa parte del Peptide Loading Complex:
+A) Calreticulina
+B) TABP
+C) ERp57
+D) Calnexina
+E) Beta 2 microglobulina
+ANS: D
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: TAP1 e TAP2 sono:
+1) Enzimi responsabili della ricombinazione dei geni del TCR
+2) Trasportatori di peptide, codificati da geni posti nell’MHC che partecipano alla presentazione in classe II
+3) Trasportatori di peptidi, codificati da geni posti nell’MHC che partecipano alla presentazione in classe I
+4) Molecole di costimolazione dei linfociti T
+5) Peptidasi che frammentano gli antigeni proteici
+ANS: 3
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Tap1 e TAP2 sono coinvolte in quale fenomeno?
+1) La presentazione dei peptidi associati alle molecole HLA di classe I
+2) La presentazione dei peptidi associati alle molecole HLA di classe II
+3) La ricombinazione dei recettori per l’antigene dei linfociti T e B
+4) La maturazione delle cellule dendritiche
+ANS: 1
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Il timoproteasoma e’ espresso da quali delle seguenti cellule?
+1) Cellule epiteliali timiche della corticale
+2) Cellule epiteliali timiche della midollare
+3) Cellule dendritiche autoctone
+4) Cellule dendritiche migratorie
+5) 1 e 3 ELI CHE MI SA CHE HA SBAGLIATO CAPRA! CAPRA!
+6) 2 e 4
+ANS: 1
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Le cellule dendritiche immature sono:
+1) Migliori cellule presentanti l’antigene rispetto alle cellule dendritiche mature
+2) Migliori nel catturare l’antigene rispetto alle cellule dendritiche mature
+3) Caratterizzate dall’espressione di molecule MHC di classe II e molecule co- stimolatorie
+4) Chiamate cellule follicolari dendritiche FUNZIONI EFFETTRICI DEI T
+ANS: 2
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: I linfociti CD4 naive vengono “istruiti” dalla cellula dendritica (DC) in base al tipo di antigene che le ha fatte maturare. In particolare, perche’ il CD4 divenga un linfocita Th1 la CD deve esprimere:
+1) I Notch receptors
+2) I legandi di tipo Delta dei recettori Notch
+3) I legandi di tipo Jagged dei recettori Notch
+4) I CDDR
+5) I CTLA-4
+6) La catena alfa del recettore dell’IL7
+ANS: 2
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Cosa sono i Th17?
+1) Cellule CD4+Foxp3+ a funzione regolatoria
+2) Cellule CD4+Foxp3- a funzione regolatoria
+3) Cellule CD4+Foxp3+ che dopo attivazione producono IL17 e IL6
+4) Cellule CD4+Foxp3- che dopo attivazione producono IL17 e IL6
+5) Cellule CD8+Foxp3- che dopo attivazione producono IL17 e IL6
+6) Cellule CD8+Foxp3+ che dopo attivazione producono IL17 e IL6
+ANS: 4
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: I linfociti helper 17 (Th17) sono indotti dalla produzione di una particolare citochina ad opera dei macrofagi attivati. Quale?
+1) IL4
+2) IL12
+3) IL21
+4) IL22
+5) IL23
+ANS: 5
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: L’interleuchina IL21 e’ un’importante citochina prodotta da alcuni tipi di linfociti CD4+ effettori, ma in una di queste popolazioni riveste un ruolo fondamentale, sia autocrino sia paracrine. In quale?
+1) Th1
+2) Th2
+3) Th9
+4) Th17
+5) Th22
+6) Th follicolari
+7) 3 e 5
+8) 4 e 5
+9) 4 e 6
+ANS: 9
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: cosa sono le perforine?
+1) Enzimi proteolitici che digeriscono la membrane cellulare
+2) Molecole che polimerizzano in presenza di Ca2+ e formano buchi sulle membrane cellulari
+3) Caspasi che determinano la morte cellulare
+4) Ligandi che si legano a specifici recettori di membrane e inducono la morte cellular per apoptosi
+5) Molecole con le caratteristuiche elencate nei punti 2 e 3
+ANS: 2
+
+CAT: Organi linfoidi e traffico cellulare
+Q: Cosa sono i granzimes rilasciati dai linfociti T?
+1) Citochine proinfiammatorie
+2) Chemochine
+3) Molecole della membrana cellular che favoriscono ladsorbimento del virus HIV
+4) Proteasi che entrando nella cellula ne determinano la morte
+5) Serino-esterasi della cascata del complemento ALLOREATTIVITA’
+ANS: 4
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Che cosa si intende per alloreattivita’?
+1) La capacita’ dei linfociti B di riconoscere complessi peptide-MHC allogenico (di un altro individuo con diverso MHC)
+2) La capacita’ delle cellule NK di riconoscere complessi peptide-MHC allogenico
+3) La capacita’ dei linfociti T di riconoscere complessi peptide-MHC allogenico
+4) La capacita’ delle cellule dendritiche di fare presentazione crociata
+ANS: 3
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Con alloreattività si intende:
+A) Il fatto che un TCR possa riconoscere complessi HLAp in cui HLA è diverso da quello dell’organismo
+B) Il fatto che una FDC possa attivare un linfocita T
+C) Il fatto che un TCR possa riconoscere antigeni self
+D) Il fatto che un TCR possa riconoscere più complessi HLAp
+E) Il fatto che un linfocita T CD4+ possa riconoscere HLA di classe I
+ANS: A
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: I linfociti T Natural Killer (NKT)
+A) Esprimono contemporaneamente il TCRalfa-beta e i recettori KIR
+B) Possono riconoscere la molecola CD1d
+C) Ci sono due tipi di NKT: tipo I e tipo II
+D) Sono perlopiù̀ coinvolti nei meccanismi della risposta immunitaria naturale (secondo me e luvi questa è falsa)
+E) Tutte le precedenti
+F) Nessuna delle precedenti
+G) Sono corrette la A,la B la C e la D
+H) Sono corrette laA,laBelaC
+ANS: E
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: I recettori KIR espressi dalle cellule NK ne bloccano l’azione citolitica quando riconoscono:
+1) Antigeni batterici
+2) Antigeni virali
+3) Cellule infettate da virus
+4) Glicoproteine MHC
+5) Molecole di costimolazione CELLULE NKT
+ANS: 3
+
+CAT: Organi linfoidi e traffico cellulare
+Q: Le cellule T-gamma-delta sono particolarmente abbondanti in quali compartimenti?
+1) Nel sangue
+2) Nella milza
+3) Nell’epidermide
+4) Nella mucosa dei tratti digestivo e riproduttivo
+5) Nei compartimenti elencati ai punti 1 e 3
+6) Nei compartimenti elencati ai punti 1 e 4
+7) Nei compartimenti elencati ai punti 3 e 4
+8) Nei compartimenti elencati ai punti 1 e 2
+ANS: 7
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: I linfociti γδ hanno:
+1) Differenziano nel timo principalmente in eta’ adulta
+2) Attraverso il TCR riconoscono molecule indotte da stress (MICA, MICB, ULBP)
+3) Riconoscono soprattutto composti non proteici fosforilati detti FOSFOANTIGENI
+4) Hanno un repertorio di recettori per l’antigene (TCR) poco polimorfico
+5) 3 e 4
+6) 2, 3 e 4
+ANS: 3
+
+CAT: Linfociti B e anticorpi
+Q: quale delle seguenti affermazioni sulle proteine della famiglia RAG è vera:
+A) sono espresse costitutivamente in tutte le cellule dell’organismo
+B) devono associarsi alle proteina ARTEMIS per funzionare
+C) nei linfociti B opera RAG-1 mentre nei linfociti T opera RAG-2
+D) possono svolgere la propria funzione solo in determinate fasi del ciclo cellulare
+E) RAG1 svolge la sua funzione in forma pentamerica, RAG2 in forma trimerica
+ANS: D
+
+CAT: Immunità innata e infiammazione
+Q: Indicare quale proteine è formato il complesse delle RAG:
+A) È formato da due RAG-1 e due RAG-2
+B) È formato da due RAG-1 e una solo RAG-2
+C) È formato da una RAG-1, una RAG-2 e una RAG-3
+D) È formato da due RAG-1, due RAG-2 e dalla DNA-PK
+E) È formato dalla sola RAG-1 associata al fattore ku
+ANS: A
+
+CAT: Immunità innata e infiammazione
+Q: Nelle Recombination Signal Sequence (RSS)
+A) Gli eptameri ed i nonameri sono sequenze di DNA altamente conservate
+B) Si trovano solo nei segmenti D
+C) Le sequenze spaziatrici possono essere di 12 o 55 aminoacidi
+D) Si trovano nelle proteine RAG
+E) Le sequenze spaziatrici hanno la funzione di legare le RAG al DNA
+ANS: D
+
+CAT: Immunità innata e infiammazione
+Q: Nella prima fase della ricombinazione V(D)J
+A) Le proteine RAG introducono un single strand break
+B) Il dominio NBD di RAG1 interagisce con l’eptamero della RSS
+C) Si forma un hairpin loop, perché il gruppo OH attacca il gruppo P libero all’estremità 5’dell’altra emielica
+D) L’enzima TdT crea un nick sul DNA
+E) La proteina ARTEMIS chiude l’hairpin loop
+ANS: D
+
+CAT: Immunità innata e infiammazione
+Q: I fattori ku:
+A) Servono per creare nick sul DNA
+B) Si trovano all’estremità C terminale di RAG-2
+C) Sono legati covalentemente all’enzima DNA-PK
+ANS: B
+
+CAT: Immunità innata e infiammazione
+Q: Quale delle seguenti proteine genera i nucleotidi P:
+A) ARTEMIS
+B) DNA-PK
+C) Fattore ku
+D) RAG-1
+E) TdT
+ANS: A
+
+CAT: Immunità innata e infiammazione
+Q: Quale delle seguenti proteine genera i nucleotidi N:
+A) ARTEMIS
+B) DNA-PK
+C) Fattore ku
+D) RAG-1
+E) TdT
+ANS: E
+
+CAT: Linfociti B e anticorpi
+Q: Il BCR:
+A) Lega antigeni processati
+B) È associato ad Ig-alfa e Ig-beta
+C) È espresso esclusivamente dai linfociti B-1
+D) Può essere espresso in forma polimerica in membrana
+E) Le catene L hanno un dominio transmembrana idrofobico
+ANS: B
+
+CAT: Linfociti B e anticorpi
+Q: Quali delle seguenti affermazioni è corretta:
+A) I linfociti B-1 si divino in: B-1 MZ e B-1 FO
+B) I linfociti B MZ esprimono alti livelli di IgD e bassi livelli di IgM
+C) I linfociti B-1 sono considerati i linfociti B canonici
+D) Allo stadio di linfocita pre-B avviene la ricombinazione VDJ per la catena H
+E) Pax5 ed EBF sono fattori trascrizionali coinvolti nel commitment a linfociti B-2
+ANS: B
+
+CAT: Linfociti B e anticorpi
+Q: Quale delle seguenti affermazioni sulla ricombinazione VDJ del BCR è corretta:
+A) Viene prima ricombinata la catena L
+B) Il locus per la catena L contiene segmenti V, D, J e C, mentre quello per la catena H non presenta i segmenti D 
+C) Viene prima ricombinato il locus k della catena H 
+D) Allo stadio di Early Pro-B cell si attua il riarrangiamento D-J per la catena H
+E) Un pre-BCR è costituito da due catene L e due eterodimeri composti da VpreB e lambda 5 (detto SLC)
+ANS: D
+
+CAT: Linfociti B e anticorpi
+Q: La maturazione dell’affinità per ipermutazione somatica consiste nel:
+A) Generare delle mutazione specifiche sul DNA in modo che tutti i BCR prodotti abbiano una affinità maggiore per l’antigene
+B) Cambiare la regione costante del BCR in modo da passare da IgM ad IgG
+C) Rimuovere la porzione transmembrana sul BCR in modo che esso diventi solubile
+D) Generare in maniera casuale mutazioni sul DNA che codifica per le catene L ed H e selezionare quelle che hanno reso il BCR più affine all’antigene
+E) Generare delle mutazioni sul DNA nelle regioni che codificano per il frammento Fc delle immunoglobuline, in modo che esse abbiano un’emivita più lunga
+ANS: D
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Le sequenze P della parte variabile del TCR derivano:
+1) dall’apertura della forcina da parte di Artemis
+2) Dall’aggiunta di nucleotide da parte della TdT
+3) Dalle caratteristiche degli eptameri
+4) Dal taglio del doppio filament di DNA da parte degli enzimi codificati da Rag1 e Rag2
+5) Dal frammento genico V PROTEASOMA
+ANS: 1
+
+CAT: Organi linfoidi e traffico cellulare
+Q: Quale delle seguenti affermazioni sui linfociti B-2 MZ è falsa:
+A) Esprimo alti livelli di IgM e bassi livelli di IgD
+B) Originano da linfociti B transizionali che hanno riconosciuto antigeni con una affinità medio-bassa
+C) Il riconoscimento da parte di NOTCH-2 di DL-L-1 favorisce l’homing nella milza
+D) Non esprimono BAFFr
+ANS: D
+
+CAT: Linfociti B e anticorpi
+Q: Durante la maturazione dei linfociti B c’è una fase d’intensa proliferazione che consente di utilizzare la stessa catena pesante riarrangiata da parte di vari cloni di linfociti
+B) Questa fase proliferativa ha luogo:
+1) Appena si e’ formatO il riarrangiamento VDJ
+2) Quando la cellula riesce a produrre la catena pesante nel citoplasma
+3) Quando la catena pesante, VpreB e λ5 vengono espresse sulla membrana
+4) QuAndo il linfocita esprime un BCR format da sole IgM
+5) Quando le catene leggere sono state riarrangiate correttamente
+ANS: B
+
+CAT: Linfociti B e anticorpi
+Q: I linfociti B sono i principali mediatori della:
+1) Infiammazione
+2) Fagocitosi
+3) Immunita’ adattativa umorale
+4) Immunita’ adattativa cellulo-mediata
+5) Immunita’ natural umorale
+ANS: 3
+
+CAT: Memoria, vaccini e immunopatologia
+Q: Vaccini contro tumori ad eziologia virale anti-HPV e anti-HBV fanno parte della immunoprevenzione:
+A) Primaria
+B) Secondaria
+C) Terziaria
+D) Sia primaria sia secondaria
+E) Nessuna delle precedenti
+ANS: A
+
+CAT: Memoria, vaccini e immunopatologia
+Q: Quale delle seguenti condizioni non e’ associate con la deposizione di immunocomplessi?
+1) reazione di Arthus
+2) anemia emolitica autoimmune 3 si
+3) malattia del siero
+4) lupus erimatoso sistemico
+5) glomerulonefrite post-streptococcica
+ANS: 2
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Individui con difetto del gene regolatore autoimmune (AIRE) sono affetti da:
+1) Sindrome DiGeorge
+2) APECED (Poli-endo-crino-patia autoimmunitaria-candidiasi-distrofia ectodermica)
+3) SCID
+4) Deficienza di MHC di classe I
+5) Deficienza di MHC di classe II
+6) Sindrome di Bruton MALATTIA GRANULOMATOSA
+ANS: 2
+
+CAT: Memoria, vaccini e immunopatologia
+Q: Quali tipi di ipersensibilita' possono essere indotti dalla penicillina?
+1) di tipo primo
+2) di tipo secondo
+3) di tipo terzo
+4) di tipo quarto
+5) di tutti e quattro i tipi
+ANS: 2
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Un uomo di 35 anni presenta cefalea, affaticamento, stordimento, dispnea e tachicardia. Gli esami di laboratorio rivelano riduzione dell’emoglobina e positivita’ al test di Coomb (presenza di anticorpi sulla superficie degli eritrociti). Il paziente sta assumendo - un antibiotic per I sintomi causati dall’infezione delle vie respiratory superiori. A quale tipo di ipersensibilita’ attribuite questi segni? -
+1) Tipo I, mediata da anticorpi IgG
+2) Tipo II, mediata da anticorpi IgG
+3) Tipo III, mediata da anticorpi IgG
+4) Tipo IV, mediata da anticorpi IgG o IgM S
+5) Tipo V, mediate dale cellule T CD4+
+ANS: 2
+
+CAT: Linfociti B e anticorpi
+Q: Quale tra queste malattie autoimmuni e' eziologicamente causata da anticorpi che legando il recettore mimano l'azione del ligando naturale ed inducono un'anomala iperfunzionalita' dell'organo?
+1) La trombocitopenia
+2) L’emoglobinuria parossistica notturna
+3) Il diabete mellito di tipo primo
+4) Il Lupus eritematoso sistemico ·
+5) La miastenia grave
+6) L'ipertiroidismo di Graves
+7) L’artite reumatoide O
+ANS: 2
+
+CAT: Memoria, vaccini e immunopatologia
+Q: Un paziente maschio giovane presenta sangue nelle urine dopo un’infezione virale delle alte vie respiratorie. I test per la funzionalita’ renale sono alterati e viene richiesta una biopsia renale. DFalla biopsia risulta deposizione di complessi immune lungo la membrane basale. Quale tipo di reazione di ipersensibilita’ e’ probabile che abbia colpito questo paziente?
+1) tipo I
+2) tipo II
+3) tipo III
+4) tipo IV
+ANS: 3
+
+CAT: Organi linfoidi e traffico cellulare
+Q: La S1P:
+A) Genera un gradiente chemiotattico che richiama i linfociti nel circolo sanguigno
+B) Non è secreta negli SLOs
+C) È presente a bassa concentrazione negli SLOs
+D) Il suo recettore specifico è CXCR5
+E) Sono vera la A e la B
+F) Sono vere la A, e la C
+G) Sono vere la A, la B e la C
+ANS: F
+
+CAT: Organi linfoidi e traffico cellulare
+Q: Quale delle seguenti affermazioni sulla reazione del centro germinativo è falsa:
+A) Le FDCs della zona scura secernono la chemochina CXCL12 al posto della CXCL13
+B) I linfociti B della zona scura si chiamano centroblasti, quelli della zona chiara centrociti
+C) I centrociti vanno incontro ad ipermutazione somatica
+D) Nella zona chiara i centrociti vanno incontro a selezione
+E) Dopo la selezione viene promosso il processo della commutazione di classe
+ANS: C
+
+CAT: Organi linfoidi e traffico cellulare
+Q: Quali cellule organizzano il network di condotti che si trova nella zona T nella paracorticale dei linfonodi?
+1) Cellule follicolari dendritiche
+2) Cellule reticolari marginali
+3) Cellule fibroblastiche reticolari
+4) Cellule dendritiche
+5) Macrofagi
+6) Cellule T
+ANS: 3
+
+CAT: Organi linfoidi e traffico cellulare
+Q: Le strutture linfoidi secondarie sono tutte le seguenti, tranne:
+1) Milza
+2) Linfonodi
+3) Midollo osseo
+4) Tessuto linfoide associate alle mucose
+5) Placche del Peyer
+ANS: 3
+
+CAT: Organi linfoidi e traffico cellulare
+Q: Cosa regola la fuoriuscita dei linfociti dai linfonodi?
+1) dalle chemochine
+2) sfingosina
+1) fosfato
+3) dalla selectina L
+4) dalle adressine vascolari
+5) dall’integrina LFA-1 (?)
+ANS: 2
+
+CAT: Organi linfoidi e traffico cellulare
+Q: La milza differisce dagli altri organi linfatici secondari per quale delle seguenti ragioni?
+1) non contiene cellule T
+2) filtra sia il sangue sia la linfa
+3) e’ popolata da cellule specializzate chiamate cellule M
+4) Riceve I patogeni attarverso I vasi linfatici afferenti
+5) Non ha connessioni coi vasi linfatici
+ANS: 5
+
+CAT: Organi linfoidi e traffico cellulare
+Q: Quali caratteristiche ritieni debba presentare la biopsia linfonodale prelevata da un giovane con un deficit legato al cromosoma X del gene che codifica per la tirosina chinasi di Bruton (Btk)?
+1) marcato infiltrato linfocitario perivascolare
+2) evidenti follicoli secondari
+3) regioni paracorticali pressoche’ assenti
+4) follicoli linfatici pressoche’ assenti
+5) presenza abbondante di polimorfonucleati
+ANS: 4
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Nonostante il fenomeno della memoria immunologica sia noto da molto tempo solo recentemente si è capito che dipende da una ristretta popolazione di cellule della memoria specializzate che:
+1) possono persistere solo in presenza dell’antigene che originariamente le ha indotte
+2) possono persistere in assenza dell’antigene che originariamente le ha indotte
+3) possono persistere solo se CD4+
+4) possono persistere solo se CD8+
+5) sono sempre plasmacellule
+6) rispondono alle caratteristiche dei punti 2 e 5
+ANS: 2
+
+CAT: Organi linfoidi e traffico cellulare
+Q: Le plasmacellule “memoria” risiedono nel midollo osseo. Quali cellule stromali sono essenziali per la loro sopravvivenza nel midollo osseo?
+1) Cellule producenti IL5
+2) Cellule producenti IL7
+3) Cellule producenti IL9
+4) Cellule producenti CCL19
+5) Cellule producenti CXCL12
+6) Cellule producentiCXCL13
+ANS: 5
+
+CAT: Linfociti T (TCR, sviluppo e attivazione)
+Q: Bcl-6 (B-cell lymphoma
+6) e’ un repressore della trascrizione fondamentale per lo sviluppo di una risposta adattativa completa. Bcl-6: a-e’ espresso da centroblasti e centrociti b-agisce in sinergia con Blimp-1 nel dterminare la generazione di plasmacellule Mi c-favorisce il differenziamento dei linfociti CD4+ in T helper follicolari d-favorisce il differenziamento dei linfociti CD4+ in T helper 1 e T helper 17 e-inibisce il differenziamento dei linfociti B in B memoria
+1) a,b,c I
+2) b,c,d
+3) a,c,e
+4) a,d,c I
+5) b,d,c
+ANS: 3
+
+CAT: Memoria, vaccini e immunopatologia
+Q: Quale/i dei seguenti meccanismi contribuisce/contribuiscono alla tolleranza immunologica?
+1) Delezione clonale
+2) Cellule T regolatorie
+3) Anergia
+4) Tutti quelli sopra elencati
+5) Nessuno di quelli elencati VACCINI
+ANS: 4
+
+CAT: Linfociti B e anticorpi
+Q: Oggi in Italia la vaccinazione anti poliomielite:
+1) E’ obbligatoria e viene effettuata con un virus vivo e attenuato per via orale (vaccino di Sabin)
+2) E’ facoltativa e viene effettuata con un virus vivo e attenuato (vaccino di Sabin) per via orale
+3) E' obbligatoria e viene effettuata con un virus ucciso (vaccino di Salk) somministratoper iniezione intramuscolare
+4) E' facoltativa e viene effettuata con un virus ucciso (vaccino di Salk) somministratoper iniezione intramuscolare
+ANS: 3
+
+CAT: Linfociti B e anticorpi
+Q: Esistono dei vaccini basati su sostanze che vengono ingerite (vaccine orali)?
+1) No, perche’ I cibi inducono tolleranza
+2) Si, in quanto inducono un’ottima risposta sistemica ma una tolleranza locale
+3) No, perche’ I vaccini ingeriti vengono distrutti dagli enzimi gastrici
+4) Si, in quanto inducono una risposta locale ad IgA ma una tolleranza sistemica
+ANS: 4
+
+CAT: Organi linfoidi e traffico cellulare
+Q: I recettori NOTCH:
+A) hanno come ligandi diverse chemochine
+B) sono dei fate specification receptors
+C) sono importanti per l’homing timico
+D) dopo il riconoscimento del ligando vanno incontro a processi proteolitici
+E) tutte le precedenti
+F) sono corrette la A, la B e la C
+G) sono corrette la B, la C e la D
+H) sono corrette la A, la B e la D
+ANS: G
+
+CAT: Memoria, vaccini e immunopatologia
+Q: Le immunodeficienze congenite:
+1) Sono distribuite egualmente tra I due sessi
+2) colpiscono: principalmente i maschi
+3) Colpiscono principalmente le femmine
+4) Colpiscono principalmente le donne dopo la menopausa
+ANS: 1
+
+CAT: APC e cellule dendritiche
+Q: Il premio Nobel per la medicina nel 2011 e’ stato assegnato meta’ ai ricercatori Beutler e Hoffman per I loro studi sull TLR4 e l’attivazione della risposta naturale, e meta’ a Steinman, deceduto poco prima del conferimento del premio. Qual’e’ stato il contributo scientifico che ha portato all’assegnazione del premio a Steinman?
+1) La scoperta del ruolo delle cellule follicolari dendritiche nella risposta adattativa
+2) La scoperta delle cellule NK e il loro ruolo nella risposta adattativa
+3) La scoperta delle funzioni delle cellule NK, T nell’attivazione della risposta innata
+4) La scoperta delle cellule dendritiche e il loro ruolo nella risposta adattativa
+ANS: 4
+
+CAT: Linfociti B e anticorpi
+Q: Un bambino di 2 mesi presenta una diarrhea persistente, I segni e I sintomi di polmonite da Pneumocytis??? e un’infezione fungina orale da Candida Albicans. Il suo peso e’ circa un decimo del peso normale. Le risposte (?) degli esami per l’HIV sono risultate negative. La causa piu’ probabile di tale quadro e’:
+1) Una grave riduzione dei livelli delle cellule B
+2) Una
+3) Un deficit a carico dello switch isotipico
+4) Un deficit a carico della funzionalita’ delle cellule T
+5) Un deficit selettivo delle IgA
+ANS: 4
+
+CAT: Linfociti B e anticorpi
+Q: Perche' si esegue il “purging” di un midollo che sara' trapiantato?
+1) Per lisare I linfociti B mature e abolirne la produzione di anticorpi verso I tessuti del ricevente
+2) Per lisare i linfociti T maturi e impedirne l'attacco dei tessuti del ricevente
+3) Per lisare I granulociti e trasferire solo I linfociti T e B
+4) Per lisare tutte le cellule staminali e trapiantare solo I linfociti maturi I
+5) Per lisare I globuli rossi, evitando cosi’ l’emolisi e trapiantando solo I linfociti che ripopoleranno il ricevente I
+6) Per fare spazio nel midollo, in modo che attecchisca meglio
+ANS: 2
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Come mai la GVHD (Graft versus host disease) puo' essere controllata utilizzando anticorpi monoclonali diretti verso CD2? Perche’ il CD2 (detto anche LFA-2):
+1) E’ una catena recettoriale del CD3-TC3
+2) E’ una catena del recettore dell’IL2, linfochina essenziale per la proliferazione dei linfociti T
+3) E' una molecola di adesione essenziale per l’attivazione dei linfociti T da parte delle APC
+4) E’ una molecola di costimolazione, analoga al CD4 e CD8
+5) E’ una molecola HLA di classe I, che se differente, stimola una violenta reazione di rigetto
+ANS: 3
+
+CAT: Memoria, vaccini e immunopatologia
+Q: Quale delle seguenti affermazioni sull’immunoediting è falsa: si
+A) Consta di tre fasi
+B) Un sistema immunitario competente elimina le cellule che hanno subito mutazioni
+C) In fase di Equilibrium le cellule tumorali hanno acquisito delle mutazioni che le si porteranno a scatenare un quadro patologico
+D) Un tumore sviluppato in un soggetto immunocompetente è il risultato di processi di rimodellamento di cui il sistema immunitario è il principale artefice
+E) Cali nell’efficienza del sistema immunitario possono portare il tumore a sfuggire dalla sua sorveglianza
+ANS: D
+
+CAT: Immunità innata e infiammazione
+Q: polimorfici?
+1) sì
+2) no
+ANS: 2
+
+CAT: Complemento e citochine
+Q: Il TNF può indurre la necrosi emorragica dei tumori formati da cellule:
+1) che esprimono il recettore del TNF
+2) che non esprimono il recettore del TNF
+3) sia che esprimano sia che non esprimano il recettore del TNF
+ANS: 3
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Un bambino affetto da morbillo genera CTL specifici per i peptidi del virus del morbillo. Questi CTL, in vitro, in un test di 4 ore, uccideranno i fibroblasti di un individuo infettati dal virus del morbillo?
+1) sì, purché siano infettati dal virus del morbillo
+2) sì, ma solo se i fibroblasti infettati dal virus del morbillo esprimono tutti gli antigeni MHC eguali a quelli del bambino
+3) sì, solo se i fibroblasti infettati dal virus del morbillo esprimono almeno tutti gli antigeni MHC di classe I eguali a quelli del bambino
+4) sì, anche se esprimono un solo antigene MHC di classe I eguale a quello del bambino
+5) no, sono comunque istocompatibili e presentano peptidi differenti
+ANS: 2
+
+CAT: Immunità innata e infiammazione
+Q: Nell’uomo, con quale ordine riarrangiano i geni delle catene pensanti H e delle catene leggere di tipo k e di tipo lambda delle Ig?
+1) H, k, lambda
+2) H, lambda, k
+3) lambda, k, H
+4) k, H, lambda
+ANS: 1
+
+CAT: Linfociti B e anticorpi
+Q: I topi che presentano difetti nell’espressione dei geni RAG1 e RAG2 hanno in circolo:
+1) solo linfociti T maturi e nessun linfocita B maturo
+2) solo linfociti B maturi e nessun linfocita T maturo
+3) nessun linfocita T o B maturo ESSERE
+ANS: 3
+
+CAT: Linfociti B e anticorpi
+Q: Un linfocita B immaturo esprime in membrana:
+1) IgA
+2) IgG
+3) IgE
+4) IgD
+5) IgM
+6) IgA e IgM
+7) IgD e IgM
+ANS: 7
+
+CAT: Linfociti B e anticorpi
+Q: La reazione di rigetto di II set di un lembo di cute estranea avviene:
+1) solo le viene trapiantata nella stessa zona corporea
+2) anche quando la cute viene trapiantata in un’altra qualsiasi parte dell’organismo
+ANS: 2
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: I ceppi di topi singenici:
+1) hanno tutti i geni in omozigosi
+2) hanno solo i MHC in omozigosi I & - L
+ANS: 1
+
+CAT: Linfociti B e anticorpi
+Q: plasmacellula?
+1) sei ore
+2) un giorno
+3) sei giorni
+4) un mese
+ANS: 3
+
+CAT: Organi linfoidi e traffico cellulare
+Q: giunzione cortico-midollare dei linfonodi
+A) 
+4) 5-1-3-7-8-2-9-6
+B) 
+7) 8-3-2-9-6-5-1-4
+C) 
+6) 2-5-1-3-7-8-4-9
+D) 
+1) 3-7-8-4-9-2-6-5
+ANS: D
+
+CAT: MHC/HLA e presentazione dell’antigene
+Q: Indica in ordine di successione gli eventi che portano al riconoscimento dell’antigene e all’attivazione dei linfociti T:
+1) associazione dei prodotti di digestione dell’antigene alle molecole MHC
+2) produzione di IL2
+3) proliferazione dei linfociti T
+4) fagocitosi e digestione dell’antigene da parte delle cellule accessorie
+5) riconoscimento dell’antigene da parte dei linfociti T
+6) produzione di IL1 ed espressione di segnali accessori da parte delle APC
+7) legame di IL2 prodotta al proprio recettore
+A) 1,4,6,5,2,7,3 -
+B) 4,1,6,5,2,7,3
+C) 6,4,1,5,3,2,7 -
+D) 4,6,2,7,3,1,5
+ANS: B
