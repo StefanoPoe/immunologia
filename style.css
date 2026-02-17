@@ -1,17 +1,37 @@
 :root {
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    --bg-main: #060b16;
+    --bg-secondary: #0f1a2f;
+    --surface: rgba(16, 24, 40, 0.78);
+    --surface-strong: #162139;
+    --text-main: #f4f8ff;
+    --text-soft: #b8c5e0;
+    --border: #2b3d63;
+    --primary: #67c6ff;
+    --primary-strong: #3ca8ea;
+    --danger: #ff6b7d;
+    --success: #3dd598;
+
+    font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    background: #0f1115;
-    color: #e7e7e7;
+    min-height: 100vh;
+    color: var(--text-main);
+    background:
+        radial-gradient(circle at 10% 10%, rgba(91, 173, 255, 0.24), transparent 44%),
+        radial-gradient(circle at 90% 0%, rgba(140, 99, 255, 0.22), transparent 38%),
+        linear-gradient(165deg, var(--bg-main), var(--bg-secondary));
 }
 
 .app {
-    max-width: 900px;
+    max-width: 980px;
     margin: 0 auto;
-    padding: 16px;
+    padding: 24px 16px 36px;
 }
 
 .topbar {
@@ -19,6 +39,19 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
+    margin-bottom: 14px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: rgba(9, 14, 26, 0.65);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.25rem, 1.6vw + 0.8rem, 1.7rem);
+    letter-spacing: 0.2px;
 }
 
 .nav {
@@ -28,29 +61,40 @@ body {
 }
 
 button {
-    background: #1b2330;
-    color: #e7e7e7;
-    border: 1px solid #2b3a52;
-    padding: 10px 12px;
-    border-radius: 10px;
+    background: linear-gradient(180deg, #213253, #1a2741);
+    color: var(--text-main);
+    border: 1px solid #3a5589;
+    padding: 10px 13px;
+    border-radius: 11px;
     cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.16s ease, filter 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 5px 15px rgba(10, 18, 34, 0.35);
 }
 
 button:hover {
+    transform: translateY(-1px);
     filter: brightness(1.08);
+    border-color: #4f71b3;
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 button.danger {
-    border-color: #6b2b2b;
-    background: #2b1515;
+    border-color: #8d3848;
+    background: linear-gradient(180deg, #4f2431, #371922);
 }
 
 .card {
-    background: #151a24;
-    border: 1px solid #26324a;
-    border-radius: 14px;
-    padding: 16px;
-    margin: 12px 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 18px;
+    margin: 14px 0;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 12px 28px rgba(3, 9, 21, 0.36);
 }
 
 .row {
@@ -61,52 +105,66 @@ button.danger {
 }
 
 .label {
-    opacity: 0.85;
+    color: var(--text-soft);
     font-size: 14px;
+    font-weight: 500;
 }
 
 .select,
 input[type="number"] {
-    background: #0f1115;
-    color: #e7e7e7;
-    border: 1px solid #26324a;
+    background: #0c1426;
+    color: var(--text-main);
+    border: 1px solid var(--border);
     padding: 10px;
     border-radius: 10px;
+}
+
+.select:focus,
+input[type="number"]:focus {
+    outline: 2px solid rgba(103, 198, 255, 0.35);
+    border-color: var(--primary-strong);
 }
 
 .option {
     display: flex;
     gap: 10px;
-    padding: 10px;
-    border: 1px solid #26324a;
+    padding: 12px;
+    border: 1px solid #334974;
     border-radius: 12px;
-    margin: 8px 0;
+    margin: 9px 0;
+    background: rgba(11, 19, 35, 0.52);
+    transition: border-color 0.16s ease, background-color 0.16s ease;
+}
+
+.option:hover {
+    border-color: #587ec3;
 }
 
 .muted {
-    opacity: 0.75;
+    color: var(--text-soft);
 }
 
 .kpi {
-    font-size: 28px;
+    font-size: 31px;
     font-weight: 700;
+    color: #99e1ff;
 }
 
 hr {
     border: 0;
-    border-top: 1px solid #26324a;
+    border-top: 1px solid var(--border);
     margin: 16px 0;
 }
 
 .qtext {
     margin: 12px 0;
     white-space: pre-wrap;
-    background: #0f1115;
-    border: 1px solid #26324a;
-    border-radius: 12px;
-    padding: 12px;
+    background: rgba(12, 20, 38, 0.86);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px;
     font-size: 16px;
-    line-height: 1.35;
+    line-height: 1.42;
 }
 
 .tbl {
@@ -116,7 +174,7 @@ hr {
 
 .tbl th,
 .tbl td {
-    border-bottom: 1px solid #26324a;
+    border-bottom: 1px solid var(--border);
     padding: 10px;
     text-align: left;
     vertical-align: top;
@@ -124,36 +182,33 @@ hr {
 
 .tbl th {
     font-size: 14px;
-    opacity: 0.85;
+    color: var(--text-soft);
 }
 
-/* Hint sotto la domanda */
 .hint {
     margin: 10px 0 6px;
-    opacity: 0.85;
+    color: var(--text-soft);
     font-size: 14px;
 }
 
-/* Evidenziazione risposte dopo conferma */
 .option.correct {
-    border-color: #2f6b3d;
-    background: rgba(47, 107, 61, 0.22);
+    border-color: #3e9f77;
+    background: rgba(61, 213, 152, 0.2);
 }
 
 .option.correct.missed {
-    background: rgba(47, 107, 61, 0.12);
+    background: rgba(61, 213, 152, 0.12);
 }
 
 .option.wrong {
-    border-color: #6b2b2b;
-    background: rgba(107, 43, 43, 0.26);
+    border-color: #a54d5d;
+    background: rgba(255, 107, 125, 0.2);
 }
 
 .option.chosen {
-    outline: 1px solid rgba(231, 231, 231, 0.08);
+    outline: 1px solid rgba(244, 248, 255, 0.18);
 }
 
-/* Timer esame */
 .timerbar {
     display: flex;
     justify-content: space-between;
@@ -167,17 +222,16 @@ hr {
     font-weight: 700;
     letter-spacing: 0.5px;
     padding: 8px 10px;
-    border: 1px solid #26324a;
+    border: 1px solid #4c648f;
     border-radius: 10px;
-    background: #0f1115;
+    background: #121c31;
 }
 
-/* Bottoni più evidenti in esame */
 button.primary {
-    border-color: #2b3a52;
-    background: #1f2a3a;
+    border-color: #4a83be;
+    background: linear-gradient(180deg, #255793, #1c4472);
 }
-/* Home: controlli uno sotto l'altro */
+
 .home-controls {
     display: flex;
     flex-direction: column;
@@ -203,7 +257,60 @@ button.primary {
     gap: 10px;
 }
 
-/* bottone start bello pieno in home */
 .home-controls #start {
     width: 100%;
+}
+
+@media (max-width: 720px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+    .nav button {
+        flex: 1;
+    }
+}
+
+/* Esame: sticky solo per timer + consegna */
+.exam-floating-controls {
+    position: sticky;
+    top: 10px;
+    z-index: 50;
+    margin: 10px 0;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border: 1px solid #4a6da4;
+    border-radius: 14px;
+    background: rgba(9, 16, 31, 0.94);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+.exam-floating-controls .timer {
+    margin: 0;
+    border-color: #5e80b3;
+    background: rgba(16, 28, 50, 0.9);
+}
+
+.exam-floating-controls .primary {
+    white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+    .exam-floating-controls {
+        flex-wrap: wrap;
+    }
+
+    .exam-floating-controls .timer,
+    .exam-floating-controls .primary {
+        width: 100%;
+    }
 }
