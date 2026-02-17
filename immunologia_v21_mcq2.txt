@@ -981,13 +981,13 @@ ANS: 4
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Le molecole Lmp2 e Lmp7 sono: (due risposte)
 R:
-1) codificate da geni localizzati tra quelli di MHC classe I
+1) codificate da geni localizzati tra quelli di MHC classe II
 2) codificate da geni localizzati tra quelli MHC di classe III
 3) dei trasportatori di peptidi
 4) proteine con attività enzimatica
 5) sempre presenti nel proteasoma
 6) siti di legame per l’ubiquitina
-ANS: 2,4
+ANS: 1,4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Abitualmente i superantigeni:
@@ -1200,11 +1200,11 @@ ANS: 2,3
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Le molecole Lmp2 e Lmp7 sono: (due risposte)
 R:
-1) codificate da geni localizzati tra quelli di MHC classe I
+1) codificate da geni localizzati tra quelli di MHC classe II
 2) codificate da geni localizzati tra quelli MHC di classe III
 3) dei trasportatori di peptidi
 4) modulate positivamente da IFN gamma
-ANS: 2,4
+ANS: 1,4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Una determinata tasca MHC può legare potenzialmente:
@@ -4230,8 +4230,8 @@ R:
 2) Antigeni virali
 3) Cellule infettate da virus
 4) Glicoproteine MHC
-5) Molecole di costimolazione CELLULE NKT
-ANS: 3
+5) Molecole di costimolazione
+ANS: 4
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Le cellule T-gamma-delta sono particolarmente abbondanti in quali compartimenti?
@@ -4524,11 +4524,10 @@ CAT: Organi linfoidi e traffico cellulare
 Q: Cosa regola la fuoriuscita dei linfociti dai linfonodi?
 R:
 1) dalle chemochine
-2) sfingosina
-1) fosfato
+2) sfingosina 1 fosfato
 3) dalla selectina L
 4) dalle adressine vascolari
-5) dall’integrina LFA-1 (?)
+5) dall’integrina LFA-1
 ANS: 2
 
 CAT: Organi linfoidi e traffico cellulare
@@ -4736,7 +4735,7 @@ R:
 5) IgM
 6) IgA e IgM
 7) IgD e IgM
-ANS: 7
+ANS: 5
 
 CAT: Linfociti B e anticorpi
 Q: La reazione di rigetto di II set di un lembo di cute estranea avviene:
