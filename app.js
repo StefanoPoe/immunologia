@@ -832,8 +832,8 @@ async function init() {
     view.innerHTML = `<div class="card"><p>Caricamento domande…</p></div>`;
 
     try {
-        const res = await fetch("./immunologia_v21_mcq.txt", { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status} su ./immunologia_v21_mcq.txt`);
+        const res = await fetch("./immunologia_v21_mcq2.txt", { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status} su ./immunologia_v21_mcq2.txt`);
 
         const txt = await res.text();
         const questions = parseTxtToQuestions(txt);
@@ -850,7 +850,7 @@ async function init() {
         <h2>Errore caricamento</h2>
         <p class="muted">${escapeHtml(String(err))}</p>
         <p class="muted">
-          Se sei in locale: usa un server (python -m http.server). Su Pages: controlla che immunologia_v21_mcq.txt sia nello stesso folder di index.html.
+          Se sei in locale: usa un server (python -m http.server). Su Pages: controlla che immunologia_v21_mcq2.txt sia nello stesso folder di index.html.
         </p>
       </div>
     `;
