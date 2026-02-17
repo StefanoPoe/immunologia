@@ -177,3 +177,33 @@ button.primary {
     border-color: #2b3a52;
     background: #1f2a3a;
 }
+/* Home: controlli uno sotto l'altro */
+.home-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.home-line {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.home-line .select,
+.home-line input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.home-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* bottone start bello pieno in home */
+.home-controls #start {
+    width: 100%;
+}

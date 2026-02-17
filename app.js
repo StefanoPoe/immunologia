@@ -337,62 +337,76 @@ function renderHome() {
 
       <hr />
 
-      <div class="row">
-        <label class="label">Modalità</label>
-        <select id="mode" class="select">${modeOptions}</select>
+        <div class="home-controls">
+    <div class="home-line">
+      <label class="label">Modalità</label>
+      <select id="mode" class="select">${modeOptions}</select>
+    </div>
 
-        ${
+    ${
         showCategory
             ? `
-          <label class="label">Categoria</label>
-          <select id="cat" class="select">${catsOptions}</select>
-        `
+      <div class="home-line">
+        <label class="label">Categoria</label>
+        <select id="cat" class="select">${catsOptions}</select>
+      </div>
+    `
             : ""
     }
 
-        ${
+    ${
         showLimit
             ? `
-          <label class="label">Numero domande</label>
-          <input id="limit" type="number" min="1" max="${total}" value="${state.config.limit}" />
-        `
+      <div class="home-line">
+        <label class="label">Numero domande</label>
+        <input id="limit" type="number" min="1" max="${total}" value="${state.config.limit}" />
+      </div>
+    `
             : ""
     }
 
-        ${
+    ${
         showShuffle
             ? `
-          <label class="label">
-            <input id="shuffle" type="checkbox" ${state.config.shuffle ? "checked" : ""} />
-            Mischia
-          </label>
-        `
+      <div class="home-line">
+        <label class="label home-check">
+          <input id="shuffle" type="checkbox" ${state.config.shuffle ? "checked" : ""} />
+          Mischia
+        </label>
+      </div>
+    `
             : ""
     }
 
-        ${
+    ${
         showRangeToggle
             ? `
-          <label class="label">
-            <input id="rangeEnabled" type="checkbox" ${state.config.rangeEnabled ? "checked" : ""} />
-            Range
-          </label>
-          ${
+      <div class="home-line">
+        <label class="label home-check">
+          <input id="rangeEnabled" type="checkbox" ${state.config.rangeEnabled ? "checked" : ""} />
+          Range
+        </label>
+
+        ${
                 showRangeInputs
                     ? `
-            <label class="label">Da</label>
-            <input id="rangeFrom" type="number" min="1" max="${maxQn}" value="${rangeFromVal}" />
-            <label class="label">A</label>
-            <input id="rangeTo" type="number" min="1" max="${maxQn}" value="${rangeToVal}" />
-          `
+          <label class="label">Da</label>
+          <input id="rangeFrom" type="number" min="1" max="${maxQn}" value="${rangeFromVal}" />
+          <label class="label">A</label>
+          <input id="rangeTo" type="number" min="1" max="${maxQn}" value="${rangeToVal}" />
+        `
                     : ""
             }
-        `
+      </div>
+    `
             : ""
     }
 
-        <button id="start" class="primary">Inizia</button>
-      </div>
+    <div class="home-line">
+      <button id="start" class="primary">Inizia</button>
+    </div>
+  </div>
+
 
       <p class="muted">
         ${
