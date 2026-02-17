@@ -1,6 +1,7 @@
 CAT: Immunità innata e infiammazione
 Q: Quale delle seguenti opzioni descrive correttamente una delle principali strategie di
 difesa del sistema immunitario?
+R:
 A) La produzione esclusiva di anticorpi senza coinvolgere altre cellule.
 B) La creazione di barriere fisiche come la pelle e le mucose.
 C) L'attacco diretto di virus tramite enzimi digestivi nello stomaco.
@@ -10,6 +11,7 @@ ANS: B
 
 CAT: Immunità innata e infiammazione
 Q: Quale delle seguenti affermazioni descrive correttamente l'immunità innata/naturale?
+R:
 A) È un sistema che genera una memoria immunitaria duratura contro i patogeni.
 B) Si attiva solo in presenza di una ferita causata da un intervento chirurgico.
 C) Ha una risposta lenta e richiede giorni per attivarsi dopo l'infezione.
@@ -20,6 +22,7 @@ ANS: D
 CAT: Immunità innata e infiammazione
 Q: Quale delle seguenti opzioni elenca correttamente una caratteristica
 dell'infiammazione?
+R:
 A) Aumento della pressione sanguigna sistemica.
 B) Diminuzione del flusso sanguigno nell'area interessata.
 C) Rossore dovuto alla vasodilatazione dei vasi sanguigni locali.
@@ -30,6 +33,7 @@ ANS: C
 CAT: Immunità innata e infiammazione
 Q: Quale delle seguenti affermazioni descrive correttamente una caratteristica
 dell'immunità adattativa?
+R:
 A) È più rapida dell’immunità innata nell’attivarsi in risposta a un'infezione.
 B) I recettori specifici per gli antigeni si formano solo dopo che il linfocita ha incontrato il microbo.
 C) Genera un repertorio di recettori casuali, anche per antigeni che il corpo potrebbe non incontrare mai.
@@ -40,6 +44,7 @@ ANS: C
 CAT: Immunità innata e infiammazione
 Q: Quale delle seguenti affermazioni descrive correttamente uno dei modelli di
 attivazione dell'immunità innata?
+R:
 A) Il danger model spiega che le cellule dell’immunità innata riconoscono solo molecole tipiche dei patogeni (PAMP).
 B) L'HAMP model suggerisce che l’immunità innata si attiva rilevando i cambiamenti nell’omeostasi cellulare, come il calcio intracellulare.
 C) Il stranger model indica che le cellule dell’immunità innata riconoscono esclusivamente le sostanze prodotte in seguito a un danno cellulare (DAMP).
@@ -50,6 +55,7 @@ ANS: B
 CAT: Immunità innata e infiammazione
 Q: Dove possono essere localizzati i recettori segnalatori dell'immunità innata, come i
 Toll-like receptors (TLR)?
+R:
 A) Solo sulla membrana cellulare esterna.
 B) Esclusivamente nel citoplasma.
 C) Sulla membrana cellulare, sulla membrana degli endosomi, nei mitocondri o nel citoplasma.
@@ -59,6 +65,7 @@ ANS: C
 
 CAT: Immunità innata e infiammazione
 Q: In che modo i recettori Toll-like (TLR) svolgono la loro funzione?
+R:
 A) I TLR riconoscono solo i vermi e gli elminti, ma non i batteri o i parassiti.
 B) Per attivarsi, i TLR devono dimerizzare (alcuni formano omodimeri e altri eterodimeri).
 C) La parte extracellulare dei TLR è responsabile della trasduzione del segnale attraverso il dominio TIR.
@@ -69,6 +76,7 @@ ANS: B
 CAT: Immunità innata e infiammazione
 Q: Quale delle seguenti affermazioni descrive correttamente una caratteristica dei
 recettori NOD-LIKE (NLR)?
+R:
 A) I NLR sono responsabili del riconoscimento di patogeni extracellulari, mentre i TLR riconoscono patogeni intracellulari.
 B) I NLR sono localizzati esclusivamente sulla membrana cellulare e riconoscono patogeni extracellulari.
 C) I NLR sono meno numerosi dei TLR, con soli 4 recettori noti nell'uomo.
@@ -78,6 +86,7 @@ ANS: E
 
 CAT: Immunità innata e infiammazione
 Q: Perché i recettori NOD sono in grado di generare signalosomi?
+R:
 A) Perché, attraverso la loro attivazione, inibiscono la trascrizione di citochine infiammatorie e enzimi anti-infiammatori.
 B) Perché inducono la produzione di molecole co-stimolatorie che impediscono l’attivazione dei linfociti T.
 C) Perché favoriscono la formazione di autofagosomi per distruggere i microbi intracellulari.
@@ -87,6 +96,7 @@ ANS: D
 
 CAT: Immunità innata e infiammazione
 Q: Cosa accade quando i recettori NLRP3 si attivano?
+R:
 A) I recettori NLRP3 impediscono la morte cellulare e riducono l’infiammazione attraverso l’inibizione della caspasi 1.
 B) I recettori NLRP3 attivano la produzione di gasdermina, che forma pori nella membrana cellulare, portando alla morte cellulare per apoptosi.
 C) La caspasi 1 rimane inattiva, impedendo la produzione di citochine infiammatorie come IL-1β e IL-18.
@@ -97,6 +107,7 @@ ANS: E
 CAT: Complemento e citochine
 Q: Quale delle seguenti affermazioni descrive correttamente alcune delle caratteristiche
 principali delle proteine del complemento?
+R:
 A) Le proteine del complemento sono costituite da proteine stabili e resistenti al calore, simili agli anticorpi.
 B) Il sistema del complemento è attivato solo attraverso l’intervento di anticorpi specifici, senza meccanismi di amplificazione.
 C) Le proteine del complemento sono inattive nei liquidi organici e attivate tramite un meccanismo a cascata che implica la serin proteasi.
@@ -106,6 +117,7 @@ ANS: C
 
 CAT: Complemento e citochine
 Q: Qual è l'ordine temporale di attivazione delle tre vie del sistema del complemento?
+R:
 A) La via classica si attiva immediatamente al contatto con il patogeno, seguita dalla via lectinica e poi dalla via alternativa.
 B) La via alternativa si attiva immediatamente al contatto con il patogeno, seguita dalla via lectinica e poi dalla via classica.
 C) La via lectinica si attiva prima della via alternativa, seguita dalla via classica.
@@ -115,6 +127,7 @@ ANS: B
 
 CAT: Complemento e citochine
 Q: Quale delle seguenti affermazioni descrive correttamente le proprietà delle citochine?
+R:
 A) Le citochine sono mediatori responsabili del reclutamento di cellule circolanti, del blocco della diffusione dei microrganismi e della maturazione, differenziazione e attivazione delle cellule della risposta adattativa.
 B) Le citochine agiscono solo in modo autocrino, influenzando esclusivamente la cellula che le rilascia.
 C) La sinergia tra due citochine riduce l'effetto complessivo rispetto alla somma dei singoli effetti.
@@ -125,6 +138,7 @@ ANS: A
 CAT: Complemento e citochine
 Q: Quale delle seguenti affermazioni è corretta riguardo alle citochine della famiglia
 dell'IL1?
+R:
 A) Le citochine della famiglia dell'IL1, come IL1β e IL18, sono attive senza bisogno di alcuna modificazione post-traduzionale.
 B) Le citochine della famiglia dell'IL1 vengono tutte secrete tramite un peptide segnale classico.
 C) IL1β e IL18 richiedono il taglio del loro pro-dominio da parte dell'inflammosoma per diventare biologicamente attive.
@@ -135,6 +149,7 @@ ANS: C
 CAT: Complemento e citochine
 Q: Quale delle seguenti affermazioni è corretta riguardo alle citochine della famiglia del
 TGF-beta?
+R:
 A) Il TGF-beta è prodotto principalmente dai linfociti B e dai neutrofili.
 B) I recettori delle citochine della famiglia del TGF-beta sono omodimeri costituiti da serina/treonina protein chinasi.
 C) La principale funzione del TGF-beta è la stimolazione della proliferazione e delle funzioni effettrici delle cellule immunitarie.
@@ -145,6 +160,7 @@ ANS: D
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale delle seguenti affermazioni descrive correttamente una caratteristica
 fondamentale delle glicoproteine del sistema maggiore di istocompatibilità (MHC)?
+R:
 A) Le glicoproteine MHC sono codificate da un singolo gene che determina la specificità per i peptidi.
 B) L’HLA è polimorfico, ma non esiste una correlazione tra gli aplotipi HLA e malattie autoimmuni.
 C) Il sistema MHC è altamente poligenico, ma non è mai codominante.
@@ -155,6 +171,7 @@ ANS: D
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale delle seguenti affermazioni descrive correttamente l’organizzazione dell’HLA sul
 cromosoma 6?
+R:
 A) I geni della classe II sono localizzati sul braccio lungo del cromosoma 6 e codificano per le catene alfa e beta.
 B) I geni della classe I dell’HLA classici sono rappresentati dai loci A, B e C.
 C) I geni della classe II dell’HLA includono molecole non classiche come TAPBP e LMP2, che aiutano nel processamento degli antigeni.
@@ -165,6 +182,7 @@ ANS: B
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale delle seguenti affermazioni descrive correttamente una differenza tra le classi I
 e II delle glicoproteine HLA?
+R:
 A) La classe II presenta all’esterno ciò che è stato fagocitato dalla cellula, mentre la classe I presenta ciò che è stato sintetizzato all’interno della cellula.
 B) La classe II presenta all’esterno ciò che è stato sintetizzato all’interno della cellula, mentre la classe I presenta ciò che è stato fagocitato.
 C) La classe I è coinvolta principalmente nella risposta immunitaria contro infezioni batteriche, mentre la classe II è più efficace contro le infezioni virali.
@@ -175,6 +193,7 @@ ANS: A
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale delle seguenti affermazioni descrive correttamente la localizzazione e
 l’espressione delle molecole HLA?
+R:
 A) Le molecole di classe I sono espresse solo sui linfociti T, mentre le molecole di classe II sono espresse su tutte le cellule nucleate.
 B) Le molecole di classe I sono espresse su tutte le cellule nucleate, ma i livelli di espressione sono bassi in alcuni tipi cellulari come gli spermatozoi e le cellule del sistema nervoso centrale.
 C) Le molecole di classe II sono espresse in modo costitutivo su tutte le cellule del corpo, mentre le molecole di classe I sono espresse solo in caso di infezione.
@@ -185,6 +204,7 @@ ANS: B
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale delle seguenti affermazioni descrive correttamente l’espressione delle proteine
 dell'MHC di classe I e II?
+R:
 A) L'espressione di MHC di classe I è regolata dal CIITA, che agisce legandosi direttamente al DNA del promotore dei geni HLA.
 B) L'espressione delle proteine di classe I è sempre costitutiva e non è mai influenzata da stimoli citochinici o infezioni.
 C) L'espressione di MHC di classe II è regolata dal CIITA, che interagisce con il DNA attraverso un enhanceosoma per attivare la trascrizione.
@@ -194,6 +214,7 @@ ANS: C
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale delle seguenti affermazioni riguardo i diversi tipi di proteasoma è vera?
+R:
 A) Il primo anello enzimatico del proteasoma costitutivo viene chiamato Core e presenta enzimi catalitici e non.
 B) Il timoproteasoma non possiede subunità uguali agli altri tipi di proteasoma.
 C) I peptidi idrofobici prodotti dalla subunità beta1i dell’immunoproteasoma sono i peptidi più adatti ad essere utilizzati nell’MHC di classe 1.
@@ -204,6 +225,7 @@ ANS: C
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale delle seguenti affermazioni riguardanti gli enzimi coinvolti nella
 presentazione del peptide sull’MHC di classe 1 è FALSA?
+R:
 A) Si possono trovare antigeni su MHC di classe 1 con una sequenza di aminoacidi diversa rispetto a quella dell’antigene originale.
 B) L’enzima TAP trasporta i peptidi dal reticolo endoplasmatico al citoplasma (la risposta non è esattamente questa perché è stata modificata dalla professoressa, ma era più o meno formulata così)
 C) L’enzima TAP è un dimero localizzato sulla membrana del reticolo endoplasmatico.
@@ -214,6 +236,7 @@ ANS: B
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale di queste affermazioni relative alla presentazione del peptide sull’MHC di
 classe 2 è vera?
+R:
 A) L’enzima LIP10 oblitera la tasca per il peptide.
 B) Le catepsine e l’abbassamento del Ph rimuovono tutto tranne CLIP.
 C) La subunità DM inibisce la subunità DO.
@@ -225,12 +248,14 @@ CAT: MHC/HLA e presentazione dell’antigene
 Q: La seguente affermazione è vera o falsa?
 Nelle cellule dendritiche immature, a seguito dell’endocitosi dell’MHC di classe 2,
 quest’ultimo viene eliminato grazie all’azione dell’enzima MARCH1.
+R:
 V) Vero
 F) Falso
 ANS: V
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: le APC:
+R:
 A) Sono cellule in grado di fagocitare qualsiasi tipo di antigene.
 B) Sono un gruppo che comprende molti tipi cellulari con funzioni disparate.
 C) Comprendono i linfociti B che fanno il priming, ossia attivano linfociti T naïve .
@@ -240,6 +265,7 @@ ANS: D
 
 CAT: APC e cellule dendritiche
 Q: Quale delle seguenti affermazioni sulle cellule dendritiche è vera?
+R:
 A) Si dividono in tantissime categorie.
 B) Ne sono una tipologia le cellule dendritiche plasmocitoidi, così chiamate perché hanno un aspetto simile ai linfociti B.
 C) Non hanno una funzione ben specifica nel nostro corpo.
@@ -249,6 +275,7 @@ ANS: D
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale tra le seguenti affermazioni riguardo il BCR e il TCR è FALSA?
+R:
 A) Sono recettori costituiti da proteine della classe delle immunoglobuline.
 B) Riconoscono entrambi l’antigene in forma nativa.
 C) Sono presenti su tipi cellulari differenti.
@@ -258,6 +285,7 @@ ANS: B
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale affermazione riguardante il TCR e i suoi corecettori è corretta?
+R:
 A) Esistono due tipi di eterodimeri di TCR che hanno in comune la catena alpha.
 B) Il corecettore CD4 è formato da quattro domini immunoglobulinici che legano alpha tre su MHC 1.
 C) Il corecettore CD8 è formato da due catene polipeptidiche con un unico dominio immunoglobulinico che legano beta 2 microglobulina su MHC 1.
@@ -267,6 +295,7 @@ ANS: E
 
 CAT: APC e cellule dendritiche
 Q: Quale delle seguenti affermazioni sulla ricombinazione VDJ è vera?
+R:
 A) Può avvenire sia nelle cellule dendritiche che nelle cellule linfoidi.
 B) La ricombinazione avviene in un ordine preciso, prima D con J e poi V con DJ.
 C) Il segmento D è assente nelle catene beta e delta
@@ -276,6 +305,7 @@ ANS: B
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale delle seguenti affermazioni riguardo gli enzimi RAG è corretta?
+R:
 A) Sono enzimi fondamentali solo per la ricombinazione di D con J.
 B) Funzionano come un dimero e si legano tra loro grazie ai domini NBD.
 C) L’azione di RAG1 è mediata dallo ione Na2+.
@@ -285,6 +315,7 @@ ANS: B
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Fasi della ricombinazione, quale di queste affermazioni è FALSA?
+R:
 A) RAG taglia grazie all’inserimento di una molecola d’acqua.
 B) TdT aggiunge nucleotidi casuali creando così ulteriore variabilità.
 C) Artemis si occupa di tagliare l’estremità “BLUNT”.
@@ -293,6 +324,7 @@ ANS: D
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale delle seguenti affermazioni è vera?
+R:
 A) Le CDR sono sequenze invariate del TCR, conservate nella specie.
 B) Le catene Z (o CD16), posseggono 3 sequenza ITAM intracitoplasmatiche.
 C) Le sequenze ITAM inibiscono l’attivazione della cascata di segnali.
@@ -304,12 +336,14 @@ CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: La seguente affermazione è vera o falsa?
 I corpuscoli di Hassal si trovano nella midollare del Timo ed è qui che le cellule
 vanno in apoptosi
+R:
 V) Vero
 F) Falso
 ANS: V
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale delle seguenti affermazioni è corretta?
+R:
 A) Le ETP sono cellule DN1 e inoltre sono negative per CD25 e positive invece per CD44
 B) Le CLP riconoscono il timo grazie alla selectina P presente sulle cellule stromali timiche
 C) La differenza tra i precursori della linea mieloide e i precursori della linea linfoide è che solo i primi esprimono le proteine TAP1 e TAP2
@@ -320,6 +354,7 @@ ANS: A
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale delle seguenti informazioni riguardanti il processo di maturazione delle
 cellule T nel timo è FALSA?
+R:
 A) L’interazione fondamentale per il differenziamento dei linfociti in linfociti T (e non in linfociti B) è l’interazione NOTCH-1 presente sulle ETP e DELTA-LIKE 4 presente sulle cellule epiteliali timiche della corticale.
 B) Il fattore KIT induce i linfociti T a esporre i corecettori CD4 e CD8
 C) La maturazione dei linfociti da DN a SP, è stimolata dall’ambiente circostante (ambiente del timo) e non dipende dall’espressione specifica di regioni genomiche del linfocita.
@@ -329,6 +364,7 @@ ANS: B
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: La beta selection è un processo che:
+R:
 A) Impedisce l’accensione di geni che farebbero differenziare l’ETP in linfocita B.
 B) Educa i linfociti nel timo eliminando quelli autoreattivi.
 C) Accende la “macchina” di trascrizione del TCR.
@@ -339,6 +375,7 @@ ANS: D
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale delle seguenti affermazioni riguardanti il processo di selezione timica è
 corretta?
+R:
 A) La selezione positiva serve a riconoscere e tenere in vita i linfociti T che non riconoscono l’MHC-peptide “self”
 B) Le mTEC producono peptidi privati grazie all’espressione dei regolatori della trascrizione AIRE e FEZF2
 C) I linfociti che non legano il self né abbastanza fortemente da essere eliminati né abbastanza debolmente da essere indotti a diventare dei normali linfociti T, diventano linfociti NK
@@ -348,6 +385,7 @@ ANS: E
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: L’attivazione dei linfociti T naïve:
+R:
 A) È mediata da molecole costimolatore come B7.1 e B7.2
 B) Porta il linfocita all’ espansione clonale ossia alla produzione di solo linfociti T effettori
 C) Necessita di segnalazione da parte di IL-10
@@ -358,6 +396,7 @@ ANS: A
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Il primo segnale dell’attivazione dei linfociti T (il riconoscimento del
 complesso MHC-peptide da parte del recettore TCR) ha come conseguenza:
+R:
 A) L’attivazione dell’enzima Csk, che defosforila l’enzima LCK, attivandolo
 B) L’inattivazione dell’enzima Csk, che porta alla fosforilazione dell’enzima LCK, attivandolo
 C) L’attivazione dell’enzima Csk, che fosforila l’enzima LCK, attivandolo
@@ -369,6 +408,7 @@ CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: L’attivazione di Zap-70, in seguito al riconoscimento dell’MHC-peptide da
 parte del TCR, porta all’attivazione di quattro meccanismi intracellulari. Quale
 tra quelli descritti NON è uno di questi meccanismi?
+R:
 A) Il reclutamento di ADAP
 B) L’Attivazione di Akt
 C) L’associazione di PLC-gamma a LAT e SLP76
@@ -378,6 +418,7 @@ ANS: E
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Un linfocita T può diventare energico:
+R:
 A) Durante il processo di tolleranza centrale
 B) A causa del riconoscimento di un antigene “non self”
 C) Durante i processi di selezione positiva e negativa nel timo
@@ -389,6 +430,7 @@ CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale delle seguenti affermazioni riguardanti le molecole co-stimolatore e co-
 inibitorie presenti sui linfociti T è corretta?
 DOMANDE
+R:
 A) PD1 è attivatoria e può essere espressa dalle cellule tumorali
 B) CD40L è attivatoria e induce l’attivazione dei linfociti T helper
 C) CTLA4 è inibitoria e presenta sequenze ITAM fosforilabili
@@ -398,6 +440,7 @@ ANS: D
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: I linfociti T helper follicolari sono caratterizzati da:
+R:
 A) Alta espressione di CXCR5 e bassa espressione di BCL-6
 B) Alta espressione di CXCR5 e BCL-6
 C) Bassa espressione di CXCR5 e BCL-6
@@ -407,6 +450,7 @@ ANS: B
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: I linfociti T CD8 citotossici sono in grado di non auto-degradarsi perché:
+R:
 A) Producono catepsina B che impedisce la polimerizzazione dei complessi perforina-granzimi
 B) La loro membrana è insensibile al contenuto dei granuli
 C) Producono serpina 9 che impedisce la polimerizzazione delle perforine
@@ -416,6 +460,7 @@ ANS: A
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: La sfingosina 1 fosfato (S1P):
+R:
 A) È più concentrata all’interno dei tessuti.
 B) È prodotta dalle cellule epiteliali.
 C) È ugualmente concentrata all’interno del circolo e all’interno dei tessuti.
@@ -425,6 +470,7 @@ ANS: E
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale delle seguenti affermazioni è vera?
+R:
 A) I timociti SP semimaturi escono dal timo.
 B) Basse concentrazioni di S1P portano alla down – regolazione del recettore S1PR1.
 C) I recent thymic emigrants passano dal circolo ai tessuti sfruttando Ccr7 e CD62L.
@@ -434,6 +480,7 @@ ANS: C
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quando il fattore di trascrizione FOXO1 è disattivato:
+R:
 A) Si sposta passando dal citoplasma al nucleo.
 B) Viene indotto lo spegnimento di Ccr7.
 C) Il timocita riesce ad uscire dal timo.
@@ -444,6 +491,7 @@ ANS: B
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale delle seguenti affermazioni distingue i linfociti T γ:δ dai linfociti T
 α:β?
+R:
 A) I linfociti T γ:δ hanno un TCR che si lega a molecole MHC-peptide.
 B) I linfociti T γ:δ sono presenti solo nel sangue e non nei tessuti epiteliali.
 C) I linfociti T γ:δ maturano nel midollo osseo senza passare dal timo
@@ -454,6 +502,7 @@ ANS: D
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale delle seguenti affermazioni è corretta riguardo ai linfociti T γ:δ
 nell’uomo?
+R:
 A) Possiedono un repertorio TCR molto variabile, con circa 10^16 combinazioni possibili.
 B) Sono caratterizzati da un recettore γ:δ che è MHC-ristretto.
 C) Sono prodotti durante la vita fetale durante la quale le cellule mancano dell’enzima TdT.
@@ -464,6 +513,7 @@ ANS: C
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Le cellule NKT condividono caratteristiche sia con le cellule NK sia con i
 linfociti T. Qual è una caratteristica peculiare delle NKT?
+R:
 A) Riconoscono e interagiscono con antigeni presentati dalle molecole MHC classe II.
 B) Espressione di CD56 e CD3, ma non di TCR α:β.
 C) Riconoscono glicolipidi presentati da CD1 e non peptidi su MHC.
@@ -473,6 +523,7 @@ ANS: C
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Le cellule linfoidi innate (ILC) differiscono dai linfociti T perché:
+R:
 A) Non esprimono il TCR e non vanno incontro a selezione clonale.
 B) Circolano prevalentemente nel sangue e non risiedono nei tessuti.
 C) Sono incapaci di produrre citochine.
@@ -483,6 +534,7 @@ ANS: A
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Qual è il risultato della maturazione delle cellule dendritiche indotta dai
 linfociti T γ:δ?
+R:
 A) Aumento dell’attivazione dei linfociti B per la produzione di anticorpi.
 B) Secrezione di perforine e granzimi che causano la morte della cellula dendritica.
 C) Presentazione migliorata degli antigeni da parte delle cellule dendritiche e ulteriore attivazione dei linfociti T α:β.
@@ -493,6 +545,7 @@ ANS: C
 CAT: Linfociti B e anticorpi
 Q: Qual è il meccanismo principale che determina se un BCR rimane una
 proteina di membrana o viene secreto come anticorpo?
+R:
 A) La differenza di trasduzione delle cene Igalpha e Igbeta nel loro dominio intracitoplasmatico.
 B) L’inclusione o meno degli esoni 5 e 6 nell’mRNA codificante per la catena pesante.
 C) L'interazione con linfociti T helper durante la maturazione nel midollo osseo.
@@ -503,6 +556,7 @@ ANS: B
 CAT: Linfociti B e anticorpi
 Q: Quale dei seguenti eventi è necessario per la completa formazione dei
 linfociti B maturi nel midollo osseo?
+R:
 A) L'attivazione del riarrangiamento dei segmenti V e J della catena leggera del BCR.
 B) Il riarrangiamento di segmenti V e J della catena pesante del BCR.
 C) L'interazione del pre-BCR con antigeni specifici nel midollo osseo.
@@ -513,6 +567,7 @@ ANS: A
 CAT: Linfociti B e anticorpi
 Q: Quale affermazione descrive correttamente la funzione della proteina FOXO
 nella maturazione dei linfociti B?
+R:
 A) FOXO promuove la proliferazione dei linfociti B fosforilando le regioni ITAM di Igα e Igβ.
 B) FOXO regola la trascrizione dei geni necessari per il riarrangiamento della catena leggera quando è fosforilato.
 C) FOXO è degradato quando è fosforilato, permettendo la proliferazione cellulare.
@@ -523,6 +578,7 @@ ANS: C
 CAT: Linfociti B e anticorpi
 Q: Quale delle seguenti molecole è essenziale per la formazione del complesso
 pre-BCR nei linfociti B durante la loro maturazione?
+R:
 A) IgD
 B) VpreB
 C) CD19
@@ -532,6 +588,7 @@ ANS: B
 
 CAT: Linfociti B e anticorpi
 Q: I BCR dei linfociti B1 non sono molto polimorfici perché:
+R:
 A) Fanno ipermutazione somatica.
 B) Utilizzano V e J delle catene leggere molto vicini tra loro
 C) Perché producono anticorpi naturali
@@ -541,6 +598,7 @@ ANS: D
 
 CAT: Linfociti B e anticorpi
 Q: I linfociti B2 follicolari rispetto ai B1:
+R:
 A) Si originano nella vita perinatale e il loro differenziamento può avvenire in modo solo T- indipendente
 B) Si originano solo durante la vita fetale e il loro differenziamento può avvenire in modo T- dipendente
 C) Reagiscono contro antigeni proteici e non vengono prodotti durante tutta la vita dell'individuo
@@ -551,6 +609,7 @@ ANS: E
 CAT: Linfociti B e anticorpi
 Q: Il processo che nei linfociti B2 porta alla trascrizione di geni specifici che
 determinano la proliferazione e il differenziamento cellulare segue quale processo:
+R:
 A) SYK fosforila BLNK(SLP65) all'interno del signalosoma. BLNK recluta nei siti fosforilati le principali molecole effettrici della segnalazione a valle del BCR, tra cui BTK
 B) Src kinasi Lyn fosforila BLNK(SLP65) all'interno del signalosoma. BLNK recluta nei siti fosforilati le principali molecole effettrici della segnalazione a valle del BCR, tra cui ATK
 C) SYK fosforila BLNK(SLP65) all'interno del signalosoma. GRB2 recluta nei siti fosforilati le principali molecole effettrici della segnalazione a valle del BCR, tra cui BTK
@@ -560,6 +619,7 @@ ANS: A
 
 CAT: Linfociti B e anticorpi
 Q: Cosa si intende per ipermutazione somatica e maturazione dell'affinità?
+R:
 A) Cambiamento nella conformazione e nelle funzioni svolte dai linfociti T durante un processo infiammatorio
 B) Produzione di altre classi di anticorpi, anziché le IgM
 C) La stimolazione alla sopravvivenza, la maturazione e l'attivazione dei linfociti B2
@@ -570,6 +630,7 @@ ANS: D
 CAT: Linfociti B e anticorpi
 Q: Per anergia si intende un meccanismo durante l’ontogenesi dei linfociti B2 per il
 quale:
+R:
 A) la cellula non è capace di riconoscere l’antigene.
 B) la cellula non può attivarsi.
 C) la cellula è in grado di riconoscere l’antigene ma non può attivarsi.
@@ -579,6 +640,7 @@ ANS: C
 
 CAT: Linfociti B e anticorpi
 Q: Sono tutte caratteristiche dei neutrofili B helper tranne una. Quale?
+R:
 A) Sono tra le prime cellule ad accorrere nel sito di infezione.
 B) Attività fagocitica elevata.
 C) Costituiscono in parte il pus dopo la loro morte.
@@ -588,6 +650,7 @@ ANS: D
 
 CAT: Linfociti B e anticorpi
 Q: Quale di queste affermazioni è vera per quanto riguarda la commutazione di classe?
+R:
 A) è il meccanismo che permette di passare dalla produzione di immunoglobuline della classe M ad immunoglobuline di classi differenti.
 B) causa la perdita di DNA
 C) Si ha un cambiamento della regione variabile sia della catena pesante che della catena leggera, si avrà dunque stesso isotipo, ma diverso idiotipo
@@ -597,6 +660,7 @@ ANS: A
 
 CAT: Linfociti B e anticorpi
 Q: Quale è il ruolo di AID?
+R:
 A) Deaminazione
 B) Apertura del DNA
 C) Riparazione del DNA
@@ -606,6 +670,7 @@ ANS: A
 
 CAT: Linfociti B e anticorpi
 Q: Da che cosa dipende la commutazione di classe nelle attivazioni T indipendenti?
+R:
 A) NF-Kb e AID
 B) CD40 e CD40L
 C) linfociti T helper
@@ -614,23 +679,8 @@ E) BAFF, APRIL e TACI
 ANS: E
 
 CAT: Linfociti B e anticorpi
-Q: Quale immunoglobulina è in grado di passare la placenta?
-Cosa succede durante l'interazione tra LFA-1 e ICAM-1 tra il linfocita T-helper e il linfocita
-B?
-A) IgG
-B) IgD
-C) IgE
-D) IgA
-E) IgM
-A) Determina la produzione di citochine senza influenzare la posizione della cellula
-B) Porta alla riorganizzazione dell'apparato di Golgi e al posizionamento sotto la sinapsi immunologica
-C) Attiva la produzione di interleuchine senza modificare la struttura cellulare
-D) L'interazione tra LFA-1 e ICAM-1 impedisce la riorganizzazione dell'apparato di Golgi
-E) Non ha alcun impatto sulla funzionalità del linfocita T-helper
-ANS: B
-
-CAT: Linfociti B e anticorpi
 Q: Cosa succede agli immunocomplessi piccoli non eliminati?
+R:
 A) Attivano la fagocitosi.
 B) Precipitano e causano infiammazione.
 C) Stimolano la produzione di IgG.
@@ -640,6 +690,7 @@ ANS: B
 
 CAT: Linfociti B e anticorpi
 Q: Qual è il ruolo del recettore FcγRIIB?
+R:
 A) Attivare la citotossicità.
 B) Regolare negativamente la risposta immunitaria.
 C) Favorire il trasporto delle IgA.
@@ -649,6 +700,7 @@ ANS: B
 
 CAT: Linfociti B e anticorpi
 Q: Come il recettore FcεRI trimerico contribuisce alla risposta allergica?
+R:
 A) Rilascia istamina.
 B) Attiva la fagocitosi.
 C) Vi si legano anticorpi IgE.
@@ -658,6 +710,7 @@ ANS: C
 
 CAT: Linfociti B e anticorpi
 Q: Qual è la funzione delle sequenze ITAM nei recettori FcαRI?
+R:
 A) Bloccare l’attivazione.
 B) Neutralizzare i patogeni.
 C) Attivare funzioni effettrici cellulari.
@@ -667,6 +720,7 @@ ANS: C
 
 CAT: Linfociti B e anticorpi
 Q: Quali sono gli anticorpi capaci di diffondere nei siti extra vascolari?
+R:
 A) IgG
 B) IgG e IgA
 C) solo IgA
@@ -676,6 +730,7 @@ ANS: B
 
 CAT: Organi linfoidi e traffico cellulare
 Q: I TLO:
+R:
 A) Perché si formino è necessario ci sia uno stato di infiammazione
 B) Presentano una capsula definita
 C) Non presentano strutture analoghe a quelle degli organi linfatici secondari
@@ -685,6 +740,7 @@ ANS: A
 
 CAT: Organi linfoidi e traffico cellulare
 Q: I linfociti B della zona marginale:
+R:
 A) Ricircolano e sono deputati alla produzione rapida di anticorpi ad alta affinità
 B) Ricircolano e catturano gli immunocomplessi
 C) Sono residenti e sono deputati alla produzione rapida di anticorpi ad alta affinità
@@ -694,6 +750,7 @@ ANS: E
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Nell’ordine, gli stadi dell’extravasazione dei linfociti sono:
+R:
 A) Rotolamento, appiattimento, adesione , extravasazione
 B) Adesione, appiattimento, extravasazione, rotolamento
 C) Rotolamento, adesione, appiattimento, extravasazione
@@ -703,6 +760,7 @@ ANS: C
 
 CAT: Organi linfoidi e traffico cellulare
 Q: In un linfonodo all’omeostasi, uno stimolo infiammatorio:
+R:
 A) Porta ad un ingrandimento del linfonodo perché le cellule al suo interno si ingrandiscono
 B) Porta ad un ingrandimento del linfonodo a causa della proliferazione delle sue cellule
 C) Non causa nessuna variazione alla quantità di cellule che non riguardano l’espansione clonale
@@ -713,6 +771,7 @@ ANS: B
 CAT: Organi linfoidi e traffico cellulare
 Q: Quale risposta non è corretta: “Un linfocita B che dopo l’ipermutazione somatica ha
 cambiato BCR”:
+R:
 A) Può ritornare alla zona chiara, dove le follicolari dendritiche gli presentano l’immuno complesso
 B) Se il BCR cambiato riconosce bene l’immunocomplesso che gli si presenta, il linfocita riceve segnali di sopravvivenza
 C) Se il BCR cambiato riconosce bene l’immunocomplesso che gli si presenta, il linfocita riceve segnali di apoptosi
@@ -722,6 +781,7 @@ ANS: C
 
 CAT: Memoria, vaccini e immunopatologia
 Q: La memoria immunitaria è:
+R:
 A) Antigene indipendente perché non ha bisogno di attivarsi grazie a un antigene
 B) Antigene dipendente in quanto ha bisogno di essere sempre ri-stimolata dall’antigene per permanere
 C) Antigene indipendente per avere una prima produzione di cellule della memoria e antigene dipendete per permanere
@@ -732,6 +792,7 @@ ANS: D
 CAT: Memoria, vaccini e immunopatologia
 Q: Quali cellule sono fondamentali per il mantenimento della memoria immunitaria nella
 nicchia del midollo osseo tramite la produzione di APRIL e IL-6 ?
+R:
 A) Basofili
 B) Eosinofili
 C) Monociti
@@ -741,6 +802,7 @@ ANS: B
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quale tra le seguenti affermazioni è corretta:
+R:
 A) Le cellule T della memoria effettrici si trovano solo in circolo
 B) Le cellule T della memoria centrali si trovano nella linfa, negli organi linfatici secondari e nelle mucose
 C) Le cellule T della memoria residenti si trovano ovunque
@@ -750,6 +812,7 @@ ANS:
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Le LLPCs:
+R:
 A) Si trovano soprattutto nelle mucose e nei polmoni
 B) La loro interazione è alla base del meccanismo di ingresso uscita dei linfociti nella circolazione o nei tessuti infiammati
 C) La loro funzione è quella di dare origine alla memoria umorale costitutiva
@@ -759,6 +822,7 @@ ANS: C
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Cosa si intende per anergia periferica:
+R:
 A) La presenza in periferia di cellule che svolgono il ruolo di immunosopprimere eventuali risposte contro il self
 B) La presenza di organi immunologicamente privilegiati per via della presenza di barriere anatomiche
 C) Il meccanismo secondo cui cellule specifiche per un antigene self in periferia non riescono a dare origine a una risposta se non ricevono costimolazione
@@ -768,6 +832,7 @@ ANS: C
 
 CAT: Memoria, vaccini e immunopatologia
 Q: I vaccini non vivi:
+R:
 A) Possono essere somministrati a individui immunocompromessi
 B) Richiedono la presenza di adiuvanti
 C) Possono essere composti da componenti del microorganismo purificate
@@ -777,6 +842,7 @@ ANS: D
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quale di queste caratteristiche è associabile al vaccino contro il morbillo?
+R:
 A) Può causare lo sviluppo della panencefalite sclerosante acuta, più pericolosa del morbillo stesso
 B) Non è un vaccino obbligatorio in Italia
 C) Fa parte delle malattie potenzialmente eradicabili, se ci fosse un’adesione vaccinale elevata
@@ -786,6 +852,7 @@ ANS: C
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quale di queste affermazioni riguardo alla vaccinazione è corretta?
+R:
 A) È nata da un’osservazione riguardo l’immunità delle mungitrici, durante il periodo di diffusione del vaiolo
 B) Inizialmente prevedeva l’utilizzo di vaccini non vivi
 C) È importante solo per gli esseri umani e non ha impatto al di fuori della salute umana
@@ -795,6 +862,7 @@ ANS: A
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quali di questi non è un vaccino obbligatorio in Italia?
+R:
 A) Morbillo
 B) Varicella
 C) Tetano
@@ -804,6 +872,7 @@ ANS: E
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quali dei seguenti è un FALSO mito sui vaccini?
+R:
 A) Il vaccino contro il morbillo può causare una forma di encefalite transitoria
 B) I vaccini contengono mercurio, formaldeide e alluminio in quantità nocive per l’uomo
 C) I vaccini “non vivi” spesso portano ad una risposta immunitaria debole
@@ -813,6 +882,7 @@ ANS: B
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Le reazioni di ipersensibilità:
+R:
 A) sono manifestazioni in cui c’è una risposta eccessiva del sistema immunitario nei confronti di agenti infettivi
 B) non provocano danni tissutali
 C) sono manifestazioni in cui c'è una risposta eccessiva del sistema immunitario nei confronti di antigeni potenzialmente innocui o antigeni self
@@ -822,6 +892,7 @@ ANS: C
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Sono tutte caratteristiche principali degli allergeni tranne una, quale?
+R:
 A) Hanno alta stabilità
 B) Sono altamente solubili
 C) Sono spesso delle proteasi
@@ -831,6 +902,7 @@ ANS: E
 
 CAT: Memoria, vaccini e immunopatologia
 Q: L’ipersensibilità di tipo primo:
+R:
 A) non è causata da IgE specifiche contro un determinato antigene
 B) è resa possibile dalla presenza dei linfociti T helper di tipo 2
 C) è resa possibile dalla presenza dei linfociti T helper di tipo 1
@@ -840,6 +912,7 @@ ANS: B
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quale di queste affermazioni è falsa?
+R:
 A) La molecola principale della reazione allergica è l’istamina, rilasciata a seguito della degranulazione di mastociti e basofili
 B) Lo shock anafilattico è la più grave manifestazione della reazione allergica immediata
 C) Vengono usati dei test allergometrici per diagnosticare l’allergia come i prick test o i RAST test
@@ -849,6 +922,7 @@ ANS: E
 
 CAT: Memoria, vaccini e immunopatologia
 Q: L’atopia:
+R:
 A) non è dovuta a degranulazione di mastociti e basofili
 B) una forma di ipersensibilità di tipo secondo riguardante la cute
 C) è una manifestazione con una bassa frequenza all’interno della popolazione
@@ -858,6 +932,7 @@ ANS: D
 
 CAT: Memoria, vaccini e immunopatologia
 Q: L’ipersensibilità di tipo II:
+R:
 A) È orchestrata dai linfociti B lungo sopravviventi in risposta ad antigeni solubili
 B) È orchestrata da linfociti T helper 1 in risposta ad antigeni solubili
 C) È orchestrata da linfociti T helper 2 in risposta ad antigeni sulla membrana cellulare
@@ -867,6 +942,7 @@ ANS: D
 
 CAT: Memoria, vaccini e immunopatologia
 Q: La malattia di Graves:
+R:
 A) È causata da anticorpi agonisti contro il recettore del TSH
 B) È causata da anticorpi agonisti contro il recettore del TRH
 C) È causata da anticorpi agonisti contro il recettore dell’acetilcolina
@@ -876,6 +952,7 @@ ANS: A
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Le patologie autoimmuni:
+R:
 A) Si verificano in caso di ipersensibilità di tipo I
 B) Sono tutte dovute a risposte cellulo-mediate
 C) Sono dovute alla formazione di immunocomplessi piccoli che si depositano
@@ -885,6 +962,7 @@ ANS: D
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Stimolo una coltura linfocitaria con un mitogeno. Mi aspetto che:
+R:
 1) circa il 5% dei linfociti venga attivato
 2) circa il 25% dei linfociti venga attivato
 3) vengano attivati tutti i linfociti
@@ -892,6 +970,7 @@ ANS: 3
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Per il locus HLA-B sono state identificate 42 specificità alleliche. Qual è il numero massimo di alleli HLA-B che può esprime simultaneamente una cellula?
+R:
 1) 42
 2) 42x2
 3) 42x42
@@ -901,6 +980,7 @@ ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Le molecole Lmp2 e Lmp7 sono: (due risposte)
+R:
 1) codificate da geni localizzati tra quelli di MHC classe I
 2) codificate da geni localizzati tra quelli MHC di classe III
 3) dei trasportatori di peptidi
@@ -911,6 +991,7 @@ ANS: 2,4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Abitualmente i superantigeni:
+R:
 1) necessitano la processazione da parte delle APC
 2) non necessitano della presentazione da parte delle APC
 3) sono presentati in associazione con MHC di classe I
@@ -919,12 +1000,14 @@ ANS: 4
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Sono più frequenti i CTL specifici per:
+R:
 1) peptidi di origine endogena
 2) peptidi che derivano da antigeni endocitati
 ANS: 1
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Perché tendenzialmente le molecole MHC di classe II non si legano ai peptidi presenti all’interno del reticolo ergastoplasmatico?
+R:
 1) perché i peptidi endogeni hanno preferenza per le molecole MHC di classe I
 2) perché la catena invariante legata alle molecole di classe II rende la tasca inaccessibile ai peptidi
 3) perché la catena invariante neo-prodotta spiazza i peptidi già legati alle molecole di classe II, essendo più affine
@@ -933,6 +1016,7 @@ ANS: 2
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Un retrovirus viene trasmesso dalla mamma al feto. Se questo retrovirus è un superantigene, esso determinerà nel neonato.
+R:
 1) la super reazione dei linfociti T
 2) l’espansione clonale del 5-25% dei linfociti T che reagiranno intensamente contro il superantigene
 3) la soppressione generalizzata della risposta T
@@ -941,6 +1025,7 @@ ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Gli ibridi F1 tra ceppi inbred accettano il trapianto di cute di un fratello?
+R:
 1) sì
 2) no
 3) solo nel 50% dei casi
@@ -949,6 +1034,7 @@ ANS: 1
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: I peptidi che derivano dall’endocitosi di proteine dell’organismo competono con quelli estranei endocitati per il legame alla tasca del MHC di classe II?
+R:
 1) sì sempre
 2) s’, se vengono riconosciuti come non self
 3) no mai
@@ -956,6 +1042,7 @@ ANS: 1
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Gli anticorpi monoclonali raggruppati in un CD (cluster of differentiation):
+R:
 1) riconoscono lo stesso complesso molecolare
 2) sono della stessa classe di immunoglobuline
 3) riconoscono la stessa parte della molecola (lo stesso determinante antigenico)
@@ -964,6 +1051,7 @@ ANS: 1
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Nei linfociti di un individuo A2 e B3, il capping dell’antigene MHC A2 ottenuto con anticorpi anti-classe I determina il co-capping dell’antigene B3?
+R:
 1) Sì, perché sono entrambi antigeni di classe I
 2) Sì, perché le due catene sono interconnesse
 3) Si, perché formano un’unica struttura di classe II
@@ -972,12 +1060,14 @@ ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: I polimorfismi MHC di un individuo derivano da:
+R:
 1) riarrangiamento genico, durante l’embriogenesi a partire da un piccolo repertorio di geni ereditati dal padre o dalla madre
 2) da alleli ereditati tali e quali dai genitori
 ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: La beta 2 microglobulina è:
+R:
 1) codificata da un gene polimorfico localizzato vicino a quelli del TNF
 2) codificata da un gene polimorfico al di fuori dell’MHC
 3) associata alle glicoproteine MHC di classe II
@@ -986,12 +1076,14 @@ ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Un linfocita CD4+ interagisce con una molecola MHC:
+R:
 1) di classe I
 2) di classe II
 ANS: 2
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: L’esclusione allelica è un fenomeno che si verifica per:
+R:
 1) il TCR
 2) gli antigeni MHC
 3) per entrambi
@@ -999,12 +1091,14 @@ ANS: 1
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Un linfocita CD4+, riconosce abitualmente uno stesso peptide quando viene presentato da un diverso allele MHC?
+R:
 1) si
 2) no
 ANS: 2
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Gli antigeni CD4 e CD8 sono espressi contemporaneamente dai:
+R:
 1) pro-timociti appena arrivati nel timo
 2) timociti corticali che non hanno ancora interagito con le molecole MHC
 3) linfociti T vergini appena usciti dal timo
@@ -1013,12 +1107,14 @@ ANS: 2
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: E’ vero che gli eptameri che servono per il riarrangiamento dei geni del TCR sono altamente polimorfici?
+R:
 1) sì
 2) no
 ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Come di ottengono i ceppi inbred di topo?
+R:
 1) mediante fecondazione in vitro e re-impianto dell’uovo fecondato
 2) incrociando sempre gli stessi genitori
 3) con incroci fratello x sorella per almeno 20 generazioni
@@ -1028,6 +1124,7 @@ ANS: 3
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Durante la maturazione dei linfociti T, quale fatto fa decidere se un linfocita maturerà come CD4 o CD8? Le caratteristiche:
+R:
 1) del CD4 di quella cellula
 2) del CD8 di quella cellula
 3) del CD2 di quella cellula
@@ -1038,6 +1135,7 @@ ANS: 5
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Le CDR3 sono regioni:
+R:
 1) polimorfiche delle molecole MHC coinvolte nel legame con il peptide
 2) monomorfiche del TCR
 3) del TCR coinvolte principalmente nel legame con il peptide
@@ -1046,12 +1144,14 @@ ANS: 3
 
 CAT: Complemento e citochine
 Q: Fisiologicamente IL2 agisce come fattore:
+R:
 1) di competenza, da G0 a G1
 2) di progressione, da G1 a S
 ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Per complementazione in trans degli antigeni MHC di classe II si intende che:
+R:
 1) una catena alfa di un locus si associa con la catena beta di un altro locus
 2) si possono formare omodimeri alfa alfa
 3) si possono formare omodimeri beta beta
@@ -1060,6 +1160,7 @@ ANS: 4
 
 CAT: Immunità innata e infiammazione
 Q: La tuftsina deriva dalla digestione enzimatica:
+R:
 1) del C
 2) del lisozima
 3) dell’albumina
@@ -1070,6 +1171,7 @@ ANS: 4
 
 CAT: Immunità innata e infiammazione
 Q: Qual è il pH della cute?
+R:
 1) uno-tre
 2) tre-sei
 3) sei-otto
@@ -1078,6 +1180,7 @@ ANS: 2
 
 CAT: Immunità innata e infiammazione
 Q: La capsula è un mezzo elaborato dai batteri per:
+R:
 1) inibire la chemiotassi dei fagociti
 2) impedire la fagocitosi
 3) inibire la formazione di fasolisosomi
@@ -1087,6 +1190,7 @@ ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Una cellula che manca di Tap-1 e Tap-2 presenta: (due risposte)
+R:
 1) molecole MHC di classi I normali
 2) poche molecole MHC di classe I instabili
 3) molecole MHC di classe II normali
@@ -1095,6 +1199,7 @@ ANS: 2,3
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Le molecole Lmp2 e Lmp7 sono: (due risposte)
+R:
 1) codificate da geni localizzati tra quelli di MHC classe I
 2) codificate da geni localizzati tra quelli MHC di classe III
 3) dei trasportatori di peptidi
@@ -1103,6 +1208,7 @@ ANS: 2,4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Una determinata tasca MHC può legare potenzialmente:
+R:
 1) un solo, ben preciso peptide
 2) circa 10-20 peptidi diversi
 3) circa 1000-2000 peptidi diversi
@@ -1111,12 +1217,14 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: Per la cooperazione T e B è necessario che entrambi riconoscano la stessa porzione di antigene verso cui saranno diretti gli anticorpi?
+R:
 1) si
 2) no
 ANS: 2
 
 CAT: Memoria, vaccini e immunopatologia
 Q: La sindrome SCID legata alla deficienza della catena gamma del recettore dell’IL2 è:
+R:
 1) più comune nei maschi
 2) più comune nelle femmine
 3) egualmente frequente nei due sessi
@@ -1124,6 +1232,7 @@ ANS: 1
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Cosa si intende dicendo che un linfocita T è diventato competente?
+R:
 1) è appena uscito matura dal timo
 2) è passato da G0 a G1
 3) è passato da G1 a S
@@ -1131,6 +1240,7 @@ ANS: 2
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Come agisce la ciclosporina A? Complessandosi con le immunofiline inibisce:
+R:
 1) la calcineurina
 2) la fosfolipasi A2
 3) la chinasi p561ck
@@ -1141,6 +1251,7 @@ ANS: 1
 
 CAT: Immunità innata e infiammazione
 Q: Il potere battericida delle lacrime è dovuto principalmente alla presenza di:
+R:
 1) lisozima
 2) tuftsina
 3) antibiosi esercitata dai batteri saprofiti
@@ -1151,6 +1262,7 @@ ANS: 1
 
 CAT: Complemento e citochine
 Q: Qual è, circa, la quantità del complemento per ml nel siero umano? Alcuni:
+R:
 1) picogrammi
 2) microgrammi
 3) milligrammi
@@ -1159,6 +1271,7 @@ ANS: 3
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: E' vero che le risposte cellulari di tipo adattativo: (due risposte)
+R:
 1) hanno un’induzione di poche ore
 2) sono oligo o mono clonali
 3) coinvolgono tutta una popolazione di cellule
@@ -1167,6 +1280,7 @@ ANS: 2,4
 
 CAT: Complemento e citochine
 Q: Il TNF può indurre la necrosi emorragica dei tumori formati da cellule:
+R:
 1) che esprimono il recettore del TNF
 2) che non esprimono il recettore del TNF
 3) sia che esprimono sia che non esprimono il recettore del TNF
@@ -1174,6 +1288,7 @@ ANS: 3
 
 CAT: Immunità innata e infiammazione
 Q: Quale leucocita rilascia quantità elevate di istamina?
+R:
 1) gli eosinofili
 2) i basofili
 3) i macrofagi
@@ -1182,12 +1297,14 @@ ANS: 2
 
 CAT: Immunità innata e infiammazione
 Q: E' vero che i batteri possono venir opsonizzati dalla proteina C reattiva?
+R:
 1) sì
 2) no
 ANS: 1
 
 CAT: Immunità innata e infiammazione
 Q: Il lisozima: (due risposte)
+R:
 1) è una citochina plurifunzionale
 2) agisce principalmente sui batteri gram +
 3) determina il catabolismo lipidico caratteristico della cachessia
@@ -1199,6 +1316,7 @@ ANS: 2,5
 
 CAT: Immunità innata e infiammazione
 Q: In genere la vita media dei neutrofili nei tessuti è:
+R:
 1) di alcuni secondi
 2) di alcuni minuti
 3) di alcune ore
@@ -1209,6 +1327,7 @@ ANS: 4
 
 CAT: Immunità innata e infiammazione
 Q: Quale leucocita può svolgere un’azione anti-infiammatoria degradando le sostanze rilasciate dai basofili?
+R:
 1) monociti
 2) macrofagi
 3) macrofagi sopressori
@@ -1219,12 +1338,14 @@ ANS: 4
 
 CAT: Immunità innata e infiammazione
 Q: Il macrofago, per uccidere una cellula eucariotica, deve fagocitarla?
+R:
 1) si
 2) no
 ANS: 1
 
 CAT: Immunità innata e infiammazione
 Q: Quale leucocita risponde ai prodotti rilasciati dai vermi?
+R:
 1) macrofagi
 2) eosinofili
 3) neutrofili
@@ -1233,6 +1354,7 @@ ANS: 2
 
 CAT: Immunità innata e infiammazione
 Q: A che cosa si lega la proteina C reattiva:
+R:
 1) alle endotossine batteriche
 2) al TNF
 3) al lisozima
@@ -1241,6 +1363,7 @@ ANS: 4
 
 CAT: Immunità innata e infiammazione
 Q: Nella formula leucocitaria di un uomo normale, i granulociti neutrofili sono il:
+R:
 1) 1-5 %
 2) 5-10 %
 3) 10-30 %
@@ -1251,6 +1374,7 @@ ANS: 5
 
 CAT: Complemento e citochine
 Q: L’apoptosi viene indotta direttamente dal TNF:
+R:
 1) solo in alcune cellule tumorali che esprimono il recettore del TNF
 2) anche in cellule tumorali che non esprimono il recettore del TNF
 3) sia in cellule che esprimono sia in cellula che non esprimono il recettore del TNF
@@ -1258,6 +1382,7 @@ ANS: 1
 
 CAT: Immunità innata e infiammazione
 Q: Nei macrofagi attivati:
+R:
 1) aumenta il consumo di glucoso e diminuisce quello di ossigeno
 2) diminuisce il consumo di glucoso e aumenta quello di ossigeno
 3) diminuisce sia il consumo di glucoso che quello di ossigeno
@@ -1266,6 +1391,7 @@ ANS: 4
 
 CAT: Immunità innata e infiammazione
 Q: L’azione antibatterica della lactoferrina dipende principalmente dalla sua capacità:
+R:
 1) di agire come enzima proteolitico
 2) di opsonizzare
 3) di scindere i muco-peptidi
@@ -1275,6 +1401,7 @@ ANS: 5
 
 CAT: Immunità innata e infiammazione
 Q: In genere i batteri inibiscono la fagocitosi:
+R:
 1) acquisendo la capsula
 2) ricoprendosi di cera
 3) fuoriuscendo rapidamente dal vacuolo
@@ -1285,12 +1412,14 @@ ANS: 6
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Le leggi dello stato italiano consentono l’espianto di organi da donatori viventi?
+R:
 1) sì
 2) no
 ANS: 1
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quale tra questi è un tipico auto-trapianto? (due risposte)
+R:
 1) polmone
 2) midollo osseo
 3) cuore
@@ -1302,6 +1431,7 @@ ANS: 2,5
 
 CAT: Complemento e citochine
 Q: Il recettore p90 dell’IFN gamma è espresso: (due risposte)
+R:
 1) sui linfociti T quiescenti (G0)
 2) da cellule di vari tessuti
 3) dai linfociti T in fase di progressione
@@ -1310,6 +1440,7 @@ ANS: 2,4
 
 CAT: Complemento e citochine
 Q: Quali catene del recettore del IL2 trasducono il segnale? (due risposte)
+R:
 1) alfa
 2) beta
 3) gamma
@@ -1317,6 +1448,7 @@ ANS: 2,3
 
 CAT: Complemento e citochine
 Q: Quale catena del recettore del IL2 viene rilasciata (shed) dalla membrana dei linfociti T in fase di progressione?
+R:
 1) alfa
 2) beta
 3) gamma
@@ -1324,6 +1456,7 @@ ANS: 1
 
 CAT: Complemento e citochine
 Q: Recupero da una coltura linfocitaria i linfociti T stimolati da un antigene. Se all’analisi con il citofluorografo essi non esprimono la p90 del recettore del IFN gamma, esprimono bassi livelli della catena beta del recettore di IL2 e alti livelli della catena alfa del IL2, essi saranno probabilmente linfociti:
+R:
 1) quiescenti in G0
 2) in fase di competenza
 3) ormai attivati, in fase avanzata di progressione
@@ -1331,6 +1464,7 @@ ANS: 3
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Un bambino affetto da morbillo genera CTL specifici per i peptidi del virus del morbillo. Questi CTL, in vitro, in un testi di 4 ore, uccideranno i fibroblasti di un individuo infettati dal virus del morbillo?
+R:
 1) sì, purché siano infettati dal virus del morbillo
 2) sì, ma solo se i fibroblasti infettati dal virus del morbillo esprimono tutti gli antigeni MHC eguali a quelli del bambino
 3) sì, solo se i fibroblasti infettati dal virus del morbillo esprimono almeno tutti gli antigeni MHC di classe I eguali a quelli del bambino
@@ -1340,6 +1474,7 @@ ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Nei linfociti di un individuo DR4, il capping della catena alfa ottenuto con anticorpi anti-alfa DR4 determina il co-capping della catena beta?
+R:
 1) sì, perché sono entrambi antigeni di classe I
 2) si, perché sono entrambi antigeni di classe II
 3) si, perché le due catene sono fisicamente associate
@@ -1349,12 +1484,14 @@ ANS: 3
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: E’ vero che le sequenze nucleotidiche che codificano per le regioni N sono presenti nel DNA delle cellule staminali e dei pro-timociti che stanno per entrare nel timo?
+R:
 1) sì
 2) no
 ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Nell’uomo, con quale ordine riarrangiano i geni delle catene pesanti H e delle catene leggere di tipo k e di tipo lambda delle Ig?
+R:
 1) H, k, lambda
 2) H, lambda, k
 3) lambda, k, H
@@ -1363,6 +1500,7 @@ ANS: 1
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: I topi che presentano difetti nell’espressione dei geni RAG1 e RAG2 hanno in circolo:
+R:
 1) solo linfociti T maturi e nessun linfocita B maturo
 2) solo linfociti B maturi e nessun linfocita T maturo
 3) nessun linfocita T o B maturo
@@ -1370,12 +1508,14 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: L’aggregazione di alcune Ig di membrana di un linfocita B indotta dal contatto con un antigene convenzionale, può essere sufficiente a far proliferare quel linfocita B?
+R:
 1) sì
 2) no
 ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: La produzione delle proteine chiamate V-preB e lambda 5 si verifica:
+R:
 1) durante tutta la vita dei linfociti B
 2) dopo il riarrangiamento di alcuni geni codificanti la loro parte variabile
 3) solo in seguito ad attivazione dei linfociti B
@@ -1388,6 +1528,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: Durante la maturazione nel midollo il linfocita comincia a presentare la catena pesante mu: (due risposte)
+R:
 1) nel citoplasma, ma solo dopo il riarrangiamento dei geni della catena leggera
 2) nel citoplasma, già prima del riarrangiamento dei geni della catena leggera
 3) in membrana, anche prima del riarrangiamento dei geni della catena leggera, associata ad altre proteine
@@ -1396,6 +1537,7 @@ ANS: 2,3
 
 CAT: Linfociti B e anticorpi
 Q: Un linfocita B immaturo esprime in membrana:
+R:
 1) IgA
 2) IgG
 3) IgE
@@ -1408,6 +1550,7 @@ ANS: 5
 
 CAT: Linfociti B e anticorpi
 Q: A quale delle seguenti classi di Ig si può associare la catena J?
+R:
 1) IgA
 2) IgG1
 3) IgG3
@@ -1417,6 +1560,7 @@ ANS: 1
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Una delle caratteristiche della risposta immunitaria secondaria è:
+R:
 1) produzione soprattutto di IgM
 2) poter essere indotta da una bassa dose di immunogeno
 3) produzione di anticorpi a bassa affinità
@@ -1425,6 +1569,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Gli antigeni timo-indipendenti: (due risposte)
+R:
 1) inducono soprattutto IgM
 2) sono principalmente proteine
 3) inducono una risposta secondaria in seguito ad un secondo inoculo
@@ -1434,6 +1579,7 @@ ANS: 1,5
 
 CAT: Linfociti B e anticorpi
 Q: Quali determinanti delle Ig possono essere immunogenici nello stesso individuo che le ha prodotte?
+R:
 1) nessun determinante, sono proteine self del tutto tollerate
 2) quelli isotipici
 3) quelli idiotipici
@@ -1442,6 +1588,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: La popolazione cellulare ottenuta dopo la fusione tra cellule spleniche e mielomi difettivi viene coltivata in terreno HAT. Quale sostanza inibisce la usuale via di sintesi dei nucleotidi?
+R:
 1) ipoxantina
 2) aminopterina
 3) timidina
@@ -1449,6 +1596,7 @@ ANS: 2
 
 CAT: Immunità innata e infiammazione
 Q: Il CD16 espresso sulle cellule NK è associato a:
+R:
 1) un omodimero zeta-zeta che si riscontra associato anche con il TCR
 2) un omodimero gamma-gamma che si riscontra associato anche con il TCR
 3) un omodimero gamma-gamma che si riscontra associato anche con il FcR epsilon
@@ -1457,6 +1605,7 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: I recettori per l’Fc delle IgG appartengono alla:
+R:
 1) superfamiglia delle Ig
 2) famiglia delle integrine
 3) famiglia delle serpine
@@ -1464,12 +1613,14 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: Si ottengono generalmente anticorpi più affini per un antigene quando:
+R:
 1) si inocula tanto antigene
 2) si inocula poco antigene
 ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Qual è il locus di classe I che sierologicamente risulta più polimorfico?
+R:
 1) B
 2) C
 3) E
@@ -1479,12 +1630,14 @@ ANS: 1
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Esistono comunemente linfociti T che esprimono contemporaneamente un TCR delta e alfa/beta?
+R:
 1) sì
 2) no
 ANS: 2
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Utilizzando i topi transgenici si è visto che, durante l’educazione timica, i linfociti che producono un TCR che interagisce, ma con bassa avidità con gli antigeni di classe I del timo:
+R:
 1) vengono eliminati in quando indotti al suicidio
 2) esprimeranno il CD8
 3) esprimeranno il CD4
@@ -1495,18 +1648,21 @@ ANS: 4
 
 CAT: Memoria, vaccini e immunopatologia
 Q: La reazione di rigetto di II set di un lembo di cute estranea avviene:
+R:
 1) solo se viene trapiantata nella stessa zona corporea
 2) anche quando la cute viene trapiantata in un’altra qualsiasi parte dell’organismo
 ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: I ceppi di topi singenici:
+R:
 1) hanno tutti i geni in omozigosi
 2) hanno solo i MHC in omozigosi
 ANS: 1
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Da chi sono espressi gli antigeni CD1?
+R:
 1) da tutti i linfociti T
 2) dai pro-timociti T prima che arrivino nel timo
 3) da molti linfociti durante l’educazione timica
@@ -1516,6 +1672,7 @@ ANS: 3
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Gli antigeni MHC di classe II sono: (due risposte)
+R:
 1) caratteristici di tutte le cellule nucleate
 2) inducibili dal complemento
 3) inducibili da IL6
@@ -1527,6 +1684,7 @@ ANS: 4,5
 
 CAT: Linfociti B e anticorpi
 Q: Nel reticolo degli idiotipi, l’immagine interna dell’antigene può essere data da anticorpi:
+R:
 1) Ab1
 2) Ab2
 3) Ab3
@@ -1534,6 +1692,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Gli apteni possono legarsi agli anticorpi:
+R:
 1) solo quando sono coniugati ad un carrier
 2) anche quando non sono coniugati ad un carrier
 3) mai
@@ -1541,6 +1700,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Il frammento secretorio delle IgA è sintetizzato:
+R:
 1) dalle stesse plasmacellule che secernono IgA, dove agisce come molecola chaperone
 2) dai linfociti Th2
 3) dai linfociti Th1
@@ -1550,6 +1710,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: Dopo quanto tempo dal riconoscimento dell’antigene, un linfocita B è completamente differenziato in plasmacellula?
+R:
 1) sei ore
 2) un giorno
 3) sei giorni
@@ -1558,6 +1719,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: Una plasmacellula presenta in membrana rispetto al linfocita B da cui deriva:
+R:
 1) la stessa quantità di IgM e IgD se si tratta di una risposta primaria
 2) IgG soltanto, se si tratta di una risposta secondaria
 3) la stessa quantità di IgM e IgD solo se si tratta di una risposta T-dipendente
@@ -1567,6 +1729,7 @@ ANS: 5
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Per avere una risposta proliferativa in vitro verso un antigene convenzionale occorre: (due risposte)
+R:
 1) pre-immunizzare il donatore di linfociti
 2) usare una grande dose di antigene
 3) presentare ai linfociti T l’antigene associato a MHC da parte delle APC
@@ -1577,6 +1740,7 @@ ANS: 1,3
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Dopo l’attivazione le cellule endoteliali esprimono per prime:
+R:
 1) le molecole CAM
 2) le integrine
 3) le selectine
@@ -1584,6 +1748,7 @@ ANS: 3
 
 CAT: Immunità innata e infiammazione
 Q: Nel sangue le cellule NK sono circa il 3% di:
+R:
 1) tutti i leucociti
 2) dei neutrofili
 3) dei monociti
@@ -1593,6 +1758,7 @@ ANS: 4
 
 CAT: Complemento e citochine
 Q: In genere, dopo un’infezione virale, dopo quanto tempo si raggiungono i titoli più elevati di IFN?
+R:
 1) alcuni secondi
 2) alcuni minuti
 3) alcune ore
@@ -1602,6 +1768,7 @@ ANS: 3
 
 CAT: Complemento e citochine
 Q: Quale tra queste citochine non è codificata dalla famiglia di geni sul cromosoma 5q?
+R:
 1) IL3
 2) IL4
 3) IL5
@@ -1613,18 +1780,21 @@ ANS: 7
 
 CAT: Complemento e citochine
 Q: I vari costituenti del complemento sono secreti dai macrofagi:
+R:
 1) in forma costitutiva
 2) solo in seguito ad attivazione dei macrofagi
 ANS: 1
 
 CAT: Complemento e citochine
 Q: IL8 è una tipica chemochina della famiglia:
+R:
 1) cys-cys
 2) cys-x-cys
 ANS: 2
 
 CAT: Immunità innata e infiammazione
 Q: Il PAF è:
+R:
 1) una proteina
 2) una glicoproteina
 3) una lipoproteina
@@ -1634,6 +1804,7 @@ ANS: 5
 
 CAT: Immunità innata e infiammazione
 Q: In genere i recettori che hanno determinato la fagocitosi:
+R:
 1) rimangono sulla membrana del vacuolo fino al suo re-inserimento sulla membrana cellulare
 2) si distaccano dal vacuolo e autonomamente vanno a reinserirsi sulla membrana
 3) vengono internalizzati e digeriti
@@ -1641,6 +1812,7 @@ ANS: 2
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Le molecole CAM fanno parte:
+R:
 1) della superfamiglia delle Ig
 2) delle integrine
 3) delle selectine
@@ -1648,12 +1820,14 @@ ANS: 1
 
 CAT: Organi linfoidi e traffico cellulare
 Q: E' vero che le cellule endoteliali stimolate opportunamente producono varie citochine?
+R:
 1) sì
 2) no, esprimono solo molecole di adesione
 ANS: 1
 
 CAT: Complemento e citochine
 Q: Quale, tra queste citochine, tende a reprimere l’attività delle cellule NK?
+R:
 1) IL1
 2) IL2
 3) IL3
@@ -1664,6 +1838,7 @@ ANS: 6
 
 CAT: Complemento e citochine
 Q: Per quale citochina è stato caratterizzato un inibitore naturale che compete con la citochina a livello del recettore, a cui si lega con un’affinità eguale a quella della citochina?
+R:
 1) nessuna citochina
 2) IFN gamma
 3) IL1
@@ -1676,18 +1851,21 @@ ANS: 3
 
 CAT: Immunità innata e infiammazione
 Q: Lo stress agisce sulle cellule NK:
+R:
 1) aumentandone l’attività citolitica
 2) diminuendone l’attività citolitica
 ANS: 2
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: E' vero che la risposta adattativa cellulare è data dall’espansione clonale dei linfociti T reattivi?
+R:
 1) sì
 2) no
 ANS: 1
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: In genere, in assenza di beta 2 microglobulina, gli antigeni MHC di classe I:
+R:
 1) vengono sintetizzati ed espressi sulla membrana normalmente
 2) non vengono sintetizzati
 3) vengono sintetizzati, ma non vengono espressi stabilmente in membrana
@@ -1696,6 +1874,7 @@ ANS: 3
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Dopo quale regione MHC si trovano i geni RING?
+R:
 1) DP
 2) DQ
 3) DR
@@ -1706,12 +1885,14 @@ ANS: 4
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: I linfociti T gamma-delta hanno due tipi di recettore che sono tra loro differenti. Esistono due forme:
+R:
 1) della catena gamma
 2) della catena delta
 ANS: 1
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Le molecole CD4: (due risposte)
+R:
 1) stabiliscono un’adesione selettiva con le molecole MHC di classe I
 2) stabiliscono un’adesione selettiva con le molecole MHC di classe II
 3) attivano protein chinasi citoplasmatiche
@@ -1720,6 +1901,7 @@ ANS: 2,3
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quali sono le caratteristiche del TCR gamma-delta?
+R:
 1) è associato a CD4
 2) è associato a CD8
 3) è caratteristico di cellule che attraversano le mucose
@@ -1728,6 +1910,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: L’avidità di un anticorpo è:
+R:
 1) complesso di forze che stabilizzano il legame tra antigene e anticorpo
 2) il complesso di forze con cui un singolo sito combinatorio lega un determinante antigenico
 3) la capacità di discriminare tra antigene omologo e altri antigeni
@@ -1735,12 +1918,14 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: Le regioni VH e VL delle immunoglobuline sono codificate da:
+R:
 1) lo stesso pool di geni V
 2) da pool diversi di geni V
 ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Le emazie di gruppo 0 sono generalmente agglutinate da anticorpi presenti in individui:
+R:
 1) di gruppo A
 2) di gruppo B
 3) di gruppo AB
@@ -1750,6 +1935,7 @@ ANS: 5
 
 CAT: Linfociti B e anticorpi
 Q: Un individuo Rh negativo:
+R:
 1) manca del gene D
 2) manca del gene H
 3) manca del gene C
@@ -1759,12 +1945,14 @@ ANS: 1
 
 CAT: Memoria, vaccini e immunopatologia
 Q: I ceppi di topi high responder e low responder sono stati ottenuti da G. Biozzi utilizzando:
+R:
 1) un antigene sintetico semplice, con un unico determinante antigenico
 2) un antigene naturale complesso, con numerosi determinanti antigenici
 ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Gli anticorpi AB0 sono: (tre risposte)
+R:
 1) in grado di attraversare il filtro placentare
 2) prevalentemente di tipo IgM
 3) preformati anche in assenza di specifica immunizzazione
@@ -1774,6 +1962,7 @@ ANS: 2,3,5
 
 CAT: Memoria, vaccini e immunopatologia
 Q: La tolleranza dei linfociti B è: (tre risposte)
+R:
 1) più duratura di quella dei linfociti T
 2) meno duratura di quella dei linfociti T
 3) di durata uguale a quella dei linfociti T
@@ -1784,6 +1973,7 @@ ANS: 2,5,6
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Secondo quale sequenza avviene la ricircolazione dei linfociti che provengono dalla rete linfatica:
+
 1) dotto toracico
 2) seno marginale dei linfonodi
 3) succlavia
@@ -1793,7 +1983,7 @@ Q: Secondo quale sequenza avviene la ricircolazione dei linfociti che provengono
 7) cuore dx, cuore sx
 8) arteriola afferente del linfonodo
 9) giunzione cortico-midollare dei linfonodi
-Sequenza esatta:
+R:
 A) 4-5-1-3-7-8-2-9-6
 B) 7-8-3-2-9-6-5-1-4
 C) 6-2-5-1-3-7-8-4-9
@@ -1802,6 +1992,7 @@ ANS: C
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: I linfociti più maturi: (due risposte)
+R:
 1) sono localizzati nella sottocorticale timica
 2) co-esprimono CD4 e CD8
 3) presentano un recettore per l’antigene di tipo alfa/beta
@@ -1811,6 +2002,7 @@ ANS: 3,5
 
 CAT: Linfociti B e anticorpi
 Q: Anticorpi anti-DNP nel siero albumina bovina (DNP-BSA), dopo assorbimento con DNP-siero albumina umana (DNP-HSA), sono in grado di precipitare: (tre risposte)
+R:
 1) DNP-BSA
 2) DNP-HSA
 3) TNP-BSA
@@ -1820,6 +2012,7 @@ ANS: 1,3,5
 
 CAT: Complemento e citochine
 Q: I fattori del siero che favoriscono l’opsonizzazione sono: (tre risposte)
+R:
 1) recettori per citochine
 2) anticorpi
 3) C3b
@@ -1829,6 +2022,7 @@ ANS: 2,3,4
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Da quali meccanismi può dipendere la generazione della diversità del TCR? (tre risposte)
+R:
 1) mutazioni somatiche
 2) associazione combinatoria delle catene alfa/beta o gamma/delta
 3) associazione combinatoria tra le catene alfa/beta/gamma/delta
@@ -1838,6 +2032,7 @@ ANS: 2,4,5
 
 CAT: Linfociti B e anticorpi
 Q: Lo scambio di classe: (due risposte)
+R:
 1) è reversibile
 2) è dovuto all’intervento di citochine
 3) comporta il cambiamento dell’isotipo
@@ -1847,6 +2042,7 @@ ANS: 2,3
 
 CAT: Linfociti B e anticorpi
 Q: Anticorpi anti-DNP albumina di cavia (DNP-GPA) dopo assorbimento con DNP-ovalbumina (DNP-OVA) sono in grado di riconoscere:
+R:
 1) DNP-GPA
 2) DNP-OVA
 3) TNP-GPA
@@ -1856,6 +2052,7 @@ ANS: 1,3,5
 
 CAT: Linfociti B e anticorpi
 Q: Con 300 geni V, 12 D e 4 J, quante diverse catene pesanti possono essere generate?
+R:
 1) 300 x 12 x 4
 2) (300+12+4) x2
 3) 300+12+4
@@ -1864,6 +2061,7 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: La terza regione ipervariabile (CDR3) delle Ig è più variabile delle altre due per: (due risposte)
+R:
 1) una frequenza più elevata di mutazioni somatiche
 2) fenomeno di giunzione imprecisa
 3) aggiunta di nucleotidi ad opera di Tdt
@@ -1872,6 +2070,7 @@ ANS: 2,3
 
 CAT: Linfociti B e anticorpi
 Q: L’elevata percentuale di mutazioni dei geni delle Ig durante la risposta immunitaria contribuisce: (tre risposte)
+R:
 1) all’acquisizione di nuove specificità idiotipiche
 2) all’espressione di classi diverse di anticorpi
 3) alla transizione tra forma di membrana e secreta delle Ig
@@ -1881,6 +2080,7 @@ ANS: 1,4,5
 
 CAT: Linfociti B e anticorpi
 Q: Il cambio di classe: (tre risposte)
+R:
 1) è generalmente irreversibile
 2) è dovuto all’intervento di citochine
 3) comporta il cambiamento dell’isotipo
@@ -1890,6 +2090,7 @@ ANS: 1,2,3
 
 CAT: Linfociti B e anticorpi
 Q: La reazione di agglutinazione avviene soltanto quando:
+R:
 1) gli antigeni sono solubili
 2) gli antigeni sono cappucciati
 3) gli anticorpi fissano il complemento
@@ -1898,6 +2099,7 @@ ANS: 4
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Il CD3 è un complesso molecolare: (tre risposte)
+R:
 1) eguale in tutti gli individui della stessa specie
 2) composto da molteplici catene
 3) associato alle molecole di classe II
@@ -1907,6 +2109,7 @@ ANS: 1,2,4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: La tasca di una molecola MHC di classe II è generalmente:
+R:
 1) vuota fino al Golgi e dopo associata a peptidi esogeni
 2) occupata già a livello dell’ergastoplasma da peptidi endogeni
 3) occupata fino a livello del post-Golgi dalla catena gamma e dopo associata a peptidi esogeni
@@ -1915,6 +2118,7 @@ ANS: 3
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Indica in ordine di successione gli eventi che portano al riconoscimento dell’antigene e all’attivazione dei linfociti T:
+
 1) associazione dei prodotti di digestione dell’antigene alle molecole MHC
 2) produzione di IL2
 3) proliferazione dei linfociti T
@@ -1922,7 +2126,7 @@ Q: Indica in ordine di successione gli eventi che portano al riconoscimento dell
 5) riconoscimento dell’antigene da parte dei linfociti T
 6) produzione di IL1 ed espressione di segnali accessori da parte delle APC
 7) legame di IL2 prodotta al proprio recettore
-Sequenza:
+R:
 A) 1,4,6,5,2,7,3
 B) 4,1,6,5,2,7,3
 C) 6,4,1,5,3,2,7
@@ -1931,6 +2135,7 @@ ANS: B
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: La struttura terziaria degli antigeni HLA di classe I e di classe II è:
+R:
 1) beta planare
 2) ad alfa elica
 3) random coil
@@ -1940,6 +2145,7 @@ ANS: 4
 
 CAT: Immunità innata e infiammazione
 Q: Le cellule NK: (indica la risposta errata)
+R:
 1) possono uccidere cellule infettate da virus, cellule neoplastiche
 2) vengono attivate da IL2
 3) hanno in genere morfologia di linfociti larghi granulari
@@ -1949,6 +2155,7 @@ ANS: 4
 
 CAT: Complemento e citochine
 Q: Le interleuchine:
+R:
 1) sono di natura lipoproteica
 2) vengono prodotte dai soli linfociti T
 3) agiscono solo sui linfociti
@@ -1958,6 +2165,7 @@ ANS: 5
 
 CAT: Complemento e citochine
 Q: La IL2: (tre risposte)
+R:
 1) non è glicosilata
 2) viene prodotta principalmente dai linfociti Th1
 3) si lega a un recettore presente su linfociti T e cellule NK
@@ -1968,6 +2176,7 @@ ANS: 2,3,5
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Come agisce la ciclosporina A? Complessandosi con delle immunofiline inibisce:
+R:
 1) la calcineurina
 2) la fosfolipasi A2
 3) la chinasi p56lck
@@ -1978,6 +2187,7 @@ ANS: 1
 
 CAT: Immunità innata e infiammazione
 Q: Cosa si intende per PAMPs:
+R:
 1) Modificazioni Associate a Proteine espresse dai Patogeni
 2) Molecole Associate a Patogeni e Parassiti
 3) Un insieme di Molecole Associate ai Patogeni
@@ -1986,6 +2196,7 @@ ANS: 3
 
 CAT: Immunità innata e infiammazione
 Q: I leucociti coinvolti nella risposta immunitaria innata riconoscono:
+R:
 1) Le molecole, chiamate antigeni, che sono unicamente specifiche di un singolo patogeno
 2) Antigeni individuali a ciascun patogeno
 3) Strutture molecolari condivise da un'ampia varietà di agenti patogeni
@@ -1994,6 +2205,7 @@ ANS: 3
 
 CAT: Immunità innata e infiammazione
 Q: I fagociti non includono:
+R:
 1) linfociti
 2) cellule dendritiche
 3) macrofagi
@@ -2002,6 +2214,7 @@ ANS: 1
 
 CAT: Immunità innata e infiammazione
 Q: I macrofagi e i neutrofili riconoscono i patogeni attraverso:
+R:
 1) PRR
 2) PAMPs
 3) Antigeni
@@ -2010,6 +2223,7 @@ ANS: 1
 
 CAT: Complemento e citochine
 Q: Quali dei seguenti fattori sono responsabili della comunicazione tra leucociti?
+R:
 1) Proteine del Complemento
 2) Proteine citotossiche
 3) Citochine
@@ -2018,6 +2232,7 @@ ANS: 3
 
 CAT: Immunità innata e infiammazione
 Q: L’immunità innata:
+R:
 1) Si attiva in seguito al riconoscimento di specifiche sequenze presenti nelle molecole associate ai patogeni.
 2) Si attiva in seguito al riconoscimento non specifico di sequenze comuni ai diversi patogeni.
 3) Si attiva molto rapidamente e sempre con la stessa intensità.
@@ -2027,6 +2242,7 @@ ANS: 5
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quali sono le 5 caratteristiche dell’immunità adattativa?
+R:
 1) Nessuna specificità, suddivisione dei compiti, rapidità ed alta intensità di risposta, memoria e tolleranza.
 2) Specificità, suddivisione dei compiti, vasto repertorio di cellule, memoria e tolleranza.
 3) Specificità, suddivisione dei compiti, vasto repertorio di cellule, rapidità ed alta intensità di risposta e tolleranza.
@@ -2035,6 +2251,7 @@ ANS: 2
 
 CAT: Immunità innata e infiammazione
 Q: Cosa si intende per DAMPs:
+R:
 1) Modificazioni Associate a Proteine presenti in Diversi patogeni.
 2) Un insieme di Molecole Associate a cellule Danneggiate e/o necrotiche.
 3) Modificazioni Associate a Proteine represse da cellule Dendritiche.
@@ -2043,6 +2260,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: I leucociti coinvolti nella risposta immunitaria innata riconoscono:
+R:
 1) Antigeni individuali a ciascun patogeno.
 2) Tutti i patogeni intestinali.
 3) Strutture molecolari condivise da un’ampia varietà di patogeni.
@@ -2051,6 +2269,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: I macrofagi ed I neutrofili riconoscono i patogeni attraverso:
+R:
 1) Anticorpi.
 2) PRR.
 3) PAMPs.
@@ -2059,6 +2278,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Le cellule B sono linfociti la cui funzione principale è produrre:
+R:
 1) Proteine del Complemento.
 2) Anticorpi.
 3) Citochine.
@@ -2067,6 +2287,7 @@ ANS: 2
 
 CAT: Memoria, vaccini e immunopatologia
 Q: L’incapacità di montare una risposta immunitaria verso gli auto-antigeni è una forma di:
+R:
 1) Memoria.
 2) Attivazione incompleta.
 3) Specificità.
@@ -2075,6 +2296,7 @@ ANS: 4
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Una risposta immunitaria troppo forte o scarsamente regolata può provocare:
+R:
 1) Perdita di memoria immunitaria.
 2) Tolleranza.
 3) Immunodeficienza.
@@ -2083,6 +2305,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: L’extravasione comporta:
+R:
 1) Il movimento delle cellule del tessuto infetto nei vasi sanguigni.
 2) Il movimento del patogeno verso i leucociti negli spazi dei tessuti.
 3) L’incapacità dei leucociti di muoversi nei tessuti al di fuori dei vasi sanguigni.
@@ -2091,6 +2314,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: L’immunità innata opera attraverso meccanismi non indotti e indotti. Tra i meccanismi non indotti ci sono:
+R:
 1) Cellule T.
 2) Barriere fisiologiche come lacrime, muco e lisozima.
 3) Anticorpi.
@@ -2099,6 +2323,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: I DAMP sono molecole la cui presenza avvisa il sistema innato dell’ospite che qualcosa non va nel corpo ed è necessaria un’azione correttiva. Cosa di quanto segue NON è un DAMP:
+R:
 1) Molecole di stress come proteine da shock termico (HSP).
 2) Anticorpi.
 3) Molecole citologiche o nucleari.
@@ -2107,6 +2332,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: La fagocitosi viene eseguita principalmente da:
+R:
 1) Cheratinociti e fibroblasti.
 2) Cellule NK e linfociti T.
 3) Neutrofili, macrofagi, monociti e cellule dendritiche.
@@ -2115,6 +2341,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: Le opsonine indicano:
+R:
 1) Proteine derivate dall’ospite che legano l’esterno di un microbo e ne facilitano la fagocitosi da parte di cellule che esprimono i recettori dell’opsonina.
 2) Opzione 1. 2
 3) Proteine tossiche espresse da antigeni patogeni che facilitano la distruzione dei fagociti che, esprimendo i recettori per l’opsonina, li hanno inghiottiti.
@@ -2123,6 +2350,7 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: Gli intermedi reattivi dell’ossigeno (ROS) e gli intermedi reattivi dell’azoto (RNI) sono prodotti durante il processo di:
+R:
 1) Opsonizzazione.
 2) Endocitosi.
 3) Uccisione fagocitica.
@@ -2131,6 +2359,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: Una funzione primaria delle cellule NK è quella di:
+R:
 1) Indurre la citolisi dei macrofagi attivati.
 2) Indurre la citolisi delle plasmacellule effettrici non utilizzate.
 3) Indurre la citolisi delle cellule T effettrici non utilizzate.
@@ -2139,6 +2368,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: Le cellule NK possono lisare cellule anormali attraverso meccanismi antigene- specifici che includono:
+R:
 1) Il legame dei recettori Fc (CD16) delle cellule NK alle Ig specifiche per l’antigene che rivestono la superficie bersaglio.
 2) Il legame dei recettori Fc (CD16) delle cellule NK alle Ig specifiche per l’antigene e presenti nel siero.
 3) Il legame dei recettori Fc (CD16) delle cellule NK con il C3 che riveste la cellula bersaglio.
@@ -2147,6 +2377,7 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: Le citochine sono:
+R:
 1) Peptidi o glicoproteine a basso peso molecolare che interagiscono direttamente con antigeni solubili.
 2) Peptidi o glicoproteine a basso peso molecolare che hanno diversa struttura e funzione.
 3) Chinasi coinvolte nella traduzione del segnale di membrana.
@@ -2155,6 +2386,7 @@ ANS: 2
 
 CAT: Complemento e citochine
 Q: I recettori per le citochine sono costituiti da:
+R:
 1) 1, 2 o 3 catene.
 2) 4, 5 o 6 catene.
 3) 7, 8 o 9 catene.
@@ -2162,6 +2394,7 @@ ANS: 1
 
 CAT: Complemento e citochine
 Q: Come viene spento il segnale inviato da una citochina?
+R:
 1) Il segnale è inibito dalla fosforilazione delle STAT.
 2) Il segnale è inibito dalla degradazione delle proteine JAK e STAT e indotta dalle SOCS.
 3) Il segnale è inibito dalle STAT e dalle SOCS.
@@ -2170,6 +2403,7 @@ ANS: 2
 
 CAT: Complemento e citochine
 Q: I recettori delle chemochine sono recettori:
+R:
 1) A 7 passi transmembrana.
 2) Tirosina-chinasici.
 3) Associati alle chinasi JAK.
@@ -2178,6 +2412,7 @@ ANS: 1
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quali sono le molecole che rappresentano il ponte tra la risposta immunitaria innata e quella adattativa?
+R:
 1) Recettori Toll-like.
 2) Citochine. 3
 3) Allarmine.
@@ -2187,6 +2422,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: Quale classe di molecole è coinvolta nella presentazione degli antigeni alle cellule T citotossiche CD8+?
+R:
 1) Classe I Non-classiche.
 2) Classe III.
 3) Classe II.
@@ -2196,6 +2432,7 @@ ANS: 5
 
 CAT: Linfociti B e anticorpi
 Q: Qual è la funzione primaria delle molecole HLA di classe I Non-classiche come HLA-E e HLA-G?
+R:
 1) Attivazione dei linfociti T CD8+.
 2) Attivazione delle cellule dendritiche.
 3) Presentazione dei lipidi ai linfociti T.
@@ -2205,6 +2442,7 @@ ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale tipo di cellule immunitarie esprimono costitutivamente le molecole HLA di classe II?
+R:
 1) I globuli rossi.
 2) I macrofagi.
 3) Le cellule NK.
@@ -2214,6 +2452,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Qual è il ruolo di CIITA nella risposta immunitaria?
+R:
 1) Regolazione dell’espressione delle cellule MHC di classe II.
 2) Attivazione delle cellule T CD8+.
 3) Inibizione dell’infiammazione.
@@ -2223,6 +2462,7 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: Quale tipo di cellula è considerata una cellula presentante l’antigene (APC) “professionale”?
+R:
 1) Linfociti B.
 2) Cellule NK.
 3) Globuli rossi.
@@ -2232,6 +2472,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: Qual è la funzione principale delle cellule presentanti l’antigene (APC) nel sistema immunitario?
+R:
 1) Rilasciare frammenti del complemento per eliminare l’infezione.
 2) Attivare le cellule della memoria.
 3) Produrre anticorpi contro gli antigeni virali.
@@ -2241,6 +2482,7 @@ ANS: 5
 
 CAT: Linfociti B e anticorpi
 Q: Qual è la funzione del recettore chemochinico CCR7 sulle cellule dendritiche?
+R:
 1) Aiuta la migrazione delle cellule dendritiche verso gli organi linfoidi.
 2) Promuove la produzione di anticorpi.
 3) È essenziale per la fagocitosi dei patogeni.
@@ -2250,6 +2492,7 @@ ANS: 1
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quali cellule T riconoscono i peptidi presentati dalle molecole MHC di classe I?
+R:
 1) Le cellule iNKT.
 2) I linfociti T gamma-delta.
 3) I linfociti T CD4.
@@ -2259,6 +2502,7 @@ ANS: 5
 
 CAT: Linfociti B e anticorpi
 Q: Qual è il ruolo della catena invariante nella presentazione dell’antigene MHC di classe II?
+R:
 1) Inibisce la sintesi delle molecole MHC di classe II.
 2) Lega direttamente gli antigeni.
 3) Trasporta le molecole MHC di classe II verso la membrana cellulare.
@@ -2268,6 +2512,7 @@ ANS: 5
 
 CAT: Immunità innata e infiammazione
 Q: Quali cellule sono i componenti principali della risposta immunitaria adattativa?
+R:
 1) Eosinofili e basofili.
 2) Linfociti T e linfociti B.
 3) Mastociti e cellule dendritiche.
@@ -2277,6 +2522,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Qual è la funzione principale dei complessi MHC nel sistema immunitario?
+R:
 1) Attivazione delle proteine del complemento.
 2) Fagocitosi dei patogeni.
 3) Produzione di anticorpi.
@@ -2286,6 +2532,7 @@ ANS: 5
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quali cellule esprimono sia i complessi MHC di classe I che quelli di classe II?
+R:
 1) Le cellule NK.
 2) I linfociti T.
 3) I neutrofili.
@@ -2295,6 +2542,7 @@ ANS: 5
 
 CAT: Linfociti B e anticorpi
 Q: Quale molecola guida i linfociti T naive ai linfonodi?
+R:
 1) CD3.
 2) CD8.
 3) IgM.
@@ -2304,6 +2552,7 @@ ANS: 4
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quali cellule immunitarie sono in grado di uccidere direttamente le cellule infettate utilizzando perforine e granzimi?
+R:
 1) Gli eosinofili.
 2) I neutrofili.
 3) I linfociti T CD4.
@@ -2313,6 +2562,7 @@ ANS: 5
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Qual è lo scopo principale del complesso proteico CD3 associato al recettore TCR?
+R:
 1) Fornisce stabilità al TCR sulla superficie cellulare.
 2) Trasdurre i segnali del TCR.
 3) Regola l’espressione di CD69.
@@ -2322,6 +2572,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Quale parte del recettore dell’antigene si lega sia all’antigene specifico che alle molecole HLA?
+R:
 1) La regione costante.
 2) Il segmento Diversity.
 3) Il CDR1.
@@ -2331,6 +2582,7 @@ ANS: 4
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Qual è lo scopo dell’esclusione allelica nel processo di ricombinazione dei recettori antigienici?
+R:
 1) Previene l’autoimmunità.
 2) Genera regioni ipervariabili nei recettori.
 3) Permette la ricombinazione in cellule non linfoidi.
@@ -2340,6 +2592,7 @@ ANS: 5
 
 CAT: Linfociti B e anticorpi
 Q: Quali enzimi riconoscono le sequenze di segnali di ricombinazione (RSS) durante il processo di ricombinazione di VDJ?
+R:
 1) RAG1 e RAG2.
 2) Artemis e TdT. 5
 3) DNA ligasi.
@@ -2349,6 +2602,7 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: Quale caratteristica differenzia il BCR dal TCR in termini di siti di legame con l’antigene?
+R:
 1) Il TCR è coinvolto nell’immunità umorale.
 2) Il BCR ha le regioni CDR1, CDR2, e CDR3.
 3) Il TCR ha due catene leggere.
@@ -2358,6 +2612,7 @@ ANS: 5
 
 CAT: Linfociti B e anticorpi
 Q: Quali cellule staminali danno origine sia alle cellule B che alle cellule T?
+R:
 1) Le cellule staminali neuronali.
 2) Le cellule ematopoietiche staminali.
 3) Le cellule staminali mesenchimali.
@@ -2367,6 +2622,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Quali fattori di trascrizione sono coinvolti nella differenziazione delle cellule B, portando al riarrangiamento di BCR?
+R:
 1) FoxP3 e T-bet.
 2) Pax5 e E2A.
 3) NFkB e JunB.
@@ -2376,6 +2632,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Qual è la citochina primaria coinvolta nella maturazione delle cellule B?
+R:
 1) IL-7.
 2) IL-17.
 3) IL-12-
@@ -2385,6 +2642,7 @@ ANS: 1
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quali cellule sono responsabili dell’induzione della selezione negativa nel timo durante la maturazione delle cellule T?
+R:
 1) Cellule T regolatorie.
 2) Cellule dendritiche midollari.
 3) Cellule epiteliali corticali.
@@ -2394,6 +2652,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Qual è la distinzione principale tra la selezione positiva delle cellule T e delle cellule B durante la maturazione?
+R:
 1) Le cellule T vengono selezionate in base all’affinità del recettore per le molecole MHC, mentre le cellule B vengono selezionate in base all’affinità del recettore per gli antigeni.
 2) Le cellule T subiscono un riarrangiamento della catena pesante, mentre le cellule B subiscono un riarrangiamento della catena beta.
 3) Le cellule T riconoscono direttamente gli antigeni, mentre le cellule B riconoscono gli antigeni presentati sulle molecole MHC.
@@ -2403,6 +2662,7 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: Qual è la funzione di CD28 durante l’attivazione delle cellule T?
+R:
 1) Induce l’apoptosi delle cellule T effettrici.
 2) Promuove la differenziazione delle cellule T in cellule della memoria.
 3) Media la cross-presentazione degli antigeni esogeni.
@@ -2412,6 +2672,7 @@ ANS: 5
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale via di segnalazione comporta l’attivazione di NFAT-C, portando alla trascrizione dei geni necessari per la proliferazione?
+R:
 1) Il pathway mediato dal calcio.
 2) Il pathway mediato da RAS.
 3) Il pathway mediato da PI3K-AKT.
@@ -2421,6 +2682,7 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: Qual è la funzione principale delle cellule T regolatorie?
+R:
 1) Promuovere la presentazione dell’antigene.
 2) Migliorare l’attivazione delle cellule B della memoria.
 3) Mantenimento dell’omeostasi immunitaria e soppressione delle risposte immunitarie eccessive.
@@ -2430,6 +2692,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: Quale molecola costimolatoria ha un’affinità maggiore per CD80 sulle APC rispetto a CD28?
+R:
 1) ICOS.
 2) PD-1.
 3) OX40.
@@ -2439,6 +2702,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: Qual è il ruolo delle cellule dendritiche nella risposta immunitaria?
+R:
 1) Rilasciano perforina e granzima.
 2) Presentano antigeni alle cellule T naïve.
 3) Uccidono direttamente le cellule infette.
@@ -2448,6 +2712,7 @@ ANS: 2
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale citochina è importante per la sopravvivenza delle cellule T CD8 della memoria?
+R:
 1) TNFalpha.
 2) IL-17.
 3) IL-12.
@@ -2457,6 +2722,7 @@ ANS: 5
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quali fattori trascrizionali sono responsabili della differenziazione delle cellule T citotossiche (CTL)?
+R:
 1) TLR3 e TLR4.
 2) GATA3 e RORgammat.
 3) TGFbeta e IL-10.
@@ -2466,6 +2732,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: Qual è il ruolo della perforina nell’uccisione delle cellule bersaglio?
+R:
 1) Impedisce ai CTL di uccidersi.
 2) Forma pori nella membrana della cellula bersaglio.
 3) Si lega a Fas sulle cellule bersaglio.
@@ -2475,6 +2742,7 @@ ANS: 2
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale citochina viene rilasciata dalle cellule Th1 ed è importante per l’attivazione dei macrofagi?
+R:
 1) IL-17.
 2) IL-10.
 3) IFN-gamma.
@@ -2484,6 +2752,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: Quali cellule svolgono un ruolo chiave nel trasporto degli antigeni dal lume intestinale ai tessuti linfociti associati alla mucosa intestinale?
+R:
 1) Macrofagi.
 2) Cellule Natural Killer.
 3) Plasmacellule.
@@ -2493,6 +2762,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: Nell’attivazione delle cellule B T-dipendenti, qual è il ruolo dell’interazione del ligando CD40 e CD40?
+R:
 1) Aumenta l’attivazione delle cellule T.
 2) Inibisce la proliferazione delle cellule B.
 3) Induce l’apoptosi delle cellule B. 7
@@ -2502,6 +2772,7 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: Quale processo avviene nell’area scura del centro germinale?
+R:
 1) Presentazione dell’antigene alle cellule T.
 2) Attivazione delle cellule B della memoria.
 3) Maturazione dell’affinità.
@@ -2511,6 +2782,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: Quale citochina è responsabile dell’induzione della produzione di anticorpi IgE?
+R:
 1) IL-2.
 2) IL-4.
 3) IL-10.
@@ -2520,6 +2792,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Qual è la funzione principale delle cellule M nei tessuti linfoidi associati all’intestino (GALT)?
+R:
 1) Produrre anticorpi.
 2) Trasportare gli antigeni dal lume ai tessuti linfoidi.
 3) Presentare gli antigeni ai linfociti T.
@@ -2529,6 +2802,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Quali componenti strutturali costituiscono gli anticorpi?
+R:
 1) 4 catene pesanti e 4 catene leggere.
 2) 4 catene pesanti e 2 catene leggere.
 3) 2 catene pesanti e 2 catene leggere.
@@ -2538,6 +2812,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: Qual è il ruolo di enzimi come la papaina e la pepsina nella ricerca sugli anticorpi?
+R:
 1) Catalizzano la produzione di anticorpi.
 2) Rilasciano le tre parti in grado di legare l’antigene.
 3) Degradano la porzione costante Fab dell’anticorpo.
@@ -2547,6 +2822,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: Quale regione dell’anticorpo è responsabile del legame con l’antigene?
+R:
 1) La regione V.
 2) La regione VH2.
 3) La regione CH2.
@@ -2556,6 +2832,7 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: Quale isotipo di immunoglobulina è responsabile della protezione del neonato dalle infezioni per circa 3 mesi dopo la nascita?
+R:
 1) IgG.
 2) IgM.
 3) IgD.
@@ -2565,6 +2842,7 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: Quale isotipo di Ig è più abbondante nel corpo?
+R:
 1) IgE.
 2) IgD.
 3) IgA.
@@ -2574,6 +2852,7 @@ ANS: 5
 
 CAT: Linfociti B e anticorpi
 Q: Quale attività anticorpale diretta comporta l’inibizione dell’attività enzimatica delle tossine?
+R:
 1) Agglutinazione.
 2) Inibizione di virus e microbi.
 3) Neutralizzazione.
@@ -2583,6 +2862,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: Qual è lo scopo principale dell’agglutinazione indotta da anticorpi?
+R:
 1) Neutralizzazione delle tossine.
 2) Induzione della degranulazione dei mastociti.
 3) Formazione di complessi immunitari.
@@ -2592,6 +2872,7 @@ ANS: 5
 
 CAT: Linfociti B e anticorpi
 Q: Quale fenomeno si verifica quando gli anticorpi si legano alla superficie di un virus, impedendone il legame alle cellule bersaglio?
+R:
 1) La neutralizzazione delle tossine.
 2) La fagocitosi.
 3) L’attività citotossica.
@@ -2601,6 +2882,7 @@ ANS: 5
 
 CAT: Linfociti B e anticorpi
 Q: Qual è il meccanismo alla base dell’inibizione dei recettori delle cellule muscolari da parte degli anticorpi nella Miastenia Gravis?
+R:
 1) L’agglutinazione.
 2) L’induzione della degranulazione da parte dei mastociti.
 3) L’aggregazione e l’internalizzazione.
@@ -2610,6 +2892,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: Quale tipo di recettore è importante per il trasporto delle IgG dalla circolazione materna a quella fetale?
+R:
 1) Recettori ad alta affinità.
 2) Recettori CD32.
 3) Recettori a bassa affinità.
@@ -2619,6 +2902,7 @@ ANS: 5
 
 CAT: Linfociti B e anticorpi
 Q: Gli anticorpi monoclonali (mAb) sono prodotti da:
+R:
 1) Cellule T attivate.
 2) Cellule B attivate casualmente.
 3) Cellule tumorali.
@@ -2628,6 +2912,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: Quale tipo di anticorpo monoclonale conserva regioni variabili degli anticorpi murini, ma ha una porzione costante?
+R:
 1) mAb chimerici.
 2) mAb murini.
 3) Diabody.
@@ -2637,6 +2922,7 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: Qual è il vantaggio principale dell’utilizzo di anticorpi monoclonali chimerici in terapia rispetto agli anticorpi monoclonali completamente murini?
+R:
 1) Migliore legame con i recettori Fc.
 2) Minor rischio di risposta allergica.
 3) Maggiore immunogenicità.
@@ -2646,6 +2932,7 @@ ANS: 2
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Qual è lo scopo principale dell’isolamento delle cellule B della memoria dei pazienti nel contesto della generazione di anticorpi monoclonali?
+R:
 1) Per identificare le cellule B che esprimono CD22.
 2) Per analizzare la produzione di anticorpi in tempo reale.
 3) Per ottenere geni che codificano per quegli anticorpi specifici contro gli antigeni.
@@ -2655,6 +2942,7 @@ ANS: 3
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Qual è la funzione primaria di un vaccino?
+R:
 1) Sostituire le cellule immunitarie danneggiate con quelle sane.
 2) Attaccare direttamente gli agenti patogeni nel corpo.
 3) Imitare la risposta anticorpale contro un agente patogeno specifico. 9
@@ -2664,6 +2952,7 @@ ANS: 4
 
 CAT: Immunità innata e infiammazione
 Q: Quali cellule si espandono clonalmente e si differenziano durante una risposta immunitaria a un’infezione?
+R:
 1) Macrofagi.
 2) Cellule T specifiche.
 3) Cellule dendritiche.
@@ -2673,6 +2962,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Qual è il ruolo principale delle cellule T della memoria nella risposta immunitaria?
+R:
 1) Stimolare l’infiammazione.
 2) Produrre anticorpi.
 3) Sopprimere l’attivazione immunitaria.
@@ -2682,6 +2972,7 @@ ANS: 5
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Perché i vaccini vivi attenuati potrebbero essere difficili da conservare?
+R:
 1) Inducono una risposta allergica in alcuni individui.
 2) Hanno requisiti di attivazione complessi.
 3) Richiedono più booster per l’efficacia.
@@ -2691,6 +2982,7 @@ ANS: 4
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quali sono le due fasi di una reazione di ipersensibilità?
+R:
 1) Fase di riconoscimento e fase di memoria.
 2) Fase primaria e fase secondaria.
 3) Fase antigenica e fase immunitaria.
@@ -2700,6 +2992,7 @@ ANS: 2
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quale tipo di ipersensibilità è caratterizzata dalla presenza di anticorpi IgE?
+R:
 1) Ipersensibilità di tipo I.
 2) Ipersensibilità di tipo V.
 3) Ipersensibilità di tipo II.
@@ -2709,6 +3002,7 @@ ANS: 1
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quale tipo di ipersensibilità comporta la formazione di granulomi?
+R:
 1) Ipersensibilità di tipo IV.
 2) Ipersensibilità di tipo I.
 3) Ipersensibilità di tipo III.
@@ -2718,6 +3012,7 @@ ANS: 1
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quali cellule immunitarie sono responsabili della fase tardiva dell’ipersensibilità di tipo I?
+R:
 1) Macrofagi.
 2) Neutrofili.
 3) Eosinofili.
@@ -2727,6 +3022,7 @@ ANS: 3
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Nell’ipersensibilità di tipo II, quali cellule sono responsabili della fagocitosi delle cellule bersaglio?
+R:
 1) Cellule Natural Killer (NK).
 2) Linfociti B.
 3) Macrofagi.
@@ -2736,6 +3032,7 @@ ANS: 3
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Qual è il meccanismo principale responsabile delle malattie autoimmuni?
+R:
 1) Produzione di anticorpi.
 2) Disregolazione dei meccanismi di tolleranza immunitaria.
 3) Danno tissutale indotto dall’infiammazione.
@@ -2745,6 +3042,7 @@ ANS: 2
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quali malattie autoimmuni sono caratterizzate dalla presenza di autoanticorpi diretti contro specifici recettori della superficie cellulare?
+R:
 1) Sclerosi multipla.
 2) Tiroidite di Hashimoto.
 3) Lupus.
@@ -2754,6 +3052,7 @@ ANS: 2
 
 CAT: Memoria, vaccini e immunopatologia
 Q: In che modo la diffusione egli epitopi contribuisce alla progressione delle malattie autoimmuni?
+R:
 1) Amplifica l’attivazione di cloni di cellule T e B autoreattive contro antigeni aggiuntivi.
 2) Riduce la risposta infiammatoria complessiva.
 3) Porta all’attivazione delle cellule T regolatorie.
@@ -2763,6 +3062,7 @@ ANS: 1
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quale citochina è più strettamente associata allo sviluppo di malattie autoimmuni innescate da infezioni virali?
+R:
 1) Interferone gamma.
 2) Interleuchina-6.
 3) Colony Stimulating Factor (SCF).
@@ -2772,6 +3072,7 @@ ANS: 1
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quale componente del sistema immunitario è il principale responsabile della fagocitosi delle cellule dagli autoanticorpi?
+R:
 1) Cellule linfoidi innate.
 2) Cellule Natural Killer (NK).
 3) Linfociti B.
@@ -2781,6 +3082,7 @@ ANS: 4
 
 CAT: Immunità innata e infiammazione
 Q: Quali dei seguenti PRRs sono espressi a livello citosolico?
+R:
 1) TLRs
 2) TREMs
 3) CLRs
@@ -2792,6 +3094,7 @@ ANS: 7
 
 CAT: Immunità innata e infiammazione
 Q: Giudica l’affermazione falsa
+R:
 A) I PRRs riconoscono PAMPs e DAMPs
 B) I GPCR fanno parte dei PRRs
 C) I PRRs si possono trovare sulla membrana cellulare o all’interno della cellula
@@ -2800,6 +3103,7 @@ ANS: B
 
 CAT: Immunità innata e infiammazione
 Q: Quale di questi è un PRRs di segnalazione?
+R:
 A) Scavenger receptors
 B) RIG1-like receptors
 C) TRIF
@@ -2808,6 +3112,7 @@ ANS: B
 
 CAT: Linfociti B e anticorpi
 Q: PRRs:
+R:
 A) Sono recettori che si trovano esclusivamente sulla membrana di macrofagi e DCs
 B) Il riconoscimento del ligando comporta necessariamente la sua internalizzazione
 C) Ognuno genera un pathway unico che non interagisce con altre vie di segnalazione
@@ -2817,6 +3122,7 @@ ANS: D
 
 CAT: Linfociti B e anticorpi
 Q: Quale di queste NON è una caratteristica dei NOD-like receptors
+R:
 A) Hanno un dominio C-terminale chiamato LRRs
 B) Tra i ligandi vi sono il peptidoglicano della parete batterica e ssRNA
 C) La loro attivazione può portare all’assemblaggio di un inflammosoma
@@ -2826,6 +3132,7 @@ ANS: D
 
 CAT: Complemento e citochine
 Q: Quale di queste NON è una caratteristica dei RIG1-like receptors:
+R:
 A) Hanno il compito di percepire acidi nucleici nel citosol
 B) A questa famiglia appartengono due recettori: RIG-1 e NOD2
 C) Presentano un dominio CARD
@@ -2835,6 +3142,7 @@ ANS: B
 
 CAT: Immunità innata e infiammazione
 Q: Quali di questi TLRs può trovarsi sia sulla membrana cellulare esterna sia sulla membrana dei compartimenti endolisosomiali:
+R:
 A) TLR-4
 B) TLR-6
 C) TLR-2
@@ -2844,6 +3152,7 @@ ANS: A
 
 CAT: Immunità innata e infiammazione
 Q: Quale di questi TLRs può usare sia la via di segnalazione mediata da Myd88 sia quella mediata da TRIF:
+R:
 A) TLR-2
 B) TLR-10
 C) TLR-4
@@ -2853,6 +3162,7 @@ ANS: C
 
 CAT: Immunità innata e infiammazione
 Q: Quale di questi PRRs presentano il dominio NACHT
+R:
 A) NLRs TLRs
 C) Scavenger
 D) NLRs
@@ -2861,12 +3171,14 @@ ANS: A
 
 CAT: Immunità innata e infiammazione
 Q: LGP-2 è un RLR particolare perché:
+R:
 A) Possiede due domini CARD
 B) È molto espresso negli enterociti del colon e, se mutato, predispone allo sviluppo del Morbo di Chron La sua attivazione provoca la secrezione di INF-alfa Ha una funzione down-regolatrice Riconosce il peptidoglicano batterico
 ANS: B
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale di questi recettori percepisce la presenza di DNA a doppia elica a livello citosolico:
+R:
 A) TLR-4
 B) AIM2
 C) NOD2(riconosce muramil dipeptide)
@@ -2876,6 +3188,7 @@ ANS: B
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Le selectine sono:
+R:
 1) Lectine di tipo C (C-type lectins) solubili con attivita’ battericida (fagocitosi e attivazione del complemento)
 2) Lectine di tipo C con un’importante funzione nel direzionare la migrazione delle cellule del sistema immunitario
 3) PRR endocellulari coinvolti nella risposta anti-virale
@@ -2884,6 +3197,7 @@ ANS: 2
 
 CAT: Immunità innata e infiammazione
 Q: I toll like receptor (TLRs) sono pattern recognition receptors che riconoscono:
+R:
 1) sostanze di origine microbica presenti nel citosol
 2) sostanze di origine microbica presenti nel nucleo
 3) sostanze di origine microbica presenti nel compartimento extracellulare
@@ -2894,6 +3208,7 @@ ANS: 5
 
 CAT: Immunità innata e infiammazione
 Q: Quali dei seguenti pattern recognition receptors (PRRs) sono espressi a livello citosolico?
+R:
 1) TLRs
 2) TREMs
 3) CLRs
@@ -2905,6 +3220,7 @@ ANS: 4,5
 
 CAT: Immunità innata e infiammazione
 Q: Che cos’e’ il DNA-dependent activator of IRFs (DAI)?
+R:
 1) Un pattern recognition receptor (PRR) di superficie che lega carboidrati batterici
 2) Un PRR endosomiale che riconosce prodotti batterici
 3) Il primo TLR identificato
@@ -2916,6 +3232,7 @@ ANS: 6
 
 CAT: Complemento e citochine
 Q: CITA e CIITA sono dei:
+R:
 A) NLRs
 B) TLRs
 C) RLRs
@@ -2925,6 +3242,7 @@ ANS: A
 
 CAT: Complemento e citochine
 Q: Quale via di attivazione del complemento si avvale dell’uso del C1q:
+R:
 A) Via alternativa
 B) Via classica
 C) Via regolatrice
@@ -2934,6 +3252,7 @@ ANS: B
 
 CAT: Complemento e citochine
 Q: Quale via di attivazione del complemento si avvale dell’uso di MBL:
+R:
 A) Via alternativa
 B) Via classica
 C) Via regolatrice
@@ -2943,6 +3262,7 @@ ANS: D
 
 CAT: APC e cellule dendritiche
 Q: Quale delle affermazioni riguardanti il C3b è falsa:
+R:
 A) Può̀ opsonizzare i microbi
 B) Sul C3b legato in membrana si può̀ legare il fattore B
 C) Sulla membrana del patogeno può̀ legare C5 e tagliarlo
@@ -2952,6 +3272,7 @@ ANS: E
 
 CAT: Complemento e citochine
 Q: quale delle seguenti affermazioni sul complemento è vera:
+R:
 A) Esistono due vie di attivazione: quella endogena e quella esogena
 B) Sono necessari i PRRs per attivarlo
 C) Il C1q entra in gioco nell’attivazione del complemento
@@ -2961,6 +3282,7 @@ ANS: C
 
 CAT: Complemento e citochine
 Q: Quale delle seguenti affermazioni è vera?
+R:
 1) Recettori diversi utilizzano combinazioni di Jak e STAT diverse, e questo consente la trasduzione di segnali diversi
 2) Il pathway Jak-STAT è utilizzato dai recettori citochinici di tipo I
 3) Il pathway Jack-STAT è utilizzato dai recettori citochinici di tipo II
@@ -2972,6 +3294,7 @@ ANS: 5
 
 CAT: Immunità innata e infiammazione
 Q: Le proteine SOCS sono inibitori dell’attivita’ di:
+R:
 1) STAT
 2) Jak
 3) NFkB
@@ -2981,6 +3304,7 @@ ANS: 2
 
 CAT: Complemento e citochine
 Q: Quale delle seguenti affermazioni sulle citochine è falsa:
+R:
 A) Vengono sintetizzate generalmente in forma attiva
 B) Una stessa citochina può avere effetti diversi
 C) Gli interferoni fanno parte delle citochine di tipo II
@@ -2988,6 +3312,7 @@ ANS: A
 
 CAT: Organi linfoidi e traffico cellulare
 Q: quale delle seguenti affermazioni è vera:
+R:
 A) I recettori per IL-2 sono simili ai TLRs
 B) Le citochine della famiglia del TNF utilizzano Myd88 per la segnalazione intracellulare
 C) Le chemochine sono fondamentali per la guarigione delle ferite e l’integrità degli epiteli
@@ -2997,6 +3322,7 @@ ANS: C
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Quali delle seguenti citochine sono fondamentali per l’integrità degli epiteli:
+R:
 A) Citochine di tipo I
 B) Citochine della famiglia di IL-17
 C) Citochine della famiglia di TNF
@@ -3006,6 +3332,7 @@ ANS: E
 
 CAT: Organi linfoidi e traffico cellulare
 Q: I recettori per quali citochine sono dei GPCR:
+R:
 A) Citochine di tipo I
 B) Citochine della famiglia di IL-17
 C) Citochine della famiglia di IL-1
@@ -3015,6 +3342,7 @@ ANS: E
 
 CAT: Organi linfoidi e traffico cellulare
 Q: i recettori per quali citochine si avvalgono FADD o TRADD per la segnalazione intracellulare
+R:
 A) Recettori per il TGF-beta
 B) Recettori per le chemochine
 C) Recettori per il TNF
@@ -3024,6 +3352,7 @@ ANS: C
 
 CAT: Organi linfoidi e traffico cellulare
 Q: I linfociti Tregolatori quale citochina inibitoria secernono comunemente:
+R:
 A) IL-1
 B) IL-2
 C) IL-10
@@ -3033,6 +3362,7 @@ ANS: C
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Quale delle seguenti citochine è fondamentale per la sopravvivenza dei linfociti B-2 in fase di maturazione:
+R:
 A) IL-10
 B) IL-7
 C) CXCL13
@@ -3042,6 +3372,7 @@ ANS: B
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Attraverso la secrezione di citochine, quali cellule può richiamare la cellula tumorale per tentare di sfuggire al controllo del sistema immunitario:
+R:
 A) Linfociti T reg
 B) NKT di classe II
 C) Linfociti Th1
@@ -3054,6 +3385,7 @@ ANS: A,B
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quali delle seguenti affermazioni sull’HLA è vera:
+R:
 A) È codificato da più geni, e per ogni gene un solo allele è espresso
 B) Ne fanno parte molecole di classe I, II e III tutte direttamente implicate nella presentazione dell’antigene
 C) La Tapsina è una molecole classica di classe I
@@ -3063,6 +3395,7 @@ ANS: E
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: quale delle seguenti affermazioni sull’HLA I è vera:
+R:
 A) Sono le glicoproteine implicate nella presentazione ai linfociti T CD4+
 B) La catena beta-2 microglobulina non è transmembrana
 C) Presentano antigeni che sono stati fagocitati o endocitati
@@ -3072,6 +3405,7 @@ ANS: B
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale delle seguenti affermazioni sull’HLA II è vera:
+R:
 A) sono implicate nella presentazione di antigeni del metabolismo cellulare
 B) la catena alfa ha tre domini extracellulare: alfa1, alfa2 e alfa3
 C) la catena beta non è transmembrana (si lo è)
@@ -3081,6 +3415,7 @@ ANS: D
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: quale delle seguenti affermazioni è falsa:
+R:
 A) IFN-gamma stimola la trascrizione di molecole HLA di classe I e II
 B) CIITA è fondamentale per la trascrizione dei geni delle molecole HLA di classe II (si)
 C) L’unico elemento regolatorio per i geni delle molecole HLA di classe II è il modulo SXY (si)
@@ -3090,6 +3425,7 @@ ANS: D
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Su quale dominio delle catene di HLA II è presente il sito di legame per il CD4 dei linfociti T:
+R:
 A) Sul dominio alfa1 della catena alfa
 B) Sul dominio beta2 della catena beta
 C) sul dominio alfa1 e alfa 2 della catena alfa
@@ -3099,6 +3435,7 @@ ANS: B
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Qual è il ruolo di CDR3
+R:
 A) Riconoscere le regioni alfa1 sull’HLA
 B) Riconoscere le regioni alfa2 sull’HLA
 C) Riconoscere le regioni beta1 sull’HLA
@@ -3108,6 +3445,7 @@ ANS: D
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale delle seguenti affermazioni è vera:
+R:
 A) Peptidi citosolici vengono espressi preferenzialmente su HLA di classe II
 B) Il proteasoma ha come unica funzione quella di riconoscere molecole poliubiquitinate e degradarle
 C) TAP1 e TAP2 sono delle proteine della membrana citoplasmatica, con il compito di prelevare antigeni dall’esterno e trasportarli nel citosol
@@ -3117,6 +3455,7 @@ ANS: E
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: i peptidi di origine citosolica vengono caricati:
+R:
 A) Preferenzialmente su HLA I
 B) Esclusivamente su HLA I
 C) In maniera casuale su HLA I o HLA II
@@ -3126,6 +3465,7 @@ ANS: A
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Su HLA di classe II vengono caricati preferenzialmente:
+R:
 A) Peptidi di origine citosolica
 B) Peptidi processati dal proteasoma
 C) Peptidi derivati dalla via fagocitica/endocitica
@@ -3135,6 +3475,7 @@ ANS: C
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: quale delle seguenti affermazioni sull’HLA di classe II è falsa
+R:
 A) Viene esposto in membrana privo del peptide e successivamente endocitato per permetterne il caricamento(si)
 B) Per il caricamento del peptide è necessario l’ausilio della catena invariante (si)
 C) Il peptide viene caricato nel lume del RE
@@ -3144,6 +3485,7 @@ ANS: C
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Che cosa non si può trovare nei MVB:
+R:
 A) Catena invariante (è già stata degradata)
 B) Catepsine
 C) HLA di classe II
@@ -3153,6 +3495,7 @@ ANS: E
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Che cosa si intende per cross presentazione:
+R:
 A) Il fatto che una DC possa attivare sia linfociti T sia linfociti B
 B) Il fatto che HLA I e HLA II possano presentare sia peptidi di origine citosolica sia di derivazione fagocitica/endocitica.
 C) il fatto che un complesso HLAp possa essere esocitato
@@ -3162,6 +3505,7 @@ ANS: E
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale delle seguenti affermazioni sui tumori è falsa:
+R:
 A) Hanno la capacità di evadere l’apoptosi
 B) L’infiammazione cronica contrasta lo sviluppo del tumore
 C) Per sfuggire al sistema immunitario le cellule tumorali, talvolta, inibiscono l’espressione di molecole MHC
@@ -3171,6 +3515,7 @@ ANS: B
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quali sono le glicoproteine HLA di classe II più polimorfiche?
+R:
 1) DM
 2) DP e DO
 3) DM, DO e DQ
@@ -3180,6 +3525,7 @@ ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Il complesso HLA è poligenico e polimorfico. Il polimorfismo HLA di un individuo:
+R:
 1) Deriva da ricombinazioni somatiche
 2) Deriva da mutazioni somatiche
 3) Deriva da ricombinazioni somatiche cui si associano spesso delle mutazioni
@@ -3188,6 +3534,7 @@ ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: I peptidi presentati dalle molecole MHC di classe II derivano principalmente:
+R:
 1) Da peptide presenti nell’ambiente extracellulare che si legano direttamente alle molecule MHC sula membrana
 2) Dalle proteine presenti nel citoplasma
 3) Dalle protein dei virus che infettano le cellule
@@ -3197,6 +3544,7 @@ ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Un peptide si lega ad una tasca MHC quando possiede:
+R:
 1) Le regioni CDR1 e CDR2 complementari
 2) La regione CDR3 complementare
 3) Quando corrisponde all’immagine interna dell’antigene
@@ -3206,6 +3554,7 @@ ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale delle seguenti affermazioni è corretta?
+R:
 1) Le molecole MHC legano esclusivamente peptidi generati da agenti infettivi
 2) Le molecole MHC di classe I sono specializzate nel presentare peptidi generate nel citoplasma dove sono sintetizzate le protein virali, quindi non possono presentare protein di origine batterica
 3) Le molecole MHC di classe II possono presentare peptidi generati da qualunque agente infettivo internalizzato dai fagociti
@@ -3216,6 +3565,7 @@ ANS: 6
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quali delle seguenti caratteristiche sono comuni alle MHC di classe I e II?
+R:
 1) Sono composte da due catene transmembrana non identiche
 2) Il dominio distale dalla membrana cellulare forma una tasca per il peptide
 3) Non assumono una conformazione stabile in assenza del peptide nella tasca
@@ -3226,6 +3576,7 @@ ANS: 5
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Per il locus HLA-B sono stati identificati oltre 400 alleli. Quale è il massimo numero di alleli per il locus HLA-B che possono esprimere simultaneamente le cellule di un determinato paziente?
+R:
 1) 1
 2) 2
 3) 4
@@ -3235,6 +3586,7 @@ ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: A un paziente con una storia di infezioni batteriche croniche delle vie aree superiori e inferiori che presenta anomalie nel numero delle molecole MHC di classe I sulla superficie cellulare e un ridotto numero di cellule T CD8, viene diagnosticata la sindrome del linfocita nudo di tipo I. La deficienza di quale di queste molecole causa la malattia?
+R:
 1) HLA-DM
 2) Catena invariante
 3) CLIP
@@ -3244,6 +3596,7 @@ ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Una donna di 38 anni necessita di un trapianto di rene. Il suo genotipo HLA e’: HLA-A: 01;01/03;01, HLA-B: 07;02/08;01, HLA-DRB1: 03;01/07;01. Per ciascun locus, l’allele materno e’ riportato per primo, mentre quello paterno per secondo. Quale dei seguenti potenziali donator e’ quello maggiormente compatibile per il trapianto?
+R:
 1) HLA-A 03;01/02;01, HLA-B: 44;02/08;01; HLA-DRB1: 03;01/04;03
 2) HLA-A 03;01/29;02, HLA-B: 18;01/08;01; HLA-DRB1: 04;03/07;01
 3) HLA-A 29;02/02;01, HLA-B: 07;02/08;01; HLA-DRB1: 03;01/13;01
@@ -3253,6 +3606,7 @@ ANS: 4
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Da quali recettori vengono captati i segnali che determinano la maturazione delle cellule dendritiche da immature a cellule dendritiche mature?
+R:
 1) Dal TCR
 2) Dal BCR
 3) Dal CD28
@@ -3262,6 +3616,7 @@ ANS: 4
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale di questi meccanismi contribuisce alla generazione della tolleranza centrale:
+R:
 A) Segregazione antigenica
 B) Linfociti Treg
 C) Anergia periferica
@@ -3269,6 +3624,7 @@ ANS: B
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale dei seguenti elementi non fa parte del complesso recettoriale dei linfociti T
+R:
 A) CD3 gamma
 B) Catena alfa del TCR
 C) CD3 delta
@@ -3278,6 +3634,7 @@ ANS: D
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Il movimento a pistone del TCR è importante per:
+R:
 A) Il suo corretto inserimento sulla membrana plasmatica
 B) Per permettere la fosforilazione delle sequenze ITAM nella suo dominio intracitoplasmatico
 C) Per permettere il corretto caricamento dell’antigene sul TCR
@@ -3287,6 +3644,7 @@ ANS: D
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Per permettere la corretta attivazione di un linfocita T serve:
+R:
 A) La produzione di IL-2 Solo B
 B) Segnali costimolatori
 C) Produzione di chemochine
@@ -3299,6 +3657,7 @@ ANS: H
 
 CAT: Organi linfoidi e traffico cellulare
 Q: il sommarsi dei segnali di costimolazione ai segnali del TCR porta il linfocita T:
+R:
 A) A produrre cloni di se stesso
 B) A migrare nei linfonodi
 C) Ad esprimere la catena alfa del recettore per IL-2
@@ -3308,6 +3667,7 @@ ANS: C
 
 CAT: Organi linfoidi e traffico cellulare
 Q: CD40L:
+R:
 A) Lega il recettore CCR7
 B) I linfociti T in fase di attivazione ne down-regolano l’espressione
 C) Se interagisce con il proprio recettore permette l’espressione di CTLA4 sul linfocita T
@@ -3317,6 +3677,7 @@ ANS: C
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale delle seguenti affermazioni su CTLA4 è falsa:
+R:
 A) Lega le molecole B7 espresse dalle APCs
 B) è considerato un checkpoint immunitario
 C) lega gli stessi ligandi di CD28 con affinità venti volte minore
@@ -3326,6 +3687,7 @@ ANS: C
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: quali delle seguenti cellule sono FoxP3+:
+R:
 A) timociti DN
 B) Linfociti B-2 MZ
 C) Linfociti B-2 FO
@@ -3335,6 +3697,7 @@ ANS: D
 
 CAT: Organi linfoidi e traffico cellulare
 Q: I linfociti Treg quale citochina inibitoria secernono comunemente:
+R:
 A) IL-1
 B) IL-2
 C) IL-10
@@ -3344,6 +3707,7 @@ ANS: C
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quale delle seguenti affermazioni è falsa:
+R:
 A) I linfociti TH2 sono coinvolti nella difesa contro gli elminti
 B) I linfociti TH9 implicati nell’insorgenza di quadri di asma
 C) I linfociti TH17 hanno due fenotipi: uno effettore e un regolatorio
@@ -3353,6 +3717,7 @@ ANS: A
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: I linfociti T CD8+ effettori citotossici:
+R:
 A) Possono secernere perforine per uccidere le cellule bersaglio
 B) Possono operare una sola uccisione poiché vengono uccisi dai loro stessi granuli - citotossici
 C) Esprimono FasL
@@ -3365,6 +3730,7 @@ ANS: H
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: I linfociti Tgamma/delta:
+R:
 A) Nella maggior parte dei casi sono CD8+
 B) Richiedono l’attivazione del fattore trascrizionale SOX13
 C) Vengono prodotti dal timo secondo due ondate. Presentano il recettore NKG2D
@@ -3376,20 +3742,23 @@ ANS: H
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Metti in ordine gli eventi che si susseguono nella reazione del centro germinativo:
+
 A) Si forma il follicolo secondario
 B) Linfociti T e linfociti B, che hanno riconosciuto l’antigene, costituiscono il focus primario, nella regione interfollicolare
 C) Formazione del centro germinativo definitivo, in cui si riconoscono una zona scura e una zona chiara
 D) Linfociti B naive residenti nel follicolo, che non hanno riconosciuto l’antigene, si spostano nella zona mantellare
 E) Linfociti T Helper Follicolari e linfociti B attivati migrano nel follicolo B
+R:
 1) B-D-E-A-C
-2) E-B-D-A-C -
-3) B-E-D-C-A >
+2) E-B-D-A-C
+3) B-E-D-C-A
 4) B-E-D-A-C
-5) E-B-D-C-A - >
+5) E-B-D-C-A
 ANS: 4
 
 CAT: Organi linfoidi e traffico cellulare
 Q: I plasmablasti generati in seguito ad attivazione T-dipendente dal focus primario dei linfonodi:
+R:
 A) Produrranno esclusivamente IgM
 B) Sono lungo sopravviventi
 C) Esprimono ad altissimi livelli BLIMP-1
@@ -3399,6 +3768,7 @@ ANS: C
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Attraverso la secrezione di citochine, quali cellule può richiamare la cellula tumorale per tentare di sfuggire al controllo del sistema immunitario:
+R:
 A) Linfociti T reg
 B) NKT di classe II
 C) Linfociti Th1
@@ -3410,6 +3780,7 @@ ANS: A,B
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Un linfocita T citotossico uccide:
+R:
 1) La cellula bersaglio morendo con essa
 2) Piu’ cellule bersaglio con lo stesso allele MHC anche se legato a peptide diversi
 3) Più cellule bersaglio con lo stesso allele MHC e lo stesso peptide in quanto si allontana prima che queste muoiano
@@ -3419,6 +3790,7 @@ ANS: 3
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: La molecola CD8 si lega:
+R:
 1) Al dominio beta-2 delle glicoproteine di classe II, dominio costante e vicino alla membrana
 2) Al dominio beta-1 delle glicoproteine MHC di classe II, dominio che partecipa alla formazione della tasca
 3) Al dominioalfa-1 delle glicoproteine di classe II, dominio che partecipa alla formazione della tasca
@@ -3427,6 +3799,7 @@ ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Più ampio è il repertorio dei diversi TCR:
+R:
 1) Minore è il numero di complessi MHC-peptide che verranno riconosciuti
 2) Maggiore è il numero di complessi MHC-peptide che verranno riconosciuti
 3) Minore e’ il numero di TCR espresso da ogni linfocita
@@ -3434,6 +3807,7 @@ ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Le regioni del TCR dette CDR1 e CDR2:
+R:
 1) Nascono dall’aggiunta di nucleotidi da parte della terminal desossinucleotidil transferasi
 2) Interagiscono principalmente con il peptide nella tasca dell’MHC
 3) Interagiscono con le glicoproteine HLA
@@ -3443,6 +3817,7 @@ ANS: 3
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Il recettore dei linfociti T (TCR) è formato:
+R:
 1) Da un’unica catena alfa, che si ripiega e poggia sulla beta-2 microglobulina
 2) Da un eterodimero di catene alfa e beta
 3) Da un omodimero di catene alfa
@@ -3451,6 +3826,7 @@ ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Da un’unica catena alfa, che si associa al complesso CD3 Il ruolo delle proteine CD3 e della catena ζ (zeta) espresse sulla superficie cellulare e’ quello di:
+R:
 1) Trasmettere i segnali captati dal BCR all’interno della cellula
 2) Trasmettere i segnali captati dal TCR all’interno della cellula
 3) Legare le molecule MHC
@@ -3460,6 +3836,7 @@ ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: I linfociti T citotossici e killer sono:
+R:
 1) Cellule CD4+ che riconoscono l’antigene in forma naturale
 2) Cellule CD4+ che riconoscono l’antigene in forma di peptide complessato con MHC di classe I
 3) Cellule CD4+ che riconoscono l’antigene in forma di peptide complessato con MHC di classe II
@@ -3469,6 +3846,7 @@ ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: I linfociti T helper sono:
+R:
 1) Cellule CD4+ che riconoscono l’antigene in forma naturale
 2) Cellule CD4+ che riconoscono l’antigene in forma di peptide complessato con le molecule MHC di classe I
 3) Cellule CD4+ che riconoscono l’antigene in forma di peptide complessato con le molecule MHC di classe II
@@ -3478,6 +3856,7 @@ ANS: 3
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Un linfocita in via di maturazione come primo evento del riarrangiamento dei geni del TCR:
+R:
 1) unisce una regione D della catena beta con una ragione J beta
 2) unisce una regione D della catena alfa con una ragione J alfa
 3) unisce una regione V della catena beta con una ragione D beta
@@ -3487,6 +3866,7 @@ ANS: 1
 
 CAT: Organi linfoidi e traffico cellulare
 Q: In quale distretto dell’organismo possiamo trovare fino al 80% di linfociti che co- esprimono CD4 e CD8?
+R:
 1) Nel sangue
 2) Nel midollo osseo
 3) Nei linfonodi
@@ -3498,6 +3878,7 @@ ANS: 5
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: La funzione della selezione negativa nel timo è di eliminare:
+R:
 1) i timociti doppi positivi
 2) i timociti singoli positivi
 3) i timociti apoptotici
@@ -3507,6 +3888,7 @@ ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Nel timo i linfociti T che non riconoscono per nulla i complessi MHC-peptide dell’individuo di cui fanno parte:
+R:
 1) Vanno incontro a espansione clonale
 2) Vengono selezionati negativamente e in dotti a suicidio apoptotico
 3) Persistono in periferia senza subire ne’ una selezione positive ne’ una selezione negativa
@@ -3516,6 +3898,7 @@ ANS: 4
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Qual’è il fenotipo più comune delle cellule T regolatorie?
+R:
 1) CD4+CD25+Foxp3+
 2) CD8+CD25+Foxp3-
 3) CD8+CD25+Foxp3+
@@ -3525,12 +3908,14 @@ ANS: 1
 
 CAT: Immunità innata e infiammazione
 Q: Come mai numerosi linfociti T vergini condividono l’identica catena beta?
+R:
 1) Perche’ la catena beta ha piu’ possibilita’ di riarrangiare rispetto alla catena alfa
 2) perché dopo aver riarrangiato la catena beta il linfocita prolifera e da origine a tanti cloni che poi riarrangiano la catena alfa
 ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Individui con difetto del gene regolatore autoimmune (AIRE) sono affetti da:
+R:
 1) Sindrome DiGeorge
 2) APECED-Poli-endo-crino-patia autoimmunitaria-candidiasi-distrofia ectodermica
 3) SCID
@@ -3541,6 +3926,7 @@ ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale evento fa sì che un linfocita maturando divenga CD4 oppure CD8?
+R:
 1) Quale dei due geni ha ricombinato per primo, quello del CD4 o quello del CD8
 2) Quale gene, CD4 oppure CD8, e’ piu’ affine al complesso MHC peptide
 3) Che il TCR interagisca con affinità con un peptide associato alle molecole MHC di classe I o II
@@ -3550,6 +3936,7 @@ ANS: 3
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: I linfociti immaturi che lasciano il midollo osseo e vanno a localizzarsi nel timo sono:
+R:
 1) CD3+, CD4+, CD8+, TCR+, Tdt+
 2) CD3+, CD4-, CD8-, TCR+, Tdt-
 3) CD3-, CD4+, CD8+, TCR+, Tdt+
@@ -3559,6 +3946,7 @@ ANS: 4
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: La maggior parte dei linfociti maturi che lasciano il timo ed entrano nel circolo sanguiogno sono:
+R:
 1) CD3+ CD4+ CD8- TdT+
 2) CD3+ CD4- CD8- TdT+
 3) CD3+ CD4+ CD8- TdT-
@@ -3567,6 +3955,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: L’espansione clonale che ha luogo dopo il riconoscimento di un antigene è un meccanismo tipico:
+R:
 1) solo dei linfociti T e B 
 2) Dei linfociti T, B, NK e macrofagi
 3) Solo dei linfociti T e delle cellule NK
@@ -3575,6 +3964,7 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: La conseguenza immunologica della malattia da immunodeficienza combinata grave (SCID) causata da un difetto genetico dei geni RAG-1 o RAG-2 e’:
+R:
 1) Perdita del meccanismo di ricombinazione somatica nei geni del recettore delle cellule T e delle cellule B
 2) Perdita del meccanismo di ricombinazione somatica nei loci delle immunoglobuline
 3) Perdita del meccanismo di ricombinazione somatica nei loci del recettore delle cellule T
@@ -3584,6 +3974,7 @@ ANS: 1
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quali cellule si ritiene siano responsabili della presentazioni ai timociti, durante il processo di selezione negativa, degli antigeni catturati nei tessuti periferici, di antigeni derivati da batteri commensali e di antigeni del cibo?
+R:
 1) Cellule epiteliali timiche della corticale
 2) Cellule epiteluiali timiche della midollare
 3) Cellule dendritiche autoctone
@@ -3594,6 +3985,7 @@ ANS: 4
 
 CAT: Organi linfoidi e traffico cellulare
 Q: cosa si intende per commitment cellulare:
+R:
 A) la perdita della capacita di un linfocita T maturo a lasciare l’organo linfatico secondario
 B) la perdita della capacità di differenziare in tipi cellulari diversi
 C) l’acquisizione di un fenotipo specifico
@@ -3603,6 +3995,7 @@ ANS: C
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: durante la selezione positiva nella corticale timica:
+R:
 A) un timocita viene selezionato positivamente riesce ad avere una interazione TCR- HLAp molto forte
 B) un timocita viene selezionato positivamente se non ha alcuna interazione TCR-HLAp
 C) un timocita viene selezionato positivamente se ha una interazione TCR-HLAp e vengono scatenati pathways intracellulari anche da un corecettore
@@ -3612,6 +4005,7 @@ ANS: C
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: la totale fosforilazione delle sequenze ITAM sui CD3 e sulle catene Zeta può portare a:
+R:
 A) assumere un fenotipo CD8+
 B) apoptosi
 C) assunzione di un fenotipo T regolatorio
@@ -3620,6 +4014,7 @@ ANS: B
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Quali sono le proteine adattatrici fondamentali per la trasduzione del segnale a valle del TCR?
+R:
 1) SLP-65 e ZAP-70
 2) SLP-65 e LAT
 3) SLP-76 e LAT
@@ -3627,6 +4022,7 @@ ANS: 3
 
 CAT: Immunità innata e infiammazione
 Q: La scissione dei fosfolipidi di membrana da parte della fosfolipasi c-gamma determina la produzione di inositolo-3-fosfato che:
+R:
 1) Fosforila le tyrosine della ITAM
 2) De-fosforila LcK e Fyn
 3) Attiva la via di trasduzione dellNF-kB
@@ -3635,6 +4031,7 @@ ANS: 4
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Il riconoscimento dell’antigene da parte dei linfociti T in assenza di segnali co- stimolatori provoca:
+R:
 1) up-regolazione del B7
 2) espressione del recettore ad alta affinita’ per l’IL-2
 3) anergia della cellula T
@@ -3644,6 +4041,7 @@ ANS: 3
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: L’espressione del CD40 Ligando da parte dei linfociti T in via d’attivazione determina l’espressione sulla cellula che presenta l’antigene:
+R:
 1) Del recettore CD28
 2) Della catena alfa del recettore di IL-2 (CD25)
 3) Della molecola di costimolazione B7
@@ -3653,6 +4051,7 @@ ANS: 3
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Metti nell’ordine corretto queste fasi della presentazione dei peptide da parte delle glicoproteine HLA di classe II: a-Progressiva degradazione della catena invariante b-Inserimento del peptide nella tasca c-Associazione delle catene alfa e beta con la catena invariante d-Sintesi indipendente delle catene alfa e beta e-Associazione delle catene alfa e beta contenenti il residuo “Clip” con le molecule HLA- DN e HLA-DO f-Apertura della tasca e fuoriuscita di “Clip”
+R:
 1) a,b,c,d,e,f
 2) e,d,f,c,b,a
 3) d,f,b,a,e,c
@@ -3662,6 +4061,7 @@ ANS: 5
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: In che cosa si differenziano le DCs classiche e le DCs plasmocitoidi:
+R:
 A) Le cDCs, una volta attivate, diventano pDCs
 B) Le cDCs hanno attivo il fattore di trascrizione E2-2, non attivo nelle pDCs
 C) Le pDCs sono più coinvolte nella risposta immunitaria innata, mentre le cDCs in quella adattativa
@@ -3671,6 +4071,7 @@ ANS: C
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Quale di queste proteine non fa parte del Peptide Loading Complex:
+R:
 A) Calreticulina
 B) TABP
 C) ERp57
@@ -3680,6 +4081,7 @@ ANS: D
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: TAP1 e TAP2 sono:
+R:
 1) Enzimi responsabili della ricombinazione dei geni del TCR
 2) Trasportatori di peptide, codificati da geni posti nell’MHC che partecipano alla presentazione in classe II
 3) Trasportatori di peptidi, codificati da geni posti nell’MHC che partecipano alla presentazione in classe I
@@ -3689,6 +4091,7 @@ ANS: 3
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Tap1 e TAP2 sono coinvolte in quale fenomeno?
+R:
 1) La presentazione dei peptidi associati alle molecole HLA di classe I
 2) La presentazione dei peptidi associati alle molecole HLA di classe II
 3) La ricombinazione dei recettori per l’antigene dei linfociti T e B
@@ -3697,6 +4100,7 @@ ANS: 1
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Il timoproteasoma e’ espresso da quali delle seguenti cellule?
+R:
 1) Cellule epiteliali timiche della corticale
 2) Cellule epiteliali timiche della midollare
 3) Cellule dendritiche autoctone
@@ -3707,6 +4111,7 @@ ANS: 1
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Le cellule dendritiche immature sono:
+R:
 1) Migliori cellule presentanti l’antigene rispetto alle cellule dendritiche mature
 2) Migliori nel catturare l’antigene rispetto alle cellule dendritiche mature
 3) Caratterizzate dall’espressione di molecule MHC di classe II e molecule co- stimolatorie
@@ -3715,6 +4120,7 @@ ANS: 2
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: I linfociti CD4 naive vengono “istruiti” dalla cellula dendritica (DC) in base al tipo di antigene che le ha fatte maturare. In particolare, perche’ il CD4 divenga un linfocita Th1 la CD deve esprimere:
+R:
 1) I Notch receptors
 2) I legandi di tipo Delta dei recettori Notch
 3) I legandi di tipo Jagged dei recettori Notch
@@ -3725,6 +4131,7 @@ ANS: 2
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Cosa sono i Th17?
+R:
 1) Cellule CD4+Foxp3+ a funzione regolatoria
 2) Cellule CD4+Foxp3- a funzione regolatoria
 3) Cellule CD4+Foxp3+ che dopo attivazione producono IL17 e IL6
@@ -3735,6 +4142,7 @@ ANS: 4
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: I linfociti helper 17 (Th17) sono indotti dalla produzione di una particolare citochina ad opera dei macrofagi attivati. Quale?
+R:
 1) IL4
 2) IL12
 3) IL21
@@ -3744,6 +4152,7 @@ ANS: 5
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: L’interleuchina IL21 e’ un’importante citochina prodotta da alcuni tipi di linfociti CD4+ effettori, ma in una di queste popolazioni riveste un ruolo fondamentale, sia autocrino sia paracrine. In quale?
+R:
 1) Th1
 2) Th2
 3) Th9
@@ -3757,6 +4166,7 @@ ANS: 9
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: cosa sono le perforine?
+R:
 1) Enzimi proteolitici che digeriscono la membrane cellulare
 2) Molecole che polimerizzano in presenza di Ca2+ e formano buchi sulle membrane cellulari
 3) Caspasi che determinano la morte cellulare
@@ -3766,6 +4176,7 @@ ANS: 2
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Cosa sono i granzimes rilasciati dai linfociti T?
+R:
 1) Citochine proinfiammatorie
 2) Chemochine
 3) Molecole della membrana cellular che favoriscono ladsorbimento del virus HIV
@@ -3775,6 +4186,7 @@ ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Che cosa si intende per alloreattivita’?
+R:
 1) La capacita’ dei linfociti B di riconoscere complessi peptide-MHC allogenico (di un altro individuo con diverso MHC)
 2) La capacita’ delle cellule NK di riconoscere complessi peptide-MHC allogenico
 3) La capacita’ dei linfociti T di riconoscere complessi peptide-MHC allogenico
@@ -3783,6 +4195,7 @@ ANS: 3
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Con alloreattività si intende:
+R:
 A) Il fatto che un TCR possa riconoscere complessi HLAp in cui HLA è diverso da quello dell’organismo
 B) Il fatto che una FDC possa attivare un linfocita T
 C) Il fatto che un TCR possa riconoscere antigeni self
@@ -3792,6 +4205,7 @@ ANS: A
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: I linfociti T Natural Killer (NKT)
+R:
 A) Esprimono contemporaneamente il TCRalfa-beta e i recettori KIR
 B) Possono riconoscere la molecola CD1d
 C) Ci sono due tipi di NKT: tipo I e tipo II
@@ -3804,6 +4218,7 @@ ANS: E
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: I recettori KIR espressi dalle cellule NK ne bloccano l’azione citolitica quando riconoscono:
+R:
 1) Antigeni batterici
 2) Antigeni virali
 3) Cellule infettate da virus
@@ -3813,6 +4228,7 @@ ANS: 3
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Le cellule T-gamma-delta sono particolarmente abbondanti in quali compartimenti?
+R:
 1) Nel sangue
 2) Nella milza
 3) Nell’epidermide
@@ -3825,6 +4241,7 @@ ANS: 7
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: I linfociti γδ hanno:
+R:
 1) Differenziano nel timo principalmente in eta’ adulta
 2) Attraverso il TCR riconoscono molecule indotte da stress (MICA, MICB, ULBP)
 3) Riconoscono soprattutto composti non proteici fosforilati detti FOSFOANTIGENI
@@ -3835,6 +4252,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: quale delle seguenti affermazioni sulle proteine della famiglia RAG è vera:
+R:
 A) sono espresse costitutivamente in tutte le cellule dell’organismo
 B) devono associarsi alle proteina ARTEMIS per funzionare
 C) nei linfociti B opera RAG-1 mentre nei linfociti T opera RAG-2
@@ -3844,6 +4262,7 @@ ANS: D
 
 CAT: Immunità innata e infiammazione
 Q: Indicare quale proteine è formato il complesse delle RAG:
+R:
 A) È formato da due RAG-1 e due RAG-2
 B) È formato da due RAG-1 e una solo RAG-2
 C) È formato da una RAG-1, una RAG-2 e una RAG-3
@@ -3853,6 +4272,7 @@ ANS: A
 
 CAT: Immunità innata e infiammazione
 Q: Nelle Recombination Signal Sequence (RSS)
+R:
 A) Gli eptameri ed i nonameri sono sequenze di DNA altamente conservate
 B) Si trovano solo nei segmenti D
 C) Le sequenze spaziatrici possono essere di 12 o 55 aminoacidi
@@ -3862,6 +4282,7 @@ ANS: D
 
 CAT: Immunità innata e infiammazione
 Q: Nella prima fase della ricombinazione V(D)J
+R:
 A) Le proteine RAG introducono un single strand break
 B) Il dominio NBD di RAG1 interagisce con l’eptamero della RSS
 C) Si forma un hairpin loop, perché il gruppo OH attacca il gruppo P libero all’estremità 5’dell’altra emielica
@@ -3871,6 +4292,7 @@ ANS: D
 
 CAT: Immunità innata e infiammazione
 Q: I fattori ku:
+R:
 A) Servono per creare nick sul DNA
 B) Si trovano all’estremità C terminale di RAG-2
 C) Sono legati covalentemente all’enzima DNA-PK
@@ -3878,6 +4300,7 @@ ANS: B
 
 CAT: Immunità innata e infiammazione
 Q: Quale delle seguenti proteine genera i nucleotidi P:
+R:
 A) ARTEMIS
 B) DNA-PK
 C) Fattore ku
@@ -3887,6 +4310,7 @@ ANS: A
 
 CAT: Immunità innata e infiammazione
 Q: Quale delle seguenti proteine genera i nucleotidi N:
+R:
 A) ARTEMIS
 B) DNA-PK
 C) Fattore ku
@@ -3896,6 +4320,7 @@ ANS: E
 
 CAT: Linfociti B e anticorpi
 Q: Il BCR:
+R:
 A) Lega antigeni processati
 B) È associato ad Ig-alfa e Ig-beta
 C) È espresso esclusivamente dai linfociti B-1
@@ -3905,6 +4330,7 @@ ANS: B
 
 CAT: Linfociti B e anticorpi
 Q: Quali delle seguenti affermazioni è corretta:
+R:
 A) I linfociti B-1 si divino in: B-1 MZ e B-1 FO
 B) I linfociti B MZ esprimono alti livelli di IgD e bassi livelli di IgM
 C) I linfociti B-1 sono considerati i linfociti B canonici
@@ -3914,6 +4340,7 @@ ANS: B
 
 CAT: Linfociti B e anticorpi
 Q: Quale delle seguenti affermazioni sulla ricombinazione VDJ del BCR è corretta:
+R:
 A) Viene prima ricombinata la catena L
 B) Il locus per la catena L contiene segmenti V, D, J e C, mentre quello per la catena H non presenta i segmenti D 
 C) Viene prima ricombinato il locus k della catena H 
@@ -3923,6 +4350,7 @@ ANS: D
 
 CAT: Linfociti B e anticorpi
 Q: La maturazione dell’affinità per ipermutazione somatica consiste nel:
+R:
 A) Generare delle mutazione specifiche sul DNA in modo che tutti i BCR prodotti abbiano una affinità maggiore per l’antigene
 B) Cambiare la regione costante del BCR in modo da passare da IgM ad IgG
 C) Rimuovere la porzione transmembrana sul BCR in modo che esso diventi solubile
@@ -3932,6 +4360,7 @@ ANS: D
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Le sequenze P della parte variabile del TCR derivano:
+R:
 1) dall’apertura della forcina da parte di Artemis
 2) Dall’aggiunta di nucleotide da parte della TdT
 3) Dalle caratteristiche degli eptameri
@@ -3941,6 +4370,7 @@ ANS: 1
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Quale delle seguenti affermazioni sui linfociti B-2 MZ è falsa:
+R:
 A) Esprimo alti livelli di IgM e bassi livelli di IgD
 B) Originano da linfociti B transizionali che hanno riconosciuto antigeni con una affinità medio-bassa
 C) Il riconoscimento da parte di NOTCH-2 di DL-L-1 favorisce l’homing nella milza
@@ -3949,6 +4379,7 @@ ANS: D
 
 CAT: Linfociti B e anticorpi
 Q: Durante la maturazione dei linfociti B c’è una fase d’intensa proliferazione che consente di utilizzare la stessa catena pesante riarrangiata da parte di vari cloni di linfociti
+R:
 B) Questa fase proliferativa ha luogo:
 1) Appena si e’ formatO il riarrangiamento VDJ
 2) Quando la cellula riesce a produrre la catena pesante nel citoplasma
@@ -3959,6 +4390,7 @@ ANS: B
 
 CAT: Linfociti B e anticorpi
 Q: I linfociti B sono i principali mediatori della:
+R:
 1) Infiammazione
 2) Fagocitosi
 3) Immunita’ adattativa umorale
@@ -3968,6 +4400,7 @@ ANS: 3
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Vaccini contro tumori ad eziologia virale anti-HPV e anti-HBV fanno parte della immunoprevenzione:
+R:
 A) Primaria
 B) Secondaria
 C) Terziaria
@@ -3977,6 +4410,7 @@ ANS: A
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quale delle seguenti condizioni non e’ associate con la deposizione di immunocomplessi?
+R:
 1) reazione di Arthus
 2) anemia emolitica autoimmune 3 si
 3) malattia del siero
@@ -3986,6 +4420,7 @@ ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Individui con difetto del gene regolatore autoimmune (AIRE) sono affetti da:
+R:
 1) Sindrome DiGeorge
 2) APECED (Poli-endo-crino-patia autoimmunitaria-candidiasi-distrofia ectodermica)
 3) SCID
@@ -3996,6 +4431,7 @@ ANS: 2
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quali tipi di ipersensibilita' possono essere indotti dalla penicillina?
+R:
 1) di tipo primo
 2) di tipo secondo
 3) di tipo terzo
@@ -4005,6 +4441,7 @@ ANS: 2
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Un uomo di 35 anni presenta cefalea, affaticamento, stordimento, dispnea e tachicardia. Gli esami di laboratorio rivelano riduzione dell’emoglobina e positivita’ al test di Coomb (presenza di anticorpi sulla superficie degli eritrociti). Il paziente sta assumendo - un antibiotic per I sintomi causati dall’infezione delle vie respiratory superiori. A quale tipo di ipersensibilita’ attribuite questi segni? -
+R:
 1) Tipo I, mediata da anticorpi IgG
 2) Tipo II, mediata da anticorpi IgG
 3) Tipo III, mediata da anticorpi IgG
@@ -4014,6 +4451,7 @@ ANS: 2
 
 CAT: Linfociti B e anticorpi
 Q: Quale tra queste malattie autoimmuni e' eziologicamente causata da anticorpi che legando il recettore mimano l'azione del ligando naturale ed inducono un'anomala iperfunzionalita' dell'organo?
+R:
 1) La trombocitopenia
 2) L’emoglobinuria parossistica notturna
 3) Il diabete mellito di tipo primo
@@ -4025,6 +4463,7 @@ ANS: 2
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Un paziente maschio giovane presenta sangue nelle urine dopo un’infezione virale delle alte vie respiratorie. I test per la funzionalita’ renale sono alterati e viene richiesta una biopsia renale. DFalla biopsia risulta deposizione di complessi immune lungo la membrane basale. Quale tipo di reazione di ipersensibilita’ e’ probabile che abbia colpito questo paziente?
+R:
 1) tipo I
 2) tipo II
 3) tipo III
@@ -4033,6 +4472,7 @@ ANS: 3
 
 CAT: Organi linfoidi e traffico cellulare
 Q: La S1P:
+R:
 A) Genera un gradiente chemiotattico che richiama i linfociti nel circolo sanguigno
 B) Non è secreta negli SLOs
 C) È presente a bassa concentrazione negli SLOs
@@ -4044,6 +4484,7 @@ ANS: F
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Quale delle seguenti affermazioni sulla reazione del centro germinativo è falsa:
+R:
 A) Le FDCs della zona scura secernono la chemochina CXCL12 al posto della CXCL13
 B) I linfociti B della zona scura si chiamano centroblasti, quelli della zona chiara centrociti
 C) I centrociti vanno incontro ad ipermutazione somatica
@@ -4053,6 +4494,7 @@ ANS: C
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Quali cellule organizzano il network di condotti che si trova nella zona T nella paracorticale dei linfonodi?
+R:
 1) Cellule follicolari dendritiche
 2) Cellule reticolari marginali
 3) Cellule fibroblastiche reticolari
@@ -4063,6 +4505,7 @@ ANS: 3
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Le strutture linfoidi secondarie sono tutte le seguenti, tranne:
+R:
 1) Milza
 2) Linfonodi
 3) Midollo osseo
@@ -4072,6 +4515,7 @@ ANS: 3
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Cosa regola la fuoriuscita dei linfociti dai linfonodi?
+R:
 1) dalle chemochine
 2) sfingosina
 1) fosfato
@@ -4082,6 +4526,7 @@ ANS: 2
 
 CAT: Organi linfoidi e traffico cellulare
 Q: La milza differisce dagli altri organi linfatici secondari per quale delle seguenti ragioni?
+R:
 1) non contiene cellule T
 2) filtra sia il sangue sia la linfa
 3) e’ popolata da cellule specializzate chiamate cellule M
@@ -4091,6 +4536,7 @@ ANS: 5
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Quali caratteristiche ritieni debba presentare la biopsia linfonodale prelevata da un giovane con un deficit legato al cromosoma X del gene che codifica per la tirosina chinasi di Bruton (Btk)?
+R:
 1) marcato infiltrato linfocitario perivascolare
 2) evidenti follicoli secondari
 3) regioni paracorticali pressoche’ assenti
@@ -4100,6 +4546,7 @@ ANS: 4
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Nonostante il fenomeno della memoria immunologica sia noto da molto tempo solo recentemente si è capito che dipende da una ristretta popolazione di cellule della memoria specializzate che:
+R:
 1) possono persistere solo in presenza dell’antigene che originariamente le ha indotte
 2) possono persistere in assenza dell’antigene che originariamente le ha indotte
 3) possono persistere solo se CD4+
@@ -4110,6 +4557,7 @@ ANS: 2
 
 CAT: Organi linfoidi e traffico cellulare
 Q: Le plasmacellule “memoria” risiedono nel midollo osseo. Quali cellule stromali sono essenziali per la loro sopravvivenza nel midollo osseo?
+R:
 1) Cellule producenti IL5
 2) Cellule producenti IL7
 3) Cellule producenti IL9
@@ -4120,6 +4568,7 @@ ANS: 5
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: Bcl-6 (B-cell lymphoma
+R:
 6) e’ un repressore della trascrizione fondamentale per lo sviluppo di una risposta adattativa completa. Bcl-6: a-e’ espresso da centroblasti e centrociti b-agisce in sinergia con Blimp-1 nel dterminare la generazione di plasmacellule Mi c-favorisce il differenziamento dei linfociti CD4+ in T helper follicolari d-favorisce il differenziamento dei linfociti CD4+ in T helper 1 e T helper 17 e-inibisce il differenziamento dei linfociti B in B memoria
 1) a,b,c I
 2) b,c,d
@@ -4130,6 +4579,7 @@ ANS: 3
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quale/i dei seguenti meccanismi contribuisce/contribuiscono alla tolleranza immunologica?
+R:
 1) Delezione clonale
 2) Cellule T regolatorie
 3) Anergia
@@ -4139,6 +4589,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: Oggi in Italia la vaccinazione anti poliomielite:
+R:
 1) E’ obbligatoria e viene effettuata con un virus vivo e attenuato per via orale (vaccino di Sabin)
 2) E’ facoltativa e viene effettuata con un virus vivo e attenuato (vaccino di Sabin) per via orale
 3) E' obbligatoria e viene effettuata con un virus ucciso (vaccino di Salk) somministratoper iniezione intramuscolare
@@ -4147,6 +4598,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: Esistono dei vaccini basati su sostanze che vengono ingerite (vaccine orali)?
+R:
 1) No, perche’ I cibi inducono tolleranza
 2) Si, in quanto inducono un’ottima risposta sistemica ma una tolleranza locale
 3) No, perche’ I vaccini ingeriti vengono distrutti dagli enzimi gastrici
@@ -4155,6 +4607,7 @@ ANS: 4
 
 CAT: Organi linfoidi e traffico cellulare
 Q: I recettori NOTCH:
+R:
 A) hanno come ligandi diverse chemochine
 B) sono dei fate specification receptors
 C) sono importanti per l’homing timico
@@ -4167,6 +4620,7 @@ ANS: G
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Le immunodeficienze congenite:
+R:
 1) Sono distribuite egualmente tra I due sessi
 2) colpiscono: principalmente i maschi
 3) Colpiscono principalmente le femmine
@@ -4175,6 +4629,7 @@ ANS: 1
 
 CAT: APC e cellule dendritiche
 Q: Il premio Nobel per la medicina nel 2011 e’ stato assegnato meta’ ai ricercatori Beutler e Hoffman per I loro studi sull TLR4 e l’attivazione della risposta naturale, e meta’ a Steinman, deceduto poco prima del conferimento del premio. Qual’e’ stato il contributo scientifico che ha portato all’assegnazione del premio a Steinman?
+R:
 1) La scoperta del ruolo delle cellule follicolari dendritiche nella risposta adattativa
 2) La scoperta delle cellule NK e il loro ruolo nella risposta adattativa
 3) La scoperta delle funzioni delle cellule NK, T nell’attivazione della risposta innata
@@ -4183,6 +4638,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: Un bambino di 2 mesi presenta una diarrhea persistente, I segni e I sintomi di polmonite da Pneumocytis??? e un’infezione fungina orale da Candida Albicans. Il suo peso e’ circa un decimo del peso normale. Le risposte (?) degli esami per l’HIV sono risultate negative. La causa piu’ probabile di tale quadro e’:
+R:
 1) Una grave riduzione dei livelli delle cellule B
 2) Una
 3) Un deficit a carico dello switch isotipico
@@ -4192,6 +4648,7 @@ ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: Perche' si esegue il “purging” di un midollo che sara' trapiantato?
+R:
 1) Per lisare I linfociti B mature e abolirne la produzione di anticorpi verso I tessuti del ricevente
 2) Per lisare i linfociti T maturi e impedirne l'attacco dei tessuti del ricevente
 3) Per lisare I granulociti e trasferire solo I linfociti T e B
@@ -4202,6 +4659,7 @@ ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Come mai la GVHD (Graft versus host disease) puo' essere controllata utilizzando anticorpi monoclonali diretti verso CD2? Perche’ il CD2 (detto anche LFA-2):
+R:
 1) E’ una catena recettoriale del CD3-TC3
 2) E’ una catena del recettore dell’IL2, linfochina essenziale per la proliferazione dei linfociti T
 3) E' una molecola di adesione essenziale per l’attivazione dei linfociti T da parte delle APC
@@ -4211,6 +4669,7 @@ ANS: 3
 
 CAT: Memoria, vaccini e immunopatologia
 Q: Quale delle seguenti affermazioni sull’immunoediting è falsa: si
+R:
 A) Consta di tre fasi
 B) Un sistema immunitario competente elimina le cellule che hanno subito mutazioni
 C) In fase di Equilibrium le cellule tumorali hanno acquisito delle mutazioni che le si porteranno a scatenare un quadro patologico
@@ -4220,12 +4679,14 @@ ANS: D
 
 CAT: Immunità innata e infiammazione
 Q: polimorfici?
+R:
 1) sì
 2) no
 ANS: 2
 
 CAT: Complemento e citochine
 Q: Il TNF può indurre la necrosi emorragica dei tumori formati da cellule:
+R:
 1) che esprimono il recettore del TNF
 2) che non esprimono il recettore del TNF
 3) sia che esprimano sia che non esprimano il recettore del TNF
@@ -4233,6 +4694,7 @@ ANS: 3
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Un bambino affetto da morbillo genera CTL specifici per i peptidi del virus del morbillo. Questi CTL, in vitro, in un test di 4 ore, uccideranno i fibroblasti di un individuo infettati dal virus del morbillo?
+R:
 1) sì, purché siano infettati dal virus del morbillo
 2) sì, ma solo se i fibroblasti infettati dal virus del morbillo esprimono tutti gli antigeni MHC eguali a quelli del bambino
 3) sì, solo se i fibroblasti infettati dal virus del morbillo esprimono almeno tutti gli antigeni MHC di classe I eguali a quelli del bambino
@@ -4242,6 +4704,7 @@ ANS: 2
 
 CAT: Immunità innata e infiammazione
 Q: Nell’uomo, con quale ordine riarrangiano i geni delle catene pensanti H e delle catene leggere di tipo k e di tipo lambda delle Ig?
+R:
 1) H, k, lambda
 2) H, lambda, k
 3) lambda, k, H
@@ -4250,6 +4713,7 @@ ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: I topi che presentano difetti nell’espressione dei geni RAG1 e RAG2 hanno in circolo:
+R:
 1) solo linfociti T maturi e nessun linfocita B maturo
 2) solo linfociti B maturi e nessun linfocita T maturo
 3) nessun linfocita T o B maturo ESSERE
@@ -4257,6 +4721,7 @@ ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: Un linfocita B immaturo esprime in membrana:
+R:
 1) IgA
 2) IgG
 3) IgE
@@ -4268,18 +4733,21 @@ ANS: 7
 
 CAT: Linfociti B e anticorpi
 Q: La reazione di rigetto di II set di un lembo di cute estranea avviene:
+R:
 1) solo le viene trapiantata nella stessa zona corporea
 2) anche quando la cute viene trapiantata in un’altra qualsiasi parte dell’organismo
 ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: I ceppi di topi singenici:
+R:
 1) hanno tutti i geni in omozigosi
 2) hanno solo i MHC in omozigosi I & - L
 ANS: 1
 
 CAT: Linfociti B e anticorpi
 Q: plasmacellula?
+R:
 1) sei ore
 2) un giorno
 3) sei giorni
@@ -4288,6 +4756,7 @@ ANS: 3
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Indica in ordine di successione gli eventi che portano al riconoscimento dell’antigene e all’attivazione dei linfociti T:
+
 1) associazione dei prodotti di digestione dell’antigene alle molecole MHC
 2) produzione di IL2
 3) proliferazione dei linfociti T
@@ -4295,8 +4764,9 @@ Q: Indica in ordine di successione gli eventi che portano al riconoscimento dell
 5) riconoscimento dell’antigene da parte dei linfociti T
 6) produzione di IL1 ed espressione di segnali accessori da parte delle APC
 7) legame di IL2 prodotta al proprio recettore
-A) 1,4,6,5,2,7,3 -
+R:
+A) 1,4,6,5,2,7,3
 B) 4,1,6,5,2,7,3
-C) 6,4,1,5,3,2,7 -
+C) 6,4,1,5,3,2,7
 D) 4,6,2,7,3,1,5
 ANS: B

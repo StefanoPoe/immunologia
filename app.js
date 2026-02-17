@@ -134,6 +134,11 @@ function chooseAnswerRun(runs, correctLabels) {
     return best;
 }
 
+function isRLine(line) {
+    // accetta "R:" anche con spazi tipo "R:   "
+    return /^R:\s*$/.test(String(line || "").trim());
+}
+
 function parseTxtToQuestions(txt) {
     const blocks = txt
         .trim()
@@ -156,39 +161,68 @@ function parseTxtToQuestions(txt) {
         const ansRaw = lines[ansLineIndex].replace(/^ANS:\s*/, "").trim();
         const correctLabels = splitAns(ansRaw);
 
-        const runs = [];
-        let current = null;
+        // Nuovo: se c’è "R:", usiamo quello come separatore netto domanda/risposte
+        const rLineIndex = lines.findIndex((l, idx) => idx > qLineIndex && idx < ansLineIndex && isRLine(l));
 
-        for (let i = qLineIndex + 1; i < ansLineIndex; i++) {
-            const l = lines[i];
-            if (isOptionLine(l)) {
+        let question = "";
+        let options = [];
+
+        if (rLineIndex !== -1) {
+            // DOMANDA = da Q: fino a prima di R:
+            const qFirst = lines[qLineIndex].replace(/^Q:\s*/, "").trim();
+            const questionLines = [qFirst];
+
+            for (let i = qLineIndex + 1; i < rLineIndex; i++) {
+                questionLines.push(lines[i].trim());
+            }
+            question = questionLines.join("\n").trim();
+
+            // OPZIONI = da dopo R: fino a prima di ANS:
+            const opts = [];
+            for (let i = rLineIndex + 1; i < ansLineIndex; i++) {
+                const l = lines[i].trim();
+                if (!isOptionLine(l)) continue;
                 const opt = parseOptionLine(l);
-                if (!opt) continue;
-                if (!current) current = { idxs: [], options: [] };
-                current.idxs.push(i);
-                current.options.push(opt);
-            } else {
-                if (current) {
-                    runs.push(current);
-                    current = null;
+                if (opt) opts.push(opt);
+            }
+            options = opts;
+        } else {
+            // Fallback vecchio: prova a capire quali righe sono opzioni (runs)
+            const runs = [];
+            let current = null;
+
+            for (let i = qLineIndex + 1; i < ansLineIndex; i++) {
+                const l = lines[i];
+                if (isOptionLine(l)) {
+                    const opt = parseOptionLine(l);
+                    if (!opt) continue;
+                    if (!current) current = { idxs: [], options: [] };
+                    current.idxs.push(i);
+                    current.options.push(opt);
+                } else {
+                    if (current) {
+                        runs.push(current);
+                        current = null;
+                    }
                 }
             }
+            if (current) runs.push(current);
+
+            const answerRun = chooseAnswerRun(runs, correctLabels);
+
+            const qFirst = lines[qLineIndex].replace(/^Q:\s*/, "").trim();
+            const questionLines = [qFirst];
+
+            const answerIdxSet = new Set(answerRun ? answerRun.idxs : []);
+            for (let i = qLineIndex + 1; i < ansLineIndex; i++) {
+                if (answerIdxSet.has(i)) continue;
+                questionLines.push(lines[i].trim());
+            }
+
+            question = questionLines.join("\n").trim();
+            options = answerRun ? answerRun.options : [];
         }
-        if (current) runs.push(current);
 
-        const answerRun = chooseAnswerRun(runs, correctLabels);
-
-        const qFirst = lines[qLineIndex].replace(/^Q:\s*/, "").trim();
-        const questionLines = [qFirst];
-
-        const answerIdxSet = new Set(answerRun ? answerRun.idxs : []);
-        for (let i = qLineIndex + 1; i < ansLineIndex; i++) {
-            if (answerIdxSet.has(i)) continue;
-            questionLines.push(lines[i].trim());
-        }
-
-        const question = questionLines.join("\n").trim();
-        const options = answerRun ? answerRun.options : [];
         if (options.length < 2) continue; // requisito tuo
 
         const idSource =
@@ -210,6 +244,7 @@ function parseTxtToQuestions(txt) {
     }
     return questions;
 }
+
 
 function wireNav() {
     document.getElementById("nav-home").onclick = () => {
