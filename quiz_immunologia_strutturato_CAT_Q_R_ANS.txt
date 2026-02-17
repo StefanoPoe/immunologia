@@ -1698,7 +1698,7 @@ R:
 2) Cellule epiteliali timiche della midollare
 3) Cellule dendritiche autoctone
 4) Cellule dendritiche migratorie
-5) 1 e 3 ELI CHE MI SA CHE HA SBAGLIATO CAPRA! CAPRA!
+5) 1 e 3
 6) 2 e 4
 ANS: 1
 
@@ -2523,7 +2523,8 @@ D) La serpina B9 è una loro proteina citoplasmatica
 E) Possono secernere granuli citotossici contententi catepsina B che ha il ruolo di uccidere i patogeni
 F) Tutte le precedenti
 G) Sono corrette la A,la B e laD
-H) Sono corrette la A, la C, la D I. Sono corrette la A, la C e la E
+H) Sono corrette la A, la C, la D 
+I) Sono corrette la A, la C e la E
 ANS: H
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
@@ -3657,7 +3658,7 @@ R:
 2) Inibizione di virus e microbi.
 3) Neutralizzazione.
 4) Fagocitosi.
-5) Aggregazione e internalizzazione. 8
+5) Aggregazione e internalizzazione.
 ANS: 3
 
 CAT: Linfociti B e anticorpi
