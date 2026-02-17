@@ -276,6 +276,73 @@ button.primary {
     }
 }
 
+/* Simulazione: layout desktop con sidebar e mappa domande */
+.exam-layout {
+    display: block;
+}
+
+.exam-sidebar {
+    margin-bottom: 14px;
+}
+
+.exam-sidebar .timer {
+    margin: 10px 0;
+}
+
+.exam-sidebar #submit-exam {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.exam-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.exam-nav-item {
+    min-height: 40px;
+    padding: 0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid #4e6390;
+    background: #1b2843;
+}
+
+.exam-nav-item.unanswered {
+    border-color: #4e6390;
+    background: #1b2843;
+}
+
+.exam-nav-item.answered {
+    border-color: #2c8b66;
+    background: linear-gradient(180deg, #2b7e5f, #1f6249);
+}
+
+.exam-nav-item.answered span::after {
+    content: " ✓";
+    font-size: 12px;
+}
+
+.exam-questions .card {
+    scroll-margin-top: 14px;
+}
+
+@media (min-width: 1024px) {
+    .exam-layout {
+        display: grid;
+        grid-template-columns: minmax(230px, 1fr) minmax(0, 3fr);
+        gap: 16px;
+        align-items: start;
+    }
+
+    .exam-sidebar {
+        position: sticky;
+        top: 12px;
+        margin-bottom: 0;
+        background: #111a2f;
 /* Esame: sticky solo per timer + consegna */
 .exam-floating-controls {
     position: sticky;
