@@ -4050,7 +4050,14 @@ R:
 ANS: 3
 
 CAT: MHC/HLA e presentazione dell’antigene
-Q: Metti nell’ordine corretto queste fasi della presentazione dei peptide da parte delle glicoproteine HLA di classe II: a-Progressiva degradazione della catena invariante b-Inserimento del peptide nella tasca c-Associazione delle catene alfa e beta con la catena invariante d-Sintesi indipendente delle catene alfa e beta e-Associazione delle catene alfa e beta contenenti il residuo “Clip” con le molecule HLA- DN e HLA-DO f-Apertura della tasca e fuoriuscita di “Clip”
+Q: Metti nell’ordine corretto queste fasi della presentazione dei peptide da parte delle glicoproteine HLA di classe II: 
+
+a-Progressiva degradazione della catena invariante 
+b-Inserimento del peptide nella tasca 
+c-Associazione delle catene alfa e beta con la catena invariante 
+d-Sintesi indipendente delle catene alfa e beta 
+e-Associazione delle catene alfa e beta contenenti il residuo “Clip” con le molecule HLA- DN e HLA-DO 
+f-Apertura della tasca e fuoriuscita di “Clip”
 R:
 1) a,b,c,d,e,f
 2) e,d,f,c,b,a

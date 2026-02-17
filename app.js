@@ -754,7 +754,7 @@ function renderExamResults(auto) {
         <div class="card">
           <div class="row">
             <div class="label"><strong>${idx + 1}</strong> · ${escapeHtml(q.category)}</div>
-            <div class="label">${res.ok ? "✅ Corretta" : "❌ Sbagliata"} · Corrette: <strong>${escapeHtml(q.correctLabels.join(", "))}</strong></div>
+            <div class="label">${res.ok ? "✅ Corretta" : "❌ Sbagliata"}</strong></div>
           </div>
           <pre class="qtext">${escapeHtml(q.question)}</pre>
           <div>${optionsHtml}</div>
