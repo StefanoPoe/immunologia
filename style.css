@@ -285,6 +285,11 @@ button.primary {
     margin-bottom: 14px;
 }
 
+.exam-sidebar-title {
+    margin: 0 0 4px;
+    font-size: 1.15rem;
+}
+
 .exam-sidebar .timer {
     margin: 10px 0;
 }
@@ -326,6 +331,10 @@ button.primary {
     font-size: 12px;
 }
 
+.exam-questions {
+    min-width: 0;
+}
+
 .exam-questions .card {
     scroll-margin-top: 14px;
 }
@@ -342,42 +351,10 @@ button.primary {
         position: sticky;
         top: 12px;
         margin-bottom: 0;
+        align-self: start;
+        height: fit-content;
+        max-height: calc(100vh - 24px);
+        overflow: auto;
         background: #111a2f;
-/* Esame: sticky solo per timer + consegna */
-.exam-floating-controls {
-    position: sticky;
-    top: 10px;
-    z-index: 50;
-    margin: 10px 0;
-    padding: 10px 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    border: 1px solid #4a6da4;
-    border-radius: 14px;
-    background: rgba(9, 16, 31, 0.94);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
-}
-
-.exam-floating-controls .timer {
-    margin: 0;
-    border-color: #5e80b3;
-    background: rgba(16, 28, 50, 0.9);
-}
-
-.exam-floating-controls .primary {
-    white-space: nowrap;
-}
-
-@media (max-width: 720px) {
-    .exam-floating-controls {
-        flex-wrap: wrap;
-    }
-
-    .exam-floating-controls .timer,
-    .exam-floating-controls .primary {
-        width: 100%;
     }
 }
