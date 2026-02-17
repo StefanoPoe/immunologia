@@ -308,7 +308,7 @@ function renderHome() {
     const showShuffle = isPractice;
     const showRangeToggle = isPractice && isAll;
     const showRangeInputs = showRangeToggle && state.config.rangeEnabled;
-    const showLimit = isPractice && (!isAll || !state.config.rangeEnabled);
+    const showLimit = isPractice;
 
     // normalizza range
     const rangeFromVal = clampInt(state.config.rangeFrom, 1, maxQn);
@@ -415,7 +415,7 @@ function renderHome() {
             ? "Simulazione: 33 domande in 30 minuti, tutte su una pagina."
             : isAll
                 ? state.config.rangeEnabled
-                    ? "Allenamento: userai tutte le domande nel range selezionato (mischiabili)."
+                    ? "Allenamento: scegli un range e quante domande estrarre da quel range (mischiabili)."
                     : "Allenamento: scegli quante domande fare (mischiabili)."
                 : "Allenamento: una domanda per volta, con correzione immediata."
     }
@@ -510,10 +510,9 @@ function startPractice() {
 
     if (state.config.shuffle) shuffle(pool);
 
-    // Se NON stai usando un range su "Tutte", allora ha senso usare "Numero domande"
-    if (!(state.config.category === "Tutte" && state.config.rangeEnabled)) {
-        pool = pool.slice(0, Math.min(state.config.limit, pool.length));
-    }
+    
+    pool = pool.slice(0, Math.min(state.config.limit, pool.length));
+
 
     state.quiz.items = pool;
     state.quiz.index = 0;
