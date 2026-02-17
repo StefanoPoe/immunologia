@@ -820,8 +820,8 @@ function renderExam() {
         .join("");
 
     view.innerHTML = `
-    <div class="card">
-      <div class="timerbar">
+    <div class="card exam-sticky-panel">
+      <div class="timerbar exam-sticky-bar">
         <div class="label">Simulazione esame: <strong>${EXAM_QUESTIONS}</strong> domande · <strong>${EXAM_MINUTES}</strong> minuti</div>
         <div class="timer">Tempo: <span id="exam-timer">${formatMMSS(left)}</span></div>
         <div class="label">Risposte date: <strong id="answered-count">${answered}</strong> / ${state.exam.items.length}</div>
