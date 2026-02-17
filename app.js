@@ -66,6 +66,18 @@ function shuffle(arr) {
     return arr;
 }
 
+function clampInt(value, min, max) {
+    let a = Number(min);
+    let b = Number(max);
+    if (!Number.isFinite(a)) a = 0;
+    if (!Number.isFinite(b)) b = a;
+    if (b < a) b = a;
+
+    const n = Math.floor(Number(value));
+    if (!Number.isFinite(n)) return a;
+    return Math.min(b, Math.max(a, n));
+}
+
 function uniqCategories(questions) {
     const set = new Set();
     for (const q of questions) set.add(q.category || "Senza categoria");
@@ -286,8 +298,19 @@ function renderHome() {
     state.mode = "home";
     const total = state.all.length;
     const maxQn = state.all.reduce((m, q) => Math.max(m, q.qNumber || 0), 0) || total;
-    const rangeFromVal = Math.max(1, Number(state.config.rangeFrom) || 1);
-    const rangeToVal = Math.max(1, Number(state.config.rangeTo) || maxQn);
+
+    const isExam = state.config.mode === "exam";
+    const isPractice = !isExam;
+    const isAll = state.config.category === "Tutte";
+
+    const showCategory = isPractice;
+    const showShuffle = isPractice;
+    const showRangeToggle = isPractice && isAll;
+    const showRangeInputs = showRangeToggle && state.config.rangeEnabled;
+    const showLimit = isPractice && (!isAll || !state.config.rangeEnabled);
+
+    const rangeFromVal = clampInt(state.config.rangeFrom, 1, maxQn);
+    const rangeToVal = clampInt(state.config.rangeTo, 1, maxQn);
 
     const catsOptions = state.categories
         .map(
@@ -302,8 +325,6 @@ function renderHome() {
     <option value="practice" ${state.config.mode === "practice" ? "selected" : ""}>Allenamento</option>
     <option value="exam" ${state.config.mode === "exam" ? "selected" : ""}>Simulazione esame (33 domande / 30 min)</option>
   `;
-
-    const isExam = state.config.mode === "exam";
 
     view.innerHTML = `
     <div class="card">
@@ -320,60 +341,144 @@ function renderHome() {
         <label class="label">Modalità</label>
         <select id="mode" class="select">${modeOptions}</select>
 
-        <label class="label">Categoria</label>
-        <select id="cat" class="select" ${isExam ? "disabled" : ""}>${catsOptions}</select>
+        ${
+        showCategory
+            ? `
+          <label class="label">Categoria</label>
+          <select id="cat" class="select">${catsOptions}</select>
+        `
+            : ""
+    }
 
-        <label class="label">Numero domande</label>
-        <input id="limit" type="number" min="1" max="${total}" value="${state.config.limit}" ${isExam ? "disabled" : ""} />
+        ${
+        showLimit
+            ? `
+          <label class="label">Numero domande</label>
+          <input id="limit" type="number" min="1" max="${total}" value="${state.config.limit}" />
+        `
+            : ""
+    }
 
-        <label class="label">
-          <input id="shuffle" type="checkbox" ${state.config.shuffle ? "checked" : ""} />
-          Mischia
-        </label>
-        <label class="label">
-          <input id="rangeEnabled" type="checkbox" ${state.config.rangeEnabled ? "checked" : ""} ${isExam ? "disabled" : ""} />
-          Range
-        </label>
-        <label class="label">Da</label>
-        <input id="rangeFrom" type="number" min="1" max="${maxQn}" value="${rangeFromVal}" ${isExam || !state.config.rangeEnabled ? "disabled" : ""} />
-        <label class="label">A</label>
-        <input id="rangeTo" type="number" min="1" max="${maxQn}" value="${rangeToVal}" ${isExam || !state.config.rangeEnabled ? "disabled" : ""} />
+        ${
+        showShuffle
+            ? `
+          <label class="label">
+            <input id="shuffle" type="checkbox" ${state.config.shuffle ? "checked" : ""} />
+            Mischia
+          </label>
+        `
+            : ""
+    }
+
+        ${
+        showRangeToggle
+            ? `
+          <label class="label">
+            <input id="rangeEnabled" type="checkbox" ${state.config.rangeEnabled ? "checked" : ""} />
+            Range
+          </label>
+          ${
+                showRangeInputs
+                    ? `
+            <label class="label">Da</label>
+            <input id="rangeFrom" type="number" min="1" max="${maxQn}" value="${rangeFromVal}" />
+            <label class="label">A</label>
+            <input id="rangeTo" type="number" min="1" max="${maxQn}" value="${rangeToVal}" />
+          `
+                    : ""
+            }
+        `
+            : ""
+    }
 
         <button id="start" class="primary">Inizia</button>
       </div>
 
       <p class="muted">
-        ${isExam
-        ? "Simulazione: 33 domande in 30 minuti, tutte su una pagina. Le domande senza soluzione (ANS: ?) vengono escluse dalla simulazione."
-        : "Allenamento: una domanda alla volta, correzione immediata con evidenziazione."}
+        ${
+        isExam
+            ? "Simulazione: 33 domande in 30 minuti, tutte su una pagina. Le domande senza soluzione (ANS: ?) vengono escluse dalla simulazione."
+            : isAll
+                ? state.config.rangeEnabled
+                    ? "Allenamento: userai tutte le domande nel range selezionato (mischiabili)."
+                    : "Allenamento: scegli quante domande fare (mischiabili)."
+                : "Allenamento: una domanda alla volta, correzione immediata con evidenziazione."
+    }
       </p>
     </div>
   `;
 
-    document.getElementById("mode").onchange = (e) => {
+    const modeEl = document.getElementById("mode");
+    modeEl.onchange = (e) => {
         state.config.mode = e.target.value;
+
+        if (state.config.mode === "exam") {
+            // in simulazione esame nascondiamo tutto il resto e rendiamo la simulazione sensata
+            state.config.category = "Tutte";
+            state.config.rangeEnabled = false;
+            state.config.shuffle = true; // sempre random, visto che non mostriamo il toggle
+        }
         save();
         renderHome();
     };
-// abilita/disabilita inputs range
+
+    const catEl = document.getElementById("cat");
+    if (catEl) {
+        catEl.onchange = (e) => {
+            state.config.category = e.target.value;
+            if (state.config.category !== "Tutte") {
+                // range non ha senso per categoria specifica
+                state.config.rangeEnabled = false;
+            }
+            save();
+            renderHome();
+        };
+    }
+
     const rangeEnabledEl = document.getElementById("rangeEnabled");
-    const rangeFromEl = document.getElementById("rangeFrom");
-    const rangeToEl = document.getElementById("rangeTo");
     if (rangeEnabledEl) {
         rangeEnabledEl.onchange = () => {
-            const on = rangeEnabledEl.checked;
-            if (rangeFromEl) rangeFromEl.disabled = !on;
-            if (rangeToEl) rangeToEl.disabled = !on;
+            state.config.rangeEnabled = rangeEnabledEl.checked;
+            save();
+            renderHome();
         };
     }
 
     document.getElementById("start").onclick = () => {
-        state.config.category = document.getElementById("cat").value;
-        state.config.limit = Math.max(1, Number(document.getElementById("limit").value) || 30);
-        state.config.shuffle = document.getElementById("shuffle").checked;
-        state.config.rangeEnabled = document.getElementById("rangeEnabled")?.checked ?? false;
-        state.config.rangeFrom = Math.max(1, Number(document.getElementById("rangeFrom")?.value) || 1);
-        state.config.rangeTo = Math.max(1, Number(document.getElementById("rangeTo")?.value) || state.config.rangeFrom);
+        // Modalità sempre presente
+        state.config.mode = document.getElementById("mode").value;
+
+        // Allenamento: leggi solo ciò che esiste (perché in exam lo nascondiamo proprio)
+        const cat = document.getElementById("cat")?.value;
+        if (cat) state.config.category = cat;
+
+        const shuffleEl = document.getElementById("shuffle");
+        if (shuffleEl) state.config.shuffle = shuffleEl.checked;
+
+        const limitEl = document.getElementById("limit");
+        if (limitEl) state.config.limit = clampInt(limitEl.value, 1, total);
+
+        const re = document.getElementById("rangeEnabled");
+        state.config.rangeEnabled = re ? re.checked : false;
+
+        const rf = document.getElementById("rangeFrom");
+        const rt = document.getElementById("rangeTo");
+        if (rf && rt) {
+            state.config.rangeFrom = clampInt(rf.value, 1, maxQn);
+            state.config.rangeTo = clampInt(rt.value, 1, maxQn);
+        }
+
+        // Se non siamo su "Tutte", il range è forzato off
+        if (state.config.mode === "practice" && state.config.category !== "Tutte") {
+            state.config.rangeEnabled = false;
+        }
+
+        // In simulazione esame: tutto random
+        if (state.config.mode === "exam") {
+            state.config.category = "Tutte";
+            state.config.rangeEnabled = false;
+            state.config.shuffle = true;
+        }
 
         save();
 
@@ -388,6 +493,7 @@ function startPractice() {
     if (state.config.category !== "Tutte") {
         pool = pool.filter((q) => q.category === state.config.category);
     }
+
     // range (solo allenamento): filtra per numero domanda del DOCX (Q: N.)
     if (state.config.rangeEnabled) {
         let a = Math.max(1, Number(state.config.rangeFrom) || 1);
@@ -398,7 +504,10 @@ function startPractice() {
 
     if (state.config.shuffle) shuffle(pool);
 
-    pool = pool.slice(0, Math.min(state.config.limit, pool.length));
+    // Se NON stai usando un range su "Tutte", allora ha senso usare "Numero domande"
+    if (!(state.config.category === "Tutte" && state.config.rangeEnabled)) {
+        pool = pool.slice(0, Math.min(state.config.limit, pool.length));
+    }
 
     state.quiz.items = pool;
     state.quiz.index = 0;
@@ -441,6 +550,7 @@ function renderPractice() {
 
     const multi = q.correctLabels.length > 1;
     const inputType = multi ? "checkbox" : "radio";
+    const qDisplayText = (q.qNumber ? `${q.qNumber}. ` : "") + q.question;
 
     const optionsHtml = q.options
         .map((o) => {
@@ -463,7 +573,7 @@ function renderPractice() {
         <div class="label">Domanda ${state.quiz.index + 1} / ${state.quiz.items.length}</div>
       </div>
 
-      <pre class="qtext">${escapeHtml(q.question)}</pre>
+      <pre class="qtext">${escapeHtml(qDisplayText)}</pre>
 
       <div class="hint">${escapeHtml(selectionHint(q))}</div>
 
