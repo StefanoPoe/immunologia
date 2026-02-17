@@ -510,7 +510,7 @@ function startPractice() {
 
     if (state.config.shuffle) shuffle(pool);
 
-    
+
     pool = pool.slice(0, Math.min(state.config.limit, pool.length));
 
 
@@ -727,6 +727,21 @@ function formatMMSS(ms) {
     return `${mm}:${ss}`;
 }
 
+function calcGrade30(correct, total) {
+    if (!total) return 0;
+    // scala lineare su 30, arrotondo all'intero più vicino
+    return Math.round((correct / total) * 30);
+}
+
+function gradeEmoji(grade, isLode) {
+    if (isLode) return "👑";
+    if (grade <= 17) return "❌";
+    if (grade <= 21) return "😮‍💨";
+    if (grade <= 24) return "🙂";
+    if (grade <= 27) return "😎";
+    return "🤩"; // 28–30
+}
+
 function startExam() {
     stopExamTimer();
 
@@ -888,6 +903,12 @@ function renderExamResults(auto) {
     const correct = state.exam.results.correct;
     const pct = total ? Math.round((correct / total) * 100) : 0;
 
+    const grade = calcGrade30(correct, total);
+    const isLode = grade === 30 && pct === 100; // lode solo se 100% corrette
+    const emoji = gradeEmoji(grade, isLode);
+    const gradeLabel = isLode ? "30L" : String(grade);
+
+
     // applica classi di evidenziazione a tutte le opzioni
     // (dopo aver renderizzato la stessa lista)
     const left = state.exam.endAt - Date.now();
@@ -939,16 +960,20 @@ function renderExamResults(auto) {
     <div class="card">
       <h2>Risultato simulazione</h2>
       <div class="row">
-        <div>
-          <div class="label">Corrette</div>
-          <div class="kpi">${correct} / ${total}</div>
+          <div>
+            <div class="label">Corrette</div>
+            <div class="kpi">${correct} / ${total}</div>
+          </div>
+          <div>
+            <div class="label">Percentuale</div>
+            <div class="kpi">${pct}%</div>
+          </div>
+          <div>
+            <div class="label">Voto</div>
+            <div class="kpi">${emoji} ${gradeLabel}</div>
+          </div>
+          <div class="muted">${auto ? "Tempo scaduto: consegna automatica." : ""}</div>
         </div>
-        <div>
-          <div class="label">Percentuale</div>
-          <div class="kpi">${pct}%</div>
-        </div>
-        <div class="muted">${auto ? "Tempo scaduto: consegna automatica." : ""}</div>
-      </div>
       <hr />
       <div class="row">
         <button id="back-home" class="primary">Home</button>

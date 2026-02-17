@@ -480,7 +480,7 @@ R:
 5) RLRs
 6) quelli indicati ai punti 2 e 5
 7) quelli indicati ai punti 4 e 5
-ANS: 4,5
+ANS: 7
 
 CAT: Immunità innata e infiammazione
 Q: 50. Che cos’e’ il DNA-dependent activator of IRFs (DAI)?
@@ -1020,7 +1020,7 @@ B) Sono un gruppo che comprende molti tipi cellulari con funzioni disparate.
 C) Comprendono i linfociti B che fanno il priming, ossia attivano linfociti T naïve .
 D) Comprendono le cellule dendritiche, in grado di fagocitare qualsiasi tipo di antigene.
 E) Comprendono i macrofagi che fagocitano antigeni solubili.
-ANS: D
+ANS: E
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: 106. Per il locus HLA-B sono state identificate 42 specificità alleliche. Qual è il numero massimo di alleli HLA-B che può esprime simultaneamente una cellula?
