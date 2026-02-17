@@ -4286,18 +4286,6 @@ Q: plasmacellula?
 4) un mese
 ANS: 3
 
-CAT: Organi linfoidi e traffico cellulare
-Q: giunzione cortico-midollare dei linfonodi
-A) 
-4) 5-1-3-7-8-2-9-6
-B) 
-7) 8-3-2-9-6-5-1-4
-C) 
-6) 2-5-1-3-7-8-4-9
-D) 
-1) 3-7-8-4-9-2-6-5
-ANS: D
-
 CAT: MHC/HLA e presentazione dell’antigene
 Q: Indica in ordine di successione gli eventi che portano al riconoscimento dell’antigene e all’attivazione dei linfociti T:
 1) associazione dei prodotti di digestione dell’antigene alle molecole MHC
