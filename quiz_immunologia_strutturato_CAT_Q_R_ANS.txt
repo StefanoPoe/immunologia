@@ -453,8 +453,11 @@ CAT: Immunità innata e infiammazione
 Q: 47. LGP-2 è un RLR particolare perché:
 R:
 A) Possiede due domini CARD
-B) È molto espresso negli enterociti del colon e, se mutato, predispone allo sviluppo del Morbo di Chron La sua attivazione provoca la secrezione di INF-alfa Ha una funzione down-regolatrice Riconosce il peptidoglicano batterico
-ANS: B
+B) È molto espresso negli enterociti del colon e, se mutato, predispone allo sviluppo del Morbo di Chron 
+C) La sua attivazione provoca la secrezione di INF-alfa 
+D) Ha una funzione down-regolatrice 
+E) Riconosce il peptidoglicano batterico
+ANS: D
 
 CAT: Immunità innata e infiammazione
 Q: 48. I toll like receptor (TLRs) sono pattern recognition receptors che riconoscono:

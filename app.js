@@ -303,12 +303,14 @@ function renderHome() {
     const isPractice = !isExam;
     const isAll = state.config.category === "Tutte";
 
+    // visibilità controlli (come da specifica)
     const showCategory = isPractice;
     const showShuffle = isPractice;
     const showRangeToggle = isPractice && isAll;
     const showRangeInputs = showRangeToggle && state.config.rangeEnabled;
     const showLimit = isPractice && (!isAll || !state.config.rangeEnabled);
 
+    // normalizza range
     const rangeFromVal = clampInt(state.config.rangeFrom, 1, maxQn);
     const rangeToVal = clampInt(state.config.rangeTo, 1, maxQn);
 
@@ -337,86 +339,85 @@ function renderHome() {
 
       <hr />
 
-        <div class="home-controls">
-    <div class="home-line">
-      <label class="label">Modalità</label>
-      <select id="mode" class="select">${modeOptions}</select>
-    </div>
-
-    ${
-        showCategory
-            ? `
-      <div class="home-line">
-        <label class="label">Categoria</label>
-        <select id="cat" class="select">${catsOptions}</select>
-      </div>
-    `
-            : ""
-    }
-
-    ${
-        showLimit
-            ? `
-      <div class="home-line">
-        <label class="label">Numero domande</label>
-        <input id="limit" type="number" min="1" max="${total}" value="${state.config.limit}" />
-      </div>
-    `
-            : ""
-    }
-
-    ${
-        showShuffle
-            ? `
-      <div class="home-line">
-        <label class="label home-check">
-          <input id="shuffle" type="checkbox" ${state.config.shuffle ? "checked" : ""} />
-          Mischia
-        </label>
-      </div>
-    `
-            : ""
-    }
-
-    ${
-        showRangeToggle
-            ? `
-      <div class="home-line">
-        <label class="label home-check">
-          <input id="rangeEnabled" type="checkbox" ${state.config.rangeEnabled ? "checked" : ""} />
-          Range
-        </label>
+      <div class="home-controls">
+        <div class="home-line">
+          <label class="label">Modalità</label>
+          <select id="mode" class="select">${modeOptions}</select>
+        </div>
 
         ${
-                showRangeInputs
-                    ? `
-          <label class="label">Da</label>
-          <input id="rangeFrom" type="number" min="1" max="${maxQn}" value="${rangeFromVal}" />
-          <label class="label">A</label>
-          <input id="rangeTo" type="number" min="1" max="${maxQn}" value="${rangeToVal}" />
+        showCategory
+            ? `
+          <div class="home-line">
+            <label class="label">Categoria</label>
+            <select id="cat" class="select">${catsOptions}</select>
+          </div>
         `
-                    : ""
-            }
-      </div>
-    `
             : ""
     }
 
-    <div class="home-line">
-      <button id="start" class="primary">Inizia</button>
-    </div>
-  </div>
+        ${
+        showLimit
+            ? `
+          <div class="home-line">
+            <label class="label">Numero domande</label>
+            <input id="limit" type="number" min="1" max="${total}" value="${state.config.limit}" />
+          </div>
+        `
+            : ""
+    }
 
+        ${
+        showShuffle
+            ? `
+          <div class="home-line">
+            <label class="label home-check">
+              <input id="shuffle" type="checkbox" ${state.config.shuffle ? "checked" : ""} />
+              Mischia
+            </label>
+          </div>
+        `
+            : ""
+    }
+
+        ${
+        showRangeToggle
+            ? `
+          <div class="home-line">
+            <label class="label home-check">
+              <input id="rangeEnabled" type="checkbox" ${state.config.rangeEnabled ? "checked" : ""} />
+              Range
+            </label>
+
+            ${
+                showRangeInputs
+                    ? `
+              <label class="label">Da</label>
+              <input id="rangeFrom" type="number" min="1" max="${maxQn}" value="${rangeFromVal}" />
+              <label class="label">A</label>
+              <input id="rangeTo" type="number" min="1" max="${maxQn}" value="${rangeToVal}" />
+            `
+                    : ""
+            }
+          </div>
+        `
+            : ""
+    }
+
+        <div class="home-line">
+          <button id="start" class="primary">Inizia</button>
+        </div>
+      </div>
 
       <p class="muted">
         ${
         isExam
-            ? "Simulazione: 33 domande in 30 minuti, tutte su una pagina. Le domande senza soluzione (ANS: ?) vengono escluse dalla simulazione."
+            ? "Simulazione: 33 domande in 30 minuti, tutte su una pagina."
             : isAll
                 ? state.config.rangeEnabled
                     ? "Allenamento: userai tutte le domande nel range selezionato (mischiabili)."
                     : "Allenamento: scegli quante domande fare (mischiabili)."
-                : "Allenamento: una domanda alla volta, correzione immediata con evidenziazione."
+                : "Allenamento: una domanda per volta, con correzione immediata."
     }
       </p>
     </div>
@@ -427,10 +428,9 @@ function renderHome() {
         state.config.mode = e.target.value;
 
         if (state.config.mode === "exam") {
-            // in simulazione esame nascondiamo tutto il resto e rendiamo la simulazione sensata
             state.config.category = "Tutte";
             state.config.rangeEnabled = false;
-            state.config.shuffle = true; // sempre random, visto che non mostriamo il toggle
+            state.config.shuffle = true;
         }
         save();
         renderHome();
@@ -440,10 +440,7 @@ function renderHome() {
     if (catEl) {
         catEl.onchange = (e) => {
             state.config.category = e.target.value;
-            if (state.config.category !== "Tutte") {
-                // range non ha senso per categoria specifica
-                state.config.rangeEnabled = false;
-            }
+            if (state.config.category !== "Tutte") state.config.rangeEnabled = false;
             save();
             renderHome();
         };
@@ -459,21 +456,27 @@ function renderHome() {
     }
 
     document.getElementById("start").onclick = () => {
-        // Modalità sempre presente
         state.config.mode = document.getElementById("mode").value;
 
-        // Allenamento: leggi solo ciò che esiste (perché in exam lo nascondiamo proprio)
+        if (state.config.mode === "exam") {
+            state.config.category = "Tutte";
+            state.config.rangeEnabled = false;
+            state.config.shuffle = true;
+            save();
+            startExam();
+            return;
+        }
+
         const cat = document.getElementById("cat")?.value;
         if (cat) state.config.category = cat;
 
         const shuffleEl = document.getElementById("shuffle");
         if (shuffleEl) state.config.shuffle = shuffleEl.checked;
 
-        const limitEl = document.getElementById("limit");
-        if (limitEl) state.config.limit = clampInt(limitEl.value, 1, total);
-
         const re = document.getElementById("rangeEnabled");
         state.config.rangeEnabled = re ? re.checked : false;
+
+        if (state.config.category !== "Tutte") state.config.rangeEnabled = false;
 
         const rf = document.getElementById("rangeFrom");
         const rt = document.getElementById("rangeTo");
@@ -482,22 +485,11 @@ function renderHome() {
             state.config.rangeTo = clampInt(rt.value, 1, maxQn);
         }
 
-        // Se non siamo su "Tutte", il range è forzato off
-        if (state.config.mode === "practice" && state.config.category !== "Tutte") {
-            state.config.rangeEnabled = false;
-        }
-
-        // In simulazione esame: tutto random
-        if (state.config.mode === "exam") {
-            state.config.category = "Tutte";
-            state.config.rangeEnabled = false;
-            state.config.shuffle = true;
-        }
+        const limitEl = document.getElementById("limit");
+        if (limitEl) state.config.limit = clampInt(limitEl.value, 1, total);
 
         save();
-
-        if (state.config.mode === "exam") startExam();
-        else startPractice();
+        startPractice();
     };
 }
 
