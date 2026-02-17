@@ -836,6 +836,9 @@ function renderExam() {
       <aside class="card exam-sidebar" role="complementary" aria-label="Sommario simulazione">
         <div class="label">Simulazione esame</div>
         <div class="label"><strong>${EXAM_QUESTIONS}</strong> domande · <strong>${EXAM_MINUTES}</strong> minuti</div>
+    <div class="card">
+      <div class="label">Simulazione esame: <strong>${EXAM_QUESTIONS}</strong> domande · <strong>${EXAM_MINUTES}</strong> minuti</div>
+      <div class="exam-floating-controls" role="region" aria-label="Controlli esame">
         <div class="timer">Tempo: <span id="exam-timer">${formatMMSS(left)}</span></div>
         <button id="submit-exam" class="primary">Consegna</button>
         <div class="label">Risposte date: <strong id="answered-count">${answered}</strong> / ${state.exam.items.length}</div>
@@ -848,6 +851,8 @@ function renderExam() {
       <div class="exam-questions">
         ${listHtml}
       </div>
+      <div class="label">Risposte date: <strong id="answered-count">${answered}</strong> / ${state.exam.items.length}</div>
+      <p class="muted">Le domande sono tutte in pagina. Alla consegna vedi correzione completa (verde/rosso) e la risposta giusta.</p>
     </div>
   `;
 
