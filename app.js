@@ -282,6 +282,11 @@ function parseTxtToQuestions(txt) {
 }
 
 
+
+function setExamDesktopLock(enabled) {
+    document.body.classList.toggle("exam-desktop-lock", enabled);
+}
+
 function wireNav() {
     document.getElementById("nav-home").onclick = () => {
         stopExamTimer();
@@ -295,6 +300,7 @@ function wireNav() {
 }
 
 function renderHome() {
+    setExamDesktopLock(false);
     state.mode = "home";
     const total = state.all.length;
     const maxQn = state.all.reduce((m, q) => Math.max(m, q.qNumber || 0), 0) || total;
@@ -549,6 +555,7 @@ function applyPracticeHighlight(q, selectedSet, correctSet) {
 }
 
 function renderPractice() {
+    setExamDesktopLock(false);
     state.mode = "practice";
     const q = state.quiz.items[state.quiz.index];
     if (!q) return renderDonePractice();
@@ -679,6 +686,7 @@ function nextPractice() {
 }
 
 function renderDonePractice() {
+    setExamDesktopLock(false);
     state.mode = "done";
     const total = state.quiz.items.length || 0;
     const correct = state.quiz.correct;
@@ -783,6 +791,7 @@ function getExamAnsweredCount() {
 }
 
 function renderExam() {
+    setExamDesktopLock(true);
     state.mode = "exam";
 
     const left = state.exam.endAt - Date.now();
@@ -928,6 +937,7 @@ function submitExam(auto) {
 }
 
 function renderExamResults(auto) {
+    setExamDesktopLock(false);
     state.mode = "exam_result";
 
     const total = state.exam.results.total;
@@ -1024,6 +1034,7 @@ function renderExamResults(auto) {
    ========================= */
 
 function renderStats() {
+    setExamDesktopLock(false);
     state.mode = "stats";
 
     const rows = Object.entries(state.stats.perCategory)
