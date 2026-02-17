@@ -282,6 +282,11 @@ function parseTxtToQuestions(txt) {
 }
 
 
+
+function setExamDesktopLock(enabled) {
+    document.body.classList.toggle("exam-desktop-lock", enabled);
+}
+
 function wireNav() {
     document.getElementById("nav-home").onclick = () => {
         stopExamTimer();
@@ -295,6 +300,7 @@ function wireNav() {
 }
 
 function renderHome() {
+    setExamDesktopLock(false);
     state.mode = "home";
     const total = state.all.length;
     const maxQn = state.all.reduce((m, q) => Math.max(m, q.qNumber || 0), 0) || total;
@@ -549,6 +555,7 @@ function applyPracticeHighlight(q, selectedSet, correctSet) {
 }
 
 function renderPractice() {
+    setExamDesktopLock(false);
     state.mode = "practice";
     const q = state.quiz.items[state.quiz.index];
     if (!q) return renderDonePractice();
@@ -679,6 +686,7 @@ function nextPractice() {
 }
 
 function renderDonePractice() {
+    setExamDesktopLock(false);
     state.mode = "done";
     const total = state.quiz.items.length || 0;
     const correct = state.quiz.correct;
@@ -783,6 +791,7 @@ function getExamAnsweredCount() {
 }
 
 function renderExam() {
+    setExamDesktopLock(true);
     state.mode = "exam";
 
     const left = state.exam.endAt - Date.now();
@@ -819,21 +828,45 @@ function renderExam() {
         })
         .join("");
 
-    view.innerHTML = `
-    <div class="card">
-      <div class="timerbar">
-        <div class="label">Simulazione esame: <strong>${EXAM_QUESTIONS}</strong> domande · <strong>${EXAM_MINUTES}</strong> minuti</div>
-        <div class="timer">Tempo: <span id="exam-timer">${formatMMSS(left)}</span></div>
-        <div class="label">Risposte date: <strong id="answered-count">${answered}</strong> / ${state.exam.items.length}</div>
-      </div>
-      <div class="row">
-        <button id="submit-exam" class="primary">Consegna</button>
-      </div>
-      <p class="muted">Le domande sono tutte in pagina. Alla consegna vedi correzione completa (verde/rosso) e la risposta giusta.</p>
-    </div>
+    const navHtml = state.exam.items
+        .map((q, idx) => {
+            const current = state.exam.answers.get(q.id);
+            const isAnswered = !!(current && current.size > 0);
+            return `
+        <button class="exam-nav-item ${isAnswered ? "answered" : "unanswered"}" data-qnav="${escapeHtml(q.id)}" type="button" aria-label="Vai alla domanda ${idx + 1}">
+          <span>${idx + 1}</span>
+        </button>
+      `;
+        })
+        .join("");
 
-    ${listHtml}
+    view.innerHTML = `
+    <div class="exam-layout">
+      <aside class="card exam-sidebar" role="complementary" aria-label="Sommario simulazione">
+        <h2 class="exam-sidebar-title">Simulazione esame</h2>
+        <div class="label"><strong>${EXAM_QUESTIONS}</strong> domande · <strong>${EXAM_MINUTES}</strong> minuti</div>
+        <div class="timer">Tempo: <span id="exam-timer">${formatMMSS(left)}</span></div>
+        <button id="submit-exam" class="primary">Consegna</button>
+        <div class="label">Risposte date: <strong id="answered-count">${answered}</strong> / ${state.exam.items.length}</div>
+        <div class="exam-nav-grid" aria-label="Elenco domande">
+          ${navHtml}
+        </div>
+        <p class="muted">Clicca una casella per andare alla domanda. Verde = risposta presente.</p>
+      </aside>
+
+      <div class="exam-questions">
+        ${listHtml}
+      </div>
+    </div>
   `;
+
+    view.querySelectorAll("[data-qnav]").forEach((btn) => {
+        btn.onclick = () => {
+            const qid = btn.getAttribute("data-qnav");
+            const target = view.querySelector(`[data-qcard="${qid}"]`);
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        };
+    });
 
     // gestisci selezioni
     view.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach((inp) => {
@@ -862,6 +895,13 @@ function renderExam() {
             const answered = getExamAnsweredCount();
             const el = document.getElementById("answered-count");
             if (el) el.textContent = String(answered);
+
+            const navEl = view.querySelector(`[data-qnav="${qid}"]`);
+            if (navEl) {
+                const hasAnswer = set.size > 0;
+                navEl.classList.toggle("answered", hasAnswer);
+                navEl.classList.toggle("unanswered", !hasAnswer);
+            }
         };
     });
 
@@ -897,6 +937,7 @@ function submitExam(auto) {
 }
 
 function renderExamResults(auto) {
+    setExamDesktopLock(false);
     state.mode = "exam_result";
 
     const total = state.exam.results.total;
@@ -993,6 +1034,7 @@ function renderExamResults(auto) {
    ========================= */
 
 function renderStats() {
+    setExamDesktopLock(false);
     state.mode = "stats";
 
     const rows = Object.entries(state.stats.perCategory)
