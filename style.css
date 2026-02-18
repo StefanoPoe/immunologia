@@ -108,7 +108,7 @@ button.danger {
 }
 
 .card {
-    background: var(--surface);
+    background: #1b2843;
     border: 1px solid var(--border);
     border-radius: 18px;
     padding: 18px;
@@ -181,7 +181,8 @@ hr {
 .qtext {
     margin: 12px 0;
     white-space: pre-wrap;
-    background: #0c1426;
+    background: rgba(12, 20, 38, 0.86);
+    background: black;
     border: 1px solid var(--border);
     border-radius: 14px;
     padding: 14px;
