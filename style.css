@@ -452,15 +452,9 @@ body::before {
             linear-gradient(165deg, var(--bg-main), var(--bg-secondary));
 
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
 }
 html, body {
     min-height: 100%;
-}
-html, body {
-    overscroll-behavior: none; /* impedisce il rubber-band */
-}
-#view {
-    -webkit-overflow-scrolling: touch;
 }
 
