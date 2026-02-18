@@ -383,7 +383,7 @@ button.primary {
         grid-template-columns: minmax(225px, 0.92fr) minmax(0, 3.08fr);
         gap: 14px;
         align-items: stretch;
-        height: auto;
+        height: 100%;
     }
 
     body.exam-desktop-lock .exam-sidebar {
