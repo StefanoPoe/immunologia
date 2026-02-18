@@ -383,7 +383,7 @@ button.primary {
         grid-template-columns: minmax(225px, 0.92fr) minmax(0, 3.08fr);
         gap: 14px;
         align-items: stretch;
-        height: 100%;
+        height: auto;
     }
 
     body.exam-desktop-lock .exam-sidebar {
@@ -422,21 +422,12 @@ button.primary {
         height: 0;
     }
 }
-.exam-grade {
-    margin-top: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    padding: 14px 12px;
-    border: 1px solid #26324a;
-    border-radius: 14px;
-    background: #0f1115;
-}
+
 
 .exam-grade-text {
     font-size: 28px;
     font-weight: 800;
     letter-spacing: 0.5px;
     text-align: center;
+    padding-top: 5px;
 }
