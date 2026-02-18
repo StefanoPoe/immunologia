@@ -282,6 +282,11 @@ function parseTxtToQuestions(txt) {
 }
 
 
+
+function setExamDesktopLock(enabled) {
+    document.body.classList.toggle("exam-desktop-lock", enabled);
+}
+
 function wireNav() {
     document.getElementById("nav-home").onclick = () => {
         stopExamTimer();
@@ -295,6 +300,7 @@ function wireNav() {
 }
 
 function renderHome() {
+    setExamDesktopLock(false);
     state.mode = "home";
     const total = state.all.length;
     const maxQn = state.all.reduce((m, q) => Math.max(m, q.qNumber || 0), 0) || total;
@@ -467,7 +473,8 @@ function renderHome() {
             return;
         }
 
-        const cat = document.getElementById("cat")?.value;
+        const catEl = document.getElementById("cat");
+        const cat = catEl ? catEl.value : null;
         if (cat) state.config.category = cat;
 
         const shuffleEl = document.getElementById("shuffle");
@@ -549,6 +556,7 @@ function applyPracticeHighlight(q, selectedSet, correctSet) {
 }
 
 function renderPractice() {
+    setExamDesktopLock(false);
     state.mode = "practice";
     const q = state.quiz.items[state.quiz.index];
     if (!q) return renderDonePractice();
@@ -679,6 +687,7 @@ function nextPractice() {
 }
 
 function renderDonePractice() {
+    setExamDesktopLock(false);
     state.mode = "done";
     const total = state.quiz.items.length || 0;
     const correct = state.quiz.correct;
@@ -783,6 +792,7 @@ function getExamAnsweredCount() {
 }
 
 function renderExam() {
+    setExamDesktopLock(true);
     state.mode = "exam";
 
     const left = state.exam.endAt - Date.now();
@@ -819,21 +829,45 @@ function renderExam() {
         })
         .join("");
 
-    view.innerHTML = `
-    <div class="card">
-      <div class="timerbar">
-        <div class="label">Simulazione esame: <strong>${EXAM_QUESTIONS}</strong> domande · <strong>${EXAM_MINUTES}</strong> minuti</div>
-        <div class="timer">Tempo: <span id="exam-timer">${formatMMSS(left)}</span></div>
-        <div class="label">Risposte date: <strong id="answered-count">${answered}</strong> / ${state.exam.items.length}</div>
-      </div>
-      <div class="row">
-        <button id="submit-exam" class="primary">Consegna</button>
-      </div>
-      <p class="muted">Le domande sono tutte in pagina. Alla consegna vedi correzione completa (verde/rosso) e la risposta giusta.</p>
-    </div>
+    const navHtml = state.exam.items
+        .map((q, idx) => {
+            const current = state.exam.answers.get(q.id);
+            const isAnswered = !!(current && current.size > 0);
+            return `
+        <button class="exam-nav-item ${isAnswered ? "answered" : "unanswered"}" data-qnav="${escapeHtml(q.id)}" type="button" aria-label="Vai alla domanda ${idx + 1}">
+          <span>${idx + 1}</span>
+        </button>
+      `;
+        })
+        .join("");
 
-    ${listHtml}
+    view.innerHTML = `
+    <div class="exam-layout">
+      <aside class="card exam-sidebar" role="complementary" aria-label="Sommario simulazione">
+        <h2 class="exam-sidebar-title">Simulazione esame</h2>
+        <div class="label"><strong>${EXAM_QUESTIONS}</strong> domande · <strong>${EXAM_MINUTES}</strong> minuti</div>
+        <div class="timer">Tempo: <span id="exam-timer">${formatMMSS(left)}</span></div>
+        <button id="submit-exam" class="primary">Consegna</button>
+        <div class="label">Risposte date: <strong id="answered-count">${answered}</strong> / ${state.exam.items.length}</div>
+        <div class="exam-nav-grid" aria-label="Elenco domande">
+          ${navHtml}
+        </div>
+        <p class="muted">Clicca una casella per andare alla domanda. Verde = risposta presente.</p>
+      </aside>
+
+      <div class="exam-questions">
+        ${listHtml}
+      </div>
+    </div>
   `;
+
+    view.querySelectorAll("[data-qnav]").forEach((btn) => {
+        btn.onclick = () => {
+            const qid = btn.getAttribute("data-qnav");
+            const target = view.querySelector(`[data-qcard="${qid}"]`);
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        };
+    });
 
     // gestisci selezioni
     view.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach((inp) => {
@@ -862,6 +896,13 @@ function renderExam() {
             const answered = getExamAnsweredCount();
             const el = document.getElementById("answered-count");
             if (el) el.textContent = String(answered);
+
+            const navEl = view.querySelector(`[data-qnav="${qid}"]`);
+            if (navEl) {
+                const hasAnswer = set.size > 0;
+                navEl.classList.toggle("answered", hasAnswer);
+                navEl.classList.toggle("unanswered", !hasAnswer);
+            }
         };
     });
 
@@ -897,21 +938,32 @@ function submitExam(auto) {
 }
 
 function renderExamResults(auto) {
+    setExamDesktopLock(true);
     state.mode = "exam_result";
 
     const total = state.exam.results.total;
     const correct = state.exam.results.correct;
+    const wrong = Math.max(0, total - correct);
     const pct = total ? Math.round((correct / total) * 100) : 0;
 
     const grade = calcGrade30(correct, total);
-    const isLode = grade === 30 && pct === 100; // lode solo se 100% corrette
+    const isLode = grade === 30 && pct === 100;
     const emoji = gradeEmoji(grade, isLode);
     const gradeLabel = isLode ? "30L" : String(grade);
 
+    const remaining = Math.max(0, state.exam.endAt - Date.now());
+    const elapsedMs = Math.max(0, EXAM_MINUTES * 60 * 1000 - remaining);
 
-    // applica classi di evidenziazione a tutte le opzioni
-    // (dopo aver renderizzato la stessa lista)
-    const left = state.exam.endAt - Date.now();
+    const navHtml = state.exam.items
+        .map((q, idx) => {
+            const res = state.exam.results.perQuestion.get(q.id);
+            return `
+        <button class="exam-nav-item ${res.ok ? "correct" : "wrong"}" data-qnav-res="${escapeHtml(q.id)}" type="button" aria-label="Vai al risultato domanda ${idx + 1}">
+          <span>${idx + 1}</span>
+        </button>
+      `;
+        })
+        .join("");
 
     const listHtml = state.exam.items
         .map((q, idx) => {
@@ -944,10 +996,10 @@ function renderExamResults(auto) {
                 .join("");
 
             return `
-        <div class="card">
+        <div class="card exam-result-card ${res.ok ? "is-correct" : "is-wrong"}" data-qcard-res="${escapeHtml(q.id)}">
           <div class="row">
             <div class="label"><strong>${idx + 1}</strong> · ${escapeHtml(q.category)}</div>
-            <div class="label">${res.ok ? "✅ Corretta" : "❌ Sbagliata"}</strong></div>
+            <div class="label">${res.ok ? "✅ Corretta" : "❌ Sbagliata"}</div>
           </div>
           <pre class="qtext">${escapeHtml(q.question)}</pre>
           <div>${optionsHtml}</div>
@@ -957,42 +1009,52 @@ function renderExamResults(auto) {
         .join("");
 
     view.innerHTML = `
-    <div class="card">
-      <h2>Risultato simulazione</h2>
-      <div class="row">
-          <div>
-            <div class="label">Corrette</div>
-            <div class="kpi">${correct} / ${total}</div>
-          </div>
-          <div>
-            <div class="label">Percentuale</div>
-            <div class="kpi">${pct}%</div>
-          </div>
-          <div>
-            <div class="label">Voto</div>
-            <div class="kpi">${emoji} ${gradeLabel}</div>
-          </div>
-          <div class="muted">${auto ? "Tempo scaduto: consegna automatica." : ""}</div>
+    <div class="exam-layout">
+      <aside class="card exam-sidebar" role="complementary" aria-label="Sommario risultato simulazione">
+        <h2 class="exam-sidebar-title">Risultato simulazione</h2>
+        <div class="label">Corrette: <strong style="color:#80f2bf">${correct}</strong> · Sbagliate: <strong style="color:#ff9baa">${wrong}</strong></div>
+        <div class="label">Percentuale: <strong>${pct}%</strong></div>
+        <div class="label">Tempo impiegato: <strong>${formatMMSS(elapsedMs)}</strong> / ${EXAM_MINUTES}:00</div>
+        <div class="muted">${auto ? "Tempo scaduto: consegna automatica." : "Consegna completata."}</div>
+        <div class="row" style="margin-top:8px;">
+          <button id="back-home" class="primary">Home</button>
+          <button id="stats">Statistiche</button>
         </div>
-      <hr />
-      <div class="row">
-        <button id="back-home" class="primary">Home</button>
-        <button id="stats">Statistiche</button>
+        <div class="exam-nav-grid" aria-label="Esito per domanda">
+          ${navHtml}
+        </div>
+        <p class="muted">Verde = risposta esatta · Rosso = risposta sbagliata.</p>
+      </aside>
+
+      <div class="exam-questions">
+        ${listHtml}
+        <div class="card exam-grade-callout" aria-label="Voto finale simulazione">
+          <div class="muted">Voto finale</div>
+          <div class="exam-grade-value">${emoji} ${gradeLabel}</div>
+        </div>
       </div>
     </div>
-
-    ${listHtml}
   `;
+
+    view.querySelectorAll("[data-qnav-res]").forEach((btn) => {
+        btn.onclick = () => {
+            const qid = btn.getAttribute("data-qnav-res");
+            const target = view.querySelector(`[data-qcard-res="${qid}"]`);
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        };
+    });
 
     document.getElementById("back-home").onclick = () => renderHome();
     document.getElementById("stats").onclick = () => renderStats();
 }
+
 
 /* =========================
    STATS
    ========================= */
 
 function renderStats() {
+    setExamDesktopLock(false);
     state.mode = "stats";
 
     const rows = Object.entries(state.stats.perCategory)
@@ -1052,11 +1114,11 @@ function sameSet(a, b) {
 
 function escapeHtml(str) {
     return String(str)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
 
 async function init() {
