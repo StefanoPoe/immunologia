@@ -470,3 +470,41 @@ body::before {
     background-size: cover !important;
     background-position: center;
 }
+
+/* ====== BACKGROUND "NEUTRO" (anti banda bianca) ====== */
+
+/* 1) fondo solido uguale ovunque */
+html, body {
+    height: 100%;
+    background: #0b1426; /* blu scuro neutro (coerente con il tuo tema) */
+}
+
+/* 2) niente gradient su body (lo spostiamo su ::before ma super soft) */
+body {
+    background: #0b1426 !important;
+    overscroll-behavior-y: none;
+}
+
+/* 3) overlay fisso leggero (non fa stacchi durante lo scroll) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    /* glow molto soft (non “schiarisce” quando scrolli) */
+    background:
+            radial-gradient(circle at 12% 10%, rgba(91, 173, 255, 0.12), transparent 50%),
+            radial-gradient(circle at 88% 0%, rgba(140, 99, 255, 0.10), transparent 45%);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* 4) stop “chain scroll” in aree scrollabili */
+.exam-questions {
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
