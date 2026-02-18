@@ -1016,10 +1016,6 @@ function renderExamResults(auto) {
         <div class="label">Voto: <strong>${emoji} ${gradeLabel}</strong></div>
         <div class="label">Tempo impiegato: <strong>${formatMMSS(elapsedMs)}</strong> / ${EXAM_MINUTES}:00</div>
         <div class="muted">${auto ? "Tempo scaduto: consegna automatica." : "Consegna completata."}</div>
-        <div class="row" style="margin-top:8px;">
-          <button id="back-home" class="primary">Home</button>
-          <button id="stats">Statistiche</button>
-        </div>
         <div class="exam-nav-grid" aria-label="Esito per domanda">
           ${navHtml}
         </div>
@@ -1029,6 +1025,11 @@ function renderExamResults(auto) {
       <div class="exam-questions">
         ${listHtml}
       </div>
+      <div class="exam-grade">Voto: 
+        <div class="exam-grade-text">${gradeLabel}</div>
+        <div class="exam-grade-emoji">${emoji}</div>
+      </div>
+
     </div>
   `;
 

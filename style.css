@@ -422,3 +422,25 @@ button.primary {
         height: 0;
     }
 }
+.exam-grade {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px 12px;
+    border: 1px solid #26324a;
+    border-radius: 14px;
+    background: #0f1115;
+}
+
+.exam-grade-emoji {
+    font-size: 44px;
+    line-height: 1;
+}
+
+.exam-grade-text {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
