@@ -937,7 +937,11 @@ function submitExam(auto) {
 }
 
 function renderExamResults(auto) {
+<<<<<<< codex/improve-css-and-suggest-design-ideas-mt17cd
     setExamDesktopLock(true);
+=======
+    setExamDesktopLock(false);
+>>>>>>> main
     state.mode = "exam_result";
 
     const total = state.exam.results.total;
