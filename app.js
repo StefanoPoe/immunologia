@@ -1013,21 +1013,18 @@ function renderExamResults(auto) {
         <h2 class="exam-sidebar-title">Risultato simulazione</h2>
         <div class="label">Corrette: <strong style="color:#80f2bf">${correct}</strong> · Sbagliate: <strong style="color:#ff9baa">${wrong}</strong></div>
         <div class="label">Percentuale: <strong>${pct}%</strong></div>
-        <div class="label">Voto: <strong>${emoji} ${gradeLabel}</strong></div>
         <div class="label">Tempo impiegato: <strong>${formatMMSS(elapsedMs)}</strong> / ${EXAM_MINUTES}:00</div>
         <div class="muted">${auto ? "Tempo scaduto: consegna automatica." : "Consegna completata."}</div>
         <div class="exam-nav-grid" aria-label="Esito per domanda">
           ${navHtml}
         </div>
         <p class="muted">Verde = risposta esatta · Rosso = risposta sbagliata.</p>
+        <div class="exam-grade-text">Voto: ${gradeLabel}</div>
+        <div class="exam-grade-emoji">${emoji}</div>
       </aside>
 
       <div class="exam-questions">
         ${listHtml}
-      </div>
-      <div class="exam-grade">Voto: 
-        <div class="exam-grade-text">${gradeLabel}</div>
-        <div class="exam-grade-emoji">${emoji}</div>
       </div>
 
     </div>
