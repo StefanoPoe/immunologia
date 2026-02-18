@@ -26,6 +26,7 @@ body {
         radial-gradient(circle at 10% 10%, rgba(91, 173, 255, 0.24), transparent 44%),
         radial-gradient(circle at 90% 0%, rgba(140, 99, 255, 0.22), transparent 38%),
         linear-gradient(165deg, var(--bg-main), var(--bg-secondary));
+    background-size: auto;
 }
 
 @media (min-width: 1024px) {
@@ -433,10 +434,6 @@ button.primary {
     letter-spacing: 0.5px;
     text-align: center;
     margin-top: 2px;
-}
-body {
-    background: none;                 /* lo togliamo da body */
-    position: relative;
 }
 
 body::before {
