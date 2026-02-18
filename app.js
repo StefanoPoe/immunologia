@@ -1012,7 +1012,7 @@ function renderExamResults(auto) {
       <aside class="card exam-sidebar" role="complementary" aria-label="Sommario risultato simulazione">
         <h2 class="exam-sidebar-title">Risultato simulazione</h2>
         <div class="label">Corrette: <strong style="color:#80f2bf">${correct}</strong> · Sbagliate: <strong style="color:#ff9baa">${wrong}</strong></div>
-        <div class="label">Tempo impiegato: <strong>${formatMMSS(elapsedMs)}</strong> / ${EXAM_MINUTES}:00</div>
+        <div class="label">Tempo impiegato: <strong>${formatMMSS(elapsedMs)}</strong></div>
         <div class="label">${auto ? "Tempo scaduto: consegna automatica." : "Consegna completata."}</div>
         <div class="exam-nav-grid" aria-label="Esito per domanda">
           ${navHtml}

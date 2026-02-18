@@ -181,7 +181,7 @@ hr {
 .qtext {
     margin: 12px 0;
     white-space: pre-wrap;
-    background: rgba(12, 20, 38, 0.86);
+    background: #0c1426;
     border: 1px solid var(--border);
     border-radius: 14px;
     padding: 14px;
@@ -432,5 +432,5 @@ button.primary {
     font-weight: 800;
     letter-spacing: 0.5px;
     text-align: center;
-    margin: 0 0 4px;
+    margin-top: 2px;
 }
