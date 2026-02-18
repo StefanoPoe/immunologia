@@ -38,7 +38,7 @@ body {
     body.exam-desktop-lock .app {
         max-width: 1240px;
         height: 100vh;
-        padding-bottom: 18px;
+        padding-bottom: 0;
         display: flex;
         flex-direction: column;
     }
@@ -375,6 +375,8 @@ button.primary {
 
 .exam-questions {
     min-width: 0;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
 }
 
 .exam-questions .card {
@@ -455,3 +457,16 @@ html, body {
     min-height: 100%;
 }
 
+html {
+    background: var(--bg-main);      /* fondamentale: niente bianco sotto */
+    overscroll-behavior-y: none;     /* blocca bounce dove supportato */
+}
+
+body {
+    background: transparent;         /* usi già body::before per il gradiente */
+    overscroll-behavior-y: none;     /* idem */
+}
+body::before {
+    background-size: cover !important;
+    background-position: center;
+}
