@@ -181,8 +181,7 @@ hr {
 .qtext {
     margin: 12px 0;
     white-space: pre-wrap;
-    background: rgba(12, 20, 38, 0.86);
-    background: black;
+    background: rgba(0, 0, 0, 0.75);
     border: 1px solid var(--border);
     border-radius: 14px;
     padding: 14px;
@@ -461,3 +460,16 @@ html, body {
 body::before {
     transform: translateZ(0);
 }
+html, body {
+    overscroll-behavior: none; /* impedisce il rubber-band */
+}
+html {
+    background: #060b16; /* fallback scuro */
+}
+body {
+    background-color: #060b16; /* fallback scuro */
+}
+#view {
+    -webkit-overflow-scrolling: touch;
+}
+
