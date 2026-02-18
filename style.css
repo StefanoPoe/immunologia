@@ -351,6 +351,24 @@ button.primary {
     font-size: 11px;
 }
 
+.exam-nav-item.correct {
+    border-color: #2c8b66;
+    background: linear-gradient(180deg, #2b7e5f, #1f6249);
+}
+
+.exam-nav-item.wrong {
+    border-color: #a94b5c;
+    background: linear-gradient(180deg, #6f2d3b, #4f1f2a);
+}
+
+.exam-result-card.is-correct {
+    border-color: #2f7d60;
+}
+
+.exam-result-card.is-wrong {
+    border-color: #7f3b4a;
+}
+
 .exam-questions {
     min-width: 0;
 }

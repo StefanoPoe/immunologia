@@ -937,22 +937,36 @@ function submitExam(auto) {
 }
 
 function renderExamResults(auto) {
+<<<<<<< codex/improve-css-and-suggest-design-ideas-mt17cd
+    setExamDesktopLock(true);
+=======
     setExamDesktopLock(false);
+>>>>>>> main
     state.mode = "exam_result";
 
     const total = state.exam.results.total;
     const correct = state.exam.results.correct;
+    const wrong = Math.max(0, total - correct);
     const pct = total ? Math.round((correct / total) * 100) : 0;
 
     const grade = calcGrade30(correct, total);
-    const isLode = grade === 30 && pct === 100; // lode solo se 100% corrette
+    const isLode = grade === 30 && pct === 100;
     const emoji = gradeEmoji(grade, isLode);
     const gradeLabel = isLode ? "30L" : String(grade);
 
+    const remaining = Math.max(0, state.exam.endAt - Date.now());
+    const elapsedMs = Math.max(0, EXAM_MINUTES * 60 * 1000 - remaining);
 
-    // applica classi di evidenziazione a tutte le opzioni
-    // (dopo aver renderizzato la stessa lista)
-    const left = state.exam.endAt - Date.now();
+    const navHtml = state.exam.items
+        .map((q, idx) => {
+            const res = state.exam.results.perQuestion.get(q.id);
+            return `
+        <button class="exam-nav-item ${res.ok ? "correct" : "wrong"}" data-qnav-res="${escapeHtml(q.id)}" type="button" aria-label="Vai al risultato domanda ${idx + 1}">
+          <span>${idx + 1}</span>
+        </button>
+      `;
+        })
+        .join("");
 
     const listHtml = state.exam.items
         .map((q, idx) => {
@@ -985,10 +999,10 @@ function renderExamResults(auto) {
                 .join("");
 
             return `
-        <div class="card">
+        <div class="card exam-result-card ${res.ok ? "is-correct" : "is-wrong"}" data-qcard-res="${escapeHtml(q.id)}">
           <div class="row">
             <div class="label"><strong>${idx + 1}</strong> · ${escapeHtml(q.category)}</div>
-            <div class="label">${res.ok ? "✅ Corretta" : "❌ Sbagliata"}</strong></div>
+            <div class="label">${res.ok ? "✅ Corretta" : "❌ Sbagliata"}</div>
           </div>
           <pre class="qtext">${escapeHtml(q.question)}</pre>
           <div>${optionsHtml}</div>
@@ -998,36 +1012,42 @@ function renderExamResults(auto) {
         .join("");
 
     view.innerHTML = `
-    <div class="card">
-      <h2>Risultato simulazione</h2>
-      <div class="row">
-          <div>
-            <div class="label">Corrette</div>
-            <div class="kpi">${correct} / ${total}</div>
-          </div>
-          <div>
-            <div class="label">Percentuale</div>
-            <div class="kpi">${pct}%</div>
-          </div>
-          <div>
-            <div class="label">Voto</div>
-            <div class="kpi">${emoji} ${gradeLabel}</div>
-          </div>
-          <div class="muted">${auto ? "Tempo scaduto: consegna automatica." : ""}</div>
+    <div class="exam-layout">
+      <aside class="card exam-sidebar" role="complementary" aria-label="Sommario risultato simulazione">
+        <h2 class="exam-sidebar-title">Risultato simulazione</h2>
+        <div class="label">Corrette: <strong style="color:#80f2bf">${correct}</strong> · Sbagliate: <strong style="color:#ff9baa">${wrong}</strong></div>
+        <div class="label">Percentuale: <strong>${pct}%</strong></div>
+        <div class="label">Voto: <strong>${emoji} ${gradeLabel}</strong></div>
+        <div class="label">Tempo impiegato: <strong>${formatMMSS(elapsedMs)}</strong> / ${EXAM_MINUTES}:00</div>
+        <div class="muted">${auto ? "Tempo scaduto: consegna automatica." : "Consegna completata."}</div>
+        <div class="row" style="margin-top:8px;">
+          <button id="back-home" class="primary">Home</button>
+          <button id="stats">Statistiche</button>
         </div>
-      <hr />
-      <div class="row">
-        <button id="back-home" class="primary">Home</button>
-        <button id="stats">Statistiche</button>
+        <div class="exam-nav-grid" aria-label="Esito per domanda">
+          ${navHtml}
+        </div>
+        <p class="muted">Verde = risposta esatta · Rosso = risposta sbagliata.</p>
+      </aside>
+
+      <div class="exam-questions">
+        ${listHtml}
       </div>
     </div>
-
-    ${listHtml}
   `;
+
+    view.querySelectorAll("[data-qnav-res]").forEach((btn) => {
+        btn.onclick = () => {
+            const qid = btn.getAttribute("data-qnav-res");
+            const target = view.querySelector(`[data-qcard-res="${qid}"]`);
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        };
+    });
 
     document.getElementById("back-home").onclick = () => renderHome();
     document.getElementById("stats").onclick = () => renderStats();
 }
+
 
 /* =========================
    STATS
