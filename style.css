@@ -128,6 +128,8 @@ button.danger {
     color: var(--text-soft);
     font-size: 14px;
     font-weight: 500;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 .select,
@@ -324,6 +326,7 @@ button.primary {
     grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
     gap: 8px;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .exam-nav-item {
@@ -429,5 +432,5 @@ button.primary {
     font-weight: 800;
     letter-spacing: 0.5px;
     text-align: center;
-    padding-top: 5px;
+    margin: 0 0 4px;
 }
