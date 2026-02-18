@@ -108,7 +108,7 @@ button.danger {
 }
 
 .card {
-    background: #1b2843;
+    background: rgba(27, 40, 67, 0.78);
     border: 1px solid var(--border);
     border-radius: 18px;
     padding: 18px;
