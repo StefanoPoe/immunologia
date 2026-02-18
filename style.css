@@ -434,13 +434,8 @@ button.primary {
     background: #0f1115;
 }
 
-.exam-grade-emoji {
-    font-size: 44px;
-    line-height: 1;
-}
-
 .exam-grade-text {
-    font-size: 42px;
+    font-size: 28px;
     font-weight: 800;
     letter-spacing: 0.5px;
 }

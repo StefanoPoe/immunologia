@@ -1019,8 +1019,7 @@ function renderExamResults(auto) {
           ${navHtml}
         </div>
         <p class="muted">Verde = risposta esatta · Rosso = risposta sbagliata.</p>
-        <div class="exam-grade-text">Voto: ${gradeLabel}</div>
-        <div class="exam-grade-emoji">${emoji}</div>
+        <div class="exam-grade-text">Voto: ${gradeLabel}${emoji}</div>
       </aside>
 
       <div class="exam-questions">
