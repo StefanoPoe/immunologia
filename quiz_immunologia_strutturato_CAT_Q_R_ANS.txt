@@ -3669,7 +3669,7 @@ R:
 3) Formazione di complessi immunitari.
 4) Blocco dell’ingresso del virus.
 5) Determinazione degli antigeni dei gruppi sanguigni.
-ANS: 5
+ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: 374. Quale fenomeno si verifica quando gli anticorpi si legano alla superficie di un virus, impedendone il legame alle cellule bersaglio?
@@ -3831,10 +3831,9 @@ E) Generare delle mutazioni sul DNA nelle regioni che codificano per il framment
 ANS: D
 
 CAT: Linfociti B e anticorpi
-Q: 390. Durante la maturazione dei linfociti B c’è una fase d’intensa proliferazione che consente di utilizzare la stessa catena pesante riarrangiata da parte di vari cloni di linfociti
+Q: 390. Durante la maturazione dei linfociti B c’è una fase d’intensa proliferazione che consente di utilizzare la stessa catena pesante riarrangiata da parte di vari cloni di linfociti Questa fase proliferativa ha luogo:
 R:
-B) Questa fase proliferativa ha luogo:
-1) Appena si e’ formatO il riarrangiamento VDJ
+1) Appena si e’ formato il riarrangiamento VDJ
 2) Quando la cellula riesce a produrre la catena pesante nel citoplasma
 3) Quando la catena pesante, VpreB e λ5 vengono espresse sulla membrana
 4) QuAndo il linfocita esprime un BCR format da sole IgM
@@ -3868,8 +3867,8 @@ Q: 393. Oggi in Italia la vaccinazione anti poliomielite:
 R:
 1) E’ obbligatoria e viene effettuata con un virus vivo e attenuato per via orale (vaccino di Sabin)
 2) E’ facoltativa e viene effettuata con un virus vivo e attenuato (vaccino di Sabin) per via orale
-3) E' obbligatoria e viene effettuata con un virus ucciso (vaccino di Salk) somministratoper iniezione intramuscolare
-4) E' facoltativa e viene effettuata con un virus ucciso (vaccino di Salk) somministratoper iniezione intramuscolare
+3) E' obbligatoria e viene effettuata con un virus ucciso (vaccino di Salk) somministrato per iniezione intramuscolare
+4) E' facoltativa e viene effettuata con un virus ucciso (vaccino di Salk) somministrato per iniezione intramuscolare
 ANS: 3
 
 CAT: Linfociti B e anticorpi
@@ -3882,7 +3881,7 @@ R:
 ANS: 4
 
 CAT: Linfociti B e anticorpi
-Q: 395. Un bambino di 2 mesi presenta una diarrhea persistente, I segni e I sintomi di polmonite da Pneumocytis??? e un’infezione fungina orale da Candida Albicans. Il suo peso e’ circa un decimo del peso normale. Le risposte (?) degli esami per l’HIV sono risultate negative. La causa piu’ probabile di tale quadro e’:
+Q: 395. Un bambino di 2 mesi presenta una diarrea persistente, I segni e I sintomi di polmonite da Pneumocytis e un’infezione fungina orale da Candida Albicans. Il suo peso e’ circa un decimo del peso normale. Le risposte degli esami per l’HIV sono risultate negative. La causa piu’ probabile di tale quadro e’:
 R:
 1) Una grave riduzione dei livelli delle cellule B
 2) Una
@@ -3930,7 +3929,7 @@ R:
 ANS: 2
 
 CAT: Linfociti B e anticorpi
-Q: 400. plasmacellula?
+Q: 400. Dopo quanto tempo dal riconoscimento dell’antigene, un linfocita B è completamente differenziato in plasmacellula?
 R:
 1) sei ore
 2) un giorno
