@@ -4047,7 +4047,7 @@ B) Le citochine della famiglia del TNF utilizzano Myd88 per la segnalazione intr
 C) Le chemochine sono fondamentali per la guarigione delle ferite e l’integrità degli epiteli
 D) Le citochine della famiglia dell’IL-17 segnalano attraverso FADD o TRADD
 E) I recettori per la famiglia delle citochine di tipo I hanno una sequenza aminoacidica conservata nel dominio intracellulare
-ANS: C
+ANS: E
 
 CAT: Organi linfoidi e traffico cellulare
 Q: 412. Quali delle seguenti citochine sono fondamentali per l’integrità degli epiteli:
