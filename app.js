@@ -296,7 +296,10 @@ function wireNav() {
         stopExamTimer();
         renderStats();
     };
-    document.getElementById("nav-reset").onclick = () => resetAll();
+
+    // Reset NON più in topbar → se non esiste, non deve crashare
+    const resetTop = document.getElementById("nav-reset");
+    if (resetTop) resetTop.onclick = () => resetAll();
 }
 
 function renderHome() {
@@ -1095,8 +1098,18 @@ function renderStats() {
           </table>
         </div>
       </div>
+      
+        <hr />
+        <div class="row">
+          <button id="reset-all" class="danger">Reset dati</button>
+        </div>
+      
     </div>
   `;
+
+    document.getElementById("reset-all").onclick = () => {
+        if (confirm("Sicuro di voler resettare statistiche e impostazioni?")) resetAll();
+    };
 }
 
 function sameSet(a, b) {
