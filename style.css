@@ -512,3 +512,31 @@ body::before {
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
 }
+
+/* Link "Download Word" identico ai bottoni */
+.nav .btn {
+    font-weight: 600;        /* uguale agli altri, se vuoi NON grassetto metti 500 o 400 */
+    line-height: 1;          /* evita altezza “strana” */
+    padding: 10px 13px;      /* uguale ai button */
+    border-radius: 11px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* Se vuoi proprio NON in grassetto */
+.nav .btn {
+    font-weight: 500; /* oppure 400 */
+}
+
+/* Assicura stessa altezza visiva tra <a> e <button> */
+.nav button,
+.nav .btn {
+    height: 42px;            /* scegli un valore fisso uguale per tutti */
+}
+
+.nav button,
+.nav .btn {
+    font-size: 14px;
+}
