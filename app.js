@@ -116,6 +116,7 @@ function queueCloudSave() {
 
 function save() {
     const payload = {
+        username: state.username,
         config: state.config,
         profile: state.profile
     };
@@ -127,6 +128,7 @@ function load() {
     if (!raw) return;
     try {
         const p = JSON.parse(raw);
+        if (p.username) state.username = p.username;
         if (p.config) state.config = { ...state.config, ...p.config };
         if (p.profile) state.profile = p.profile;
     } catch {
