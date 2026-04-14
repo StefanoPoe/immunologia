@@ -158,6 +158,37 @@ async function saveProfileToCloud(username, profile) {
     if (error) throw error;
 }
 
+async function refreshProfileFromCloud() {
+    if (!state.username) return false;
+
+    try {
+        const freshProfile = await loadProfileFromCloud(state.username);
+        state.profile = freshProfile;
+        recalcProfileStats();
+        save();
+        return true;
+    } catch (err) {
+        console.error("Errore refresh profilo cloud:", err);
+        return false;
+    }
+}
+
+async function openStatsScreen() {
+    if (!state.username) {
+        renderUsernameScreen();
+        return;
+    }
+
+    view.innerHTML = `
+      <div class="card">
+        <p>Caricamento statistiche...</p>
+      </div>
+    `;
+
+    await refreshProfileFromCloud();
+    renderStats();
+}
+
 let cloudSaveTimeout = null;
 
 function queueCloudSave() {
@@ -202,7 +233,12 @@ function save() {
 
 function load() {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return;
+    if (!raw) {
+        state.username = "";
+        state.profile = makeEmptyProfile("");
+        state.config.practiceMode = "normal";
+        return;
+    }
 
     try {
         const p = JSON.parse(raw);
@@ -213,6 +249,7 @@ function load() {
 
     state.username = "";
     state.profile = makeEmptyProfile("");
+    state.config.practiceMode = "normal";
 }
 
 function resetAll() {
@@ -507,13 +544,9 @@ function wireNav() {
         renderHome();
     };
 
-    document.getElementById("nav-stats").onclick = () => {
+    document.getElementById("nav-stats").onclick = async () => {
         stopExamTimer();
-        if (!state.username) {
-            renderUsernameScreen();
-            return;
-        }
-        renderStats();
+        await openStatsScreen();
     };
 
     const logoutBtn = document.getElementById("nav-logout");
@@ -585,6 +618,7 @@ function renderUsernameScreen() {
 function renderHome() {
     setExamDesktopLock(false);
     state.mode = "home";
+    if (!state.config.practiceMode) state.config.practiceMode = "normal";
     const total = state.all.length;
     const maxQn = state.all.reduce((m, q) => Math.max(m, q.qNumber || 0), 0) || total;
 
@@ -1163,7 +1197,9 @@ function renderDonePractice() {
   `;
 
     document.getElementById("again").onclick = () => renderHome();
-    document.getElementById("stats").onclick = () => renderStats();
+    document.getElementById("stats").onclick = async () => {
+        await openStatsScreen();
+    };
 }
 
 /* =========================
@@ -1491,7 +1527,9 @@ function renderExamResults(auto) {
     });
 
     document.getElementById("back-home").onclick = () => renderHome();
-    document.getElementById("stats").onclick = () => renderStats();
+    document.getElementById("stats").onclick = async () => {
+        await openStatsScreen();
+    };
 }
 
 
