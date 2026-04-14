@@ -1,7 +1,11 @@
 // Quiz Immunologia - SPA vanilla JS
 // Modalità: Allenamento (una domanda per volta) + Simulazione esame (33 domande/30 min)
 
+import { supabase } from "./supabaseClient.js";
+
 const view = document.getElementById("view");
+
+
 // nuovo file domande (formato CAT/Q/R/ANS)
 const QUESTIONS_FILE = "./quiz_immunologia_strutturato_CAT_Q_R_ANS.txt";
 
@@ -18,26 +22,97 @@ const EXAM_MINUTES = 30;
 const state = {
     all: [],
     categories: [],
-    mode: "home", // home | practice | done | stats | exam | exam_result
+    mode: "home",
+    username: "",
     config: { category: "Tutte", limit: 30, shuffle: true, mode: "practice", practiceMode: "normal", rangeEnabled: false, rangeFrom: 1, rangeTo: 1 },
     quiz: { items: [], index: 0, selected: new Set(), correct: 0, answered: 0 },
     profile: {
         nickname: "",
-        pin: "",
         stats: { played: 0, correct: 0, wrong: 0, perCategory: {} },
         questions: {},
         wrongQuestionIds: []
     },
-
     exam: {
         items: [],
-        answers: new Map(), // qid -> Set(labels)
+        answers: new Map(),
         endAt: 0,
         timerId: null,
         submitted: false,
-        results: null, // { total, correct, perQuestion: Map(qid -> {ok, correctLabels, selectedLabels}) }
-    },
+        results: null
+    }
 };
+
+function makeEmptyProfile(username) {
+    return {
+        nickname: username,
+        stats: { played: 0, correct: 0, wrong: 0, perCategory: {} },
+        questions: {},
+        wrongQuestionIds: []
+    };
+}
+
+async function loadProfileFromCloud(username) {
+    const { data, error } = await supabase
+        .from("profiles")
+        .select("data")
+        .eq("username", username)
+        .limit(1);
+
+    if (error) throw error;
+
+    if (data && data.length > 0) {
+        return data[0].data;
+    }
+
+    const emptyProfile = makeEmptyProfile(username);
+
+    const { error: insertError } = await supabase
+        .from("profiles")
+        .upsert(
+            {
+                username,
+                data: emptyProfile,
+                updated_at: new Date().toISOString()
+            },
+            { onConflict: "username" }
+        );
+
+    if (insertError) throw insertError;
+
+    return emptyProfile;
+}
+
+async function saveProfileToCloud(username, profile) {
+    const { error } = await supabase
+        .from("profiles")
+        .upsert(
+            {
+                username,
+                data: profile,
+                updated_at: new Date().toISOString()
+            },
+            { onConflict: "username" }
+        );
+
+    if (error) throw error;
+}
+
+let cloudSaveTimeout = null;
+
+function queueCloudSave() {
+    clearTimeout(cloudSaveTimeout);
+
+    cloudSaveTimeout = setTimeout(async () => {
+        if (!state.username) return;
+
+        try {
+            await saveProfileToCloud(state.username, state.profile);
+            console.log("Profilo salvato online");
+        } catch (err) {
+            console.error("Errore salvataggio cloud:", err);
+        }
+    }, 500);
+}
 
 function save() {
     const payload = {
@@ -306,6 +381,45 @@ function wireNav() {
     // Reset NON più in topbar → se non esiste, non deve crashare
     const resetTop = document.getElementById("nav-reset");
     if (resetTop) resetTop.onclick = () => resetAll();
+}
+
+function renderUsernameScreen() {
+    view.innerHTML = `
+    <div class="card">
+      <h2>Entra</h2>
+      <p class="muted">Inserisci solo uno username per sincronizzare i progressi tra dispositivi.</p>
+
+      <div class="row">
+        <input id="usernameInput" class="select" type="text" placeholder="Username" />
+        <button id="enterBtn" class="primary">Entra</button>
+      </div>
+
+      <p id="loginFeedback" class="muted"></p>
+    </div>
+  `;
+
+    document.getElementById("enterBtn").onclick = async () => {
+        const input = document.getElementById("usernameInput");
+        const feedback = document.getElementById("loginFeedback");
+
+        const username = input.value.trim().toLowerCase();
+        if (!username) {
+            feedback.textContent = "Inserisci uno username.";
+            return;
+        }
+
+        feedback.textContent = "Caricamento profilo...";
+
+        try {
+            state.username = username;
+            state.profile = await loadProfileFromCloud(username);
+            save();
+            renderHome();
+        } catch (err) {
+            console.error(err);
+            feedback.textContent = "Errore nel caricamento del profilo.";
+        }
+    };
 }
 
 function renderHome() {
@@ -762,6 +876,10 @@ function recordQuestionResult(q, ok) {
         qStat.lastResult = "wrong";
         addWrongQuestionId(q.id);
     }
+
+    save();
+    queueCloudSave();
+
 }
 
 function feedback(msg) {
@@ -1221,8 +1339,8 @@ async function init() {
     view.innerHTML = `<div class="card"><p>Caricamento domande…</p></div>`;
 
     try {
-        const res = await fetch(QUESTIONS_FILE, { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status} su ${QUESTIONS_FILE}`);
+        const res = await fetch("./immunologia_v21_mcq.txt", { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status} su ./immunologia_v21_mcq.txt`);
 
         const txt = await res.text();
         const questions = parseTxtToQuestions(txt);
@@ -1231,16 +1349,24 @@ async function init() {
         state.categories = uniqCategories(state.all);
 
         wireNav();
-        renderHome();
+
+        if (state.username) {
+            try {
+                state.profile = await loadProfileFromCloud(state.username);
+                renderHome();
+            } catch (err) {
+                console.error(err);
+                renderUsernameScreen();
+            }
+        } else {
+            renderUsernameScreen();
+        }
     } catch (err) {
         console.error(err);
         view.innerHTML = `
       <div class="card">
         <h2>Errore caricamento</h2>
         <p class="muted">${escapeHtml(String(err))}</p>
-        <p class="muted">
-          Se sei in locale: usa un server (python -m http.server). Su Pages: controlla che immunologia_v21_mcq2.txt sia nello stesso folder di index.html.
-        </p>
       </div>
     `;
     }
