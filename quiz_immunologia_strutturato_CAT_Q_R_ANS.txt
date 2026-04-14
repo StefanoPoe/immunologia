@@ -391,16 +391,14 @@ R:
 ANS: 2
 
 CAT: Immunità innata e infiammazione
-Q: 41. Quali dei seguenti PRRs sono espressi a livello citosolico?
+Q: 41. Quali dei seguenti PRRs sono espressi a livello citosolico? (due risposte corrette)
 R:
 1) TLRs
 2) TREMs
 3) CLRs
 4) NLRs
 5) RLRs
-6) quelli indicati nei punti 2 e 5
-7) quelli 4 e 5
-ANS: 7
+ANS: 4,5
 
 CAT: Immunità innata e infiammazione
 Q: 42. Giudica l’affermazione falsa
@@ -471,16 +469,14 @@ R:
 ANS: 5
 
 CAT: Immunità innata e infiammazione
-Q: 49. Quali dei seguenti pattern recognition receptors (PRRs) sono espressi a livello citosolico?
+Q: 49. Quali dei seguenti pattern recognition receptors (PRRs) sono espressi a livello citosolico? (due risposte corrette)
 R:
 1) TLRs
 2) TREMs
 3) CLRs
 4) NLRs
 5) RLRs
-6) quelli indicati ai punti 2 e 5
-7) quelli indicati ai punti 4 e 5
-ANS: 7
+ANS: 4,5
 
 CAT: Immunità innata e infiammazione
 Q: 50. Che cos’e’ il DNA-dependent activator of IRFs (DAI)?
@@ -882,16 +878,14 @@ E) Il complemento non fa parte della risposta immunitaria innata CITOCHINE
 ANS: C
 
 CAT: Complemento e citochine
-Q: 93. Quale delle seguenti affermazioni è vera?
+Q: 93. Quale delle seguenti affermazioni sono vere?
 R:
 1) Recettori diversi utilizzano combinazioni di Jak e STAT diverse, e questo consente la trasduzione di segnali diversi
 2) Il pathway Jak-STAT è utilizzato dai recettori citochinici di tipo I
 3) Il pathway Jack-STAT è utilizzato dai recettori citochinici di tipo II
 4) Le STAT si cross-fosforilano attivandosi e poi fosforilano le Jak che dimerizzano e traslocano nel nucleo
-5) Sono giuste la 1, 2 e 3
-6) Sono giuste la 2, 3 e 4
 7) Sono tutte giuste
-ANS: 5
+ANS: 1,2,3
 
 CAT: Complemento e citochine
 Q: 94. Quale delle seguenti affermazioni sulle citochine è falsa:
@@ -4088,17 +4082,14 @@ E) IL-21
 ANS: B
 
 CAT: Organi linfoidi e traffico cellulare
-Q: 417. Per permettere la corretta attivazione di un linfocita T serve:
+Q: 417. Per permettere la corretta attivazione di un linfocita T serve: (tre risposte giuste)
 R:
 A) La produzione di IL-2 Solo B
 B) Segnali costimolatori
 C) Produzione di chemochine
 D) Produzione di IFN
 E) Riconoscimento ad alta affinità TCR-HLAp
-F) Sono giuste la B e la E
-G) Sono giuste la B, la E e la D
-H) Sono giuste la A, la B e la E
-ANS: H
+ANS: A,B,E
 
 CAT: Organi linfoidi e traffico cellulare
 Q: 418. il sommarsi dei segnali di costimolazione ai segnali del TCR porta il linfocita T:

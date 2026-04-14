@@ -192,8 +192,17 @@ function shuffledCopy(arr) {
 function attachShuffledOptions(questions) {
     return questions.map(q => ({
         ...q,
-        displayOptions: shuffledCopy(q.options || [])
+        displayOptions: shuffledCopy(
+            (q.options || []).map(o => ({
+                ...o,
+                text: stripLeadingOptionMarker(o.text)
+            }))
+        )
     }));
+}
+
+function stripLeadingOptionMarker(text) {
+    return String(text || "").replace(/^\s*[A-Za-z0-9]+\)\s*/, "").trim();
 }
 
 function clampInt(value, min, max) {
@@ -804,7 +813,7 @@ function renderPractice() {
         <label class="option" data-label="${escapeHtml(o.label)}">
           <input type="${inputType}" name="opt" value="${escapeHtml(o.label)}" ${checked} />
           <div>
-            <div>${escapeHtml(o.text)}</div>
+            <div>${escapeHtml(stripLeadingOptionMarker(o.text))}</div>
           </div>
         </label>
       `;
@@ -1108,7 +1117,7 @@ function renderExam() {
                     return `
             <label class="option" data-qid="${escapeHtml(q.id)}" data-label="${escapeHtml(o.label)}">
               <input type="${inputType}" name="q_${escapeHtml(q.id)}" value="${escapeHtml(o.label)}" ${checked} />
-              <div>${escapeHtml(o.text)}</div>
+              <div>${escapeHtml(stripLeadingOptionMarker(o.text))}</div>
             </label>
           `;
                 })
@@ -1287,11 +1296,11 @@ function renderExamResults(auto) {
                     if (isSelected && !isCorrect) cls += " wrong";
 
                     return `
-            <label class="${cls}" data-label="${escapeHtml(o.label)}">
-              <input type="${inputType}" disabled ${isSelected ? "checked" : ""} />
-              <div>${escapeHtml(o.text)}</div>
-            </label>
-          `;
+    <label class="${cls}" data-label="${escapeHtml(o.label)}">
+      <input type="${inputType}" disabled ${isSelected ? "checked" : ""} />
+      <div>${escapeHtml(stripLeadingOptionMarker(o.text))}</div>
+    </label>
+`;
                 })
                 .join("");
 
