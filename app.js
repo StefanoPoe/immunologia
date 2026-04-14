@@ -51,6 +51,7 @@ function clearCurrentSession() {
 
 function logoutUser() {
     clearCurrentSession();
+    updateAuthButtons();
     renderUsernameScreen();
 }
 
@@ -59,16 +60,35 @@ function openAuthScreen() {
     renderUsernameScreen();
 }
 
-function updateAuthButtons() {
-    const authBtn = document.getElementById("nav-auth");
+function setNavForLoggedOut() {
+    const homeBtn = document.getElementById("nav-home");
+    const statsBtn = document.getElementById("nav-stats");
     const logoutBtn = document.getElementById("nav-logout");
+    const downloadBtn = document.getElementById("nav-download");
 
-    if (authBtn) {
-        authBtn.textContent = state.username ? "Cambia utente" : "Accedi / Nuovo utente";
-    }
+    if (homeBtn) homeBtn.style.display = "none";
+    if (statsBtn) statsBtn.style.display = "none";
+    if (logoutBtn) logoutBtn.style.display = "none";
+    if (downloadBtn) downloadBtn.style.display = "none";
+}
 
-    if (logoutBtn) {
-        logoutBtn.style.display = state.username ? "inline-flex" : "none";
+function setNavForLoggedIn() {
+    const homeBtn = document.getElementById("nav-home");
+    const statsBtn = document.getElementById("nav-stats");
+    const logoutBtn = document.getElementById("nav-logout");
+    const downloadBtn = document.getElementById("nav-download");
+
+    if (homeBtn) homeBtn.style.display = "inline-flex";
+    if (statsBtn) statsBtn.style.display = "inline-flex";
+    if (logoutBtn) logoutBtn.style.display = "inline-flex";
+    if (downloadBtn) downloadBtn.style.display = "inline-flex";
+}
+
+function updateAuthButtons() {
+    if (state.username) {
+        setNavForLoggedIn();
+    } else {
+        setNavForLoggedOut();
     }
 }
 
@@ -486,14 +506,6 @@ function wireNav() {
         renderStats();
     };
 
-    const authBtn = document.getElementById("nav-auth");
-    if (authBtn) {
-        authBtn.onclick = () => {
-            stopExamTimer();
-            openAuthScreen();
-        };
-    }
-
     const logoutBtn = document.getElementById("nav-logout");
     if (logoutBtn) {
         logoutBtn.onclick = () => {
@@ -521,7 +533,7 @@ function renderUsernameScreen() {
 
       <div class="row">
         <input id="usernameInput" class="select" type="text" placeholder="Username" />
-        <button id="enterBtn" class="primary">Entra / Crea</button>
+        <button id="enterBtn" class="primary">Entra</button>
       </div>
 
       <p id="loginFeedback" class="muted"></p>
