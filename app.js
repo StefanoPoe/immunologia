@@ -19,9 +19,15 @@ const state = {
     all: [],
     categories: [],
     mode: "home", // home | practice | done | stats | exam | exam_result
-    config: { category: "Tutte", limit: 30, shuffle: true, mode: "practice", rangeEnabled: false, rangeFrom: 1, rangeTo: 1 },
+    config: { category: "Tutte", limit: 30, shuffle: true, mode: "practice", practiceMode: "normal", rangeEnabled: false, rangeFrom: 1, rangeTo: 1 },
     quiz: { items: [], index: 0, selected: new Set(), correct: 0, answered: 0 },
-    stats: { played: 0, correct: 0, wrong: 0, perCategory: {} },
+    profile: {
+        nickname: "",
+        pin: "",
+        stats: { played: 0, correct: 0, wrong: 0, perCategory: {} },
+        questions: {},
+        wrongQuestionIds: []
+    },
 
     exam: {
         items: [],
@@ -36,7 +42,7 @@ const state = {
 function save() {
     const payload = {
         config: state.config,
-        stats: state.stats,
+        profile: state.profile
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
 }
@@ -47,7 +53,7 @@ function load() {
     try {
         const p = JSON.parse(raw);
         if (p.config) state.config = { ...state.config, ...p.config };
-        if (p.stats) state.stats = p.stats;
+        if (p.profile) state.profile = p.profile;
     } catch {
         // ignora
     }
@@ -354,6 +360,20 @@ function renderHome() {
           <select id="mode" class="select">${modeOptions}</select>
         </div>
 
+      ${
+        isPractice
+            ? `
+      <div class="home-line">
+        <label class="label">Tipo allenamento</label>
+        <select id="practiceMode" class="select">
+          <option value="normal" ${state.config.practiceMode === "normal" ? "selected" : ""}>Normale</option>
+          <option value="wrong_only" ${state.config.practiceMode === "wrong_only" ? "selected" : ""}>Solo sbagliate</option>
+        </select>
+      </div>
+    `
+            : ""
+    }
+
         ${
         showCategory
             ? `
@@ -466,6 +486,8 @@ function renderHome() {
 
     document.getElementById("start").onclick = () => {
         state.config.mode = document.getElementById("mode").value;
+        const practiceModeEl = document.getElementById("practiceMode");
+        if (practiceModeEl) state.config.practiceMode = practiceModeEl.value;
 
         if (state.config.mode === "exam") {
             state.config.category = "Tutte";
@@ -504,6 +526,11 @@ function renderHome() {
 
 function startPractice() {
     let pool = [...state.all];
+
+    if (state.config.practiceMode === "wrong_only") {
+        const wrongSet = new Set(state.profile?.wrongQuestionIds || []);
+        pool = pool.filter(q => wrongSet.has(q.id));
+    }
 
     if (state.config.category !== "Tutte") {
         pool = pool.filter((q) => q.category === state.config.category);
@@ -655,18 +682,12 @@ function renderPractice() {
         applyPracticeHighlight(q, selectedNorm, correctNorm);
 
         // stats
-        state.stats.played++;
-        state.stats.perCategory[q.category] ??= { played: 0, correct: 0, wrong: 0 };
-        state.stats.perCategory[q.category].played++;
+        recordQuestionResult(q, ok);
 
         if (ok) {
             state.quiz.correct++;
-            state.stats.correct++;
-            state.stats.perCategory[q.category].correct++;
             feedback("Corretto.");
         } else {
-            state.stats.wrong++;
-            state.stats.perCategory[q.category].wrong++;
             feedback(`Sbagliato. Corrette: ${q.correctLabels.join(", ")}`);
         }
 
@@ -675,6 +696,72 @@ function renderPractice() {
 
         setTimeout(() => nextPractice(), ok ? PRACTICE_DELAY_OK : PRACTICE_DELAY_WRONG);
     };
+}
+
+function ensureProfile() {
+    if (!state.profile) {
+        state.profile = {
+            nickname: "",
+            pin: "",
+            stats: {
+                played: 0,
+                correct: 0,
+                wrong: 0,
+                perCategory: {}
+            },
+            questions: {},
+            wrongQuestionIds: []
+        };
+    }
+}
+
+function ensureQuestionStat(qid) {
+    ensureProfile();
+    if (!state.profile.questions[qid]) {
+        state.profile.questions[qid] = {
+            correct: 0,
+            wrong: 0,
+            lastResult: null
+        };
+    }
+    return state.profile.questions[qid];
+}
+
+function addWrongQuestionId(qid) {
+    ensureProfile();
+    if (!state.profile.wrongQuestionIds.includes(qid)) {
+        state.profile.wrongQuestionIds.push(qid);
+    }
+}
+
+function removeWrongQuestionId(qid) {
+    ensureProfile();
+    state.profile.wrongQuestionIds = state.profile.wrongQuestionIds.filter(id => id !== qid);
+}
+
+function recordQuestionResult(q, ok) {
+    ensureProfile();
+
+    const cat = q.category || "Senza categoria";
+    const qStat = ensureQuestionStat(q.id);
+
+    state.profile.stats.played++;
+    state.profile.stats.perCategory[cat] ??= { played: 0, correct: 0, wrong: 0 };
+    state.profile.stats.perCategory[cat].played++;
+
+    if (ok) {
+        state.profile.stats.correct++;
+        state.profile.stats.perCategory[cat].correct++;
+        qStat.correct++;
+        qStat.lastResult = "correct";
+        removeWrongQuestionId(q.id);
+    } else {
+        state.profile.stats.wrong++;
+        state.profile.stats.perCategory[cat].wrong++;
+        qStat.wrong++;
+        qStat.lastResult = "wrong";
+        addWrongQuestionId(q.id);
+    }
 }
 
 function feedback(msg) {
@@ -1053,7 +1140,9 @@ function renderStats() {
     setExamDesktopLock(false);
     state.mode = "stats";
 
-    const rows = Object.entries(state.stats.perCategory)
+    const stats = state.profile?.stats || { played: 0, correct: 0, wrong: 0, perCategory: {} };
+
+    const rows = Object.entries(stats.perCategory)
         .sort((a, b) => a[0].localeCompare(b[0]))
         .map(([cat, s]) => {
             const pct = s.played ? Math.round((s.correct / s.played) * 100) : 0;
@@ -1073,15 +1162,15 @@ function renderStats() {
       <div class="row">
         <div>
           <div class="label">Giocate</div>
-          <div class="kpi">${state.stats.played}</div>
+          <div class="kpi">${stats.played}</div>
         </div>
         <div>
           <div class="label">Corrette</div>
-          <div class="kpi">${state.stats.correct}</div>
+          <div class="kpi">${stats.correct}</div>
         </div>
         <div>
           <div class="label">Sbagliate</div>
-          <div class="kpi">${state.stats.wrong}</div>
+          <div class="kpi">${stats.wrong}</div>
         </div>
       </div>
 
