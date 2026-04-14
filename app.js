@@ -180,6 +180,22 @@ function shuffle(arr) {
     return arr;
 }
 
+function shuffledCopy(arr) {
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+}
+
+function attachShuffledOptions(questions) {
+    return questions.map(q => ({
+        ...q,
+        displayOptions: shuffledCopy(q.options || [])
+    }));
+}
+
 function clampInt(value, min, max) {
     let a = Number(min);
     let b = Number(max);
@@ -735,7 +751,7 @@ function startPractice() {
     pool = pool.slice(0, Math.min(state.config.limit, pool.length));
 
 
-    state.quiz.items = pool;
+    state.quiz.items = attachShuffledOptions(pool);
     state.quiz.index = 0;
     state.quiz.selected = new Set();
     state.quiz.correct = 0;
@@ -779,14 +795,16 @@ function renderPractice() {
     const inputType = multi ? "checkbox" : "radio";
     const qDisplayText = (q.qNumber ? `${q.qNumber}. ` : "") + q.question;
 
-    const optionsHtml = q.options
+    const shownOptions = q.displayOptions || q.options;
+
+    const optionsHtml = shownOptions
         .map((o) => {
             const checked = state.quiz.selected.has(o.label) ? "checked" : "";
             return `
         <label class="option" data-label="${escapeHtml(o.label)}">
           <input type="${inputType}" name="opt" value="${escapeHtml(o.label)}" ${checked} />
           <div>
-            <div><strong>${escapeHtml(o.label)})</strong> ${escapeHtml(o.text)}</div>
+            <div>${escapeHtml(o.text)}</div>
           </div>
         </label>
       `;
@@ -1040,7 +1058,7 @@ function startExam() {
 
     pool = pool.slice(0, Math.min(EXAM_QUESTIONS, pool.length));
 
-    state.exam.items = pool;
+    state.exam.items = attachShuffledOptions(pool);
     state.exam.answers = new Map();
     state.exam.submitted = false;
     state.exam.results = null;
@@ -1082,13 +1100,15 @@ function renderExam() {
             const inputType = multi ? "checkbox" : "radio";
             const current = state.exam.answers.get(q.id) ?? new Set();
 
-            const optionsHtml = q.options
+            const shownOptions = q.displayOptions || q.options;
+
+            const optionsHtml = shownOptions
                 .map((o) => {
                     const checked = current.has(o.label) ? "checked" : "";
                     return `
             <label class="option" data-qid="${escapeHtml(q.id)}" data-label="${escapeHtml(o.label)}">
               <input type="${inputType}" name="q_${escapeHtml(q.id)}" value="${escapeHtml(o.label)}" ${checked} />
-              <div><strong>${escapeHtml(o.label)})</strong> ${escapeHtml(o.text)}</div>
+              <div>${escapeHtml(o.text)}</div>
             </label>
           `;
                 })
@@ -1252,7 +1272,9 @@ function renderExamResults(auto) {
             const multi = q.correctLabels.length > 1;
             const inputType = multi ? "checkbox" : "radio";
 
-            const optionsHtml = q.options
+            const shownOptions = q.displayOptions || q.options;
+
+            const optionsHtml = shownOptions
                 .map((o) => {
                     const nl = normalizeLabelForCompare(o.label);
                     const isSelected = selected.has(nl);
@@ -1267,7 +1289,7 @@ function renderExamResults(auto) {
                     return `
             <label class="${cls}" data-label="${escapeHtml(o.label)}">
               <input type="${inputType}" disabled ${isSelected ? "checked" : ""} />
-              <div><strong>${escapeHtml(o.label)})</strong> ${escapeHtml(o.text)}</div>
+              <div>${escapeHtml(o.text)}</div>
             </label>
           `;
                 })
