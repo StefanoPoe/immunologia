@@ -557,6 +557,7 @@ function renderUsernameScreen() {
         try {
             state.username = username;
             state.profile = await loadProfileFromCloud(username);
+            recalcProfileStats();
             save();
             updateAuthButtons();
             renderHome();
@@ -1010,27 +1011,106 @@ function recordQuestionResult(q, ok) {
     const cat = q.category || "Senza categoria";
     const qStat = ensureQuestionStat(q.id);
 
-    state.profile.stats.played++;
-    state.profile.stats.perCategory[cat] ??= { played: 0, correct: 0, wrong: 0 };
-    state.profile.stats.perCategory[cat].played++;
+    qStat.category = cat;
 
     if (ok) {
-        state.profile.stats.correct++;
-        state.profile.stats.perCategory[cat].correct++;
-        qStat.correct++;
+        qStat.correct = (qStat.correct || 0) + 1;
         qStat.lastResult = "correct";
         removeWrongQuestionId(q.id);
     } else {
-        state.profile.stats.wrong++;
-        state.profile.stats.perCategory[cat].wrong++;
-        qStat.wrong++;
+        qStat.wrong = (qStat.wrong || 0) + 1;
         qStat.lastResult = "wrong";
         addWrongQuestionId(q.id);
     }
 
+    recalcProfileStats();
     save();
     queueCloudSave();
+}
 
+function buildDerivedStats() {
+    const allQuestions = state.all || [];
+    const qStats = state.profile?.questions || {};
+
+    const byId = new Map(allQuestions.map(q => [q.id, q]));
+    const totalByCategory = {};
+
+    for (const q of allQuestions) {
+        const cat = q.category || "Senza categoria";
+        totalByCategory[cat] = (totalByCategory[cat] || 0) + 1;
+    }
+
+    const perCategory = {};
+    for (const [cat, total] of Object.entries(totalByCategory)) {
+        perCategory[cat] = {
+            answeredUnique: 0,
+            correctUnique: 0,
+            wrongUnique: 0,
+            totalQuestions: total
+        };
+    }
+
+    let answeredUnique = 0;
+    let correctUnique = 0;
+    let wrongUnique = 0;
+
+    for (const [qid, stat] of Object.entries(qStats)) {
+        const attempts = Number(stat.correct || 0) + Number(stat.wrong || 0);
+        if (attempts <= 0) continue;
+
+        const q = byId.get(qid);
+        const cat = q?.category || stat.category || "Senza categoria";
+
+        if (!perCategory[cat]) {
+            perCategory[cat] = {
+                answeredUnique: 0,
+                correctUnique: 0,
+                wrongUnique: 0,
+                totalQuestions: totalByCategory[cat] || 0
+            };
+        }
+
+        answeredUnique++;
+        perCategory[cat].answeredUnique++;
+
+        if (stat.lastResult === "correct") {
+            correctUnique++;
+            perCategory[cat].correctUnique++;
+        } else if (stat.lastResult === "wrong") {
+            wrongUnique++;
+            perCategory[cat].wrongUnique++;
+        }
+    }
+
+    return {
+        answeredUnique,
+        correctUnique,
+        wrongUnique,
+        totalQuestions: allQuestions.length,
+        perCategory
+    };
+}
+
+function recalcProfileStats() {
+    const derived = buildDerivedStats();
+
+    ensureProfile();
+    state.profile.stats = {
+        played: derived.answeredUnique,
+        correct: derived.correctUnique,
+        wrong: derived.wrongUnique,
+        perCategory: Object.fromEntries(
+            Object.entries(derived.perCategory).map(([cat, s]) => [
+                cat,
+                {
+                    played: s.answeredUnique,
+                    correct: s.correctUnique,
+                    wrong: s.wrongUnique,
+                    total: s.totalQuestions
+                }
+            ])
+        )
+    };
 }
 
 function feedback(msg) {
@@ -1413,18 +1493,21 @@ function renderStats() {
     setExamDesktopLock(false);
     state.mode = "stats";
 
-    const stats = state.profile?.stats || { played: 0, correct: 0, wrong: 0, perCategory: {} };
+    const stats = buildDerivedStats();
 
     const rows = Object.entries(stats.perCategory)
         .sort((a, b) => a[0].localeCompare(b[0]))
         .map(([cat, s]) => {
-            const pct = s.played ? Math.round((s.correct / s.played) * 100) : 0;
+            const progressPct = s.totalQuestions
+                ? Math.round((s.answeredUnique / s.totalQuestions) * 100)
+                : 0;
+
             return `<tr>
         <td>${escapeHtml(cat)}</td>
-        <td>${s.played}</td>
-        <td>${s.correct}</td>
-        <td>${s.wrong}</td>
-        <td>${pct}%</td>
+        <td>${s.answeredUnique} / ${s.totalQuestions}</td>
+        <td>${s.correctUnique}</td>
+        <td>${s.wrongUnique}</td>
+        <td>${progressPct}%</td>
       </tr>`;
         })
         .join("");
@@ -1434,16 +1517,16 @@ function renderStats() {
       <h2>Statistiche</h2>
       <div class="row">
         <div>
-          <div class="label">Giocate</div>
-          <div class="kpi">${stats.played}</div>
+          <div class="label">Risposte uniche</div>
+          <div class="kpi">${stats.answeredUnique} / ${stats.totalQuestions}</div>
         </div>
         <div>
-          <div class="label">Corrette</div>
-          <div class="kpi">${stats.correct}</div>
+          <div class="label">Corrette uniche</div>
+          <div class="kpi">${stats.correctUnique}</div>
         </div>
         <div>
-          <div class="label">Sbagliate</div>
-          <div class="kpi">${stats.wrong}</div>
+          <div class="label">Sbagliate uniche</div>
+          <div class="kpi">${stats.wrongUnique}</div>
         </div>
       </div>
 
@@ -1454,17 +1537,23 @@ function renderStats() {
         <div style="overflow:auto;">
           <table class="tbl">
             <thead>
-              <tr><th>Categoria</th><th>Giocate</th><th>Corrette</th><th>Sbagliate</th><th>%</th></tr>
+              <tr>
+                <th>Categoria</th>
+                <th>Risposte uniche</th>
+                <th>Corrette</th>
+                <th>Sbagliate</th>
+                <th>Completamento</th>
+              </tr>
             </thead>
             <tbody>${rows || "<tr><td colspan='5' class='muted'>Nessun dato.</td></tr>"}</tbody>
           </table>
         </div>
       </div>
       
-        <hr />
-        <div class="row">
-          <button id="reset-all" class="danger">Reset statistiche</button>
-        </div>
+      <hr />
+      <div class="row">
+        <button id="reset-all" class="danger">Reset statistiche</button>
+      </div>
       
     </div>
   `;
@@ -1519,6 +1608,8 @@ async function init() {
         if (state.username) {
             try {
                 state.profile = await loadProfileFromCloud(state.username);
+                recalcProfileStats();
+                save();
                 updateAuthButtons();
                 renderHome();
             } catch (err) {
