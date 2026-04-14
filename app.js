@@ -144,6 +144,24 @@ function queueCloudSave() {
     }, 500);
 }
 
+async function resetStatsOnly() {
+    if (!state.username) return;
+
+    const emptyProfile = makeEmptyProfile(state.username);
+
+    try {
+        state.profile = emptyProfile;
+        save();
+        await saveProfileToCloud(state.username, emptyProfile);
+        renderStats();
+    } catch (err) {
+        console.error("Errore reset statistiche cloud:", err);
+        alert("Errore durante il reset delle statistiche.");
+    }
+}
+
+
+
 function save() {
     const payload = {
         username: state.username,
@@ -1433,14 +1451,20 @@ function renderStats() {
       
         <hr />
         <div class="row">
-          <button id="reset-all" class="danger">Reset dati</button>
+          <button id="reset-all" class="danger">Reset statistiche</button>
         </div>
       
     </div>
   `;
 
-    document.getElementById("reset-all").onclick = () => {
-        if (confirm("Sicuro di voler resettare statistiche e impostazioni?")) resetAll();
+    document.getElementById("reset-all").onclick = async () => {
+        if (!confirm("Sicuro di voler resettare tutte le statistiche di questo utente?")) return;
+
+        const btn = document.getElementById("reset-all");
+        btn.disabled = true;
+        btn.textContent = "Reset in corso...";
+
+        await resetStatsOnly();
     };
 }
 
