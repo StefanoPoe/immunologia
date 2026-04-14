@@ -42,6 +42,36 @@ const state = {
     }
 };
 
+function clearCurrentSession() {
+    state.username = "";
+    state.profile = makeEmptyProfile("");
+    save();
+    updateAuthButtons();
+}
+
+function logoutUser() {
+    clearCurrentSession();
+    renderUsernameScreen();
+}
+
+function openAuthScreen() {
+    clearCurrentSession();
+    renderUsernameScreen();
+}
+
+function updateAuthButtons() {
+    const authBtn = document.getElementById("nav-auth");
+    const logoutBtn = document.getElementById("nav-logout");
+
+    if (authBtn) {
+        authBtn.textContent = state.username ? "Cambia utente" : "Accedi / Nuovo utente";
+    }
+
+    if (logoutBtn) {
+        logoutBtn.style.display = state.username ? "inline-flex" : "none";
+    }
+}
+
 function makeEmptyProfile(username) {
     return {
         nickname: username,
@@ -126,6 +156,7 @@ function save() {
 function load() {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return;
+
     try {
         const p = JSON.parse(raw);
         if (p.username) state.username = p.username;
@@ -373,38 +404,71 @@ function setExamDesktopLock(enabled) {
 function wireNav() {
     document.getElementById("nav-home").onclick = () => {
         stopExamTimer();
+        if (!state.username) {
+            renderUsernameScreen();
+            return;
+        }
         renderHome();
     };
+
     document.getElementById("nav-stats").onclick = () => {
         stopExamTimer();
+        if (!state.username) {
+            renderUsernameScreen();
+            return;
+        }
         renderStats();
     };
 
-    // Reset NON più in topbar → se non esiste, non deve crashare
+    const authBtn = document.getElementById("nav-auth");
+    if (authBtn) {
+        authBtn.onclick = () => {
+            stopExamTimer();
+            openAuthScreen();
+        };
+    }
+
+    const logoutBtn = document.getElementById("nav-logout");
+    if (logoutBtn) {
+        logoutBtn.onclick = () => {
+            stopExamTimer();
+            logoutUser();
+        };
+    }
+
     const resetTop = document.getElementById("nav-reset");
     if (resetTop) resetTop.onclick = () => resetAll();
+
+    updateAuthButtons();
 }
 
 function renderUsernameScreen() {
+    setExamDesktopLock(false);
+    updateAuthButtons();
+
     view.innerHTML = `
     <div class="card">
       <h2>Entra</h2>
-      <p class="muted">Inserisci solo uno username per sincronizzare i progressi tra dispositivi.</p>
+      <p class="muted">
+        Inserisci uno username. Se esiste già, rientri nel tuo profilo. Se non esiste, viene creato automaticamente.
+      </p>
 
       <div class="row">
         <input id="usernameInput" class="select" type="text" placeholder="Username" />
-        <button id="enterBtn" class="primary">Entra</button>
+        <button id="enterBtn" class="primary">Entra / Crea</button>
       </div>
 
       <p id="loginFeedback" class="muted"></p>
     </div>
   `;
 
-    document.getElementById("enterBtn").onclick = async () => {
-        const input = document.getElementById("usernameInput");
-        const feedback = document.getElementById("loginFeedback");
+    const input = document.getElementById("usernameInput");
+    const feedback = document.getElementById("loginFeedback");
+    const enterBtn = document.getElementById("enterBtn");
 
+    enterBtn.onclick = async () => {
         const username = input.value.trim().toLowerCase();
+
         if (!username) {
             feedback.textContent = "Inserisci uno username.";
             return;
@@ -416,12 +480,17 @@ function renderUsernameScreen() {
             state.username = username;
             state.profile = await loadProfileFromCloud(username);
             save();
+            updateAuthButtons();
             renderHome();
         } catch (err) {
             console.error(err);
             feedback.textContent = "Errore nel caricamento del profilo.";
         }
     };
+
+    input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") enterBtn.click();
+    });
 }
 
 function renderHome() {
@@ -1341,20 +1410,26 @@ async function init() {
     view.innerHTML = `<div class="card"><p>Caricamento domande…</p></div>`;
 
     try {
-        const res = await fetch("./immunologia_v21_mcq.txt", { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status} su ./immunologia_v21_mcq.txt`);
+        const res = await fetch(QUESTIONS_FILE, { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status} su ${QUESTIONS_FILE}`);
 
         const txt = await res.text();
         const questions = parseTxtToQuestions(txt);
+
+        if (!questions.length) {
+            throw new Error(`Nessuna domanda caricata da ${QUESTIONS_FILE}`);
+        }
 
         state.all = questions;
         state.categories = uniqCategories(state.all);
 
         wireNav();
+        updateAuthButtons();
 
         if (state.username) {
             try {
                 state.profile = await loadProfileFromCloud(state.username);
+                updateAuthButtons();
                 renderHome();
             } catch (err) {
                 console.error(err);

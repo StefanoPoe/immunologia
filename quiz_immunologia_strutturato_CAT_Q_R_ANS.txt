@@ -579,13 +579,6 @@ E) TdT
 ANS: E
 
 CAT: Immunità innata e infiammazione
-Q: 60. polimorfici?
-R:
-1) sì
-2) no
-ANS: 2
-
-CAT: Immunità innata e infiammazione
 Q: 61. Nell’uomo, con quale ordine riarrangiano i geni delle catene pensanti H e delle catene leggere di tipo k e di tipo lambda delle Ig?
 R:
 1) H, k, lambda
@@ -986,7 +979,7 @@ Q: 102. Quale delle seguenti affermazioni riguardanti gli enzimi coinvolti nella
 presentazione del peptide sull’MHC di classe 1 è FALSA?
 R:
 A) Si possono trovare antigeni su MHC di classe 1 con una sequenza di aminoacidi diversa rispetto a quella dell’antigene originale.
-B) L’enzima TAP trasporta i peptidi dal reticolo endoplasmatico al citoplasma (la risposta non è esattamente questa perché è stata modificata dalla professoressa, ma era più o meno formulata così)
+B) L’enzima TAP trasporta i peptidi dal reticolo endoplasmatico al citoplasma
 C) L’enzima TAP è un dimero localizzato sulla membrana del reticolo endoplasmatico.
 D) Il complesso PLC consente il “peptide editing”
 E) La tapasina forma un ponte tra TAP e la membrana del reticolo endoplasmatico
@@ -1397,11 +1390,11 @@ ANS: C
 CAT: MHC/HLA e presentazione dell’antigene
 Q: 145. quale delle seguenti affermazioni sull’HLA di classe II è falsa
 R:
-A) Viene esposto in membrana privo del peptide e successivamente endocitato per permetterne il caricamento(si)
-B) Per il caricamento del peptide è necessario l’ausilio della catena invariante (si)
+A) Viene esposto in membrana privo del peptide e successivamente endocitato per permetterne il caricamento
+B) Per il caricamento del peptide è necessario l’ausilio della catena invariante
 C) Il peptide viene caricato nel lume del RE
 D) I MVB giocano un ruolo fondamentale nel processo di caricamento del peptide
-E) La proteina DM entra in gioco nel corso del caricamento del peptide (si)
+E) La proteina DM entra in gioco nel corso del caricamento del peptide
 ANS: C
 
 CAT: MHC/HLA e presentazione dell’antigene
@@ -1535,7 +1528,7 @@ D) Linfociti B-2 FO
 E) Tutte le precedenti
 F) Risposte A e C
 G) Risposte A e B
-ANS: A,B
+ANS: G
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: 159. Un linfocita T citotossico uccide:
@@ -1736,7 +1729,7 @@ R:
 A) Esprimono contemporaneamente il TCRalfa-beta e i recettori KIR
 B) Possono riconoscere la molecola CD1d
 C) Ci sono due tipi di NKT: tipo I e tipo II
-D) Sono perlopiù̀ coinvolti nei meccanismi della risposta immunitaria naturale (secondo me e luvi questa è falsa)
+D) Sono perlopiù coinvolti nei meccanismi della risposta immunitaria naturale
 E) Tutte le precedenti
 F) Nessuna delle precedenti
 G) Sono corrette la A,la B la C e la D
