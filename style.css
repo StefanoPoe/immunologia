@@ -540,3 +540,7 @@ body::before {
 .nav .btn {
     font-size: 14px;
 }
+
+#feedback {
+    white-space: pre-line;
+}

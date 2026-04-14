@@ -205,6 +205,29 @@ function stripLeadingOptionMarker(text) {
     return String(text || "").replace(/^\s*[A-Za-z0-9]+\)\s*/, "").trim();
 }
 
+function getCorrectOptionTexts(q) {
+    const source = q.displayOptions || q.options || [];
+    const correctSet = new Set((q.correctLabels || []).map(normalizeLabelForCompare));
+
+    return source
+        .filter(o => correctSet.has(normalizeLabelForCompare(o.label)))
+        .map(o => stripLeadingOptionMarker(o.text));
+}
+
+function formatCorrectAnswersMessage(q) {
+    const texts = getCorrectOptionTexts(q);
+
+    if (!texts.length) {
+        return "Soluzione non disponibile.";
+    }
+
+    if (texts.length === 1) {
+        return `Risposta corretta:\n${texts[0]}`;
+    }
+
+    return `Risposte corrette:\n- ${texts.join("\n- ")}`;
+}
+
 function clampInt(value, min, max) {
     let a = Number(min);
     let b = Number(max);
@@ -900,7 +923,7 @@ function renderPractice() {
             state.quiz.correct++;
             feedback("Corretto.");
         } else {
-            feedback(`Sbagliato. Corrette: ${q.correctLabels.join(", ")}`);
+            feedback(formatCorrectAnswersMessage(q));
         }
 
         state.quiz.answered++;
