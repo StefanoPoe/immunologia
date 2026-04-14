@@ -65,11 +65,16 @@ function setNavForLoggedOut() {
     const statsBtn = document.getElementById("nav-stats");
     const logoutBtn = document.getElementById("nav-logout");
     const downloadBtn = document.getElementById("nav-download");
+    const greeting = document.getElementById("nav-user-greeting");
 
     if (homeBtn) homeBtn.style.display = "none";
     if (statsBtn) statsBtn.style.display = "none";
     if (logoutBtn) logoutBtn.style.display = "none";
     if (downloadBtn) downloadBtn.style.display = "none";
+    if (greeting) {
+        greeting.style.display = "none";
+        greeting.textContent = "";
+    }
 }
 
 function setNavForLoggedIn() {
@@ -77,11 +82,17 @@ function setNavForLoggedIn() {
     const statsBtn = document.getElementById("nav-stats");
     const logoutBtn = document.getElementById("nav-logout");
     const downloadBtn = document.getElementById("nav-download");
+    const greeting = document.getElementById("nav-user-greeting");
 
     if (homeBtn) homeBtn.style.display = "inline-flex";
     if (statsBtn) statsBtn.style.display = "inline-flex";
     if (logoutBtn) logoutBtn.style.display = "inline-flex";
     if (downloadBtn) downloadBtn.style.display = "inline-flex";
+
+    if (greeting) {
+        greeting.style.display = "inline-flex";
+        greeting.textContent = `Ciao, ${state.username}`;
+    }
 }
 
 function updateAuthButtons() {
@@ -184,9 +195,7 @@ async function resetStatsOnly() {
 
 function save() {
     const payload = {
-        username: state.username,
-        config: state.config,
-        profile: state.profile
+        config: state.config
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
 }
@@ -197,12 +206,13 @@ function load() {
 
     try {
         const p = JSON.parse(raw);
-        if (p.username) state.username = p.username;
         if (p.config) state.config = { ...state.config, ...p.config };
-        if (p.profile) state.profile = p.profile;
     } catch {
         // ignora
     }
+
+    state.username = "";
+    state.profile = makeEmptyProfile("");
 }
 
 function resetAll() {
@@ -1605,20 +1615,10 @@ async function init() {
         wireNav();
         updateAuthButtons();
 
-        if (state.username) {
-            try {
-                state.profile = await loadProfileFromCloud(state.username);
-                recalcProfileStats();
-                save();
-                updateAuthButtons();
-                renderHome();
-            } catch (err) {
-                console.error(err);
-                renderUsernameScreen();
-            }
-        } else {
-            renderUsernameScreen();
-        }
+        state.username = "";
+        state.profile = makeEmptyProfile("");
+        updateAuthButtons();
+        renderUsernameScreen();
     } catch (err) {
         console.error(err);
         view.innerHTML = `

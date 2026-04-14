@@ -544,3 +544,14 @@ body::before {
 #feedback {
     white-space: pre-line;
 }
+
+.nav-user {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 12px;
+    border: 1px solid #2b3a52;
+    border-radius: 10px;
+    background: #151a24;
+    color: #e7e7e7;
+    font-size: 14px;
+}
