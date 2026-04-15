@@ -2947,9 +2947,6 @@ R:
 3) solo in seguito ad attivazione dei linfociti B
 4) per poche fasi della maturazione dei linfociti B
 5) quando il linfocita B è già differenziato in plasmacellula
-6) come enunciato nei punti 1 e 2
-7) come enunciato nei punti 2 e 4
-8) come enunciato nei punti 2 e 5
 ANS: 4
 
 CAT: Linfociti B e anticorpi
@@ -3000,7 +2997,6 @@ R:
 1) nessun determinante, sono proteine self del tutto tollerate
 2) quelli isotipici
 3) quelli idiotipici
-4) quelli dei punti 2 e 3
 ANS: 3
 
 CAT: Linfociti B e anticorpi
@@ -3699,7 +3695,7 @@ R:
 3) Sopprimere l’attivazione immunitaria.
 4) Produrre citochine.
 5) Uccidere le cellule infettate.
-ANS: 5
+ANS: 4
 
 CAT: Linfociti B e anticorpi
 Q: 381. PRRs:
@@ -3798,7 +3794,7 @@ R:
 3) Quando la catena pesante, VpreB e λ5 vengono espresse sulla membrana
 4) QuAndo il linfocita esprime un BCR format da sole IgM
 5) Quando le catene leggere sono state riarrangiate correttamente
-ANS: B
+ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: 391. I linfociti B sono i principali mediatori della:
@@ -3844,11 +3840,10 @@ CAT: Linfociti B e anticorpi
 Q: 395. Un bambino di 2 mesi presenta una diarrea persistente, I segni e I sintomi di polmonite da Pneumocytis e un’infezione fungina orale da Candida Albicans. Il suo peso e’ circa un decimo del peso normale. Le risposte degli esami per l’HIV sono risultate negative. La causa piu’ probabile di tale quadro e’:
 R:
 1) Una grave riduzione dei livelli delle cellule B
-2) Una
-3) Un deficit a carico dello switch isotipico
-4) Un deficit a carico della funzionalita’ delle cellule T
-5) Un deficit selettivo delle IgA
-ANS: 4
+2) Un deficit a carico dello switch isotipico
+3) Un deficit a carico della funzionalita’ delle cellule T
+4) Un deficit selettivo delle IgA
+ANS: 3
 
 CAT: Linfociti B e anticorpi
 Q: 396. Perche' si esegue il “purging” di un midollo che sara' trapiantato?
@@ -3866,7 +3861,7 @@ Q: 397. I topi che presentano difetti nell’espressione dei geni RAG1 e RAG2 ha
 R:
 1) solo linfociti T maturi e nessun linfocita B maturo
 2) solo linfociti B maturi e nessun linfocita T maturo
-3) nessun linfocita T o B maturo ESSERE
+3) nessun linfocita T o B maturo
 ANS: 3
 
 CAT: Linfociti B e anticorpi
