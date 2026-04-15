@@ -155,7 +155,7 @@ function buildExamHistoryEntry(auto) {
     const pct = total ? Math.round((correct / total) * 100) : 0;
 
     const grade = calcGrade30(correct, total);
-    const isLode = grade === 30 && pct === 100;
+    const isLode = correct >= 31;
 
     const startedAtMs = state.exam.endAt - EXAM_MINUTES * 60 * 1000;
     const submittedAtMs = Math.min(Date.now(), state.exam.endAt);
@@ -1317,8 +1317,8 @@ function formatMMSS(ms) {
 
 function calcGrade30(correct, total) {
     if (!total) return 0;
-    // scala lineare su 30, arrotondo all'intero più vicino
-    return Math.round((correct / total) * 30);
+    if (correct >= 30) return 30;
+    return Math.max(0, correct);
 }
 
 function gradeEmoji(grade, isLode) {
@@ -1531,7 +1531,7 @@ function renderExamResults(auto) {
     const pct = total ? Math.round((correct / total) * 100) : 0;
 
     const grade = calcGrade30(correct, total);
-    const isLode = grade === 30 && pct === 100;
+    const isLode = correct >= 31;
     const emoji = gradeEmoji(grade, isLode);
     const gradeLabel = isLode ? "30L" : String(grade);
 
@@ -1665,8 +1665,7 @@ function renderStats() {
         <button class="exam-history-item" data-exam-id="${escapeHtml(exam.id)}" type="button">
           <div><strong>Simulazione ${examHistory.length - idx}</strong></div>
           <div class="muted">${escapeHtml(formatDateTime(exam.submittedAt))}</div>
-          <div class="muted">
-            ${exam.correct}/${exam.total} corrette ·
+          <div class="muted"> · ${exam.correct}/${exam.total} corrette ·
             ${exam.percentage}% ·
             Voto ${exam.isLode ? "30L" : exam.grade} ·
             ${formatMMSS(exam.elapsedMs)}
