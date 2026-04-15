@@ -257,9 +257,8 @@ R:
 2) ricoprendosi di cera
 3) fuoriuscendo rapidamente dal vacuolo
 4) inibendo la migrazione nel lisosoma
-5) con i meccanismi ai punti 1 e 2
-6) con i meccanismi dei punti 1,2,3,4
-ANS: 6
+5) tutte le risposte sono corrette
+ANS: 5
 
 CAT: Immunità innata e infiammazione
 Q: 27. Il CD16 espresso sulle cellule NK è associato a:
@@ -352,14 +351,12 @@ R:
 ANS: 1
 
 CAT: Immunità innata e infiammazione
-Q: 37. L’immunità innata:
+Q: 37. L’immunità innata: (due risposte corrette)
 R:
 1) Si attiva in seguito al riconoscimento di specifiche sequenze presenti nelle molecole associate ai patogeni.
 2) Si attiva in seguito al riconoscimento non specifico di sequenze comuni ai diversi patogeni.
 3) Si attiva molto rapidamente e sempre con la stessa intensità.
-4) Sono vere le affermazioni 1 e 3.
-5) Sono vere le affermazioni 2 e 3.
-ANS: 5
+ANS: 2,3
 
 CAT: Immunità innata e infiammazione
 Q: 38. Cosa si intende per DAMPs:
@@ -458,15 +455,13 @@ E) Riconosce il peptidoglicano batterico
 ANS: D
 
 CAT: Immunità innata e infiammazione
-Q: 48. I toll like receptor (TLRs) sono pattern recognition receptors che riconoscono:
+Q: 48. I toll like receptor (TLRs) sono pattern recognition receptors che riconoscono: (due risposte corrette)
 R:
 1) sostanze di origine microbica presenti nel citosol
 2) sostanze di origine microbica presenti nel nucleo
 3) sostanze di origine microbica presenti nel compartimento extracellulare
 4) sostanze di origine microbica presenti nel compartimento endosomiale
-5) le sostanze di cui ai punti 3 e 4
-6) le sostanze di cui ai punti 2 e 4
-ANS: 5
+ANS: 3,4
 
 CAT: Immunità innata e infiammazione
 Q: 49. Quali dei seguenti pattern recognition receptors (PRRs) sono espressi a livello citosolico? (due risposte corrette)
@@ -1313,7 +1308,7 @@ Q: 138. Quale delle seguenti affermazioni sull’HLA II è vera:
 R:
 A) sono implicate nella presentazione di antigeni del metabolismo cellulare
 B) la catena alfa ha tre domini extracellulare: alfa1, alfa2 e alfa3
-C) la catena beta non è transmembrana (si lo è)
+C) la catena beta non è transmembrana
 D) sono espresse costitutivamente solo su DCs (cell dendritiche), TEC(timociti epiteliali della corticale), linfociti B e macrofagi
 E) si crea la tasca per il peptide tra alfa1 e alfa2
 ANS: D
@@ -1458,26 +1453,22 @@ R:
 ANS: 4
 
 CAT: MHC/HLA e presentazione dell’antigene
-Q: 153. Quale delle seguenti affermazioni è corretta?
+Q: 153. Quale delle seguenti affermazioni è corretta? (due risposte corrette)
 R:
 1) Le molecole MHC legano esclusivamente peptidi generati da agenti infettivi
 2) Le molecole MHC di classe I sono specializzate nel presentare peptidi generate nel citoplasma dove sono sintetizzate le protein virali, quindi non possono presentare protein di origine batterica
 3) Le molecole MHC di classe II possono presentare peptidi generati da qualunque agente infettivo internalizzato dai fagociti
 4) Solo la proteina alfa di classe I, e non la beta-2-microglobulina, e’ codificata all’interno del sistema maggiore di istocompatibilita’
-5) Sono vere la 1 e la 2
-6) Sono vere la 3 e la 4
-ANS: 6
+ANS: 3,4
 
 CAT: MHC/HLA e presentazione dell’antigene
-Q: 154. Quali delle seguenti caratteristiche sono comuni alle MHC di classe I e II?
+Q: 154. Quali delle seguenti caratteristiche sono comuni alle MHC di classe I e II? (due risposte corrette)
 R:
 1) Sono composte da due catene transmembrana non identiche
 2) Il dominio distale dalla membrana cellulare forma una tasca per il peptide
 3) Non assumono una conformazione stabile in assenza del peptide nella tasca
 4) Sono espresso virtualmente su tutte le cellule dell’organismo
-5) Sono vere la 2 e la 3
-6) Sono vere la 2 e la 4
-ANS: 5
+ANS: 2,3
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: 155. Per il locus HLA-B sono stati identificati oltre 400 alleli. Quale è il massimo numero di alleli per il locus HLA-B che possono esprimere simultaneamente le cellule di un determinato paziente?
@@ -1567,14 +1558,14 @@ R:
 ANS: 2
 
 CAT: MHC/HLA e presentazione dell’antigene
-Q: 164. I linfociti T citotossici e killer sono:
+Q: 164. I linfociti T citotossici e killer sono: (due risposte corrette)
 R:
 1) Cellule CD4+ che riconoscono l’antigene in forma naturale
 2) Cellule CD4+ che riconoscono l’antigene in forma di peptide complessato con MHC di classe I
 3) Cellule CD4+ che riconoscono l’antigene in forma di peptide complessato con MHC di classe II
 4) Cellule CD8+ che riconoscono l’antigene in forma di peptide complessato con MHC di classe I
 5) Cellule CD8+ che riconoscono l’antigene in forma di peptide complessato con MHC di classe II LINFOIDE INFETTO cellT
-ANS: 4
+ANS: 3,4
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: 165. I linfociti T helper sono:
@@ -1680,8 +1671,6 @@ R:
 2) Cellule epiteliali timiche della midollare
 3) Cellule dendritiche autoctone
 4) Cellule dendritiche migratorie
-5) 1 e 3
-6) 2 e 4
 ANS: 1
 
 CAT: MHC/HLA e presentazione dell’antigene
@@ -1721,8 +1710,6 @@ C) Ci sono due tipi di NKT: tipo I e tipo II
 D) Sono perlopiù coinvolti nei meccanismi della risposta immunitaria naturale
 E) Tutte le precedenti
 F) Nessuna delle precedenti
-G) Sono corrette la A,la B la C e la D
-H) Sono corrette laA,laBelaC
 ANS: E
 
 CAT: MHC/HLA e presentazione dell’antigene
