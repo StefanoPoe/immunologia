@@ -2491,10 +2491,7 @@ C) Esprimono FasL
 D) La serpina B9 è una loro proteina citoplasmatica
 E) Possono secernere granuli citotossici contententi catepsina B che ha il ruolo di uccidere i patogeni
 F) Tutte le precedenti
-G) Sono corrette la A,la B e laD
-H) Sono corrette la A, la C, la D 
-I) Sono corrette la A, la C e la E
-ANS: H
+ANS: A,C,D
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: 258. I linfociti Tgamma/delta:
@@ -2673,7 +2670,7 @@ R:
 ANS: 5
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
-Q: 275. L’interleuchina IL21 e’ un’importante citochina prodotta da alcuni tipi di linfociti CD4+ effettori, ma in una di queste popolazioni riveste un ruolo fondamentale, sia autocrino sia paracrine. In quale?
+Q: 275. L’interleuchina IL21 e’ un’importante citochina prodotta da alcuni tipi di linfociti CD4+ effettori, ma in una di queste popolazioni riveste un ruolo fondamentale, sia autocrino sia paracrine. In quale? (due risposte giuste)
 R:
 1) Th1
 2) Th2
@@ -2681,10 +2678,7 @@ R:
 4) Th17
 5) Th22
 6) Th follicolari
-7) 3 e 5
-8) 4 e 5
-9) 4 e 6
-ANS: 9
+ANS: 4,6
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: 276. cosa sono le perforine?
@@ -2703,8 +2697,6 @@ R:
 2) Attraverso il TCR riconoscono molecule indotte da stress (MICA, MICB, ULBP)
 3) Riconoscono soprattutto composti non proteici fosforilati detti FOSFOANTIGENI
 4) Hanno un repertorio di recettori per l’antigene (TCR) poco polimorfico
-5) 3 e 4
-6) 2, 3 e 4
 ANS: 3
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
@@ -2725,7 +2717,6 @@ R:
 3) possono persistere solo se CD4+
 4) possono persistere solo se CD8+
 5) sono sempre plasmacellule
-6) rispondono alle caratteristiche dei punti 2 e 5
 ANS: 2
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
