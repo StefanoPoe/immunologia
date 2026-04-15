@@ -1665,7 +1665,7 @@ function renderStats() {
         <button class="exam-history-item" data-exam-id="${escapeHtml(exam.id)}" type="button">
           <div><strong>Simulazione ${examHistory.length - idx}</strong></div>
           <div class="muted">${escapeHtml(formatDateTime(exam.submittedAt))}</div>
-          <div class="muted"> · ${exam.correct}/${exam.total} corrette ·
+          <div class="muted">, ${exam.correct}/${exam.total} corrette ·
             ${exam.percentage}% ·
             Voto ${exam.isLode ? "30L" : exam.grade} ·
             ${formatMMSS(exam.elapsedMs)}
