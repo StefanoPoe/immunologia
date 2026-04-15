@@ -24,7 +24,17 @@ const state = {
     categories: [],
     mode: "home",
     username: "",
-    config: { category: "Tutte", limit: 30, shuffle: true, mode: "practice", practiceMode: "normal", rangeEnabled: false, rangeFrom: 1, rangeTo: 1 },
+    config: {
+        category: "Tutte",
+        limit: 30,
+        shuffle: true,
+        mode: "practice",
+        practiceMode: "normal",
+        statsSection: "practice",
+        rangeEnabled: false,
+        rangeFrom: 1,
+        rangeTo: 1
+    },
     quiz: { items: [], index: 0, selected: new Set(), correct: 0, answered: 0 },
     profile: {
         nickname: "",
@@ -108,8 +118,93 @@ function makeEmptyProfile(username) {
         nickname: username,
         stats: { played: 0, correct: 0, wrong: 0, perCategory: {} },
         questions: {},
-        wrongQuestionIds: []
+        wrongQuestionIds: [],
+        examHistory: []
     };
+}
+
+function ensureExamHistory() {
+    ensureProfile();
+    if (!Array.isArray(state.profile.examHistory)) {
+        state.profile.examHistory = [];
+    }
+}
+
+function makeExamHistoryId() {
+    if (typeof crypto !== "undefined" && crypto.randomUUID) {
+        return crypto.randomUUID();
+    }
+    return `exam_${Date.now()}_${Math.random().toString(16).slice(2, 10)}`;
+}
+
+function formatDateTime(isoString) {
+    try {
+        return new Date(isoString).toLocaleString("it-IT", {
+            dateStyle: "short",
+            timeStyle: "short"
+        });
+    } catch {
+        return isoString || "";
+    }
+}
+
+function buildExamHistoryEntry(auto) {
+    const total = state.exam.results.total;
+    const correct = state.exam.results.correct;
+    const wrong = Math.max(0, total - correct);
+    const pct = total ? Math.round((correct / total) * 100) : 0;
+
+    const grade = calcGrade30(correct, total);
+    const isLode = grade === 30 && pct === 100;
+
+    const startedAtMs = state.exam.endAt - EXAM_MINUTES * 60 * 1000;
+    const submittedAtMs = Math.min(Date.now(), state.exam.endAt);
+    const elapsedMs = Math.max(0, submittedAtMs - startedAtMs);
+
+    const items = state.exam.items.map((q) => ({
+        id: q.id,
+        category: q.category,
+        qNumber: q.qNumber ?? null,
+        question: q.question,
+        correctLabels: [...(q.correctLabels || [])],
+        displayOptions: (q.displayOptions || q.options || []).map((o) => ({
+            label: o.label,
+            text: o.text
+        }))
+    }));
+
+    const results = state.exam.items.map((q) => {
+        const res = state.exam.results.perQuestion.get(q.id);
+        return {
+            questionId: q.id,
+            ok: !!res?.ok,
+            selectedLabels: Array.from(res?.selectedLabels || []),
+            correctLabels: Array.from(res?.correctLabels || [])
+        };
+    });
+
+    return {
+        id: makeExamHistoryId(),
+        startedAt: new Date(startedAtMs).toISOString(),
+        submittedAt: new Date(submittedAtMs).toISOString(),
+        autoSubmitted: !!auto,
+        total,
+        correct,
+        wrong,
+        percentage: pct,
+        grade,
+        isLode,
+        elapsedMs,
+        items,
+        results
+    };
+}
+
+function saveExamHistoryEntry(entry) {
+    ensureExamHistory();
+    state.profile.examHistory.unshift(entry);
+    save();
+    queueCloudSave();
 }
 
 async function loadProfileFromCloud(username) {
@@ -1420,7 +1515,10 @@ function submitExam(auto) {
 
     state.exam.results = { total: state.exam.items.length, correct, perQuestion };
 
-    renderExamResults(auto);
+    const entry = buildExamHistoryEntry(auto);
+    saveExamHistoryEntry(entry);
+
+    renderExamHistoryDetail(entry);
 }
 
 function renderExamResults(auto) {
@@ -1541,9 +1639,11 @@ function renderStats() {
     setExamDesktopLock(false);
     state.mode = "stats";
 
+    const section = state.config.statsSection || "practice";
     const stats = buildDerivedStats();
+    const examHistory = Array.isArray(state.profile?.examHistory) ? state.profile.examHistory : [];
 
-    const rows = Object.entries(stats.perCategory)
+    const practiceRows = Object.entries(stats.perCategory)
         .sort((a, b) => a[0].localeCompare(b[0]))
         .map(([cat, s]) => {
             const progressPct = s.totalQuestions
@@ -1560,60 +1660,231 @@ function renderStats() {
         })
         .join("");
 
+    const examRows = examHistory.length
+        ? examHistory.map((exam, idx) => `
+        <button class="exam-history-item" data-exam-id="${escapeHtml(exam.id)}" type="button">
+          <div><strong>Simulazione ${examHistory.length - idx}</strong></div>
+          <div class="muted">${escapeHtml(formatDateTime(exam.submittedAt))}</div>
+          <div class="muted">
+            ${exam.correct}/${exam.total} corrette ·
+            ${exam.percentage}% ·
+            Voto ${exam.isLode ? "30L" : exam.grade} ·
+            ${formatMMSS(exam.elapsedMs)}
+          </div>
+        </button>
+      `).join("")
+        : `<p class="muted">Nessuna simulazione salvata.</p>`;
+
+    const contentHtml = section === "practice"
+        ? `
+        <div class="card">
+          <div class="row">
+            <div>
+              <div class="label">Risposte uniche</div>
+              <div class="kpi">${stats.answeredUnique} / ${stats.totalQuestions}</div>
+            </div>
+            <div>
+              <div class="label">Corrette uniche</div>
+              <div class="kpi">${stats.correctUnique}</div>
+            </div>
+            <div>
+              <div class="label">Sbagliate uniche</div>
+              <div class="kpi">${stats.wrongUnique}</div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="card">
+            <div class="label">Per categoria</div>
+            <div style="overflow:auto;">
+              <table class="tbl">
+                <thead>
+                  <tr>
+                    <th>Categoria</th>
+                    <th>Risposte uniche</th>
+                    <th>Corrette</th>
+                    <th>Sbagliate</th>
+                    <th>Completamento</th>
+                  </tr>
+                </thead>
+                <tbody>${practiceRows || "<tr><td colspan='5' class='muted'>Nessun dato.</td></tr>"}</tbody>
+              </table>
+            </div>
+          </div>
+
+          <hr />
+          <div class="row">
+            <button id="reset-all" class="danger">Reset statistiche</button>
+          </div>
+        </div>
+      `
+        : `
+        <div class="card">
+          <div class="label">Cronologia simulazioni</div>
+          <div class="exam-history-list">
+            ${examRows}
+          </div>
+        </div>
+      `;
+
     view.innerHTML = `
     <div class="card">
       <h2>Statistiche</h2>
-      <div class="row">
-        <div>
-          <div class="label">Risposte uniche</div>
-          <div class="kpi">${stats.answeredUnique} / ${stats.totalQuestions}</div>
-        </div>
-        <div>
-          <div class="label">Corrette uniche</div>
-          <div class="kpi">${stats.correctUnique}</div>
-        </div>
-        <div>
-          <div class="label">Sbagliate uniche</div>
-          <div class="kpi">${stats.wrongUnique}</div>
-        </div>
+
+      <div class="stats-switch">
+        <button id="stats-tab-practice" class="${section === "practice" ? "primary" : ""}">Allenamento</button>
+        <button id="stats-tab-exam" class="${section === "exam" ? "primary" : ""}">Simulazioni esame</button>
       </div>
 
       <hr />
 
-      <div class="card">
-        <div class="label">Per categoria</div>
-        <div style="overflow:auto;">
-          <table class="tbl">
-            <thead>
-              <tr>
-                <th>Categoria</th>
-                <th>Risposte uniche</th>
-                <th>Corrette</th>
-                <th>Sbagliate</th>
-                <th>Completamento</th>
-              </tr>
-            </thead>
-            <tbody>${rows || "<tr><td colspan='5' class='muted'>Nessun dato.</td></tr>"}</tbody>
-          </table>
-        </div>
-      </div>
-      
-      <hr />
-      <div class="row">
-        <button id="reset-all" class="danger">Reset statistiche</button>
-      </div>
-      
+      ${contentHtml}
     </div>
   `;
 
-    document.getElementById("reset-all").onclick = async () => {
-        if (!confirm("Sicuro di voler resettare tutte le statistiche di questo utente?")) return;
+    document.getElementById("stats-tab-practice").onclick = () => {
+        state.config.statsSection = "practice";
+        save();
+        renderStats();
+    };
 
-        const btn = document.getElementById("reset-all");
-        btn.disabled = true;
-        btn.textContent = "Reset in corso...";
+    document.getElementById("stats-tab-exam").onclick = () => {
+        state.config.statsSection = "exam";
+        save();
+        renderStats();
+    };
 
-        await resetStatsOnly();
+    if (section === "practice") {
+        document.getElementById("reset-all").onclick = async () => {
+            if (!confirm("Sicuro di voler resettare tutte le statistiche di questo utente?")) return;
+
+            const btn = document.getElementById("reset-all");
+            btn.disabled = true;
+            btn.textContent = "Reset in corso...";
+
+            await resetStatsOnly();
+        };
+    } else {
+        document.querySelectorAll("[data-exam-id]").forEach((btn) => {
+            btn.onclick = () => {
+                const examId = btn.getAttribute("data-exam-id");
+                const record = examHistory.find((e) => e.id === examId);
+                if (record) renderExamHistoryDetail(record);
+            };
+        });
+    }
+}
+
+function renderExamHistoryDetail(record) {
+    setExamDesktopLock(true);
+    state.mode = "exam_history_detail";
+
+    const resultMap = new Map((record.results || []).map((r) => [r.questionId, r]));
+
+    const navHtml = (record.items || [])
+        .map((q, idx) => {
+            const res = resultMap.get(q.id);
+            return `
+        <button class="exam-nav-item ${(res && res.ok) ? "correct" : "wrong"}" data-qnav-res="${escapeHtml(q.id)}" type="button" aria-label="Vai alla domanda ${idx + 1}">
+          <span>${idx + 1}</span>
+        </button>
+      `;
+        })
+        .join("");
+
+    const listHtml = (record.items || [])
+        .map((q, idx) => {
+            const res = resultMap.get(q.id) || {
+                ok: false,
+                selectedLabels: [],
+                correctLabels: q.correctLabels || []
+            };
+
+            const selected = new Set((res.selectedLabels || []).map(normalizeLabelForCompare));
+            const correctSet = new Set((res.correctLabels || []).map(normalizeLabelForCompare));
+
+            const multi = (q.correctLabels || []).length > 1;
+            const inputType = multi ? "checkbox" : "radio";
+            const shownOptions = q.displayOptions || [];
+
+            const optionsHtml = shownOptions
+                .map((o) => {
+                    const nl = normalizeLabelForCompare(o.label);
+                    const isSelected = selected.has(nl);
+                    const isCorrect = correctSet.has(nl);
+
+                    let cls = "option";
+                    if (isCorrect) cls += " correct";
+                    if (isCorrect && !isSelected) cls += " missed";
+                    if (isSelected) cls += " chosen";
+                    if (isSelected && !isCorrect) cls += " wrong";
+
+                    return `
+            <label class="${cls}" data-label="${escapeHtml(o.label)}">
+              <input type="${inputType}" disabled ${isSelected ? "checked" : ""} />
+              <div>${escapeHtml(stripLeadingOptionMarker(o.text))}</div>
+            </label>
+          `;
+                })
+                .join("");
+
+            const qDisplayText = (q.qNumber ? `${q.qNumber}. ` : "") + q.question;
+
+            return `
+        <div class="card exam-result-card ${res.ok ? "is-correct" : "is-wrong"}" data-qcard-res="${escapeHtml(q.id)}">
+          <div class="row">
+            <div class="label"><strong>${idx + 1}</strong> · ${escapeHtml(q.category)}</div>
+            <div class="label">${res.ok ? "✅ Corretta" : "❌ Sbagliata"}</div>
+          </div>
+          <pre class="qtext">${escapeHtml(qDisplayText)}</pre>
+          <div>${optionsHtml}</div>
+        </div>
+      `;
+        })
+        .join("");
+
+    const gradeLabel = record.isLode ? "30L" : String(record.grade);
+    const emoji = gradeEmoji(record.grade, record.isLode);
+
+    view.innerHTML = `
+    <div class="exam-layout">
+      <aside class="card exam-sidebar" role="complementary" aria-label="Dettaglio simulazione salvata">
+        <h2 class="exam-sidebar-title">Simulazione salvata</h2>
+        <div class="label">Data: <strong>${escapeHtml(formatDateTime(record.submittedAt))}</strong></div>
+        <div class="label">Corrette: <strong style="color:#80f2bf">${record.correct}</strong> · Sbagliate: <strong style="color:#ff9baa">${record.wrong}</strong></div>
+        <div class="label">Tempo impiegato: <strong>${formatMMSS(record.elapsedMs)}</strong></div>
+        <div class="label">${record.autoSubmitted ? "Tempo scaduto: consegna automatica." : "Consegna completata."}</div>
+        <div class="exam-nav-grid" aria-label="Esito per domanda">
+          ${navHtml}
+        </div>
+        <div class="label">Verde = risposta esatta.</div>
+        <div class="label">Rosso = risposta sbagliata.</div>
+        <div class="exam-grade-text">Voto: ${gradeLabel}${emoji}</div>
+
+        <div class="row" style="margin-top:12px;">
+          <button id="back-to-exam-history" class="primary">Torna alle simulazioni</button>
+        </div>
+      </aside>
+
+      <div class="exam-questions">
+        ${listHtml}
+      </div>
+    </div>
+  `;
+
+    view.querySelectorAll("[data-qnav-res]").forEach((btn) => {
+        btn.onclick = () => {
+            const qid = btn.getAttribute("data-qnav-res");
+            const target = view.querySelector(`[data-qcard-res="${qid}"]`);
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        };
+    });
+
+    document.getElementById("back-to-exam-history").onclick = () => {
+        state.config.statsSection = "exam";
+        save();
+        renderStats();
     };
 }
 

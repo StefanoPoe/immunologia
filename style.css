@@ -551,3 +551,23 @@ body::before {
     padding: 10px 12px;
     font-size: 14px;
 }
+
+.stats-switch {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.exam-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.exam-history-item {
+    text-align: left;
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+}

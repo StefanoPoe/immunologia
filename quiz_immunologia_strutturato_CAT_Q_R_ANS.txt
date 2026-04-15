@@ -4002,7 +4002,7 @@ B) Le citochine della famiglia del TNF utilizzano Myd88 per la segnalazione intr
 C) Le chemochine sono fondamentali per la guarigione delle ferite e l’integrità degli epiteli
 D) Le citochine della famiglia dell’IL-17 segnalano attraverso FADD o TRADD
 E) I recettori per la famiglia delle citochine di tipo I hanno una sequenza aminoacidica conservata nel dominio intracellulare
-ANS: E
+ANS: C
 
 CAT: Organi linfoidi e traffico cellulare
 Q: 412. Quali delle seguenti citochine sono fondamentali per l’integrità degli epiteli:
@@ -4112,8 +4112,6 @@ R:
 3) Nei linfonodi
 4) Nei polmoni e nel fegato
 5) Nel timo
-6) Sono vere 2 e 3
-7) Sono vere 1 e 2
 ANS: 5
 
 CAT: Organi linfoidi e traffico cellulare
@@ -4143,11 +4141,7 @@ R:
 2) Nella milza
 3) Nell’epidermide
 4) Nella mucosa dei tratti digestivo e riproduttivo
-5) Nei compartimenti elencati ai punti 1 e 3
-6) Nei compartimenti elencati ai punti 1 e 4
-7) Nei compartimenti elencati ai punti 3 e 4
-8) Nei compartimenti elencati ai punti 1 e 2
-ANS: 7
+ANS: 3,4
 
 CAT: Organi linfoidi e traffico cellulare
 Q: 426. Quale delle seguenti affermazioni sui linfociti B-2 MZ è falsa:
@@ -4165,10 +4159,7 @@ A) Genera un gradiente chemiotattico che richiama i linfociti nel circolo sangui
 B) Non è secreta negli SLOs
 C) È presente a bassa concentrazione negli SLOs
 D) Il suo recettore specifico è CXCR5
-E) Sono vera la A e la B
-F) Sono vere la A, e la C
-G) Sono vere la A, la B e la C
-ANS: F
+ANS: A,C
 
 CAT: Organi linfoidi e traffico cellulare
 Q: 428. Quale delle seguenti affermazioni sulla reazione del centro germinativo è falsa:
@@ -4250,10 +4241,7 @@ B) sono dei fate specification receptors
 C) sono importanti per l’homing timico
 D) dopo il riconoscimento del ligando vanno incontro a processi proteolitici
 E) tutte le precedenti
-F) sono corrette la A, la B e la C
-G) sono corrette la B, la C e la D
-H) sono corrette la A, la B e la D
-ANS: G
+ANS: B,C,D
 
 CAT: Memoria, vaccini e immunopatologia
 Q: 436. La memoria immunitaria è:
@@ -4283,7 +4271,7 @@ A) Le cellule T della memoria effettrici si trovano solo in circolo
 B) Le cellule T della memoria centrali si trovano nella linfa, negli organi linfatici secondari e nelle mucose
 C) Le cellule T della memoria residenti si trovano ovunque
 D) Le cellule T della memoria effettrici si trovano o nel midollo o nella milza
-E) Le cellule T della memoria residenti si trovano nelle mucose RISPOST CORRETTA E
+E) Le cellule T della memoria residenti si trovano nelle mucose
 ANS: E
 
 CAT: Memoria, vaccini e immunopatologia
@@ -4710,7 +4698,7 @@ R:
 2) Cellule T regolatorie
 3) Anergia
 4) Tutti quelli sopra elencati
-5) Nessuno di quelli elencati VACCINI
+5) Nessuno di quelli elencati
 ANS: 4
 
 CAT: Memoria, vaccini e immunopatologia
