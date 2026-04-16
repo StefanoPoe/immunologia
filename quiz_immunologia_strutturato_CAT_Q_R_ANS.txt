@@ -1002,7 +1002,7 @@ B) Sono un gruppo che comprende molti tipi cellulari con funzioni disparate.
 C) Comprendono i linfociti B che fanno il priming, ossia attivano linfociti T naïve .
 D) Comprendono le cellule dendritiche, in grado di fagocitare qualsiasi tipo di antigene.
 E) Comprendono i macrofagi che fagocitano antigeni solubili.
-ANS: E
+ANS: B
 
 CAT: MHC/HLA e presentazione dell’antigene
 Q: 106. Per il locus HLA-B sono state identificate 42 specificità alleliche. Qual è il numero massimo di alleli HLA-B che può esprime simultaneamente una cellula?
