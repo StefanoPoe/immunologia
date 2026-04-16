@@ -2498,12 +2498,10 @@ Q: 258. I linfociti Tgamma/delta:
 R:
 A) Nella maggior parte dei casi sono CD8+
 B) Richiedono l’attivazione del fattore trascrizionale SOX13
-C) Vengono prodotti dal timo secondo due ondate. Presentano il recettore NKG2D
+C) Vengono prodotti dal timo secondo due ondate
+D) Presentano il recettore NKG2D
 E) Tutte le precedenti
-F) Sono corrette la C, la D
-G) Sono corrette la A e la D
-H) Sono correttel aB,la C e laD
-ANS: H
+ANS: B,C,D
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
 Q: 259. Metti in ordine gli eventi che si susseguono nella reazione del centro germinativo:
@@ -2720,9 +2718,14 @@ R:
 ANS: 2
 
 CAT: Linfociti T (TCR, sviluppo e attivazione)
-Q: 280. Bcl-6 (B-cell lymphoma
+Q: 280. Bcl-6 (B-cell lymphoma) e’ un repressore della trascrizione fondamentale per lo sviluppo di una risposta adattativa completa. Bcl-6:
+
+a - è espresso da centroblasti e centrociti 
+b - agisce in sinergia con Blimp-1 nel dterminare la generazione di plasmacellule Mi 
+c - favorisce il differenziamento dei linfociti CD4+ in T helper follicolari 
+d - favorisce il differenziamento dei linfociti CD4+ in T helper 1 e T helper 17 
+e - inibisce il differenziamento dei linfociti B in B memoria
 R:
-6) e’ un repressore della trascrizione fondamentale per lo sviluppo di una risposta adattativa completa. Bcl-6: a-e’ espresso da centroblasti e centrociti b-agisce in sinergia con Blimp-1 nel dterminare la generazione di plasmacellule Mi c-favorisce il differenziamento dei linfociti CD4+ in T helper follicolari d-favorisce il differenziamento dei linfociti CD4+ in T helper 1 e T helper 17 e-inibisce il differenziamento dei linfociti B in B memoria
 1) a,b,c I
 2) b,c,d
 3) a,c,e
@@ -3256,9 +3259,8 @@ CAT: Linfociti B e anticorpi
 Q: 336. Le opsonine indicano:
 R:
 1) Proteine derivate dall’ospite che legano l’esterno di un microbo e ne facilitano la fagocitosi da parte di cellule che esprimono i recettori dell’opsonina.
-2) Opzione 1. 2
-3) Proteine tossiche espresse da antigeni patogeni che facilitano la distruzione dei fagociti che, esprimendo i recettori per l’opsonina, li hanno inghiottiti.
-4) Proteine derivate dall’ospite che legano l’esterno di un microbo e ne facilitano la capacità di infettare e distruggere i fagociti che esprimono il recettore per l’opsonina.
+2) Proteine tossiche espresse da antigeni patogeni che facilitano la distruzione dei fagociti che, esprimendo i recettori per l’opsonina, li hanno inghiottiti.
+3) Proteine derivate dall’ospite che legano l’esterno di un microbo e ne facilitano la capacità di infettare e distruggere i fagociti che esprimono il recettore per l’opsonina.
 ANS: 1
 
 CAT: Linfociti B e anticorpi
