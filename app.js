@@ -459,19 +459,61 @@ function shuffledCopy(arr) {
 }
 
 function attachShuffledOptions(questions) {
-    return questions.map(q => ({
-        ...q,
-        displayOptions: shuffledCopy(
-            (q.options || []).map(o => ({
-                ...o,
-                text: stripLeadingOptionMarker(o.text)
-            }))
-        )
-    }));
+    return questions.map(q => {
+        const cleanOptions = (q.options || []).map(o => ({
+            ...o,
+            text: stripLeadingOptionMarker(o.text)
+        }));
+
+        const isFisio2 =
+            q.bank === "fisio2" ||
+            state.currentBank === "fisio2";
+
+        return {
+            ...q,
+            displayOptions: isFisio2
+                ? cleanOptions
+                : shuffledCopy(cleanOptions)
+        };
+    });
 }
 
 function stripLeadingOptionMarker(text) {
     return String(text || "").replace(/^\s*[A-Za-z0-9]+\)\s*/, "").trim();
+}
+
+function isFisio2Question(q) {
+    return q?.bank === "fisio2" || state.currentBank === "fisio2";
+}
+
+function isTrueFalseQuestion(q) {
+    const options = q?.displayOptions || q?.options || [];
+    if (options.length !== 2) return false;
+
+    const texts = options.map(o =>
+        stripLeadingOptionMarker(o.text)
+            .trim()
+            .toLowerCase()
+    );
+
+    return (
+        texts.includes("vero") &&
+        texts.includes("falso")
+    );
+}
+
+function shouldShowOptionLetters(q) {
+    return isFisio2Question(q) && !isTrueFalseQuestion(q);
+}
+
+function formatOptionDisplayText(q, option) {
+    const cleanText = stripLeadingOptionMarker(option.text);
+
+    if (shouldShowOptionLetters(q)) {
+        return `${option.label}) ${cleanText}`;
+    }
+
+    return cleanText;
 }
 
 function extractImageRefs(text) {
@@ -508,7 +550,7 @@ function getCorrectOptionTexts(q) {
 
     return source
         .filter(o => correctSet.has(normalizeLabelForCompare(o.label)))
-        .map(o => stripLeadingOptionMarker(o.text));
+        .map(o => formatOptionDisplayText(q, o));
 }
 
 function formatCorrectAnswersMessage(q) {
@@ -1198,7 +1240,7 @@ function renderPractice() {
         <label class="option" data-label="${escapeHtml(o.label)}">
           <input type="${inputType}" name="opt" value="${escapeHtml(o.label)}" ${checked} />
           <div>
-            <div>${escapeHtml(stripLeadingOptionMarker(o.text))}</div>
+            <div>${escapeHtml(formatOptionDisplayText(q, o))}</div>
           </div>
         </label>
       `;
@@ -1594,7 +1636,7 @@ function renderExam() {
                     return `
             <label class="option" data-qid="${escapeHtml(q.id)}" data-label="${escapeHtml(o.label)}">
               <input type="${inputType}" name="q_${escapeHtml(q.id)}" value="${escapeHtml(o.label)}" ${checked} />
-              <div>${escapeHtml(stripLeadingOptionMarker(o.text))}</div>
+              <div>${escapeHtml(formatOptionDisplayText(q, o))}</div>
             </label>
           `;
                 })
@@ -1779,7 +1821,7 @@ function renderExamResults(auto) {
                     return `
     <label class="${cls}" data-label="${escapeHtml(o.label)}">
       <input type="${inputType}" disabled ${isSelected ? "checked" : ""} />
-      <div>${escapeHtml(stripLeadingOptionMarker(o.text))}</div>
+      <div>${escapeHtml(formatOptionDisplayText(q, o))}</div>
     </label>
 `;
                 })
@@ -2031,7 +2073,7 @@ function renderExamHistoryDetail(record) {
                     return `
             <label class="${cls}" data-label="${escapeHtml(o.label)}">
               <input type="${inputType}" disabled ${isSelected ? "checked" : ""} />
-              <div>${escapeHtml(stripLeadingOptionMarker(o.text))}</div>
+              <div>${escapeHtml(formatOptionDisplayText(q, o))}</div>
             </label>
           `;
                 })
