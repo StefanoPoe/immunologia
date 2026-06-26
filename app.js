@@ -21,8 +21,8 @@ const QUESTION_BANKS = {
         id: "fisio2",
         title: "Fisio 2 - Prova B",
         file: "./fisio2_prova_b_strutturato_CAT_Q_R_ANS.txt",
-        downloadHref: "fisio2_prova_b_strutturato_CAT_Q_R_ANS.txt",
-        downloadText: "Download Fisio 2"
+        downloadHref: "Quiz_Fisio_2_Prova_B.docx",
+        downloadText: "Download Word Fisio 2"
     }
 };
 
