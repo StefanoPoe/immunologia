@@ -7,7 +7,24 @@ const view = document.getElementById("view");
 
 
 // nuovo file domande (formato CAT/Q/R/ANS)
-const QUESTIONS_FILE = "./quiz_immunologia_strutturato_CAT_Q_R_ANS.txt";
+const DEFAULT_BANK_ID = "immunologia";
+
+const QUESTION_BANKS = {
+    immunologia: {
+        id: "immunologia",
+        title: "Immunologia",
+        file: "./quiz_immunologia_strutturato_CAT_Q_R_ANS.txt",
+        downloadHref: "Quiz_Immunologia.docx",
+        downloadText: "Download Word"
+    },
+    fisio2: {
+        id: "fisio2",
+        title: "Fisio 2 - Prova B",
+        file: "./fisio2_prova_b_strutturato_CAT_Q_R_ANS.txt",
+        downloadHref: "fisio2_prova_b_strutturato_CAT_Q_R_ANS.txt",
+        downloadText: "Download Fisio 2"
+    }
+};
 
 const STORAGE_KEY = "immunologia_quiz_v2";
 
@@ -24,7 +41,9 @@ const state = {
     categories: [],
     mode: "home",
     username: "",
+    currentBank: DEFAULT_BANK_ID,
     config: {
+        bank: DEFAULT_BANK_ID,
         category: "Tutte",
         limit: 30,
         shuffle: true,
@@ -76,11 +95,14 @@ function setNavForLoggedOut() {
     const logoutBtn = document.getElementById("nav-logout");
     const downloadBtn = document.getElementById("nav-download");
     const greeting = document.getElementById("nav-user-greeting");
+    const bankSelect = document.getElementById("bank-select");
 
     if (homeBtn) homeBtn.style.display = "none";
     if (statsBtn) statsBtn.style.display = "none";
     if (logoutBtn) logoutBtn.style.display = "none";
     if (downloadBtn) downloadBtn.style.display = "none";
+    if (bankSelect) bankSelect.style.display = "none";
+
     if (greeting) {
         greeting.style.display = "none";
         greeting.textContent = "";
@@ -93,16 +115,20 @@ function setNavForLoggedIn() {
     const logoutBtn = document.getElementById("nav-logout");
     const downloadBtn = document.getElementById("nav-download");
     const greeting = document.getElementById("nav-user-greeting");
+    const bankSelect = document.getElementById("bank-select");
 
     if (homeBtn) homeBtn.style.display = "inline-flex";
     if (statsBtn) statsBtn.style.display = "inline-flex";
     if (logoutBtn) logoutBtn.style.display = "inline-flex";
     if (downloadBtn) downloadBtn.style.display = "inline-flex";
+    if (bankSelect) bankSelect.style.display = "inline-flex";
 
     if (greeting) {
         greeting.style.display = "inline-flex";
         greeting.textContent = `Ciao, ${state.username}`;
     }
+
+    updateBankUI();
 }
 
 function updateAuthButtons() {
@@ -121,6 +147,68 @@ function makeEmptyProfile(username) {
         wrongQuestionIds: [],
         examHistory: []
     };
+}
+
+function getCurrentBank() {
+    return QUESTION_BANKS[state.currentBank] || QUESTION_BANKS[DEFAULT_BANK_ID];
+}
+
+function updateBankUI() {
+    const bank = getCurrentBank();
+
+    const title = document.getElementById("app-title");
+    const select = document.getElementById("bank-select");
+    const download = document.getElementById("nav-download");
+
+    if (title) title.textContent = `Quiz ${bank.title}`;
+
+    if (select) {
+        select.value = bank.id;
+    }
+
+    if (download) {
+        download.href = bank.downloadHref;
+        download.textContent = bank.downloadText;
+    }
+}
+
+async function loadQuestionBank(bankId, showLoading = true) {
+    const bank = QUESTION_BANKS[bankId] || QUESTION_BANKS[DEFAULT_BANK_ID];
+
+    state.currentBank = bank.id;
+    state.config.bank = bank.id;
+
+    if (showLoading) {
+        view.innerHTML = `<div class="card"><p>Caricamento ${escapeHtml(bank.title)}…</p></div>`;
+    }
+
+    const res = await fetch(bank.file, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status} su ${bank.file}`);
+
+    const txt = await res.text();
+
+    const questions = parseTxtToQuestions(txt).map(q => ({
+        ...q,
+        bank: bank.id,
+        // Manteniamo gli ID vecchi per Immunologia, così non perdi le statistiche già salvate.
+        // Per Fisio aggiungiamo prefisso per evitare collisioni.
+        id: bank.id === "immunologia" ? q.id : `${bank.id}_${q.id}`
+    }));
+
+    if (!questions.length) {
+        throw new Error(`Nessuna domanda caricata da ${bank.file}`);
+    }
+
+    state.all = questions;
+    state.categories = uniqCategories(state.all);
+
+    state.config.category = "Tutte";
+    state.config.practiceMode = "normal";
+    state.config.rangeEnabled = false;
+
+    recalcProfileStats();
+    save();
+    updateBankUI();
 }
 
 function ensureExamHistory() {
@@ -166,6 +254,7 @@ function buildExamHistoryEntry(auto) {
         category: q.category,
         qNumber: q.qNumber ?? null,
         question: q.question,
+        imageRefs: q.imageRefs || [],
         correctLabels: [...(q.correctLabels || [])],
         displayOptions: (q.displayOptions || q.options || []).map((o) => ({
             label: o.label,
@@ -185,6 +274,7 @@ function buildExamHistoryEntry(auto) {
 
     return {
         id: makeExamHistoryId(),
+        bank: state.currentBank,
         startedAt: new Date(startedAtMs).toISOString(),
         submittedAt: new Date(submittedAtMs).toISOString(),
         autoSubmitted: !!auto,
@@ -328,23 +418,21 @@ function save() {
 
 function load() {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) {
-        state.username = "";
-        state.profile = makeEmptyProfile("");
-        state.config.practiceMode = "normal";
-        return;
-    }
 
-    try {
-        const p = JSON.parse(raw);
-        if (p.config) state.config = { ...state.config, ...p.config };
-    } catch {
-        // ignora
+    if (raw) {
+        try {
+            const p = JSON.parse(raw);
+            if (p.config) state.config = { ...state.config, ...p.config };
+        } catch {
+            // ignora
+        }
     }
 
     state.username = "";
     state.profile = makeEmptyProfile("");
     state.config.practiceMode = "normal";
+    state.config.bank = state.config.bank || DEFAULT_BANK_ID;
+    state.currentBank = state.config.bank || DEFAULT_BANK_ID;
 }
 
 function resetAll() {
@@ -385,6 +473,34 @@ function stripLeadingOptionMarker(text) {
     return String(text || "").replace(/^\s*[A-Za-z0-9]+\)\s*/, "").trim();
 }
 
+function extractImageRefs(text) {
+    return Array.from(String(text || "").matchAll(/\[IMMAGINE:\s*([^\]]+)\]/gi))
+        .map(m => m[1].trim())
+        .filter(Boolean);
+}
+
+function removeImageMarkers(text) {
+    return String(text || "").replace(/\s*\[IMMAGINE:\s*[^\]]+\]/gi, "").trim();
+}
+
+function renderQuestionImages(q) {
+    const refs = q.imageRefs || [];
+    if (!refs.length) return "";
+
+    return `
+        <div class="question-images">
+            ${refs.map(ref => `
+                <img
+                    class="question-image"
+                    src="media/${encodeURIComponent(ref)}"
+                    alt="Immagine domanda"
+                    loading="lazy"
+                />
+            `).join("")}
+        </div>
+    `;
+}
+
 function getCorrectOptionTexts(q) {
     const source = q.displayOptions || q.options || [];
     const correctSet = new Set((q.correctLabels || []).map(normalizeLabelForCompare));
@@ -396,6 +512,10 @@ function getCorrectOptionTexts(q) {
 
 function formatCorrectAnswersMessage(q) {
     const texts = getCorrectOptionTexts(q);
+
+    if (q.hasAnswer && !texts.length) {
+        return "Risposta corretta:\nNessuna risposta.";
+    }
 
     if (!texts.length) {
         return "Soluzione non disponibile.";
@@ -444,7 +564,11 @@ function normalizeLabelForCompare(label) {
 
 function splitAns(ansRaw) {
     const cleaned = String(ansRaw ?? "").trim();
+    const upper = cleaned.toUpperCase();
+
     if (!cleaned || cleaned === "?") return [];
+    if (upper === "NESSUNA" || upper === "NESSUNO" || upper === "NO") return [];
+
     return cleaned
         .split(/[,\s]+/)
         .map((x) => x.trim())
@@ -602,6 +726,11 @@ function parseTxtToQuestions(txt) {
 
         if (options.length < 2) continue;
 
+        const imageRefs = extractImageRefs(question);
+        question = removeImageMarkers(question);
+
+        const hasAnswer = ansRaw.trim() !== "" && ansRaw.trim() !== "?";
+
         const idSource =
             category +
             "|" +
@@ -615,9 +744,10 @@ function parseTxtToQuestions(txt) {
             category,
             qNumber,
             question,
+            imageRefs,
             options,
             correctLabels,
-            hasAnswer: correctLabels.length > 0,
+            hasAnswer,
         });
     }
     return questions;
@@ -649,6 +779,28 @@ function wireNav() {
         logoutBtn.onclick = () => {
             stopExamTimer();
             logoutUser();
+        };
+    }
+
+    const bankSelect = document.getElementById("bank-select");
+    if (bankSelect) {
+        bankSelect.onchange = async () => {
+            if (!state.username) return;
+
+            stopExamTimer();
+
+            try {
+                await loadQuestionBank(bankSelect.value, true);
+                renderHome();
+            } catch (err) {
+                console.error(err);
+                view.innerHTML = `
+                    <div class="card">
+                        <h2>Errore caricamento banca dati</h2>
+                        <p class="muted">${escapeHtml(String(err))}</p>
+                    </div>
+                `;
+            }
         };
     }
 
@@ -964,7 +1116,10 @@ function startPractice() {
 
 function selectionHint(q) {
     if (!q.hasAnswer) return "Soluzione non disponibile per questa domanda.";
+
     const n = q.correctLabels.length;
+
+    if (n === 0) return "Non selezionare nessuna risposta.";
     if (n === 1) return "Seleziona 1 risposta corretta.";
     return `Seleziona ${n} risposte corrette.`;
 }
@@ -993,7 +1148,7 @@ function renderPractice() {
     const q = state.quiz.items[state.quiz.index];
     if (!q) return renderDonePractice();
 
-    const multi = q.correctLabels.length > 1;
+    const multi = q.correctLabels.length !== 1;
     const inputType = multi ? "checkbox" : "radio";
     const qDisplayText = (q.qNumber ? `${q.qNumber}. ` : "") + q.question;
 
@@ -1021,6 +1176,7 @@ function renderPractice() {
       </div>
 
       <pre class="qtext">${escapeHtml(qDisplayText)}</pre>
+        ${renderQuestionImages(q)}
 
       <div class="hint">${escapeHtml(selectionHint(q))}</div>
 
@@ -1151,6 +1307,7 @@ function recordQuestionResult(q, ok) {
     const qStat = ensureQuestionStat(q.id);
 
     qStat.category = cat;
+    qStat.bank = state.currentBank;
 
     if (ok) {
         qStat.correct = (qStat.correct || 0) + 1;
@@ -1194,20 +1351,17 @@ function buildDerivedStats() {
     let wrongUnique = 0;
 
     for (const [qid, stat] of Object.entries(qStats)) {
+        const q = byId.get(qid);
+
+        // IMPORTANTISSIMO:
+        // se la domanda non appartiene alla banca dati attualmente selezionata,
+        // non va contata nelle statistiche correnti.
+        if (!q) continue;
+
         const attempts = Number(stat.correct || 0) + Number(stat.wrong || 0);
         if (attempts <= 0) continue;
 
-        const q = byId.get(qid);
-        const cat = q?.category || stat.category || "Senza categoria";
-
-        if (!perCategory[cat]) {
-            perCategory[cat] = {
-                answeredUnique: 0,
-                correctUnique: 0,
-                wrongUnique: 0,
-                totalQuestions: totalByCategory[cat] || 0
-            };
-        }
+        const cat = q.category || "Senza categoria";
 
         answeredUnique++;
         perCategory[cat].answeredUnique++;
@@ -1641,7 +1795,10 @@ function renderStats() {
 
     const section = state.config.statsSection || "practice";
     const stats = buildDerivedStats();
-    const examHistory = Array.isArray(state.profile?.examHistory) ? state.profile.examHistory : [];
+    const currentBank = state.currentBank || DEFAULT_BANK_ID;
+
+    const examHistory = (Array.isArray(state.profile?.examHistory) ? state.profile.examHistory : [])
+        .filter(exam => (exam.bank || "immunologia") === currentBank);
 
     const practiceRows = Object.entries(stats.perCategory)
         .sort((a, b) => a[0].localeCompare(b[0]))
@@ -1904,27 +2061,18 @@ function escapeHtml(str) {
 
 async function init() {
     load();
-    view.innerHTML = `<div class="card"><p>Caricamento domande…</p></div>`;
+
+    view.innerHTML = `<div class="card"><p>Caricamento banca dati…</p></div>`;
 
     try {
-        const res = await fetch(QUESTIONS_FILE, { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status} su ${QUESTIONS_FILE}`);
-
-        const txt = await res.text();
-        const questions = parseTxtToQuestions(txt);
-
-        if (!questions.length) {
-            throw new Error(`Nessuna domanda caricata da ${QUESTIONS_FILE}`);
-        }
-
-        state.all = questions;
-        state.categories = uniqCategories(state.all);
-
         wireNav();
         updateAuthButtons();
 
+        await loadQuestionBank(state.config.bank || DEFAULT_BANK_ID, true);
+
         state.username = "";
         state.profile = makeEmptyProfile("");
+
         updateAuthButtons();
         renderUsernameScreen();
     } catch (err) {

@@ -4,12 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Quiz Immunologia</title>
-    <link rel="stylesheet" href="style.css?v=6" />
+    <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
 <div class="app">
     <header class="topbar">
-        <h1>Quiz Immunologia</h1>
+        <div class="brand">
+            <h1 id="app-title">Quiz Immunologia</h1>
+
+            <select id="bank-select" class="select bank-select" style="display:none;">
+                <option value="immunologia">Immunologia</option>
+                <option value="fisio2">Fisio 2 - Prova B</option>
+            </select>
+        </div>
+
         <nav class="nav">
             <button id="nav-home">Home</button>
             <button id="nav-stats">Statistiche</button>
@@ -27,6 +35,6 @@
     <main id="view"></main>
 </div>
 
-<script type="module" src="app.js?v=6"></script>
+<script type="module" src="app.js?v=7"></script>
 </body>
 </html>
