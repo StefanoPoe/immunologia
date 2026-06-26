@@ -255,6 +255,7 @@ function buildExamHistoryEntry(auto) {
         qNumber: q.qNumber ?? null,
         question: q.question,
         imageRefs: q.imageRefs || [],
+        explanation: q.explanation || "",
         correctLabels: [...(q.correctLabels || [])],
         displayOptions: (q.displayOptions || q.options || []).map((o) => ({
             label: o.label,
@@ -528,6 +529,37 @@ function formatCorrectAnswersMessage(q) {
     return `Risposte corrette:\n- ${texts.join("\n- ")}`;
 }
 
+function renderQuestionExplanation(q) {
+    const explanation = String(q?.explanation || "").trim();
+    if (!explanation) return "";
+
+    return `
+        <div class="explanation-box">
+            <h3>Spiegazione</h3>
+            <pre class="explanation-text">${escapeHtml(explanation)}</pre>
+        </div>
+    `;
+}
+
+function showPracticeExplanation(q) {
+    const box = document.getElementById("explanationBox");
+    if (!box) return;
+
+    const html = renderQuestionExplanation(q);
+    if (!html.trim()) return;
+
+    box.innerHTML = html;
+    box.style.display = "block";
+}
+
+function showNextPracticeButton() {
+    const nextBtn = document.getElementById("next-after-check");
+    if (!nextBtn) return;
+
+    nextBtn.style.display = "inline-flex";
+    nextBtn.focus();
+}
+
 function clampInt(value, min, max) {
     let a = Number(min);
     let b = Number(max);
@@ -627,7 +659,11 @@ function parseTxtToQuestions(txt) {
         .filter(Boolean);
 
     const questions = [];
-    for (const block of blocks) {
+    for (const originalBlock of blocks) {
+        const explMatch = originalBlock.match(/\nEXPL:\s*\n?([\s\S]*)$/i);
+        const explanation = explMatch ? explMatch[1].trim() : "";
+        const block = explMatch ? originalBlock.slice(0, explMatch.index).trim() : originalBlock;
+
         // NB: non facciamo trim() a sinistra per non perdere l'indentazione,
         // ma usiamo trimEnd e poi gestiamo continuazioni con trim().
         const rawLines = block.split("\n").map((l) => l.trimEnd());
@@ -745,6 +781,7 @@ function parseTxtToQuestions(txt) {
             qNumber,
             question,
             imageRefs,
+            explanation,
             options,
             correctLabels,
             hasAnswer,
@@ -1186,9 +1223,11 @@ function renderPractice() {
         <button id="check" class="primary">Conferma</button>
         <button id="skip">Salta</button>
         <button id="back">Indietro</button>
+        <button id="next-after-check" class="primary" style="display:none;">Avanti</button>
       </div>
 
       <p id="feedback" class="muted"></p>
+      <div id="explanationBox" style="display:none;"></div>
     </div>
   `;
 
@@ -1221,16 +1260,25 @@ function renderPractice() {
         nextPractice();
     };
 
+    document.getElementById("next-after-check").onclick = () => {
+        if (!locked) return;
+        nextPractice();
+    };
+
     document.getElementById("check").onclick = () => {
         if (locked) return;
         locked = true;
 
-        // blocca input
+        // blocca input e pulsanti: da qui si avanza solo con "Avanti"
         document.querySelectorAll('input[name="opt"]').forEach((i) => (i.disabled = true));
+        document.getElementById("check").disabled = true;
+        document.getElementById("skip").disabled = true;
+        document.getElementById("back").disabled = true;
 
         if (!q.hasAnswer) {
             feedback("Soluzione non disponibile (ANS: ?). Non conteggiata.");
-            setTimeout(() => nextPractice(), PRACTICE_DELAY_OK);
+            showPracticeExplanation(q);
+            showNextPracticeButton();
             return;
         }
 
@@ -1255,7 +1303,8 @@ function renderPractice() {
         state.quiz.answered++;
         save();
 
-        setTimeout(() => nextPractice(), ok ? PRACTICE_DELAY_OK : PRACTICE_DELAY_WRONG);
+        showPracticeExplanation(q);
+        showNextPracticeButton();
     };
 }
 
@@ -1557,8 +1606,9 @@ function renderExam() {
             <div class="label"><strong>${idx + 1}</strong> · ${escapeHtml(q.category)}</div>
             <div class="label">${escapeHtml(selectionHint(q))}</div>
           </div>
-          <pre class="qtext">${escapeHtml(q.question)}</pre>
-          <div>${optionsHtml}</div>
+          <pre class="qtext">${escapeHtml((q.qNumber ? `${q.qNumber}. ` : "") + q.question)}</pre>
+            ${renderQuestionImages(q)}
+        <div>${optionsHtml}</div>
         </div>
       `;
         })
@@ -1741,8 +1791,10 @@ function renderExamResults(auto) {
             <div class="label"><strong>${idx + 1}</strong> · ${escapeHtml(q.category)}</div>
             <div class="label">${res.ok ? "✅ Corretta" : "❌ Sbagliata"}</div>
           </div>
-          <pre class="qtext">${escapeHtml(q.question)}</pre>
-          <div>${optionsHtml}</div>
+          <pre class="qtext">${escapeHtml((q.qNumber ? `${q.qNumber}. ` : "") + q.question)}</pre>
+${renderQuestionImages(q)}
+<div>${optionsHtml}</div>
+${renderQuestionExplanation(q)}
         </div>
       `;
         })
@@ -1994,7 +2046,9 @@ function renderExamHistoryDetail(record) {
             <div class="label">${res.ok ? "✅ Corretta" : "❌ Sbagliata"}</div>
           </div>
           <pre class="qtext">${escapeHtml(qDisplayText)}</pre>
-          <div>${optionsHtml}</div>
+${renderQuestionImages(q)}
+<div>${optionsHtml}</div>
+${renderQuestionExplanation(q)}
         </div>
       `;
         })
